@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class VaccumController : MonoBehaviour {
-
+public class VacuumController : MonoBehaviour 
+{
+	
 	// Use this for initialization
 	void Start () {
 	
