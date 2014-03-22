@@ -11,16 +11,17 @@ public class VacuumSucker : MonoBehaviour
 	[HideInInspector]
 	public float suckDist2;
 	
+	private GameObject playerObj;
 	// Use this for initialization
 	void Start ()
 	{
 		suckDist2 = suckDist*suckDist;
+		playerObj = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-	
 	}
 	
 	
@@ -30,7 +31,7 @@ public class VacuumSucker : MonoBehaviour
 		{
 			if(col.gameObject.GetComponent<GetSucked>().canGetSucked)
 			{
-				Destroy(col.gameObject);
+				//Destroy(col.gameObject);
 			}
 		}
 	}
