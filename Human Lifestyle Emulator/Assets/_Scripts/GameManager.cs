@@ -3,7 +3,8 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour 
 {
-	public float totalSceneWeight;
+	public float totalSceneWeight =0;
+	public int objectCount =0;
 	public GameObject DebugTextFab;
 	
 	// Use this for initialization
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
 	void findTotalSceneWeight()
 	{
 		totalSceneWeight = 0;
+		objectCount = 0;
 		GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
 		foreach(GameObject thisObject in allObjects)
 		{
@@ -23,10 +25,13 @@ public class GameManager : MonoBehaviour
 				if(thisObject.rigidbody != null)
 				{
 					totalSceneWeight+= thisObject.rigidbody.mass;
+					objectCount ++;
 				}
 			}
 		}
 	}
+	
+	
 	
 	public GameObject createNewDebugTextObj()
 	{

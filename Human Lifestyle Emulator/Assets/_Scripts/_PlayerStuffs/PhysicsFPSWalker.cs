@@ -94,18 +94,17 @@ public class PhysicsFPSWalker : MonoBehaviour {
 			
 			if(vert !=0)
 			{
-				rigidbody.AddForce (transform.rotation * Vector3.forward * vert * speedMod);				
+				rigidbody.AddForce (new Vector3(transform.forward.x, 0, transform.forward.z) * vert * speedMod);				
 			}
 			else
 			{//slows the player down if they aren't applying a force
 				//rigidbody.AddForce(transform.rotation * new Vector3(0,0,-velXZ.normalized.z) * speedMod); 
 				rigidbody.AddForce(transform.rotation * (new Vector3(0,0,-velXZ.z) * rigidbody.mass)); 
-				
 			}
 			
 			if(horz != 0)
 			{
-				rigidbody.AddForce (transform.rotation * Vector3.right * horz * speedMod);
+				rigidbody.AddForce (new Vector3(transform.right.x, 0, transform.right.z) * horz * speedMod);
 				
 			}
 			else
@@ -119,12 +118,12 @@ public class PhysicsFPSWalker : MonoBehaviour {
 		{ //if object is in the air; give you control over it slightly
 			if(vert != 0)
 			{
-				rigidbody.AddForce (transform.rotation * Vector3.forward * vert * speedMod * 0.7f);
+				rigidbody.AddForce (new Vector3(transform.forward.x, 0, transform.forward.z) * vert * speedMod * 0.7f);
 			}
 			
 			if(horz != 0)
 			{
-				rigidbody.AddForce (transform.rotation * Vector3.right * horz * speedMod * 0.7f);
+				rigidbody.AddForce (new Vector3(transform.right.x, 0, transform.right.z) * horz * speedMod * 0.7f);
 			}
 		}
 		

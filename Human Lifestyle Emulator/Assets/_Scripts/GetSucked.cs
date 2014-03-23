@@ -6,6 +6,7 @@ public class GetSucked : MonoBehaviour
 	public bool isDebugging = false;
 	TextMesh debugTextMesh;
 	
+	public Vector3 origSize;
 	
 	private VacuumSucker vacuumSucker;
 	private Vector3 velocity;
@@ -19,21 +20,25 @@ public class GetSucked : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		origSize = transform.localScale;
 		if(!(size > 0)) size = rigidbody.mass;//temp
 		if(!(health > 0)) health = (int)size;
 		if(!(resistance > 0)) resistance = health;
 		
-		rigidbody.constraints = RigidbodyConstraints.None;
 		vacuumSucker = GameObject.FindGameObjectWithTag("Vacuum").GetComponent("VacuumSucker") as VacuumSucker;
 		gameObject.tag = "Suckable";
+		
+		
 		if(this.isDebugging)
 		{
 			GameObject textObj = vacuumSucker.playerObj.GetComponentInChildren<GameManager>().createNewDebugTextObj();
 			textObj.transform.position = this.transform.position + Vector3.up * 1.5f;
 			textObj.transform.parent = this.transform;
 
-						debugTextMesh = textObj.GetComponent<TextMesh>();
+			debugTextMesh = textObj.GetComponent<TextMesh>();
 		}
+		
+
 	}
 	
 	// Update is called once per frame
@@ -53,9 +58,31 @@ public class GetSucked : MonoBehaviour
 				force *= Time.deltaTime*-20;
 				rigidbody.AddForceAtPosition(force,relVec + vacuumSucker.transform.position);
 				
+				if(force.magnitude >= resistance*0.3f)
+				{
+					UnLockRigid();
+				}
 			}
 		}
 	}
+	
+	void LateUpdate()
+	{
+
+	}
+	
+	public void LockRigid()
+	{
+		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+		rigidbody.isKinematic = true;
+	}
+	
+	public void UnLockRigid()
+	{
+		rigidbody.constraints = RigidbodyConstraints.None;
+		rigidbody.isKinematic = false;
+	}
+	
 	
 	
 	void OnGUI()

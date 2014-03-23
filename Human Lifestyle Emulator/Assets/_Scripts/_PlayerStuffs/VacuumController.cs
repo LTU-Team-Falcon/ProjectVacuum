@@ -20,6 +20,7 @@ public class VacuumController : MonoBehaviour
 		playerObj = GameObject.FindGameObjectWithTag("Player");
 		camObj = playerObj.transform.FindChild("Main Camera").gameObject;
 		vacSucker = transform.GetComponentInChildren<VacuumSucker>();
+		vacSucker.vacController = this;
 		defaultRot = transform.localEulerAngles;
 	}
 	
