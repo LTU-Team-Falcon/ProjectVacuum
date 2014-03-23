@@ -144,6 +144,6 @@ public class PhysicsFPSWalker : MonoBehaviour {
 	void OnGUI()
 	{
 		string sped = "Speed: " + (float)(Mathf.Round(XZmovementMag*10f)/10f);
-		GUI.Box (new Rect (10,10,100,90), sped);
+		GUI.Box (new Rect (10,10,100,20), sped);
 	}
 }
