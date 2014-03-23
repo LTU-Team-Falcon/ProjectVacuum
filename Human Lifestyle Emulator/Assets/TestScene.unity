@@ -174,6 +174,7 @@ GameObject:
   - 23: {fileID: 203619057}
   - 114: {fileID: 203619056}
   - 54: {fileID: 203619055}
+  - 114: {fileID: 203619060}
   m_Layer: 0
   m_Name: Handle
   m_TagString: Untagged
@@ -187,13 +188,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 203619053}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.1348495, y: 12.3260193, z: 12.6026907}
+  m_LocalRotation: {x: .0344097205, y: -.112694725, z: -.0954873115, w: .988432109}
+  m_LocalPosition: {x: .620855331, y: .433346748, z: .62693882}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1142140549}
   - {fileID: 1875084001}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1582810625}
 --- !u!54 &203619055
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -233,7 +234,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 203619053}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -267,6 +268,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 203619053}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &203619060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 203619053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bad48d5f0598e6468a716868e573edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOut: 0
 --- !u!1 &363420743
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,7 +442,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!1 &500493138
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,7 +486,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 500493138}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -530,7 +548,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!1 &503059214
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,6 +618,18 @@ Prefab:
     - target: {fileID: 400008, guid: ad28af5f7e0b49c42b1bdc5087844362, type: 2}
       propertyPath: m_LocalRotation.w
       value: .777351975
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400002, guid: ad28af5f7e0b49c42b1bdc5087844362, type: 2}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400006, guid: ad28af5f7e0b49c42b1bdc5087844362, type: 2}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400004, guid: ad28af5f7e0b49c42b1bdc5087844362, type: 2}
+      propertyPath: m_Mass
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad28af5f7e0b49c42b1bdc5087844362, type: 2}
@@ -701,7 +736,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!1 &550761808
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,7 +812,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 608776029}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -834,7 +874,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!1 &660368848
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,7 +1005,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 1255651926}
   m_GameObject: {fileID: 674964547}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -1020,7 +1065,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!1 &739084368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,7 +1123,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 1255651926}
   m_GameObject: {fileID: 739084368}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -1122,7 +1172,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!1001 &887739155
 Prefab:
   m_ObjectHideFlags: 0
@@ -1240,7 +1295,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 1043484281}
   m_GameObject: {fileID: 959180364}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -1289,7 +1344,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!1 &975329522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1331,7 +1391,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 505728576}
   m_GameObject: {fileID: 975329522}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -1391,7 +1451,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!1001 &1043484281
 Prefab:
   m_ObjectHideFlags: 0
@@ -1426,6 +1491,22 @@ Prefab:
     - target: {fileID: 400008, guid: ad28af5f7e0b49c42b1bdc5087844362, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400000, guid: ad28af5f7e0b49c42b1bdc5087844362, type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400004, guid: ad28af5f7e0b49c42b1bdc5087844362, type: 2}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400006, guid: ad28af5f7e0b49c42b1bdc5087844362, type: 2}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400002, guid: ad28af5f7e0b49c42b1bdc5087844362, type: 2}
+      propertyPath: m_Mass
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad28af5f7e0b49c42b1bdc5087844362, type: 2}
@@ -1556,7 +1637,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 505728576}
   m_GameObject: {fileID: 1221966921}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -1605,7 +1686,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!1 &1234491212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,7 +1723,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!54 &1234491214
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1645,7 +1736,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1234491212}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -1742,6 +1833,22 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: .304387778
       objectReference: {fileID: 0}
+    - target: {fileID: 5400000, guid: ad28af5f7e0b49c42b1bdc5087844362, type: 2}
+      propertyPath: m_Mass
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400004, guid: ad28af5f7e0b49c42b1bdc5087844362, type: 2}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400006, guid: ad28af5f7e0b49c42b1bdc5087844362, type: 2}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400002, guid: ad28af5f7e0b49c42b1bdc5087844362, type: 2}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad28af5f7e0b49c42b1bdc5087844362, type: 2}
   m_RootGameObject: {fileID: 65851882}
@@ -1799,7 +1906,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 1255651926}
   m_GameObject: {fileID: 1263166692}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -1848,7 +1955,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!1 &1284398982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,7 +1992,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!54 &1284398984
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1888,7 +2005,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1284398982}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -2050,7 +2167,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!1 &1551444692
 GameObject:
   m_ObjectHideFlags: 0
@@ -2153,7 +2275,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!1 &1552440389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2185,7 +2312,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!54 &1552440391
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2193,7 +2325,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1552440389}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -2267,9 +2399,10 @@ GameObject:
   - 114: {fileID: 1582810623}
   - 54: {fileID: 1582810622}
   - 136: {fileID: 1582810626}
+  - 114: {fileID: 1582810627}
   m_Layer: 0
   m_Name: Playa
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2332,6 +2465,7 @@ Transform:
   m_LocalPosition: {x: -30.7649231, y: 11.7497883, z: 10.9297609}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 203619054}
   - {fileID: 660368849}
   m_Father: {fileID: 0}
 --- !u!136 &1582810626
@@ -2347,6 +2481,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1582810627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1582810621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb1c1cdc4ef38e4b8f89a5e143649d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalSceneWeight: 0
+  DebugTextFab: {fileID: 100000, guid: 65ef8194b8c90664db759b896642740e, type: 2}
 --- !u!1 &1589776093
 GameObject:
   m_ObjectHideFlags: 0
@@ -2385,7 +2532,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1589776093}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -2447,7 +2594,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!1 &1607024152
 GameObject:
   m_ObjectHideFlags: 0
@@ -2489,7 +2641,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 1043484281}
   m_GameObject: {fileID: 1607024152}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -2549,7 +2701,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!1 &1620614496
 GameObject:
   m_ObjectHideFlags: 0
@@ -2602,7 +2759,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 505728576}
   m_GameObject: {fileID: 1620614496}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -2651,7 +2808,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!1 &1644137857
 GameObject:
   m_ObjectHideFlags: 0
@@ -2683,7 +2845,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!54 &1644137859
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2691,7 +2858,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1644137857}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -2765,6 +2932,8 @@ GameObject:
   - 114: {fileID: 1875084002}
   - 33: {fileID: 1875084005}
   - 23: {fileID: 1875084004}
+  - 65: {fileID: 1875084006}
+  - 54: {fileID: 1875084007}
   m_Layer: 0
   m_Name: Sucker
   m_TagString: Vacuum
@@ -2780,7 +2949,7 @@ Transform:
   m_GameObject: {fileID: 1875084000}
   m_LocalRotation: {x: -.628531039, y: 0, z: 0, w: .777784526}
   m_LocalPosition: {x: .00897216797, y: -.146237373, z: 1.4851141}
-  m_LocalScale: {x: .745414674, y: .39578709, z: .337896913}
+  m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children: []
   m_Father: {fileID: 203619054}
 --- !u!114 &1875084002
@@ -2795,9 +2964,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxFlyVelocity: 20
-  suckPow: 1
-  suckDist: 12
+  suckPotential: 2
+  maxSuckPower: 50
+  maxSuckDist: 0
+  suckDist: 15
   suckDist2: 0
+  isSucking: 1
+  suckPow: 1
+  massToSuction: 0
+  intake: []
+  hasSucked: []
+  playerObj: {fileID: 0}
 --- !u!65 &1875084003
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2839,6 +3016,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1875084000}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1875084006
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1875084000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.10000002, y: 1.10000002, z: 1.10000002}
+  m_Center: {x: 0, y: -3.81469727e-06, z: 3.81469727e-06}
+--- !u!54 &1875084007
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1875084000}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 2
+  m_Constraints: 94
+  m_CollisionDetection: 2
 --- !u!1 &1940189726
 GameObject:
   m_ObjectHideFlags: 0
@@ -2941,7 +3145,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!1 &1940269549
 GameObject:
   m_ObjectHideFlags: 0
@@ -3042,7 +3251,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!64 &1941874322
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3166,7 +3380,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 1043484281}
   m_GameObject: {fileID: 2020453325}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -3215,7 +3429,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!1 &2032941667
 GameObject:
   m_ObjectHideFlags: 0
@@ -3247,7 +3466,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 1
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
 --- !u!54 &2032941669
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3255,7 +3479,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2032941667}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -3419,4 +3643,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
+  debugString: This Aint w0rking
   canGetSucked: 1
+  resistance: 0
+  health: 0
+  size: 0
