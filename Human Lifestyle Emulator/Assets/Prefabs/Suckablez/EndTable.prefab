@@ -121,9 +121,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: .703271151, y: -.0735510141, z: -.0735510141, w: -.703271151}
-  m_LocalPosition: {x: -23.8120308, y: 11.4979601, z: 21.6351509}
-  m_LocalScale: {x: .908823073, y: 2.03915691, z: .827267826}
+  m_LocalRotation: {x: -.663356781, y: .244862914, z: .244862914, w: .663356781}
+  m_LocalPosition: {x: -24.9300709, y: 11.497961, z: 15.3060751}
+  m_LocalScale: {x: .908823013, y: 2.03915501, z: .827268004}
   m_Children:
   - {fileID: 400002}
   - {fileID: 400004}
@@ -182,7 +182,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
   m_LocalRotation: {x: 0, y: 0, z: -1.04795559e-08, w: -1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: .200000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
@@ -337,10 +337,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 2
-  m_Constraints: 126
-  m_CollisionDetection: 2
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!54 &5400002
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -352,7 +352,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -367,7 +367,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -382,7 +382,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -397,7 +397,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -425,7 +425,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!64 &6400004
 MeshCollider:
@@ -438,7 +438,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300004, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!64 &6400006
 MeshCollider:
@@ -451,7 +451,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300008, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!64 &6400008
 MeshCollider:
@@ -464,7 +464,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300006, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -477,8 +477,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attachForce: 0
   isDebugging: 0
   origScale: {x: 0, y: 0, z: 0}
+  origSize: 0
+  origHealth: 0
   canGetSucked: 1
   resistance: 0
   health: 0
@@ -496,8 +499,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attachForce: 0
   isDebugging: 0
   origScale: {x: 0, y: 0, z: 0}
+  origSize: 0
+  origHealth: 0
   canGetSucked: 1
   resistance: 0
   health: 0
@@ -515,8 +521,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attachForce: 0
   isDebugging: 0
   origScale: {x: 0, y: 0, z: 0}
+  origSize: 0
+  origHealth: 0
   canGetSucked: 1
   resistance: 0
   health: 0
@@ -534,8 +543,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attachForce: 0
   isDebugging: 0
   origScale: {x: 0, y: 0, z: 0}
+  origSize: 0
+  origHealth: 0
   canGetSucked: 1
   resistance: 0
   health: 0
@@ -553,8 +565,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attachForce: 0
   isDebugging: 0
   origScale: {x: 0, y: 0, z: 0}
+  origSize: 0
+  origHealth: 0
   canGetSucked: 1
   resistance: 0
   health: 0

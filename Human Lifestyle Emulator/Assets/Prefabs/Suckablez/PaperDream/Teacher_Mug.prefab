@@ -113,11 +113,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attachForce: 0
   isDebugging: 0
+  origScale: {x: 0, y: 0, z: 0}
+  origSize: 0
+  origHealth: 0
   canGetSucked: 1
   resistance: 0
   health: 0
-  size: 0
+  size: 1
+  damage: 0
+  debugList: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
