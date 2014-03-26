@@ -24,7 +24,8 @@ function LateUpdate ()
 
 function Start () 
 {
-	target = GameObject.FindGameObjectWithTag("Player").transform.FindChild("Main Camera");
+	if(target == null)
+		target = GameObject.FindGameObjectWithTag("Player").transform.FindChild("Main Camera");
 
 	// Make the rigid body not change rotation
    	if (rigidbody)

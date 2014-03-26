@@ -13,11 +13,11 @@ SceneSettings:
 --- !u!104 &2
 RenderSettings:
   m_Fog: 0
-  m_FogColor: {r: .5, g: .5, b: .5, a: 1}
+  m_FogColor: {r: .227941155, g: .227941155, b: .227941155, a: 1}
   m_FogMode: 3
-  m_FogDensity: .00999999978
-  m_LinearFogStart: 0
-  m_LinearFogEnd: 300
+  m_FogDensity: 1
+  m_LinearFogStart: 2
+  m_LinearFogEnd: 5
   m_AmbientLight: {r: .200000003, g: .200000003, b: .200000003, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: .5
@@ -215,7 +215,7 @@ Transform:
   m_PrefabInternal: {fileID: 1481066174}
   m_GameObject: {fileID: 15766027}
   m_LocalRotation: {x: 0, y: 0, z: -1.04795559e-08, w: -1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: .200000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 783670196}
@@ -254,10 +254,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 2
-  m_Constraints: 126
-  m_CollisionDetection: 2
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!64 &15766031
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -314,7 +314,7 @@ GameObject:
   - 23: {fileID: 30609199}
   - 54: {fileID: 30609197}
   - 114: {fileID: 30609196}
-  - 64: {fileID: 30609198}
+  - 65: {fileID: 30609198}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -371,11 +371,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &30609198
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &30609198
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1246492754}
   m_GameObject: {fileID: 30609194}
@@ -383,9 +383,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &30609199
 Renderer:
   m_ObjectHideFlags: 0
@@ -596,7 +595,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -612,7 +611,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300008, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &37528058
 Renderer:
@@ -884,7 +883,7 @@ GameObject:
   - 23: {fileID: 53535976}
   - 54: {fileID: 53535974}
   - 114: {fileID: 53535973}
-  - 64: {fileID: 53535975}
+  - 65: {fileID: 53535975}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -941,11 +940,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &53535975
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &53535975
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 711496262}
   m_GameObject: {fileID: 53535971}
@@ -953,9 +952,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &53535976
 Renderer:
   m_ObjectHideFlags: 0
@@ -1088,7 +1086,7 @@ GameObject:
   - 23: {fileID: 67074483}
   - 54: {fileID: 67074481}
   - 114: {fileID: 67074480}
-  - 64: {fileID: 67074482}
+  - 65: {fileID: 67074482}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -1145,11 +1143,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &67074482
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &67074482
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1789498360}
   m_GameObject: {fileID: 67074478}
@@ -1157,9 +1155,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &67074483
 Renderer:
   m_ObjectHideFlags: 0
@@ -1258,7 +1255,7 @@ GameObject:
   - 23: {fileID: 81287051}
   - 54: {fileID: 81287049}
   - 114: {fileID: 81287048}
-  - 64: {fileID: 81287050}
+  - 65: {fileID: 81287050}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -1315,11 +1312,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &81287050
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &81287050
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 982666444}
   m_GameObject: {fileID: 81287046}
@@ -1327,9 +1324,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &81287051
 Renderer:
   m_ObjectHideFlags: 0
@@ -1650,6 +1646,107 @@ Prefab:
   m_RootGameObject: {fileID: 763741840}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &114346854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100004, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 114346855}
+  - 23: {fileID: 114346859}
+  - 102: {fileID: 114346858}
+  - 114: {fileID: 114346857}
+  - 65: {fileID: 114346856}
+  m_Layer: 0
+  m_Name: MenuContinue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &114346855
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
+  m_GameObject: {fileID: 114346854}
+  m_LocalRotation: {x: 0, y: -.707348228, z: 0, w: .706865311}
+  m_LocalPosition: {x: 0, y: 2.2411623, z: -0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 326350052}
+--- !u!65 &114346856
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 114346854}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.98000622, y: 1.47250009, z: 1}
+  m_Center: {x: 3.81469727e-06, y: -9.19681042e-09, z: 4.76837158e-07}
+--- !u!114 &114346857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
+  m_GameObject: {fileID: 114346854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d82d64926e86894ca057dbdf508b1ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  damping: 6
+  smooth: 1
+--- !u!102 &114346858
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 10200002, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
+  m_GameObject: {fileID: 114346854}
+  m_Text: Continue
+  m_OffsetZ: 0
+  m_CharacterSize: .100000001
+  m_LineSpacing: 1
+  m_Anchor: 4
+  m_Alignment: 1
+  m_TabSize: 4
+  m_FontSize: 128
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 12800000, guid: 110bb54de811d8947b7e0ca112582942, type: 3}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4291755984
+--- !u!23 &114346859
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300002, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
+  m_GameObject: {fileID: 114346854}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 110bb54de811d8947b7e0ca112582942, type: 3}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!1 &116063174
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,7 +1759,7 @@ GameObject:
   - 23: {fileID: 116063179}
   - 54: {fileID: 116063177}
   - 114: {fileID: 116063176}
-  - 64: {fileID: 116063178}
+  - 65: {fileID: 116063178}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -1719,11 +1816,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &116063178
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &116063178
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 2001016361}
   m_GameObject: {fileID: 116063174}
@@ -1731,9 +1828,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &116063179
 Renderer:
   m_ObjectHideFlags: 0
@@ -1767,8 +1863,8 @@ MeshFilter:
 --- !u!1 &150655848
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: 9e2240b9c77d89d4885be0b2ec30715e, type: 2}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 100012, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 150655849}
@@ -1786,8 +1882,8 @@ GameObject:
 --- !u!4 &150655849
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: 9e2240b9c77d89d4885be0b2ec30715e, type: 2}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 400012, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 150655848}
   m_LocalRotation: {x: -.628531098, y: 4.70464272e-07, z: -2.90869934e-07, w: .777784526}
   m_LocalPosition: {x: .00896833092, y: -.0933284834, z: 1.23865402}
@@ -1797,8 +1893,9 @@ Transform:
 --- !u!114 &150655850
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 11400008, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 150655848}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1808,8 +1905,9 @@ MonoBehaviour:
 --- !u!199 &150655851
 ParticleSystemRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 19900000, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 150655848}
   m_Enabled: 1
   m_CastShadows: 0
@@ -1841,8 +1939,9 @@ ParticleSystemRenderer:
 --- !u!198 &150655852
 ParticleSystem:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 19800000, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 150655848}
   lengthInSec: 1
   startDelay: 0
@@ -2868,8 +2967,9 @@ ParticleSystem:
 --- !u!65 &150655853
 BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 6500006, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 150655848}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -2889,7 +2989,7 @@ GameObject:
   - 23: {fileID: 153248806}
   - 54: {fileID: 153248804}
   - 114: {fileID: 153248803}
-  - 64: {fileID: 153248805}
+  - 65: {fileID: 153248805}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -2946,11 +3046,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &153248805
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &153248805
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1674892767}
   m_GameObject: {fileID: 153248801}
@@ -2958,9 +3058,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &153248806
 Renderer:
   m_ObjectHideFlags: 0
@@ -3057,7 +3156,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -3073,7 +3172,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300004, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &155323676
 Renderer:
@@ -3512,8 +3611,8 @@ Prefab:
 --- !u!1 &203619053
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 100014, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 203619054}
@@ -3530,8 +3629,8 @@ GameObject:
 --- !u!4 &203619054
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 400014, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 203619053}
   m_LocalRotation: {x: .0344097205, y: -.112694725, z: -.0954873115, w: .988432109}
   m_LocalPosition: {x: .620853424, y: .433346748, z: .372472763}
@@ -3544,8 +3643,9 @@ Transform:
 --- !u!54 &203619055
 Rigidbody:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 5400000, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 203619053}
   serializedVersion: 2
   m_Mass: 1
@@ -3559,8 +3659,9 @@ Rigidbody:
 --- !u!114 &203619056
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 11400010, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 203619053}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -3577,8 +3678,9 @@ MonoBehaviour:
 --- !u!114 &203619060
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 11400012, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 203619053}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -3657,7 +3759,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -3673,7 +3775,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300008, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &206833465
 Renderer:
@@ -3717,7 +3819,7 @@ GameObject:
   - 23: {fileID: 223178916}
   - 54: {fileID: 223178914}
   - 114: {fileID: 223178913}
-  - 64: {fileID: 223178915}
+  - 65: {fileID: 223178915}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -3774,11 +3876,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &223178915
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &223178915
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 550795445}
   m_GameObject: {fileID: 223178911}
@@ -3786,9 +3888,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &223178916
 Renderer:
   m_ObjectHideFlags: 0
@@ -4748,7 +4849,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -4764,7 +4865,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300004, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &283655066
 Renderer:
@@ -4808,7 +4909,7 @@ GameObject:
   - 23: {fileID: 283962453}
   - 54: {fileID: 283962451}
   - 114: {fileID: 283962450}
-  - 64: {fileID: 283962452}
+  - 65: {fileID: 283962452}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -4865,11 +4966,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &283962452
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &283962452
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 912282607}
   m_GameObject: {fileID: 283962448}
@@ -4877,9 +4978,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &283962453
 Renderer:
   m_ObjectHideFlags: 0
@@ -5090,7 +5190,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -5106,7 +5206,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &288009195
 Renderer:
@@ -5150,7 +5250,7 @@ GameObject:
   - 23: {fileID: 297239563}
   - 54: {fileID: 297239561}
   - 114: {fileID: 297239560}
-  - 64: {fileID: 297239562}
+  - 65: {fileID: 297239562}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -5207,11 +5307,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &297239562
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &297239562
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1542179951}
   m_GameObject: {fileID: 297239558}
@@ -5219,9 +5319,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &297239563
 Renderer:
   m_ObjectHideFlags: 0
@@ -5432,7 +5531,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -5448,7 +5547,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300004, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &309279099
 Renderer:
@@ -5621,7 +5720,7 @@ Transform:
   m_PrefabInternal: {fileID: 338029900}
   m_GameObject: {fileID: 326291709}
   m_LocalRotation: {x: 0, y: 0, z: -1.04795559e-08, w: -1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: .200000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1141309705}
@@ -5660,10 +5759,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 2
-  m_Constraints: 126
-  m_CollisionDetection: 2
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!64 &326291713
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5708,6 +5807,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 338029900}
   m_GameObject: {fileID: 326291709}
   m_Mesh: {fileID: 4300000, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
+--- !u!1 &326350051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100010, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 326350052}
+  - 114: {fileID: 326350053}
+  m_Layer: 0
+  m_Name: PauseMenuObj
+  m_TagString: Menu
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &326350052
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400010, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
+  m_GameObject: {fileID: 326350051}
+  m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106829}
+  m_LocalPosition: {x: 0, y: .5, z: 6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1855207148}
+  - {fileID: 114346855}
+  - {fileID: 1082975969}
+  m_Father: {fileID: 1582810625}
+--- !u!114 &326350053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
+  m_GameObject: {fileID: 326350051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7cba6b401733d40a31d871e2c122c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &328609807
 GameObject:
   m_ObjectHideFlags: 0
@@ -5774,7 +5915,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -5790,7 +5931,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300004, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &328609812
 Renderer:
@@ -6266,7 +6407,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -6282,7 +6423,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300008, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &362936308
 Renderer:
@@ -6389,7 +6530,7 @@ GameObject:
   - 23: {fileID: 387978358}
   - 54: {fileID: 387978356}
   - 114: {fileID: 387978355}
-  - 64: {fileID: 387978357}
+  - 65: {fileID: 387978357}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -6446,11 +6587,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &387978357
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &387978357
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 2020365056}
   m_GameObject: {fileID: 387978353}
@@ -6458,9 +6599,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &387978358
 Renderer:
   m_ObjectHideFlags: 0
@@ -6503,7 +6643,7 @@ GameObject:
   - 23: {fileID: 396247119}
   - 54: {fileID: 396247117}
   - 114: {fileID: 396247116}
-  - 64: {fileID: 396247118}
+  - 65: {fileID: 396247118}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -6560,11 +6700,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &396247118
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &396247118
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 68956073}
   m_GameObject: {fileID: 396247114}
@@ -6572,9 +6712,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &396247119
 Renderer:
   m_ObjectHideFlags: 0
@@ -6897,7 +7036,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -6913,7 +7052,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300008, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &408463256
 Renderer:
@@ -6986,7 +7125,7 @@ MonoBehaviour:
   canGetSucked: 1
   resistance: 0
   health: 0
-  size: 0
+  size: 1
   damage: 0
   debugList: []
 --- !u!54 &408770704
@@ -7141,7 +7280,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -7157,7 +7296,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &411384563
 Renderer:
@@ -7201,7 +7340,7 @@ GameObject:
   - 23: {fileID: 413449540}
   - 54: {fileID: 413449538}
   - 114: {fileID: 413449537}
-  - 64: {fileID: 413449539}
+  - 65: {fileID: 413449539}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -7258,11 +7397,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &413449539
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &413449539
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1139445125}
   m_GameObject: {fileID: 413449535}
@@ -7270,9 +7409,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &413449540
 Renderer:
   m_ObjectHideFlags: 0
@@ -7864,7 +8002,7 @@ Transform:
   m_PrefabInternal: {fileID: 1471063429}
   m_GameObject: {fileID: 462243238}
   m_LocalRotation: {x: 0, y: 0, z: -1.04795559e-08, w: -1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: .200000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 997121058}
@@ -7903,10 +8041,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 2
-  m_Constraints: 126
-  m_CollisionDetection: 2
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!64 &462243242
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8073,7 +8211,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -8089,7 +8227,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &470028703
 Renderer:
@@ -8475,7 +8613,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -8491,7 +8629,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300006, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &502960811
 Renderer:
@@ -8565,7 +8703,7 @@ GameObject:
   - 23: {fileID: 509523774}
   - 54: {fileID: 509523772}
   - 114: {fileID: 509523771}
-  - 64: {fileID: 509523773}
+  - 65: {fileID: 509523773}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -8622,11 +8760,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &509523773
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &509523773
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 598098193}
   m_GameObject: {fileID: 509523769}
@@ -8634,9 +8772,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &509523774
 Renderer:
   m_ObjectHideFlags: 0
@@ -8992,7 +9129,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -9008,7 +9145,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &543408062
 Renderer:
@@ -9144,7 +9281,7 @@ GameObject:
   - 23: {fileID: 576770065}
   - 54: {fileID: 576770063}
   - 114: {fileID: 576770062}
-  - 64: {fileID: 576770064}
+  - 65: {fileID: 576770064}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -9201,11 +9338,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &576770064
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &576770064
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1368839163}
   m_GameObject: {fileID: 576770060}
@@ -9213,9 +9350,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &576770065
 Renderer:
   m_ObjectHideFlags: 0
@@ -9354,7 +9490,7 @@ GameObject:
   - 23: {fileID: 583861594}
   - 54: {fileID: 583861592}
   - 114: {fileID: 583861591}
-  - 64: {fileID: 583861593}
+  - 65: {fileID: 583861593}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -9411,11 +9547,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &583861593
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &583861593
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1238966398}
   m_GameObject: {fileID: 583861589}
@@ -9423,9 +9559,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &583861594
 Renderer:
   m_ObjectHideFlags: 0
@@ -9468,7 +9603,7 @@ GameObject:
   - 23: {fileID: 588536573}
   - 54: {fileID: 588536571}
   - 114: {fileID: 588536570}
-  - 64: {fileID: 588536572}
+  - 65: {fileID: 588536572}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -9525,11 +9660,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &588536572
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &588536572
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1799536503}
   m_GameObject: {fileID: 588536568}
@@ -9537,9 +9672,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &588536573
 Renderer:
   m_ObjectHideFlags: 0
@@ -9836,7 +9970,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -9852,7 +9986,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &597036980
 Renderer:
@@ -10343,7 +10477,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -10359,7 +10493,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300006, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &609312498
 Renderer:
@@ -10403,7 +10537,7 @@ GameObject:
   - 23: {fileID: 610518329}
   - 54: {fileID: 610518327}
   - 114: {fileID: 610518326}
-  - 64: {fileID: 610518328}
+  - 65: {fileID: 610518328}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -10460,11 +10594,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &610518328
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &610518328
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 649984704}
   m_GameObject: {fileID: 610518324}
@@ -10472,9 +10606,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &610518329
 Renderer:
   m_ObjectHideFlags: 0
@@ -10701,7 +10834,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300006, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &617555824
 Renderer:
@@ -10815,7 +10948,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300004, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &624245273
 Renderer:
@@ -10965,7 +11098,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -10981,7 +11114,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &632562986
 Renderer:
@@ -11216,7 +11349,7 @@ Prefab:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100008, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 2008581459}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 660368849}
@@ -11235,7 +11368,7 @@ GameObject:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400008, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 660368848}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: .907083511, z: 0}
@@ -11247,7 +11380,7 @@ AudioListener:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 8100000, guid: 19ae5653d8184ad4cb8144857f4d4120,
     type: 2}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 660368848}
   m_Enabled: 1
 --- !u!124 &660368851
@@ -11255,7 +11388,7 @@ Behaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 12400000, guid: 19ae5653d8184ad4cb8144857f4d4120,
     type: 2}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 660368848}
   m_Enabled: 1
 --- !u!92 &660368852
@@ -11263,7 +11396,7 @@ Behaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 9200000, guid: 19ae5653d8184ad4cb8144857f4d4120,
     type: 2}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 660368848}
   m_Enabled: 1
 --- !u!20 &660368853
@@ -11271,7 +11404,7 @@ Camera:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 2000000, guid: 19ae5653d8184ad4cb8144857f4d4120,
     type: 2}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 660368848}
   m_Enabled: 1
   serializedVersion: 2
@@ -11661,8 +11794,8 @@ MeshFilter:
 --- !u!1 &689155852
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: 9e2240b9c77d89d4885be0b2ec30715e, type: 2}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 100016, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 689155853}
@@ -11680,8 +11813,8 @@ GameObject:
 --- !u!4 &689155853
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: 9e2240b9c77d89d4885be0b2ec30715e, type: 2}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 400016, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 689155852}
   m_LocalRotation: {x: -.628531098, y: 4.70464272e-07, z: -2.90869934e-07, w: .777784526}
   m_LocalPosition: {x: .00897077844, y: -.146237493, z: 1.4851135}
@@ -11691,8 +11824,9 @@ Transform:
 --- !u!65 &689155854
 BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 6500008, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 689155852}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -11703,8 +11837,9 @@ BoxCollider:
 --- !u!23 &689155855
 Renderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 2300006, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 689155852}
   m_Enabled: 1
   m_CastShadows: 1
@@ -11724,15 +11859,17 @@ Renderer:
 --- !u!33 &689155856
 MeshFilter:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 3300000, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 689155852}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &689155857
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 11400014, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 689155852}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -12094,7 +12231,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -12110,7 +12247,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300008, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &709742708
 Renderer:
@@ -12338,7 +12475,7 @@ GameObject:
   - 23: {fileID: 725484922}
   - 54: {fileID: 725484920}
   - 114: {fileID: 725484919}
-  - 64: {fileID: 725484921}
+  - 65: {fileID: 725484921}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -12395,11 +12532,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &725484921
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &725484921
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 599927907}
   m_GameObject: {fileID: 725484917}
@@ -12407,9 +12544,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &725484922
 Renderer:
   m_ObjectHideFlags: 0
@@ -12844,7 +12980,7 @@ GameObject:
   - 23: {fileID: 759712065}
   - 54: {fileID: 759712063}
   - 114: {fileID: 759712062}
-  - 64: {fileID: 759712064}
+  - 65: {fileID: 759712064}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -12901,11 +13037,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &759712064
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &759712064
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1229704734}
   m_GameObject: {fileID: 759712060}
@@ -12913,9 +13049,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &759712065
 Renderer:
   m_ObjectHideFlags: 0
@@ -12969,7 +13104,7 @@ Transform:
   m_GameObject: {fileID: 763741840}
   m_LocalRotation: {x: .703271151, y: -.0735510141, z: -.0735510141, w: -.703271151}
   m_LocalPosition: {x: -23.8120308, y: 11.4979601, z: 21.6351509}
-  m_LocalScale: {x: .908823073, y: 2.03915691, z: .827267826}
+  m_LocalScale: {x: .908823013, y: 2.03915501, z: .827268004}
   m_Children:
   - {fileID: 1110504974}
   - {fileID: 1196609954}
@@ -13043,7 +13178,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -13059,7 +13194,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &764822705
 Renderer:
@@ -13103,7 +13238,7 @@ GameObject:
   - 23: {fileID: 773816142}
   - 54: {fileID: 773816140}
   - 114: {fileID: 773816139}
-  - 64: {fileID: 773816141}
+  - 65: {fileID: 773816141}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -13160,11 +13295,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &773816141
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &773816141
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 163512760}
   m_GameObject: {fileID: 773816137}
@@ -13172,9 +13307,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &773816142
 Renderer:
   m_ObjectHideFlags: 0
@@ -13284,7 +13418,7 @@ Transform:
   m_PrefabInternal: {fileID: 264870755}
   m_GameObject: {fileID: 777418676}
   m_LocalRotation: {x: 0, y: 0, z: -1.04795559e-08, w: -1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: .200000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1412943201}
@@ -13323,10 +13457,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 2
-  m_Constraints: 126
-  m_CollisionDetection: 2
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!64 &777418680
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13414,7 +13548,7 @@ GameObject:
   - 23: {fileID: 784923276}
   - 54: {fileID: 784923274}
   - 114: {fileID: 784923273}
-  - 64: {fileID: 784923275}
+  - 65: {fileID: 784923275}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -13471,11 +13605,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &784923275
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &784923275
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 851319934}
   m_GameObject: {fileID: 784923271}
@@ -13483,9 +13617,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &784923276
 Renderer:
   m_ObjectHideFlags: 0
@@ -13808,7 +13941,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -13824,7 +13957,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300008, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &810199525
 Renderer:
@@ -13897,7 +14030,7 @@ MonoBehaviour:
   canGetSucked: 1
   resistance: 0
   health: 0
-  size: 0
+  size: 1
   damage: 0
   debugList: []
 --- !u!54 &827324406
@@ -14052,7 +14185,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -14068,7 +14201,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300008, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &849196059
 Renderer:
@@ -14337,7 +14470,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -14353,7 +14486,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300004, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &855118109
 Renderer:
@@ -14451,7 +14584,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -14467,7 +14600,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &859406565
 Renderer:
@@ -14636,7 +14769,7 @@ MonoBehaviour:
   canGetSucked: 1
   resistance: 0
   health: 0
-  size: 0
+  size: 1
   damage: 0
   debugList: []
 --- !u!54 &868158300
@@ -14791,7 +14924,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -14807,7 +14940,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300008, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &877580735
 Renderer:
@@ -14851,7 +14984,7 @@ GameObject:
   - 23: {fileID: 883164280}
   - 54: {fileID: 883164278}
   - 114: {fileID: 883164277}
-  - 64: {fileID: 883164279}
+  - 65: {fileID: 883164279}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -14908,11 +15041,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &883164279
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &883164279
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1191798161}
   m_GameObject: {fileID: 883164275}
@@ -14920,9 +15053,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &883164280
 Renderer:
   m_ObjectHideFlags: 0
@@ -14965,7 +15097,7 @@ GameObject:
   - 23: {fileID: 883817820}
   - 54: {fileID: 883817818}
   - 114: {fileID: 883817817}
-  - 64: {fileID: 883817819}
+  - 65: {fileID: 883817819}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -15022,11 +15154,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &883817819
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &883817819
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 793868217}
   m_GameObject: {fileID: 883817815}
@@ -15034,9 +15166,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &883817820
 Renderer:
   m_ObjectHideFlags: 0
@@ -15079,7 +15210,7 @@ GameObject:
   - 23: {fileID: 887917208}
   - 54: {fileID: 887917206}
   - 114: {fileID: 887917205}
-  - 64: {fileID: 887917207}
+  - 65: {fileID: 887917207}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -15136,11 +15267,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &887917207
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &887917207
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1799349779}
   m_GameObject: {fileID: 887917203}
@@ -15148,9 +15279,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &887917208
 Renderer:
   m_ObjectHideFlags: 0
@@ -15513,7 +15643,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -15529,7 +15659,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &919610440
 Renderer:
@@ -15573,7 +15703,7 @@ GameObject:
   - 23: {fileID: 926763310}
   - 54: {fileID: 926763308}
   - 114: {fileID: 926763307}
-  - 64: {fileID: 926763309}
+  - 65: {fileID: 926763309}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -15630,11 +15760,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &926763309
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &926763309
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 337142905}
   m_GameObject: {fileID: 926763305}
@@ -15642,9 +15772,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &926763310
 Renderer:
   m_ObjectHideFlags: 0
@@ -15741,7 +15870,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -15757,7 +15886,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300006, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &931221253
 Renderer:
@@ -15915,7 +16044,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -15931,7 +16060,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300006, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &932542139
 Renderer:
@@ -16029,7 +16158,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -16045,7 +16174,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300008, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &936962920
 Renderer:
@@ -16191,7 +16320,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -16207,7 +16336,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &944411283
 Renderer:
@@ -16369,7 +16498,7 @@ GameObject:
   - 23: {fileID: 960156145}
   - 54: {fileID: 960156143}
   - 114: {fileID: 960156142}
-  - 64: {fileID: 960156144}
+  - 65: {fileID: 960156144}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -16426,11 +16555,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &960156144
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &960156144
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 403521523}
   m_GameObject: {fileID: 960156140}
@@ -16438,9 +16567,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &960156145
 Renderer:
   m_ObjectHideFlags: 0
@@ -16498,7 +16626,7 @@ Transform:
   m_PrefabInternal: {fileID: 112318661}
   m_GameObject: {fileID: 974136633}
   m_LocalRotation: {x: 0, y: 0, z: -1.04795559e-08, w: -1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: .200000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 763741841}
@@ -16537,10 +16665,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 2
-  m_Constraints: 126
-  m_CollisionDetection: 2
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!64 &974136637
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16725,7 +16853,7 @@ Transform:
   m_PrefabInternal: {fileID: 1564186788}
   m_GameObject: {fileID: 976033845}
   m_LocalRotation: {x: 0, y: 0, z: -1.04795559e-08, w: -1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: .200000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1805586382}
@@ -16764,10 +16892,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 2
-  m_Constraints: 126
-  m_CollisionDetection: 2
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!64 &976033849
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16926,7 +17054,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -16942,7 +17070,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300008, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &983082902
 Renderer:
@@ -17040,7 +17168,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -17056,7 +17184,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300006, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &984679103
 Renderer:
@@ -17262,7 +17390,7 @@ Transform:
   m_PrefabInternal: {fileID: 1381885103}
   m_GameObject: {fileID: 1016401747}
   m_LocalRotation: {x: 0, y: 0, z: -1.04795559e-08, w: -1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: .200000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 661821004}
@@ -17301,10 +17429,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 2
-  m_Constraints: 126
-  m_CollisionDetection: 2
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!64 &1016401751
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17471,7 +17599,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -17487,7 +17615,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300004, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1022728856
 Renderer:
@@ -17560,7 +17688,7 @@ MonoBehaviour:
   canGetSucked: 1
   resistance: 0
   health: 0
-  size: 0
+  size: 1
   damage: 0
   debugList: []
 --- !u!54 &1028002807
@@ -17715,7 +17843,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -17731,7 +17859,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1039233547
 Renderer:
@@ -17829,7 +17957,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -17845,7 +17973,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300006, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1064654038
 Renderer:
@@ -17943,7 +18071,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -17959,7 +18087,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1068824282
 Renderer:
@@ -18057,7 +18185,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -18073,7 +18201,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300006, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1077071062
 Renderer:
@@ -18105,6 +18233,108 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1454215656}
   m_GameObject: {fileID: 1077071057}
   m_Mesh: {fileID: 4300006, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
+--- !u!1 &1082975968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1082975969}
+  - 23: {fileID: 1082975973}
+  - 102: {fileID: 1082975972}
+  - 114: {fileID: 1082975971}
+  - 65: {fileID: 1082975970}
+  m_Layer: 0
+  m_Name: MenuReload
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1082975969
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
+  m_GameObject: {fileID: 1082975968}
+  m_LocalRotation: {x: 0, y: -.70734787, z: 0, w: .706865668}
+  m_LocalPosition: {x: 0, y: .780550957, z: -0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 326350052}
+--- !u!65 &1082975970
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
+  m_GameObject: {fileID: 1082975968}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.30000114, y: 1.47250009, z: 1}
+  m_Center: {x: 2.38418579e-07, y: -9.19681042e-09, z: 0}
+--- !u!114 &1082975971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
+  m_GameObject: {fileID: 1082975968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d82d64926e86894ca057dbdf508b1ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  damping: 6
+  smooth: 1
+--- !u!102 &1082975972
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 10200000, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
+  m_GameObject: {fileID: 1082975968}
+  m_Text: Retry
+  m_OffsetZ: 0
+  m_CharacterSize: .100000001
+  m_LineSpacing: 1
+  m_Anchor: 4
+  m_Alignment: 1
+  m_TabSize: 4
+  m_FontSize: 128
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 12800000, guid: 110bb54de811d8947b7e0ca112582942, type: 3}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4291756024
+--- !u!23 &1082975973
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
+  m_GameObject: {fileID: 1082975968}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 110bb54de811d8947b7e0ca112582942, type: 3}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!1 &1095743584
 GameObject:
   m_ObjectHideFlags: 0
@@ -18285,7 +18515,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -18301,7 +18531,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1110504978
 Renderer:
@@ -18483,7 +18713,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -18499,7 +18729,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1124643626
 Renderer:
@@ -18597,7 +18827,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -18613,7 +18843,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300006, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1130922360
 Renderer:
@@ -18711,7 +18941,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -18727,7 +18957,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300008, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1132274018
 Renderer:
@@ -18825,7 +19055,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -18841,7 +19071,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300004, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1132640786
 Renderer:
@@ -18939,7 +19169,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -18955,7 +19185,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300006, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1136676319
 Renderer:
@@ -19130,7 +19360,7 @@ GameObject:
   - 23: {fileID: 1146136716}
   - 54: {fileID: 1146136714}
   - 114: {fileID: 1146136713}
-  - 64: {fileID: 1146136715}
+  - 65: {fileID: 1146136715}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -19187,11 +19417,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1146136715
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1146136715
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 2042260923}
   m_GameObject: {fileID: 1146136711}
@@ -19199,9 +19429,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1146136716
 Renderer:
   m_ObjectHideFlags: 0
@@ -19298,7 +19527,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -19314,7 +19543,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300004, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1147590896
 Renderer:
@@ -19472,7 +19701,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -19488,7 +19717,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300006, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1160498032
 Renderer:
@@ -19584,7 +19813,7 @@ GameObject:
   - 23: {fileID: 1184373963}
   - 54: {fileID: 1184373961}
   - 114: {fileID: 1184373960}
-  - 64: {fileID: 1184373962}
+  - 65: {fileID: 1184373962}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -19630,11 +19859,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1184373962
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1184373962
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 426622314}
   m_GameObject: {fileID: 1184373959}
@@ -19642,9 +19871,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1184373963
 Renderer:
   m_ObjectHideFlags: 0
@@ -19752,7 +19980,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -19768,7 +19996,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300004, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1185827122
 Renderer:
@@ -19879,7 +20107,7 @@ Transform:
   m_PrefabInternal: {fileID: 1201853946}
   m_GameObject: {fileID: 1191087131}
   m_LocalRotation: {x: 0, y: 0, z: -1.04795559e-08, w: -1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: .200000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2115318951}
@@ -19918,10 +20146,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 2
-  m_Constraints: 126
-  m_CollisionDetection: 2
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!64 &1191087135
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20140,7 +20368,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -20156,7 +20384,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300004, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1196609958
 Renderer:
@@ -20356,7 +20584,7 @@ GameObject:
   - 23: {fileID: 1210583592}
   - 54: {fileID: 1210583590}
   - 114: {fileID: 1210583589}
-  - 64: {fileID: 1210583591}
+  - 65: {fileID: 1210583591}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -20413,11 +20641,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1210583591
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1210583591
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 733944160}
   m_GameObject: {fileID: 1210583587}
@@ -20425,9 +20653,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1210583592
 Renderer:
   m_ObjectHideFlags: 0
@@ -20877,7 +21104,7 @@ Transform:
   m_PrefabInternal: {fileID: 232177321}
   m_GameObject: {fileID: 1230867649}
   m_LocalRotation: {x: 0, y: 0, z: -1.04795559e-08, w: -1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: .200000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 638618769}
@@ -20916,10 +21143,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 2
-  m_Constraints: 126
-  m_CollisionDetection: 2
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!64 &1230867653
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21201,7 +21428,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -21217,7 +21444,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300006, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1241950900
 Renderer:
@@ -21309,7 +21536,7 @@ GameObject:
   - 23: {fileID: 1244952786}
   - 54: {fileID: 1244952784}
   - 114: {fileID: 1244952783}
-  - 64: {fileID: 1244952785}
+  - 65: {fileID: 1244952785}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -21366,11 +21593,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1244952785
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1244952785
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1723996981}
   m_GameObject: {fileID: 1244952781}
@@ -21378,9 +21605,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1244952786
 Renderer:
   m_ObjectHideFlags: 0
@@ -21714,7 +21940,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -21730,7 +21956,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300004, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1254375973
 Renderer:
@@ -21826,7 +22052,7 @@ GameObject:
   - 23: {fileID: 1256814525}
   - 54: {fileID: 1256814523}
   - 114: {fileID: 1256814522}
-  - 64: {fileID: 1256814524}
+  - 65: {fileID: 1256814524}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -21883,11 +22109,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1256814524
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1256814524
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 901314872}
   m_GameObject: {fileID: 1256814520}
@@ -21895,9 +22121,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1256814525
 Renderer:
   m_ObjectHideFlags: 0
@@ -22157,7 +22382,7 @@ GameObject:
   - 23: {fileID: 1270403692}
   - 54: {fileID: 1270403690}
   - 114: {fileID: 1270403689}
-  - 64: {fileID: 1270403691}
+  - 65: {fileID: 1270403691}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -22214,11 +22439,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1270403691
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1270403691
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 240482300}
   m_GameObject: {fileID: 1270403687}
@@ -22226,9 +22451,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1270403692
 Renderer:
   m_ObjectHideFlags: 0
@@ -22400,7 +22624,7 @@ Transform:
   m_PrefabInternal: {fileID: 1123345950}
   m_GameObject: {fileID: 1274860697}
   m_LocalRotation: {x: 0, y: 0, z: -1.04795559e-08, w: -1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: .200000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1532056377}
@@ -22439,10 +22663,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 2
-  m_Constraints: 126
-  m_CollisionDetection: 2
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!64 &1274860701
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22724,7 +22948,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -22740,7 +22964,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300006, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1284839423
 Renderer:
@@ -22952,7 +23176,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -22968,7 +23192,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1289132321
 Renderer:
@@ -23066,7 +23290,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -23082,7 +23306,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300006, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1291758762
 Renderer:
@@ -23240,7 +23464,7 @@ GameObject:
   - 23: {fileID: 1304798289}
   - 54: {fileID: 1304798287}
   - 114: {fileID: 1304798286}
-  - 64: {fileID: 1304798288}
+  - 65: {fileID: 1304798288}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -23297,11 +23521,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1304798288
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1304798288
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1258815813}
   m_GameObject: {fileID: 1304798284}
@@ -23309,9 +23533,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1304798289
 Renderer:
   m_ObjectHideFlags: 0
@@ -23369,7 +23592,7 @@ Transform:
   m_PrefabInternal: {fileID: 1454215656}
   m_GameObject: {fileID: 1309409437}
   m_LocalRotation: {x: 0, y: 0, z: -1.04795559e-08, w: -1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: .200000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 91245955}
@@ -23408,10 +23631,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 2
-  m_Constraints: 126
-  m_CollisionDetection: 2
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!64 &1309409441
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23468,7 +23691,7 @@ GameObject:
   - 23: {fileID: 1314369786}
   - 54: {fileID: 1314369784}
   - 114: {fileID: 1314369783}
-  - 64: {fileID: 1314369785}
+  - 65: {fileID: 1314369785}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -23525,11 +23748,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1314369785
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1314369785
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1416199040}
   m_GameObject: {fileID: 1314369781}
@@ -23537,9 +23760,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1314369786
 Renderer:
   m_ObjectHideFlags: 0
@@ -23582,7 +23804,7 @@ GameObject:
   - 23: {fileID: 1316322657}
   - 54: {fileID: 1316322655}
   - 114: {fileID: 1316322654}
-  - 64: {fileID: 1316322656}
+  - 65: {fileID: 1316322656}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -23639,11 +23861,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1316322656
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1316322656
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1243350335}
   m_GameObject: {fileID: 1316322652}
@@ -23651,9 +23873,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1316322657
 Renderer:
   m_ObjectHideFlags: 0
@@ -23696,7 +23917,7 @@ GameObject:
   - 23: {fileID: 1327531938}
   - 54: {fileID: 1327531936}
   - 114: {fileID: 1327531935}
-  - 64: {fileID: 1327531937}
+  - 65: {fileID: 1327531937}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -23753,11 +23974,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1327531937
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1327531937
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 468818996}
   m_GameObject: {fileID: 1327531933}
@@ -23765,9 +23986,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1327531938
 Renderer:
   m_ObjectHideFlags: 0
@@ -23873,7 +24093,7 @@ GameObject:
   - 23: {fileID: 1330086571}
   - 54: {fileID: 1330086569}
   - 114: {fileID: 1330086568}
-  - 64: {fileID: 1330086570}
+  - 65: {fileID: 1330086570}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -23930,11 +24150,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1330086570
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1330086570
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 102840644}
   m_GameObject: {fileID: 1330086566}
@@ -23942,9 +24162,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1330086571
 Renderer:
   m_ObjectHideFlags: 0
@@ -24161,7 +24380,7 @@ GameObject:
   - 23: {fileID: 1341016374}
   - 54: {fileID: 1341016372}
   - 114: {fileID: 1341016371}
-  - 64: {fileID: 1341016373}
+  - 65: {fileID: 1341016373}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -24218,11 +24437,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1341016373
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1341016373
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1756724406}
   m_GameObject: {fileID: 1341016369}
@@ -24230,9 +24449,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1341016374
 Renderer:
   m_ObjectHideFlags: 0
@@ -24731,7 +24949,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -24747,7 +24965,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1387372132
 Renderer:
@@ -25135,7 +25353,7 @@ GameObject:
   - 23: {fileID: 1409655609}
   - 54: {fileID: 1409655607}
   - 114: {fileID: 1409655606}
-  - 64: {fileID: 1409655608}
+  - 65: {fileID: 1409655608}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -25192,11 +25410,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1409655608
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1409655608
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1575008336}
   m_GameObject: {fileID: 1409655604}
@@ -25204,9 +25422,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1409655609
 Renderer:
   m_ObjectHideFlags: 0
@@ -25722,7 +25939,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -25738,7 +25955,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300004, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1434615245
 Renderer:
@@ -26160,7 +26377,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -26176,7 +26393,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300006, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1457783025
 Renderer:
@@ -26586,7 +26803,7 @@ GameObject:
   - 23: {fileID: 1488224665}
   - 54: {fileID: 1488224663}
   - 114: {fileID: 1488224662}
-  - 64: {fileID: 1488224664}
+  - 65: {fileID: 1488224664}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -26643,11 +26860,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1488224664
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1488224664
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 931915047}
   m_GameObject: {fileID: 1488224660}
@@ -26655,9 +26872,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1488224665
 Renderer:
   m_ObjectHideFlags: 0
@@ -26959,7 +27175,7 @@ GameObject:
   - 23: {fileID: 1498079113}
   - 54: {fileID: 1498079111}
   - 114: {fileID: 1498079110}
-  - 64: {fileID: 1498079112}
+  - 65: {fileID: 1498079112}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -27016,11 +27232,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1498079112
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1498079112
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1383301516}
   m_GameObject: {fileID: 1498079108}
@@ -27028,9 +27244,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1498079113
 Renderer:
   m_ObjectHideFlags: 0
@@ -27104,7 +27319,7 @@ GameObject:
   - 23: {fileID: 1518454697}
   - 54: {fileID: 1518454695}
   - 114: {fileID: 1518454694}
-  - 64: {fileID: 1518454696}
+  - 65: {fileID: 1518454696}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -27161,11 +27376,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1518454696
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1518454696
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1275086717}
   m_GameObject: {fileID: 1518454692}
@@ -27173,9 +27388,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1518454697
 Renderer:
   m_ObjectHideFlags: 0
@@ -27272,7 +27486,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -27288,7 +27502,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300008, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1525193526
 Renderer:
@@ -27386,7 +27600,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -27402,7 +27616,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1525930501
 Renderer:
@@ -27509,7 +27723,7 @@ Transform:
   m_GameObject: {fileID: 1532056376}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: -23.8096581, y: 11.497961, z: 29.666954}
-  m_LocalScale: {x: .908823073, y: 2.03915691, z: .827267826}
+  m_LocalScale: {x: .908823013, y: 2.03915501, z: .827268004}
   m_Children:
   - {fileID: 1039233543}
   - {fileID: 1825121101}
@@ -27529,7 +27743,7 @@ GameObject:
   - 23: {fileID: 1539540379}
   - 54: {fileID: 1539540377}
   - 114: {fileID: 1539540376}
-  - 64: {fileID: 1539540378}
+  - 65: {fileID: 1539540378}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -27586,11 +27800,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1539540378
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1539540378
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1203401394}
   m_GameObject: {fileID: 1539540374}
@@ -27598,9 +27812,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1539540379
 Renderer:
   m_ObjectHideFlags: 0
@@ -27978,7 +28191,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -27994,7 +28207,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300008, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1553010109
 Renderer:
@@ -28303,7 +28516,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -28319,7 +28532,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300008, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1573689049
 Renderer:
@@ -28500,7 +28713,7 @@ MonoBehaviour:
   canGetSucked: 1
   resistance: 0
   health: 0
-  size: 0
+  size: 1
   damage: 0
   debugList: []
 --- !u!54 &1575998373
@@ -28707,7 +28920,7 @@ MeshFilter:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100006, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 2008581459}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1582810625}
@@ -28726,8 +28939,9 @@ GameObject:
 --- !u!54 &1582810622
 Rigidbody:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 5400002, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 1582810621}
   serializedVersion: 2
   m_Mass: 30
@@ -28741,8 +28955,9 @@ Rigidbody:
 --- !u!114 &1582810623
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 11400016, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 1582810621}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -28756,8 +28971,9 @@ MonoBehaviour:
 --- !u!114 &1582810624
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 11400018, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 1582810621}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -28775,7 +28991,7 @@ MonoBehaviour:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400006, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 1582810621}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -25.9608192, y: 11.7497883, z: -11.3616657}
@@ -28783,12 +28999,14 @@ Transform:
   m_Children:
   - {fileID: 203619054}
   - {fileID: 660368849}
+  - {fileID: 326350052}
   m_Father: {fileID: 0}
 --- !u!136 &1582810626
 CapsuleCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 13600000, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 1582810621}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -28800,18 +29018,23 @@ CapsuleCollider:
 --- !u!114 &1582810627
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 11400020, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 1582810621}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6bb1c1cdc4ef38e4b8f89a5e143649d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  secondPhase: 0
   totalSceneWeight: 0
   objectCount: 0
   DebugTextFab: {fileID: 100000, guid: 65ef8194b8c90664db759b896642740e, type: 2}
+  firstPhaseTime: 60
+  secondPhaseTime: 60
   inTheBag: []
+  isPaused: 0
 --- !u!1 &1589776093
 GameObject:
   m_ObjectHideFlags: 0
@@ -29090,7 +29313,7 @@ Transform:
   m_PrefabInternal: {fileID: 595552271}
   m_GameObject: {fileID: 1611196146}
   m_LocalRotation: {x: 0, y: 0, z: -1.04795559e-08, w: -1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: .200000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1467084817}
@@ -29129,10 +29352,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 2
-  m_Constraints: 126
-  m_CollisionDetection: 2
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!64 &1611196150
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29232,7 +29455,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -29248,7 +29471,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300008, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1613401633
 Renderer:
@@ -29530,7 +29753,7 @@ GameObject:
   - 23: {fileID: 1623082363}
   - 54: {fileID: 1623082361}
   - 114: {fileID: 1623082360}
-  - 64: {fileID: 1623082362}
+  - 65: {fileID: 1623082362}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -29587,11 +29810,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1623082362
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1623082362
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1922207075}
   m_GameObject: {fileID: 1623082358}
@@ -29599,9 +29822,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1623082363
 Renderer:
   m_ObjectHideFlags: 0
@@ -29644,7 +29866,7 @@ GameObject:
   - 23: {fileID: 1623570961}
   - 54: {fileID: 1623570959}
   - 114: {fileID: 1623570958}
-  - 64: {fileID: 1623570960}
+  - 65: {fileID: 1623570960}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -29701,11 +29923,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1623570960
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1623570960
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1155149528}
   m_GameObject: {fileID: 1623570956}
@@ -29713,9 +29935,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1623570961
 Renderer:
   m_ObjectHideFlags: 0
@@ -29758,7 +29979,7 @@ GameObject:
   - 23: {fileID: 1625796207}
   - 54: {fileID: 1625796205}
   - 114: {fileID: 1625796204}
-  - 64: {fileID: 1625796206}
+  - 65: {fileID: 1625796206}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -29815,11 +30036,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1625796206
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1625796206
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1721240904}
   m_GameObject: {fileID: 1625796202}
@@ -29827,9 +30048,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1625796207
 Renderer:
   m_ObjectHideFlags: 0
@@ -29970,7 +30190,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -29986,7 +30206,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300006, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1634354365
 Renderer:
@@ -30030,7 +30250,7 @@ GameObject:
   - 23: {fileID: 1637041092}
   - 54: {fileID: 1637041090}
   - 114: {fileID: 1637041089}
-  - 64: {fileID: 1637041091}
+  - 65: {fileID: 1637041091}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -30087,11 +30307,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1637041091
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1637041091
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 744304523}
   m_GameObject: {fileID: 1637041087}
@@ -30099,9 +30319,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1637041092
 Renderer:
   m_ObjectHideFlags: 0
@@ -30255,7 +30474,7 @@ GameObject:
   - 23: {fileID: 1645635113}
   - 54: {fileID: 1645635111}
   - 114: {fileID: 1645635110}
-  - 64: {fileID: 1645635112}
+  - 65: {fileID: 1645635112}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -30312,11 +30531,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1645635112
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1645635112
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1922015314}
   m_GameObject: {fileID: 1645635108}
@@ -30324,9 +30543,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1645635113
 Renderer:
   m_ObjectHideFlags: 0
@@ -30550,7 +30768,7 @@ Transform:
   m_PrefabInternal: {fileID: 2133924467}
   m_GameObject: {fileID: 1657650225}
   m_LocalRotation: {x: 0, y: 0, z: -1.04795559e-08, w: -1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: .200000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1495389579}
@@ -30589,10 +30807,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 2
-  m_Constraints: 126
-  m_CollisionDetection: 2
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!64 &1657650229
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -30974,7 +31192,7 @@ MonoBehaviour:
   canGetSucked: 1
   resistance: 0
   health: 0
-  size: 0
+  size: 1
   damage: 0
   debugList: []
 --- !u!54 &1694272858
@@ -31075,7 +31293,7 @@ GameObject:
   - 23: {fileID: 1696420599}
   - 54: {fileID: 1696420597}
   - 114: {fileID: 1696420596}
-  - 64: {fileID: 1696420598}
+  - 65: {fileID: 1696420598}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -31132,11 +31350,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1696420598
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1696420598
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 668938444}
   m_GameObject: {fileID: 1696420594}
@@ -31144,9 +31362,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1696420599
 Renderer:
   m_ObjectHideFlags: 0
@@ -31189,7 +31406,7 @@ GameObject:
   - 23: {fileID: 1702866619}
   - 54: {fileID: 1702866617}
   - 114: {fileID: 1702866616}
-  - 64: {fileID: 1702866618}
+  - 65: {fileID: 1702866618}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -31246,11 +31463,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1702866618
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1702866618
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1336636486}
   m_GameObject: {fileID: 1702866614}
@@ -31258,9 +31475,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1702866619
 Renderer:
   m_ObjectHideFlags: 0
@@ -31318,7 +31534,7 @@ Transform:
   m_PrefabInternal: {fileID: 583366836}
   m_GameObject: {fileID: 1704714666}
   m_LocalRotation: {x: 0, y: 0, z: -1.04795559e-08, w: -1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: .200000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 914888024}
@@ -31357,10 +31573,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 2
-  m_Constraints: 126
-  m_CollisionDetection: 2
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!64 &1704714670
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31417,7 +31633,7 @@ GameObject:
   - 23: {fileID: 1706444212}
   - 54: {fileID: 1706444210}
   - 114: {fileID: 1706444209}
-  - 64: {fileID: 1706444211}
+  - 65: {fileID: 1706444211}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -31474,11 +31690,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1706444211
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1706444211
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 941577341}
   m_GameObject: {fileID: 1706444207}
@@ -31486,9 +31702,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1706444212
 Renderer:
   m_ObjectHideFlags: 0
@@ -31531,7 +31746,7 @@ GameObject:
   - 23: {fileID: 1711634356}
   - 54: {fileID: 1711634354}
   - 114: {fileID: 1711634353}
-  - 64: {fileID: 1711634355}
+  - 65: {fileID: 1711634355}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -31588,11 +31803,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1711634355
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1711634355
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1223950266}
   m_GameObject: {fileID: 1711634351}
@@ -31600,9 +31815,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1711634356
 Renderer:
   m_ObjectHideFlags: 0
@@ -31712,7 +31926,7 @@ Transform:
   m_PrefabInternal: {fileID: 1832275017}
   m_GameObject: {fileID: 1722354345}
   m_LocalRotation: {x: 0, y: 0, z: -1.04795559e-08, w: -1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: .200000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1516854474}
@@ -31751,10 +31965,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 2
-  m_Constraints: 126
-  m_CollisionDetection: 2
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!64 &1722354349
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31826,7 +32040,7 @@ Transform:
   m_PrefabInternal: {fileID: 1887303080}
   m_GameObject: {fileID: 1722981183}
   m_LocalRotation: {x: 0, y: 0, z: -1.04795559e-08, w: -1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: .200000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 517021552}
@@ -31865,10 +32079,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 2
-  m_Constraints: 126
-  m_CollisionDetection: 2
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!64 &1722981187
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -32014,7 +32228,7 @@ MonoBehaviour:
   canGetSucked: 1
   resistance: 0
   health: 0
-  size: 0
+  size: 1
   damage: 0
   debugList: []
 --- !u!54 &1730769522
@@ -32147,7 +32361,7 @@ GameObject:
   - 23: {fileID: 1744726223}
   - 54: {fileID: 1744726221}
   - 114: {fileID: 1744726220}
-  - 64: {fileID: 1744726222}
+  - 65: {fileID: 1744726222}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -32204,11 +32418,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1744726222
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1744726222
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1832410570}
   m_GameObject: {fileID: 1744726218}
@@ -32216,9 +32430,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1744726223
 Renderer:
   m_ObjectHideFlags: 0
@@ -32261,7 +32474,7 @@ GameObject:
   - 23: {fileID: 1746902932}
   - 54: {fileID: 1746902930}
   - 114: {fileID: 1746902929}
-  - 64: {fileID: 1746902931}
+  - 65: {fileID: 1746902931}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -32307,11 +32520,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1746902931
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1746902931
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 662846893}
   m_GameObject: {fileID: 1746902928}
@@ -32319,9 +32532,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1746902932
 Renderer:
   m_ObjectHideFlags: 0
@@ -32543,7 +32755,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -32559,7 +32771,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300008, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1751118898
 Renderer:
@@ -32954,7 +33166,7 @@ GameObject:
   - 23: {fileID: 1765722973}
   - 54: {fileID: 1765722971}
   - 114: {fileID: 1765722970}
-  - 64: {fileID: 1765722972}
+  - 65: {fileID: 1765722972}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -33011,11 +33223,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1765722972
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1765722972
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 746861075}
   m_GameObject: {fileID: 1765722968}
@@ -33023,9 +33235,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1765722973
 Renderer:
   m_ObjectHideFlags: 0
@@ -33122,7 +33333,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -33138,7 +33349,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300004, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1775118899
 Renderer:
@@ -33766,7 +33977,7 @@ GameObject:
   - 23: {fileID: 1815453625}
   - 54: {fileID: 1815453623}
   - 114: {fileID: 1815453622}
-  - 64: {fileID: 1815453624}
+  - 65: {fileID: 1815453624}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -33823,11 +34034,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1815453624
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1815453624
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 66226133}
   m_GameObject: {fileID: 1815453620}
@@ -33835,9 +34046,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1815453625
 Renderer:
   m_ObjectHideFlags: 0
@@ -34064,7 +34274,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1819209590
 Renderer:
@@ -34222,7 +34432,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -34238,7 +34448,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300004, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1825121105
 Renderer:
@@ -34334,7 +34544,7 @@ GameObject:
   - 23: {fileID: 1828656646}
   - 54: {fileID: 1828656644}
   - 114: {fileID: 1828656643}
-  - 64: {fileID: 1828656645}
+  - 65: {fileID: 1828656645}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -34391,11 +34601,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1828656645
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1828656645
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 591558622}
   m_GameObject: {fileID: 1828656641}
@@ -34403,9 +34613,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1828656646
 Renderer:
   m_ObjectHideFlags: 0
@@ -34721,6 +34930,108 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!1 &1855207147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1855207148}
+  - 23: {fileID: 1855207152}
+  - 102: {fileID: 1855207151}
+  - 114: {fileID: 1855207150}
+  - 65: {fileID: 1855207149}
+  m_Layer: 0
+  m_Name: MenuQuitToMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1855207148
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400004, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
+  m_GameObject: {fileID: 1855207147}
+  m_LocalRotation: {x: 0, y: -.707348287, z: 0, w: .706865251}
+  m_LocalPosition: {x: 0, y: -.656506538, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 326350052}
+--- !u!65 &1855207149
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500004, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
+  m_GameObject: {fileID: 1855207147}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.30000591, y: 1.47250009, z: 1}
+  m_Center: {x: 0, y: -9.19681042e-09, z: -9.53674316e-07}
+--- !u!114 &1855207150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400006, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
+  m_GameObject: {fileID: 1855207147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d82d64926e86894ca057dbdf508b1ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  damping: 6
+  smooth: 1
+--- !u!102 &1855207151
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 10200004, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
+  m_GameObject: {fileID: 1855207147}
+  m_Text: Main Menu
+  m_OffsetZ: 0
+  m_CharacterSize: .100000001
+  m_LineSpacing: 1
+  m_Anchor: 4
+  m_Alignment: 1
+  m_TabSize: 4
+  m_FontSize: 128
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 12800000, guid: 110bb54de811d8947b7e0ca112582942, type: 3}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4291743487
+--- !u!23 &1855207152
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300004, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
+  m_GameObject: {fileID: 1855207147}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 110bb54de811d8947b7e0ca112582942, type: 3}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!1 &1857776552
 GameObject:
   m_ObjectHideFlags: 0
@@ -34778,7 +35089,7 @@ GameObject:
   - 23: {fileID: 1861236148}
   - 54: {fileID: 1861236146}
   - 114: {fileID: 1861236145}
-  - 64: {fileID: 1861236147}
+  - 65: {fileID: 1861236147}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -34835,11 +35146,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1861236147
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1861236147
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1825012821}
   m_GameObject: {fileID: 1861236143}
@@ -34847,9 +35158,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1861236148
 Renderer:
   m_ObjectHideFlags: 0
@@ -34994,7 +35304,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300008, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1874165663
 Renderer:
@@ -35038,7 +35348,7 @@ GameObject:
   - 23: {fileID: 1874336667}
   - 54: {fileID: 1874336665}
   - 114: {fileID: 1874336664}
-  - 64: {fileID: 1874336666}
+  - 65: {fileID: 1874336666}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -35095,11 +35405,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1874336666
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1874336666
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1018052407}
   m_GameObject: {fileID: 1874336662}
@@ -35107,9 +35417,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1874336667
 Renderer:
   m_ObjectHideFlags: 0
@@ -35152,7 +35461,7 @@ GameObject:
   - 23: {fileID: 1876380804}
   - 54: {fileID: 1876380802}
   - 114: {fileID: 1876380801}
-  - 64: {fileID: 1876380803}
+  - 65: {fileID: 1876380803}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -35209,11 +35518,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1876380803
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1876380803
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1609842608}
   m_GameObject: {fileID: 1876380799}
@@ -35221,9 +35530,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1876380804
 Renderer:
   m_ObjectHideFlags: 0
@@ -35380,7 +35688,7 @@ GameObject:
   - 23: {fileID: 1879913231}
   - 54: {fileID: 1879913229}
   - 114: {fileID: 1879913228}
-  - 64: {fileID: 1879913230}
+  - 65: {fileID: 1879913230}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -35437,11 +35745,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1879913230
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1879913230
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 470548682}
   m_GameObject: {fileID: 1879913226}
@@ -35449,9 +35757,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1879913231
 Renderer:
   m_ObjectHideFlags: 0
@@ -35978,7 +36285,7 @@ GameObject:
   - 23: {fileID: 1900420947}
   - 54: {fileID: 1900420945}
   - 114: {fileID: 1900420944}
-  - 64: {fileID: 1900420946}
+  - 65: {fileID: 1900420946}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -36035,11 +36342,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1900420946
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1900420946
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 346979136}
   m_GameObject: {fileID: 1900420942}
@@ -36047,9 +36354,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1900420947
 Renderer:
   m_ObjectHideFlags: 0
@@ -36092,7 +36398,7 @@ GameObject:
   - 23: {fileID: 1902946811}
   - 54: {fileID: 1902946809}
   - 114: {fileID: 1902946808}
-  - 64: {fileID: 1902946810}
+  - 65: {fileID: 1902946810}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -36149,11 +36455,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1902946810
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1902946810
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1370657404}
   m_GameObject: {fileID: 1902946806}
@@ -36161,9 +36467,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1902946811
 Renderer:
   m_ObjectHideFlags: 0
@@ -36260,7 +36565,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -36276,7 +36581,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300004, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1913151814
 Renderer:
@@ -36436,7 +36741,7 @@ GameObject:
   - 23: {fileID: 1926863572}
   - 54: {fileID: 1926863570}
   - 114: {fileID: 1926863569}
-  - 64: {fileID: 1926863571}
+  - 65: {fileID: 1926863571}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -36493,11 +36798,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1926863571
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1926863571
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1938088450}
   m_GameObject: {fileID: 1926863567}
@@ -36505,9 +36810,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1926863572
 Renderer:
   m_ObjectHideFlags: 0
@@ -36612,7 +36916,7 @@ GameObject:
   - 23: {fileID: 1929716070}
   - 54: {fileID: 1929716068}
   - 114: {fileID: 1929716067}
-  - 64: {fileID: 1929716069}
+  - 65: {fileID: 1929716069}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -36669,11 +36973,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1929716069
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &1929716069
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1885119549}
   m_GameObject: {fileID: 1929716065}
@@ -36681,9 +36985,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &1929716070
 Renderer:
   m_ObjectHideFlags: 0
@@ -37148,7 +37451,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -37164,7 +37467,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300004, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1987728136
 Renderer:
@@ -37262,7 +37565,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -37278,7 +37581,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300004, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &1988002938
 Renderer:
@@ -37691,7 +37994,7 @@ MonoBehaviour:
   canGetSucked: 1
   resistance: 0
   health: 0
-  size: 0
+  size: 1
   damage: 0
   debugList: []
 --- !u!54 &2005170534
@@ -37792,7 +38095,7 @@ GameObject:
   - 23: {fileID: 2006544694}
   - 54: {fileID: 2006544692}
   - 114: {fileID: 2006544691}
-  - 64: {fileID: 2006544693}
+  - 65: {fileID: 2006544693}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -37849,11 +38152,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &2006544693
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &2006544693
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1016273874}
   m_GameObject: {fileID: 2006544689}
@@ -37861,9 +38164,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &2006544694
 Renderer:
   m_ObjectHideFlags: 0
@@ -38008,6 +38310,67 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1891405409}
   m_GameObject: {fileID: 2008252315}
   m_Mesh: {fileID: 4300008, guid: 55338cb047636714aa2c5bff27b80375, type: 3}
+--- !u!1001 &2008581459
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400006, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -25.9608192
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 11.7497883
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -11.3616657
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500004, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500002, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+      propertyPath: m_Size.z
+      value: .699999988
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.656506538
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6500002, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+  m_RootGameObject: {fileID: 1582810621}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &2009421359
 GameObject:
   m_ObjectHideFlags: 0
@@ -38020,7 +38383,7 @@ GameObject:
   - 23: {fileID: 2009421364}
   - 54: {fileID: 2009421362}
   - 114: {fileID: 2009421361}
-  - 64: {fileID: 2009421363}
+  - 65: {fileID: 2009421363}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -38077,11 +38440,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &2009421363
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &2009421363
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1003237201}
   m_GameObject: {fileID: 2009421359}
@@ -38089,9 +38452,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &2009421364
 Renderer:
   m_ObjectHideFlags: 0
@@ -38240,7 +38602,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -38256,7 +38618,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300006, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &2016979557
 Renderer:
@@ -38315,7 +38677,7 @@ Transform:
   m_PrefabInternal: {fileID: 274305794}
   m_GameObject: {fileID: 2018664819}
   m_LocalRotation: {x: 0, y: 0, z: -1.04795559e-08, w: -1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: .200000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1675369584}
@@ -38355,9 +38717,9 @@ Rigidbody:
   m_AngularDrag: .0500000007
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 2
+  m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
 --- !u!64 &2018664823
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -38462,7 +38824,7 @@ GameObject:
   - 23: {fileID: 2031692723}
   - 54: {fileID: 2031692721}
   - 114: {fileID: 2031692720}
-  - 64: {fileID: 2031692722}
+  - 65: {fileID: 2031692722}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -38519,11 +38881,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &2031692722
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &2031692722
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 1592803036}
   m_GameObject: {fileID: 2031692718}
@@ -38531,9 +38893,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &2031692723
 Renderer:
   m_ObjectHideFlags: 0
@@ -38687,7 +39048,7 @@ GameObject:
   - 23: {fileID: 2034649892}
   - 54: {fileID: 2034649890}
   - 114: {fileID: 2034649889}
-  - 64: {fileID: 2034649891}
+  - 65: {fileID: 2034649891}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -38744,11 +39105,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &2034649891
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &2034649891
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 198471414}
   m_GameObject: {fileID: 2034649887}
@@ -38756,9 +39117,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &2034649892
 Renderer:
   m_ObjectHideFlags: 0
@@ -38947,7 +39307,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -38963,7 +39323,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300006, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &2048566898
 Renderer:
@@ -39007,7 +39367,7 @@ GameObject:
   - 23: {fileID: 2071472027}
   - 54: {fileID: 2071472025}
   - 114: {fileID: 2071472024}
-  - 64: {fileID: 2071472026}
+  - 65: {fileID: 2071472026}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -39064,11 +39424,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &2071472026
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &2071472026
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 2003182485}
   m_GameObject: {fileID: 2071472022}
@@ -39076,9 +39436,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &2071472027
 Renderer:
   m_ObjectHideFlags: 0
@@ -39235,7 +39594,7 @@ GameObject:
   - 23: {fileID: 2078309231}
   - 54: {fileID: 2078309229}
   - 114: {fileID: 2078309228}
-  - 64: {fileID: 2078309230}
+  - 65: {fileID: 2078309230}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -39292,11 +39651,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &2078309230
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &2078309230
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 635828691}
   m_GameObject: {fileID: 2078309226}
@@ -39304,9 +39663,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &2078309231
 Renderer:
   m_ObjectHideFlags: 0
@@ -39441,7 +39799,7 @@ MonoBehaviour:
   canGetSucked: 1
   resistance: 0
   health: 0
-  size: 0
+  size: 1
   damage: 0
   debugList: []
 --- !u!54 &2108320634
@@ -39564,8 +39922,8 @@ Transform:
 --- !u!1 &2127494664
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100002, guid: 9e2240b9c77d89d4885be0b2ec30715e, type: 2}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 100018, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2127494665}
@@ -39584,8 +39942,8 @@ GameObject:
 --- !u!4 &2127494665
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400002, guid: 9e2240b9c77d89d4885be0b2ec30715e, type: 2}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 400018, guid: 19ae5653d8184ad4cb8144857f4d4120, type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 2127494664}
   m_LocalRotation: {x: -.67717582, y: 4.79530854e-07, z: -2.56733756e-07, w: .735821247}
   m_LocalPosition: {x: -.00220228196, y: -.0557044186, z: .756884515}
@@ -39595,8 +39953,9 @@ Transform:
 --- !u!199 &2127494666
 ParticleSystemRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 19900002, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 2127494664}
   m_Enabled: 1
   m_CastShadows: 1
@@ -39628,8 +39987,9 @@ ParticleSystemRenderer:
 --- !u!198 &2127494667
 ParticleSystem:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 19800002, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 2127494664}
   lengthInSec: 1
   startDelay: 0
@@ -40680,8 +41040,9 @@ ParticleSystem:
 --- !u!64 &2127494668
 MeshCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 6400000, guid: 19ae5653d8184ad4cb8144857f4d4120,
+    type: 2}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 2127494664}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -40693,9 +41054,9 @@ MeshCollider:
 --- !u!23 &2127494669
 Renderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300000, guid: 9e2240b9c77d89d4885be0b2ec30715e,
+  m_PrefabParentObject: {fileID: 2300008, guid: 19ae5653d8184ad4cb8144857f4d4120,
     type: 2}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 2127494664}
   m_Enabled: 1
   m_CastShadows: 1
@@ -40715,9 +41076,9 @@ Renderer:
 --- !u!33 &2127494670
 MeshFilter:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300000, guid: 9e2240b9c77d89d4885be0b2ec30715e,
+  m_PrefabParentObject: {fileID: 3300002, guid: 19ae5653d8184ad4cb8144857f4d4120,
     type: 2}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 2008581459}
   m_GameObject: {fileID: 2127494664}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2128506164
@@ -40786,7 +41147,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -40802,7 +41163,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300008, guid: 9c937d19be6e2c14d9733afe915ffded, type: 3}
 --- !u!23 &2128506169
 Renderer:
@@ -41222,7 +41583,7 @@ GameObject:
   - 23: {fileID: 2142069278}
   - 54: {fileID: 2142069276}
   - 114: {fileID: 2142069275}
-  - 64: {fileID: 2142069277}
+  - 65: {fileID: 2142069277}
   m_Layer: 0
   m_Name: TextBookA_SD_2
   m_TagString: Untagged
@@ -41279,11 +41640,11 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &2142069277
-MeshCollider:
+  m_CollisionDetection: 1
+--- !u!65 &2142069277
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 701705f7b01e42f49a8736e95298ee75,
+  m_PrefabParentObject: {fileID: 6500000, guid: 701705f7b01e42f49a8736e95298ee75,
     type: 2}
   m_PrefabInternal: {fileID: 109476792}
   m_GameObject: {fileID: 2142069273}
@@ -41291,9 +41652,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 52cc660da50760b42988d291d2bbabbf, type: 3}
+  m_Size: {x: .0107498262, y: .00913755596, z: .010321361}
+  m_Center: {x: -.000214232365, y: -2.32830644e-10, z: 0}
 --- !u!23 &2142069278
 Renderer:
   m_ObjectHideFlags: 0
@@ -41351,7 +41711,7 @@ Transform:
   m_PrefabInternal: {fileID: 866935357}
   m_GameObject: {fileID: 2142998437}
   m_LocalRotation: {x: 0, y: 0, z: -1.04795559e-08, w: -1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: .200000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1781242560}
@@ -41390,10 +41750,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 2
-  m_Constraints: 126
-  m_CollisionDetection: 2
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!64 &2142998441
 MeshCollider:
   m_ObjectHideFlags: 0
