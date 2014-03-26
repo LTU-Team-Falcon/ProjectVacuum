@@ -66,7 +66,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   serializedVersion: 2
-  m_Mass: 4
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -99,11 +99,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDebugging: 0
-  origSize: {x: 0, y: 0, z: 0}
+  origScale: {x: 0, y: 0, z: 0}
   canGetSucked: 1
   resistance: 0
   health: 0
-  size: 0
+  size: 1
+  damage: 0
+  debugList: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
