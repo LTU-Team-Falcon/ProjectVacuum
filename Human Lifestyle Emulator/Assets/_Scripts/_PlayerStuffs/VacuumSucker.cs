@@ -47,7 +47,7 @@ public class VacuumSucker : MonoBehaviour
 		this.playerObj = GameObject.FindGameObjectWithTag("Player");
 		vacController.playerObj = this.playerObj;
 		playerObj.GetComponentInChildren<GameManager>().findTotalSceneWeight();
-		massToSuction = 4f*(float)((maxSuckPotential - suckPotential)/playerObj.GetComponentInChildren<GameManager>().totalSceneWeight);
+		massToSuction = (float)((maxSuckPotential - suckPotential)/playerObj.GetComponentInChildren<GameManager>().totalSceneWeight);
 		countToSuction = (float)((maxSuckPotential - suckPotential)/(float)playerObj.GetComponentInChildren<GameManager>().objectCount);
 		
 	}
@@ -120,11 +120,10 @@ public class VacuumSucker : MonoBehaviour
 	{
 		foreach(GameObject i in hasSucked)
 		{//Actually suck up the object and increase the intensity of the Vacuum sucker
-			//intake.Remove(i);
+			intake.Remove(i);
 			suckPotential += i.rigidbody.mass * i.rigidbody.mass * massToSuction * massToSuction;
 			playerObj.GetComponent<GameManager>().inTheBag.Add(i);
 			i.SetActive(false);
-			//Destroy(i);
 		}
 		hasSucked.Clear();
 		
