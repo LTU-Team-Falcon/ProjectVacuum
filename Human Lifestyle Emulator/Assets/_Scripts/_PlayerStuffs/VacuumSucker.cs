@@ -47,7 +47,7 @@ public class VacuumSucker : MonoBehaviour
 		this.playerObj = GameObject.FindGameObjectWithTag("Player");
 		vacController.playerObj = this.playerObj;
 		playerObj.GetComponentInChildren<GameManager>().findTotalSceneWeight();
-		massToSuction = (float)((maxSuckPotential - suckPotential)/playerObj.GetComponentInChildren<GameManager>().totalSceneWeight);
+		massToSuction = 4f*(float)((maxSuckPotential - suckPotential)/playerObj.GetComponentInChildren<GameManager>().totalSceneWeight);
 		countToSuction = (float)((maxSuckPotential - suckPotential)/(float)playerObj.GetComponentInChildren<GameManager>().objectCount);
 		
 	}

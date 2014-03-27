@@ -28,7 +28,6 @@ public class VacuumPuncher : MonoBehaviour
 	
 	void OnTriggerEnter(Collider col)
 	{
-
 		if(vacController.isPunching && col.tag == "Suckable")
 		{//checks if it hasn't already hit anything
 			
@@ -42,7 +41,7 @@ public class VacuumPuncher : MonoBehaviour
 
 			//never reaches here if its already been hit this punch
 			GetSucked colGetSucked = col.gameObject.GetComponent<GetSucked>();
-			colGetSucked.damage += vacController.vacSucker.suckPotential/2f;
+			colGetSucked.damage += vacController.vacSucker.suckPotential;
 			
 			
 			if(colGetSucked.damage >= colGetSucked.resistance)
