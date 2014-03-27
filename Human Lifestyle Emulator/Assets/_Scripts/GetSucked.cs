@@ -23,10 +23,11 @@ public class GetSucked : MonoBehaviour
 	private Vector3 velocity;
 	private Vector3 force;
 	
-	//[HideInInspector]
+	[HideInInspector]
 	public bool canGetSucked = true;
 	
 	public float resistance = 0f; //strength to resist defences
+	[HideInInspector]
 	public float health = 0f; //amount of punching it can withstand >> Goes with Damage
 	public float size = 0f;
 	
