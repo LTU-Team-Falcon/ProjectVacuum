@@ -36,7 +36,7 @@ public class VacuumSucker : MonoBehaviour
 	[HideInInspector]
 	public List<GameObject> hasSucked = new List<GameObject>(0);// Learn how to serialize bro
 	
-	
+	public GameObject scorePartFab;
 	
 	
 	// Use this for initialization
@@ -120,6 +120,10 @@ public class VacuumSucker : MonoBehaviour
 			suckPotential += i.rigidbody.mass * i.rigidbody.mass * massToSuction;
 			playerObj.GetComponent<GameManager>().inTheBag.Add(i);
 			i.SetActive(false);
+			GameObject scorepart = Instantiate(scorePartFab) as GameObject;
+			scorepart.transform.position = transform.position;
+			scorepart.rigidbody.velocity = new Vector3(Random.value*4f - 2,0, Random.value*4f -2);
+			scorepart.GetComponent<ScoreParticle>().value = (int)(i.rigidbody.mass*10f);
 		}
 		hasSucked.Clear();
 		

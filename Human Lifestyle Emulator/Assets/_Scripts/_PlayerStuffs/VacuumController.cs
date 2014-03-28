@@ -87,13 +87,13 @@ public class VacuumController : MonoBehaviour
 		isPunching = false;
 		transform.localPosition = defaultLocPos;
 		Invoke("EnablePunch", punchCoolDown);
-		vacSucker.isSucking = false;
+		//vacSucker.isSucking = false;
 	}
 	
 	void EnablePunch()
 	{
 		canPunchAgain = true;
-		vacSucker.isSucking = true;
+		//vacSucker.isSucking = true;
 	}
 	
 	// Update is called once per frame

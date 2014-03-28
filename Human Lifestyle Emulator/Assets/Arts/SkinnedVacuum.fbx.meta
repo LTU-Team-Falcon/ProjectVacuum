@@ -1,48 +1,52 @@
 fileFormatVersion: 2
-guid: dbdb2127ee501e542a6c5a2a8b692eae
+guid: 096e7b554523d3d4f94427acd286618a
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: pCube2
-    100002: pCylinder1
-    100004: pCylinder2
-    100006: polySurface1
-    100008: transform1
-    100010: transform2
-    100012: transform3
-    100014: transform4
-    100016: //RootNode
-    100018: vacuumBase
-    100020: bagInGame
-    100022: cordUnwrappedInGame
-    100024: handleInGame
-    100026: transform5
-    100028: transform6
-    100030: vacuumBaseInGame
-    100032: wheel2InGame
-    100034: wheelInGame
-    400000: pCube2
-    400002: pCylinder1
-    400004: pCylinder2
-    400006: polySurface1
-    400008: transform1
-    400010: transform2
-    400012: transform3
-    400014: transform4
-    400016: //RootNode
-    400018: vacuumBase
-    400020: bagInGame
-    400022: cordUnwrappedInGame
-    400024: handleInGame
-    400026: transform5
-    400028: transform6
-    400030: vacuumBaseInGame
-    400032: wheel2InGame
-    400034: wheelInGame
-    2300000: polySurface1
-    3300000: polySurface1
-    4300000: polySurface1
+    100000: Body
+    100002: Cord
+    100004: joint1
+    100006: joint10
+    100008: joint11
+    100010: joint12
+    100012: joint13
+    100014: joint14
+    100016: joint15
+    100018: joint16
+    100020: joint2
+    100022: joint3
+    100024: joint4
+    100026: joint5
+    100028: joint6
+    100030: joint7
+    100032: joint8
+    100034: joint9
+    100036: //RootNode
+    400000: Body
+    400002: Cord
+    400004: joint1
+    400006: joint10
+    400008: joint11
+    400010: joint12
+    400012: joint13
+    400014: joint14
+    400016: joint15
+    400018: joint16
+    400020: joint2
+    400022: joint3
+    400024: joint4
+    400026: joint5
+    400028: joint6
+    400030: joint7
+    400032: joint8
+    400034: joint9
+    400036: //RootNode
+    2300000: Body
+    3300000: Body
+    4300000: Body
+    4300002: Cord
     9500000: //RootNode
+    13700000: Cord
   materials:
     importMaterials: 1
     materialName: 0

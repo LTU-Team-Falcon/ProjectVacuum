@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 56ba005a625a2a949acd085dec367372
 ModelImporter:
-  serializedVersion: 15
+  serializedVersion: 16
   fileIDToRecycleName:
     100000: bag
     100002: cord
@@ -15,6 +15,10 @@ ModelImporter:
     100018: transform5
     100020: //RootNode
     100022: vacuumBase
+    100024: transform6
+    100026: transform7
+    100028: wheel
+    100030: wheel2
     400000: bag
     400002: cord
     400004: cord_prong
@@ -27,6 +31,10 @@ ModelImporter:
     400018: transform5
     400020: //RootNode
     400022: vacuumBase
+    400024: transform6
+    400026: transform7
+    400028: wheel
+    400030: wheel2
     2300000: polySurface1
     3300000: polySurface1
     4300000: polySurface1
@@ -82,4 +90,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
+  additionalBone: 0
   userData: 

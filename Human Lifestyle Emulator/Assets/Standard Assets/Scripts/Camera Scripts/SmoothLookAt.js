@@ -22,6 +22,10 @@ function LateUpdate () {
 
 function Start () {
 	// Make the rigid body not change rotation
+	if(target == null)
+	{
+		target = GameObject.FindGameObjectWithTag("Player").transform;
+	}
    	if (rigidbody)
 		rigidbody.freezeRotation = true;
 }
