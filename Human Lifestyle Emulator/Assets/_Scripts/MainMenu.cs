@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
 	{
 		spotty = GameObject.FindGameObjectWithTag("Light").light;
 		idealIntensity = spotty.intensity;
-		spotty.intensity = 0;
+		//spotty.intensity = 0;
 	}
  
 	void InitMenu()
@@ -54,7 +54,7 @@ public class MainMenu : MonoBehaviour
 		}
 		else if(logoDone)
 		{
-			spotty.intensity += (idealIntensity - spotty.intensity)/idealIntensity;
+			//spotty.intensity += (idealIntensity - spotty.intensity)/idealIntensity;
 		}
 		else
 		{

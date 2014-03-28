@@ -56,7 +56,7 @@ public class VacuumController : MonoBehaviour
 			{
 				if(child1 != child2)
 				{
-					Physics.IgnoreCollision(child1, child2);
+//					Physics.IgnoreCollision(child1, child2);
 				}
 			}
 		}
@@ -131,9 +131,9 @@ public class VacuumController : MonoBehaviour
 	
 	void OnGUI()
 	{
-		string toGui = "SuckPow: " + vacSucker.suckPow;
+/*		string toGui = "SuckPow: " + vacSucker.suckPow;
 		toGui += "\n SuckPotential: " + vacSucker.suckPotential;
 		toGui += "\n isSucking: " + vacSucker.isSucking + "  isOut: " + isOut;
-		GUI.Box (new Rect (10,50,200,100), toGui );
+		GUI.Box (new Rect (10,50,200,100), toGui );*/
 	}
 }
