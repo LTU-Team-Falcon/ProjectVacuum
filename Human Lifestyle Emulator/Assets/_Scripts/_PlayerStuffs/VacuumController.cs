@@ -45,7 +45,7 @@ public class VacuumController : MonoBehaviour
 		{
 			if(child.collider != null)
 			{
-				Physics.IgnoreCollision(playerObj.collider, child.collider);
+//				Physics.IgnoreCollision(playerObj.collider, child.collider);
 				childColliders.Add(child.collider);
 			}
 		}
