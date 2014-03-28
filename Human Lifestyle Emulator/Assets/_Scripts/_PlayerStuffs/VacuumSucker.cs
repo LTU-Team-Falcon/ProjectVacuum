@@ -55,20 +55,18 @@ public class VacuumSucker : MonoBehaviour
 	// Update is called once per physics frame
 	void FixedUpdate () 
 	{
-	
-		//print ("suckPow" + suckPow + " suckPot" + suckPotential);
 		suckPow = suckPotential;
 		
 		if(isSucking)
 		{
 				foreach(GameObject i in intake)
 				{ //reduces the power of the sucking dependent on th esize and number of whatever objects are stucked
-					suckPow = suckPow/i.GetComponent<GetSucked>().resistance; 				
+					suckPow = suckPow/(i.GetComponent<GetSucked>().resistance*0.5f); 				
 				}
 				
 			
 				if(suckPow <= 0.2f)
-				{//#SPARKS checks to see if the objects in the intake are have plugged up the intake enough to "short circuite it" and shoot sparks
+				{ //#SPARKS checks to see if the objects in the intake are have plugged up the intake enough to "short circuite it" and shoot sparks
 									
 					this.isSucking = false;
 					vacController.vacPuncher.gameObject.GetComponent<ParticleSystem>().Play();
@@ -77,7 +75,7 @@ public class VacuumSucker : MonoBehaviour
 				}
 				
 				foreach(GameObject i in intake)
-				{//shrinks objects stuck in intake and then eventually sucks them up completely
+				{ //shrinks objects stuck in intake and then eventually sucks them up completely
 					GetSucked getSuckedI = i.GetComponent<GetSucked>();
 					
 					getSuckedI.health -= (float)(suckPow/16f);
@@ -92,7 +90,7 @@ public class VacuumSucker : MonoBehaviour
 							getSuckedI.size -= 1;
 						}
 						else
-						{
+						{	//if the object is already way to small; we'll not shrink it at all
 							getSuckedI.size = -1;
 						}
 					}
@@ -104,7 +102,7 @@ public class VacuumSucker : MonoBehaviour
 				}
 				
 				foreach(GameObject i in hasSucked)
-				{///removes objects from the intake that are queued to get sucked
+				{ //removes objects from the intake that are queued to get sucked
 					intake.Remove(i);
 				}
 		}
@@ -112,8 +110,6 @@ public class VacuumSucker : MonoBehaviour
 		{
 			suckPow = 0;
 		}
-		
-		//print ("FixedUpdate: " + suckPotential);
 	}
 	
 	void LateUpdate()
@@ -134,8 +130,6 @@ public class VacuumSucker : MonoBehaviour
 				transform.parent.GetComponentInChildren<ParticleSystem>().Play();
 			}
 		}
-		
-		//print ("lateUpdate: " + suckPotential);
 	}
 	
 	void AddToIntake(GameObject parGameObj)
@@ -146,6 +140,7 @@ public class VacuumSucker : MonoBehaviour
 		parGameObj.collider.enabled = false;
 		intake.Add(parGameObj);
 	}
+	
 	
 	public void dropIntake()
 	{ //drops and resets all objects currently stuck at the intake
@@ -166,12 +161,9 @@ public class VacuumSucker : MonoBehaviour
 	
 	void OnTriggerEnter(Collider col)
 	{ //checks if colliding object is ellidgable to get sucked into the vacuum and if it is, it adds it to the intake for further processing
-		if(this.isSucking && col.gameObject.tag == "Suckable" && (col.rigidbody.velocity.sqrMagnitude > 0.5f || col.gameObject.GetComponent<GetSucked>().size == 1 ))
-		{	//if the vacuum is sucking AND the colliding object is suckable AND EITHER the object is moving, or the object is super small; might remove that last part
-			if(col.gameObject.GetComponent<GetSucked>().canGetSucked)
-			{
+		if(this.isSucking && col.gameObject.tag == "Suckable" && col.gameObject.GetComponent<GetSucked>().canGetSucked)
+		{	//if the vacuum is sucking AND the colliding object is suckable AND EITHER the object is moving, or the object is super small; might remove that last part				if(col.rigidbody.velocity.sqrMagnitude > 0.5f || col.gameObject.GetComponent<GetSucked>().size == 1);
 				AddToIntake(col.gameObject);
-			}
 		}
 	}
 	

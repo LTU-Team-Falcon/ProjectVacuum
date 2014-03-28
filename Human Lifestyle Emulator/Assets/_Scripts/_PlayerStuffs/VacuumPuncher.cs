@@ -28,7 +28,7 @@ public class VacuumPuncher : MonoBehaviour
 	
 	void OnTriggerEnter(Collider col)
 	{
-		if(vacController.isPunching && col.tag == "Suckable")
+		if(vacController.isPunching && col.tag == "Suckable" && col.GetComponent<GetSucked>().hasSuckyParent)
 		{//checks if it hasn't already hit anything
 			
 			foreach(GameObject hit in hasMadeCollision)

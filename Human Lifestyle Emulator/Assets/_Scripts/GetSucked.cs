@@ -4,9 +4,10 @@ using System.Collections.Generic;
 
 public class GetSucked : MonoBehaviour 
 {
-	//[HideInInspector]
-	private bool hasSuckyParent = false;
-	public float attachForce;
+	[HideInInspector]
+	public bool hasSuckyParent = false;
+	
+	public float attachForce; //not implemented yet.
 	
 	
 	public bool isDebugging = false;
@@ -26,10 +27,13 @@ public class GetSucked : MonoBehaviour
 	[HideInInspector]
 	public bool canGetSucked = true;
 	
-	public float resistance = 0f; //strength to resist defences
+	public float resistance = 0f; //strength to resist sucking
 	[HideInInspector]
 	public float health = 0f; //amount of punching it can withstand >> Goes with Damage
-	public float size = 0f;
+	
+	private float realMass;//used to recreate the rigidbody if the rigidbody is destroyed
+	
+	public float size = 0f;//once it has 0 health; this determines how fast it shrinks in the intake;
 	
 	[HideInInspector]
 	public float damage = 0;
@@ -39,10 +43,21 @@ public class GetSucked : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		realMass = rigidbody.mass;
+		reCalcVar();
 		
-		if(!(size > 0)) size = rigidbody.mass;//temp 
-		if(!(resistance > 0)) resistance = rigidbody.mass*2;
-		if(!(health > 0)) health = resistance;
+		
+		if(transform.parent.gameObject.GetComponent<GetSucked>() != null)
+		{//if its parents are suckable, it disables this one.
+			hasSuckyParent = true;
+			canGetSucked = false;
+			transform.parent.rigidbody.mass += this.rigidbody.mass;
+			Destroy(rigidbody);
+		}
+		
+		
+		
+
 		
 		
 		vacuumSucker = GameObject.FindGameObjectWithTag("Vacuum").GetComponent("VacuumSucker") as VacuumSucker;
@@ -51,38 +66,32 @@ public class GetSucked : MonoBehaviour
 		origScale = transform.localScale;
 		origSize = size;
 		origHealth = health;
-		
-		if(transform.parent.gameObject.GetComponent<GetSucked>() != null)
-		{
-			hasSuckyParent = true;
-			canGetSucked = false;
-			this.LockRigid();
-		}
-		
-		foreach(Transform child in transform)
-		{
-			if(child.collider != null && this.collider != null)
-			{
-				Physics.IgnoreCollision(this.rigidbody.collider, child.rigidbody.collider);
-			}
-		}
+
 	}
 	
 	public void SplitFromParent()
-	{ //when damaged enough to the point where it is eliminated;
+	{ //is called when the object has recieved enough force to where it breaks off from its parent
 		if(hasSuckyParent == true)
 		{
 			transform.parent = null;
 		}
-		
+		gameObject.AddComponent<Rigidbody>().mass = realMass;
+		hasSuckyParent = false;
 		canGetSucked = true;
 		this.UnLockRigid();
 	}
 	
+	public void reCalcVar()
+	{
+		if(!(size > 0)) size = rigidbody.mass;//temp 
+		if(!(resistance > 0)) resistance = rigidbody.mass*2;
+		if(!(health > 0)) health = resistance;
+	}
+	
 	// Update is called once per physics frame
 	void FixedUpdate ()
-	{
-		if(damage > 0) {	damage -= 0.2f;	}
+	{//determines the force withwhich it is pulled towards the sucker.
+		if(damage > 0) {	damage -= 0.3f;	}
 		
 		if(canGetSucked)
 		{	
@@ -90,26 +99,26 @@ public class GetSucked : MonoBehaviour
 			relVec = relVec - vacuumSucker.transform.position;
 			
 			float relDist2 = relVec.sqrMagnitude;
+			
 			if(relDist2 < vacuumSucker.suckDist2)
 			{
 				force = relVec.normalized*vacuumSucker.suckPow;
 				force *= (vacuumSucker.suckDist2 - relDist2)/vacuumSucker.suckDist2;
-				force *= Time.deltaTime*-20;
+				force *= Time.fixedDeltaTime*-50f;//multiplies it by the amount of time between each frame
 				rigidbody.AddForceAtPosition(force,relVec + vacuumSucker.transform.position);
-
 			}
 		}
 	}
-	
-	void LateUpdate()
-	{
 
-	}
-	
 	public void LockRigid()
 	{
 		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 		rigidbody.isKinematic = true;
+	}
+	
+	public void FreezeRigid()
+	{
+		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 	}
 	
 	public void UnLockRigid()
@@ -121,7 +130,7 @@ public class GetSucked : MonoBehaviour
 	
 	
 	void OnGUI()
-	{
+	{//this is all stuff for debugging; right now its set to display text of the current force on the object; can be changed to whatever pretty easily though
 		if(isDebugging)
 		{
 			if(this.isDebugging && debugTextMesh == null)
