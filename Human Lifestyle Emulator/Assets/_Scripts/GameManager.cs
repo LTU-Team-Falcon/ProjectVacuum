@@ -10,17 +10,14 @@ public class GameManager : MonoBehaviour
 	public int objectCount =0;
 	public GameObject DebugTextFab;
 	
-	private float levelStartTime;
-	public float firstPhaseTime =60f;
-	public float secondPhaseTime = 60f;
 	public List<GameObject> inTheBag = new List<GameObject>();
 	
 	public bool isPaused = false;
+	private bool canUnpause = true;
 	
 	// Use this for initialization
 	void Start () 
 	{
-		levelStartTime = Time.time;
 		findTotalSceneWeight();	
 		//RenderSettings.ambientLight f;
 		
@@ -62,6 +59,25 @@ public class GameManager : MonoBehaviour
 		
 	}
 	
+	public void ForcePause()
+	{		
+		isPaused = true;
+		Screen.lockCursor = false;
+		Screen.showCursor = true;
+		RenderSettings.fog = true;//ambientLight *= 0.01f;
+		
+		GameObject pauseMenu = transform.Find("PauseMenuObj").gameObject;
+		pauseMenu.SetActive(true);
+		pauseMenu.transform.FindChild("MenuContinue").gameObject.SetActive(false);
+		pauseMenu.transform.FindChild("MenuReload").gameObject.SetActive(false);
+		
+		canUnpause = false;
+		 //SetActive(false);
+		
+	}
+	
+	
+	
 	public void UnPause()
 	{
 		RenderSettings.fog = false;
@@ -84,16 +100,10 @@ public class GameManager : MonoBehaviour
 			{
 				Pause();
 			}
-			else
+			else if(canUnpause)
 			{
 				UnPause();
 			}
 		}
-	}
-	
-	void OnGUI()
-	{
-		string sped = "Time: " + Mathf.Floor(Time.time - levelStartTime) + "  Score: " + inTheBag.Count;
-		GUI.Box (new Rect (10,10,150,20), sped);
 	}
 }

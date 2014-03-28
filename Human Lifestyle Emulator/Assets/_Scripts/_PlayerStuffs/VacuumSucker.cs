@@ -117,13 +117,14 @@ public class VacuumSucker : MonoBehaviour
 		foreach(GameObject i in hasSucked)
 		{//Actually suck up the object and increase the intensity of the Vacuum sucker
 			intake.Remove(i);
-			suckPotential += i.rigidbody.mass * i.rigidbody.mass * massToSuction;
+			suckPotential += 	i.rigidbody.mass * i.rigidbody.mass * massToSuction;;
 			playerObj.GetComponent<GameManager>().inTheBag.Add(i);
 			i.SetActive(false);
+			
 			GameObject scorepart = Instantiate(scorePartFab) as GameObject;
 			scorepart.transform.position = transform.position;
-			scorepart.rigidbody.velocity = new Vector3(Random.value*4f - 2,0, Random.value*4f -2);
-			scorepart.GetComponent<ScoreParticle>().value = (int)(i.rigidbody.mass*10f);
+			scorepart.transform.parent = this.transform;
+			scorepart.GetComponent<ScoreParticle>().value = (int)(i.rigidbody.mass * i.rigidbody.mass * 10);
 		}
 		hasSucked.Clear();
 		
