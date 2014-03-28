@@ -83,15 +83,17 @@ public class VacuumController : MonoBehaviour
 	
 	void DonePunching()
 	{
-		rigidbody.AddExplosionForce(vacSucker.suckPow/3f, transform.position, 1f);
+		rigidbody.AddExplosionForce(vacSucker.suckPow/2f, transform.position, 1.5f);
 		isPunching = false;
 		transform.localPosition = defaultLocPos;
 		Invoke("EnablePunch", punchCoolDown);
+		vacSucker.isSucking = false;
 	}
 	
 	void EnablePunch()
 	{
 		canPunchAgain = true;
+		vacSucker.isSucking = true;
 	}
 	
 	// Update is called once per frame
@@ -124,12 +126,7 @@ public class VacuumController : MonoBehaviour
 				Invoke("DonePunching", punchLength);
 			}
 		}
-/*		else
-		if(hasHit && !Input.GetMouseButton(1))
-		{
-			hasHit = false;
-		}
-*/	}
+	}
 	
 	
 	void OnGUI()
