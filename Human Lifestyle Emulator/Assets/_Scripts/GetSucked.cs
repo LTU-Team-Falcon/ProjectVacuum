@@ -95,10 +95,8 @@ public class GetSucked : MonoBehaviour
 		
 		if(canGetSucked)
 		{	
-			Vector3 relVec = rigidbody.ClosestPointOnBounds(vacuumSucker.transform.position)- vacuumSucker.transform.position;
+			Vector3 relVec = rigidbody.ClosestPointOnBounds(vacuumSucker.transform.position) - vacuumSucker.transform.position;
 
-			
-						
 			float relDist2 = relVec.sqrMagnitude;
 			
 			if(relDist2 < vacuumSucker.suckDist2)
@@ -107,23 +105,11 @@ public class GetSucked : MonoBehaviour
 				force *= (vacuumSucker.suckDist2 - relDist2)/vacuumSucker.suckDist2;
 				force *= Time.fixedDeltaTime*-50f;//multiplies it by the amount of time between each frame
 				
-				
-				Vector3 angledPos = vacuumSucker.transform.eulerAngles.normalized * relVec.magnitude;
-			/*	if(angledPos.z < 0)
-				{
-					if(angledPos.z < -Mathf.Abs(angledPos.x) || angledPos.z < -Mathf.Abs(angledPos.y))
-					{
-						force *= 0f;
-					}
-					else
-					{
-						force *= 0.2f;
-					}
-				}
-				else if(angledPos.z < Mathf.Abs(angledPos.x) || angledPos.z < Mathf.Abs(angledPos.y))
-				{
-					force *= 0.6f;
-				}*/
+				float AngleDot = Vector3.Dot(vacuumSucker.transform.forward, relVec);	
+				AngleDot /= 3f;
+				AngleDot = (Mathf.Clamp(AngleDot,-1,1f)+0.2f)/2f;
+				AngleDot += 0.3f;
+				force*= AngleDot; //AngleDot sets the "fulcrum" of the force
 				
 				rigidbody.AddForceAtPosition(force,relVec + vacuumSucker.transform.position);
 			}

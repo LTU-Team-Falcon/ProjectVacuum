@@ -98,8 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4765ab187e0eeb44b9d571caa68c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasSuckyParent: 0
+  attachForce: 0
   isDebugging: 0
   origScale: {x: 0, y: 0, z: 0}
+  origSize: 0
+  origHealth: 0
   canGetSucked: 1
   resistance: 1
   health: 1
