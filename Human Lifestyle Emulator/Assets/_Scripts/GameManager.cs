@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour 
 {
-	public bool secondPhase = true;
+	public bool shootingPhase = true;
 	public float totalSceneWeight =0;
 	public int objectCount =0;
 	public GameObject DebugTextFab;
@@ -14,13 +14,21 @@ public class GameManager : MonoBehaviour
 	
 	public bool isPaused = false;
 	private bool canUnpause = true;
-	
+
+	private VacuumSucker vacSucker;
+	private VacuumShooter vacShooter;
+	private VacuumController vacController;
+	private Score score;
+
 	// Use this for initialization
 	void Start () 
 	{
 		findTotalSceneWeight();	
-		//RenderSettings.ambientLight f;
-		
+		vacController = GameObject.FindObjectOfType<VacuumController>();
+		vacController.isShootingPhase = shootingPhase;
+		vacSucker = GameObject.FindObjectOfType<VacuumSucker>();
+		vacShooter = GameObject.FindObjectOfType<VacuumShooter>();
+		score = GameObject.FindObjectOfType<Score>();
 	}
 	
 	public void findTotalSceneWeight()
@@ -34,7 +42,7 @@ public class GameManager : MonoBehaviour
 			{
 				if(thisObject.rigidbody != null)
 				{
-					totalSceneWeight+= thisObject.rigidbody.mass;
+					totalSceneWeight += thisObject.rigidbody.mass;
 					objectCount ++;
 				}
 			}
@@ -104,6 +112,31 @@ public class GameManager : MonoBehaviour
 			{
 				UnPause();
 			}
+		}
+	}
+
+	public void EndSucking()
+	{
+		vacSucker.isSucking = false;
+		score.transform.localPosition = new Vector3(score.transform.localPosition.x,0,score.transform.localPosition.z);
+		score.texty.characterSize = 0.3f;
+		score.texty.text = "Score : " + score.playerScore;
+		SaveSuckedObjects();
+		Application.LoadLevel(2);
+	}
+
+	void SaveSuckedObjects()
+	{
+		int size = inTheBag.Count;
+		PlayerPrefs.SetInt("totalSucked", size);
+		PlayerPrefs.SetInt("Score", score.playerScore);
+
+		
+		for(int i = 0; i< size; i++)
+		{
+			int j = size - 1 - i;
+			string ID = "sucked" + j.ToString();
+			PlayerPrefs.SetString(ID, inTheBag[j].name);
 		}
 	}
 }

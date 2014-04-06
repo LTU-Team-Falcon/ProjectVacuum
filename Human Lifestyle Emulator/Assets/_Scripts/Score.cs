@@ -15,6 +15,10 @@ public class Score : MonoBehaviour
 		texty = gameObject.GetComponentInChildren<TextMesh>();
 		idealCharSize = texty.characterSize;
 		playerScore = (int)GameObject.FindObjectOfType<VacuumSucker>().suckPotential;
+		if(GameObject.FindObjectOfType<GameManager>().shootingPhase == true)
+		{
+			playerScore = PlayerPrefs.GetInt("Score");
+		}
 	}
 	
 	// Update is called once per frame
@@ -23,6 +27,5 @@ public class Score : MonoBehaviour
 		texty.text = "Power : " + playerScore.ToString();
 		if(texty.characterSize > idealCharSize) texty.characterSize -= 0.01f;
 		if(texty.characterSize < idealCharSize) texty.characterSize += 0.01f;
-		
 	}
 }

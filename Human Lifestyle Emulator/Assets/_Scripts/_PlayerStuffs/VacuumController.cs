@@ -5,9 +5,8 @@ using System.Collections.Generic;
 
 public class VacuumController : MonoBehaviour 
 {
-
 	public bool isOut = true;
-	private float punchLength = 0.2f;
+	public float punchLength = 0.2f;
 	private float punchCoolDown = 0.2f;
 	public bool canPunchAgain = true;
 	public bool isPunching = false;
@@ -21,6 +20,10 @@ public class VacuumController : MonoBehaviour
 	private Vector3 target;
 	public VacuumSucker vacSucker;
 	public VacuumPuncher vacPuncher;
+	public VacuumShooter vacShooter;
+
+	[HideInInspector]
+	public bool isShootingPhase = false;
 	
 	// Use this for initialization
 	void Start () 
@@ -31,6 +34,7 @@ public class VacuumController : MonoBehaviour
 				
 		camObj = playerObj.transform.FindChild("Main Camera").gameObject;
 		vacSucker = gameObject.GetComponentInChildren<VacuumSucker>();
+		vacShooter = gameObject.GetComponentInChildren<VacuumShooter>();
 		vacPuncher = gameObject.GetComponentInChildren<VacuumPuncher>();
 		vacSucker.vacController = this;
 		downRotation = transform.localEulerAngles;
@@ -99,31 +103,67 @@ public class VacuumController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if(Input.GetMouseButtonUp(1))
+		if(!isShootingPhase)
 		{
-			vacSucker.isSucking = true;
-			vacSucker.suckPow = vacSucker.suckPotential;
-			isOut = true;
-		}
-		
-		if(Input.GetMouseButton(1))
-		{
-			isOut = false;
-			vacSucker.isSucking = false;
-			vacSucker.dropIntake();
+			if(Input.GetMouseButtonUp(1))
+			{
+				vacSucker.isSucking = true;
+				vacSucker.suckPow = vacSucker.suckPotential;
+				isOut = true;
+			}
+			
+			if(Input.GetMouseButton(1))
+			{
+				isOut = false;
+				vacSucker.isSucking = false;
+				vacSucker.dropIntake();
+			}
+			else
+			{
+				isOut = true;
+			}
+			
+			if(Input.GetMouseButtonDown(0))
+			{
+				if(isOut && !isPunching && canPunchAgain)
+				{
+					canPunchAgain = false;
+					isPunching = true;
+					Invoke("DonePunching", punchLength);
+				}
+			}
 		}
 		else
 		{
-			isOut = true;
-		}
-		
-		if(Input.GetMouseButtonDown(0))
-		{
-			if(isOut && !isPunching && canPunchAgain)
+
+			if(Input.GetMouseButtonUp(1))
 			{
-				canPunchAgain = false;
-				isPunching = true;
-				Invoke("DonePunching", punchLength);
+				vacSucker.isSucking = true;
+				vacSucker.suckPow = vacSucker.suckPotential;
+				isOut = true;
+			}
+			
+			if(Input.GetMouseButton(1))
+			{
+				isOut = false;
+				vacSucker.isSucking = false;
+				vacSucker.dropIntake();
+			}
+			else
+			{
+				isOut = true;
+			}
+
+			if(Input.GetMouseButton(0))
+			{
+				if(isOut && !isPunching && canPunchAgain)
+				{
+					canPunchAgain = false;
+					isPunching = true;
+					Invoke("DonePunching", punchLength);
+					vacShooter.ShootObject();
+
+				}
 			}
 		}
 	}
