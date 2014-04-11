@@ -7,12 +7,21 @@ public class VacuumPuncher : MonoBehaviour
 	//public bool hasHit = false;
 	
 	private List<GameObject> hasMadeCollision = new List<GameObject>();
-	private VacuumController vacController;
+	[HideInInspector]
+	public VacuumController vacController;
+
+	public float punchLength = 0.2f;
+	private float punchCoolDown = 0.2f;
+
+	public bool isPunching = false;
+	public bool canPunchAgain = true;
+
+
+
 
 	// Use this for initialization
 	void Start () 
 	{
-		vacController = transform.parent.gameObject.GetComponent<VacuumController>();
 	}
 	
 	// Update is called once per frame
@@ -20,10 +29,33 @@ public class VacuumPuncher : MonoBehaviour
 	{
 		
 	}
-	
+
+	public void initiatePunch()
+	{
+		canPunchAgain = false;
+		isPunching = true;
+		Invoke("DonePunching", punchLength);
+	}
+
+	void DonePunching()
+	{
+		vacController.rigidbody.AddExplosionForce(vacController.vacSucker.suckPow/2f, transform.position, 1.5f);
+		isPunching = false;
+		vacController.transform.localPosition = vacController.defaultLocPos;
+		Invoke("EnablePunch", punchCoolDown);
+		//vacSucker.isSucking = false;
+	}
+
+
 	void ClearHasHits()
 	{
 		hasMadeCollision.Clear();
+	}
+
+	void EnablePunch()
+	{
+		canPunchAgain = true;
+		//vacSucker.isSucking = true;
 	}
 	
 	void OnTriggerEnter(Collider col)
@@ -42,7 +74,8 @@ public class VacuumPuncher : MonoBehaviour
 			//never reaches here if its already been hit this punch
 			GetSucked colGetSucked = col.gameObject.GetComponent<GetSucked>();
 			float damageValue = vacController.vacSucker.suckPotential;
-			if(!vacController.isPunching) {		damageValue /= 3;	}
+
+			if(!isPunching) {	damageValue /= 3;	}
 			
 			
 			colGetSucked.damage += damageValue;

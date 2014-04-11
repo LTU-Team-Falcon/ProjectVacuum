@@ -3,7 +3,6 @@ using System.Collections;
 
 public class DisplayTime : MonoBehaviour 
 {
-
 	private float levelStartTime;
 	public int phaseTime = 180;
 	public TextMesh texty;
@@ -24,10 +23,19 @@ public class DisplayTime : MonoBehaviour
 	{
 		int timeLeft = (int)phaseTime - Mathf.FloorToInt(Time.time - levelStartTime);
 		texty.text = "Time: " + timeLeft;
-		texty.color = new Color(1 - (float)timeLeft/levelStartTime, (float)timeLeft/levelStartTime, 0);
+		texty.color = new Color(1 - (float)timeLeft/phaseTime, (float)timeLeft/phaseTime, 0);
 		if(timeLeft < 0)
 		{
-			gameManager.EndSucking();
+			texty.color = Color.black;
+			texty.text = "END OF PHASE";
+			if(gameManager.isShootingPhase)
+			{
+				gameManager.EndShooting();
+			}
+			else
+			{
+				gameManager.EndSucking();
+			}
 		}
 	}
 }

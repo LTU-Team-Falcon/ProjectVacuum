@@ -265,15 +265,12 @@
 				
 				//lighting
 				float3 diffuseReflection = atten*_LightColor0.rgb * saturate( dot( normalDirection, lightDirection ) );
-				
 				float diffMultiplier = length(diffuseReflection);
-				//diffuseReflection = normalize(diffuseReflection);
 				
 				float diffDif = length(diffuseReflection);
 				diffDif = (ceil(diffDif * _Octaves) / _Octaves)/diffDif;
 				
-				float3 lightFinal = saturate(diffuseReflection * diffDif)  * diffMultiplier;// X >> Y is the same as X / 2^Y  ERGO: this is the same as specRef*4)/
-					//float3 lightFinal = rimLighting*(_RimColor.a) + diffuseReflection*(_Color.a) + specularReflection*(_SpecColor.a) + UNITY_LIGHTMODEL_AMBIENT.rgb;
+				float3 lightFinal = saturate(diffuseReflection * diffDif)  * diffMultiplier;
 
 					
 				return float4(max(lightFinal * _Color, 0.0),1.0);

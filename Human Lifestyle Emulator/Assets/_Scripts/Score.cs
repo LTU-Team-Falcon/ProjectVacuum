@@ -9,13 +9,16 @@ public class Score : MonoBehaviour
 //	[HideInInspector]
 	public float idealCharSize;
 	public TextMesh texty;
+
+	private VacuumSucker vacSucker;
 	// Use this for initialization
 	void Start () 
 	{
 		texty = gameObject.GetComponentInChildren<TextMesh>();
 		idealCharSize = texty.characterSize;
-		playerScore = (int)GameObject.FindObjectOfType<VacuumSucker>().suckPotential;
-		if(GameObject.FindObjectOfType<GameManager>().shootingPhase == true)
+		vacSucker = GameObject.FindObjectOfType<VacuumSucker>();
+		playerScore = (int)vacSucker.suckPotential;
+		if(GameObject.FindObjectOfType<GameManager>().isShootingPhase == true)
 		{
 			playerScore = PlayerPrefs.GetInt("Score");
 		}
@@ -24,7 +27,8 @@ public class Score : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		texty.text = "Power : " + playerScore.ToString();
+		texty.text = "Score : " + (playerScore - 3).ToString();
+		texty.text += "    Pow: " + vacSucker.suckPow;
 		if(texty.characterSize > idealCharSize) texty.characterSize -= 0.01f;
 		if(texty.characterSize < idealCharSize) texty.characterSize += 0.01f;
 	}

@@ -8,8 +8,10 @@ public class GetSucked : MonoBehaviour
 	public bool hasSuckyParent = false;
 	
 	public float attachForce; //not implemented yet.
-	
-	
+
+	[HideInInspector]
+	public bool isShootingPhase = true;
+
 	public bool isDebugging = false;
 	TextMesh debugTextMesh;
 	
@@ -39,14 +41,12 @@ public class GetSucked : MonoBehaviour
 	public float damage = 0;
 
 	public List<float> debugList;
-
 	// Use this for initialization
 	void Start () 
 	{
 		realMass = rigidbody.mass;
 		reCalcVar();
-		
-		
+
 		if(transform.parent.gameObject.GetComponent<GetSucked>() != null)
 		{//if its parents are suckable, it disables this one.
 			hasSuckyParent = true;
@@ -55,18 +55,12 @@ public class GetSucked : MonoBehaviour
 			Destroy(rigidbody);
 		}
 		
-		
-		
-
-		
-		
 		vacuumSucker = GameObject.FindGameObjectWithTag("Vacuum").GetComponent("VacuumSucker") as VacuumSucker;
 		gameObject.tag = "Suckable";
 		
 		origScale = transform.localScale;
 		origSize = size;
 		origHealth = health;
-
 	}
 	
 	public void SplitFromParent()
@@ -91,10 +85,10 @@ public class GetSucked : MonoBehaviour
 	// Update is called once per physics frame
 	void FixedUpdate ()
 	{//determines the force withwhich it is pulled towards the sucker.
-		if(damage > 0) {	damage -= 0.3f;	}
-		
 		if(canGetSucked)
 		{	
+			if(damage > 0) {	damage -= 0.3f;	}//regenerates a little bit of health every update if its not being sucked currently
+
 			Vector3 relVec = rigidbody.ClosestPointOnBounds(vacuumSucker.transform.position) - vacuumSucker.transform.position;
 
 			float relDist2 = relVec.sqrMagnitude;
@@ -109,7 +103,7 @@ public class GetSucked : MonoBehaviour
 				AngleDot /= 3f;
 				AngleDot = (Mathf.Clamp(AngleDot,-1,1f)+0.2f)/2f;
 				AngleDot += 0.3f;
-				force*= AngleDot; //AngleDot sets the "fulcrum" of the force
+				force *= AngleDot; //AngleDot sets the "fulcrum" of the force
 				
 				rigidbody.AddForceAtPosition(force,relVec + vacuumSucker.transform.position);
 			}

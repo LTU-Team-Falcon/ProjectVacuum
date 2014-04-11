@@ -61,16 +61,16 @@ public class VacuumSucker : MonoBehaviour
 		{
 				foreach(GameObject i in intake)
 				{ //reduces the power of the sucking dependent on th esize and number of whatever objects are stucked
-					suckPow = suckPow/(i.GetComponent<GetSucked>().resistance*0.5f); 				
+					suckPow -= (i.GetComponent<GetSucked>().resistance*0.5f); 				
 				}
 				
 			
-				if(suckPow <= 0.2f)
+				if(suckPow <= 0f)
 				{ //#SPARKS checks to see if the objects in the intake are have plugged up the intake enough to "short circuite it" and shoot sparks
-									
+					print("isOverloaded")	;	
 					this.isSucking = false;
 					vacController.vacPuncher.gameObject.GetComponent<ParticleSystem>().Play();
-				
+
 					return;	
 				}
 				
@@ -117,7 +117,7 @@ public class VacuumSucker : MonoBehaviour
 		foreach(GameObject i in hasSucked)
 		{//Actually suck up the object and increase the intensity of the Vacuum sucker
 			intake.Remove(i);
-			suckPotential += 	i.rigidbody.mass * i.rigidbody.mass * massToSuction;;
+			suckPotential += 	i.rigidbody.mass * i.rigidbody.mass * massToSuction * 5;
 			playerObj.GetComponent<GameManager>().inTheBag.Add(i);
 			i.SetActive(false);
 			

@@ -6,16 +6,12 @@ using System.Collections.Generic;
 public class VacuumController : MonoBehaviour 
 {
 	public bool isOut = true;
-	public float punchLength = 0.2f;
-	private float punchCoolDown = 0.2f;
-	public bool canPunchAgain = true;
-	public bool isPunching = false;
-	
+
 	public GameObject playerObj;
 	private GameObject camObj;
 	
 	private Vector3 downRotation;
-	private Vector3 defaultLocPos;
+	public Vector3 defaultLocPos;
 	
 	private Vector3 target;
 	public VacuumSucker vacSucker;
@@ -36,6 +32,7 @@ public class VacuumController : MonoBehaviour
 		vacSucker = gameObject.GetComponentInChildren<VacuumSucker>();
 		vacShooter = gameObject.GetComponentInChildren<VacuumShooter>();
 		vacPuncher = gameObject.GetComponentInChildren<VacuumPuncher>();
+		vacPuncher.vacController = this;
 		vacSucker.vacController = this;
 		downRotation = transform.localEulerAngles;
 		defaultLocPos = transform.localPosition;
@@ -72,7 +69,7 @@ public class VacuumController : MonoBehaviour
 		{	//hold the vaccum downwards more;
 			transform.localEulerAngles = downRotation;
 		}
-		else if(isPunching)
+		else if(vacPuncher.isPunching)
 		{	//swing for the punch
 			transform.position += transform.forward * (1.5f - transform.localPosition.z) * 0.5f;
 		}
@@ -82,23 +79,9 @@ public class VacuumController : MonoBehaviour
 			transform.LookAt(target);
 		}
 	}
-	
 
-	
-	void DonePunching()
-	{
-		rigidbody.AddExplosionForce(vacSucker.suckPow/2f, transform.position, 1.5f);
-		isPunching = false;
-		transform.localPosition = defaultLocPos;
-		Invoke("EnablePunch", punchCoolDown);
-		//vacSucker.isSucking = false;
-	}
-	
-	void EnablePunch()
-	{
-		canPunchAgain = true;
-		//vacSucker.isSucking = true;
-	}
+
+
 	
 	// Update is called once per frame
 	void Update()
@@ -125,11 +108,9 @@ public class VacuumController : MonoBehaviour
 			
 			if(Input.GetMouseButtonDown(0))
 			{
-				if(isOut && !isPunching && canPunchAgain)
+				if(isOut && !vacPuncher.isPunching && vacPuncher.canPunchAgain)
 				{
-					canPunchAgain = false;
-					isPunching = true;
-					Invoke("DonePunching", punchLength);
+					vacPuncher.initiatePunch();
 				}
 			}
 		}
@@ -156,13 +137,10 @@ public class VacuumController : MonoBehaviour
 
 			if(Input.GetMouseButton(0))
 			{
-				if(isOut && !isPunching && canPunchAgain)
+				if(isOut && !vacPuncher.isPunching && vacPuncher.canPunchAgain)
 				{
-					canPunchAgain = false;
-					isPunching = true;
-					Invoke("DonePunching", punchLength);
+					vacPuncher.initiatePunch();
 					vacShooter.ShootObject();
-
 				}
 			}
 		}

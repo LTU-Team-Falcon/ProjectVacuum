@@ -5,13 +5,15 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour 
 {
-	public bool shootingPhase = true;
+	public bool isShootingPhase = true;
 	public float totalSceneWeight =0;
 	public int objectCount =0;
 	public GameObject DebugTextFab;
+
+	public List<GameObject> holoList = new List<GameObject>();
 	
 	public List<GameObject> inTheBag = new List<GameObject>();
-	
+
 	public bool isPaused = false;
 	private bool canUnpause = true;
 
@@ -21,14 +23,21 @@ public class GameManager : MonoBehaviour
 	private Score score;
 
 	// Use this for initialization
-	void Start () 
+	void Start ()
 	{
 		findTotalSceneWeight();	
 		vacController = GameObject.FindObjectOfType<VacuumController>();
-		vacController.isShootingPhase = shootingPhase;
+		vacController.isShootingPhase = isShootingPhase;
 		vacSucker = GameObject.FindObjectOfType<VacuumSucker>();
 		vacShooter = GameObject.FindObjectOfType<VacuumShooter>();
 		score = GameObject.FindObjectOfType<Score>();
+		Physics.IgnoreCollision(vacController.transform.FindChild("Body").FindChild("VacuumObject").gameObject.collider, gameObject.collider);
+		if(isShootingPhase)
+		{
+			shiftGameModes();
+		}
+
+		vacShooter.gameManager = this;
 	}
 	
 	public void findTotalSceneWeight()
@@ -48,8 +57,20 @@ public class GameManager : MonoBehaviour
 			}
 		}
 	}
-	
-	
+
+	public void shiftGameModes()
+	{
+		GetSucked[] suckers = GameObject.FindObjectsOfType<GetSucked>();
+		foreach(GetSucked sucker in suckers)
+		{
+			HoloPositioner holo = sucker.gameObject.AddComponent<HoloPositioner>();
+
+			holo.size = sucker.origSize;
+			holoList.Add(holo.gameObject);
+
+			sucker.enabled = false;
+		}
+	}
 	
 	public GameObject createNewDebugTextObj()
 	{
@@ -123,6 +144,11 @@ public class GameManager : MonoBehaviour
 		score.texty.text = "Score : " + score.playerScore;
 		SaveSuckedObjects();
 		Application.LoadLevel(2);
+	}
+
+	public void EndShooting()
+	{
+		Application.LoadLevel(0);
 	}
 
 	void SaveSuckedObjects()
