@@ -5,7 +5,7 @@
 		_Color ("Color", Color) = (1.0,1.0,1.0,1.0)
 		_Octaves ("Octaves", float) = 4
 		_RimColor ("Rim Color", Color) = (1.0,1.0,1.0,1.0)
-		_RimPow ("Rim Power", Range(0.1,10)) = 3
+		_RimPow ("Rim Power", float) = 0.5
 		_SizeMod ("SizeMod", float) = 1.2
 		
 		_MainTex ("Main Texture", 2D) = "white" {}
@@ -133,8 +133,9 @@
 
 				lightFinal * pulsations;
 				 
-
-				return float4(_Color.rgb * lightFinal, _Color.a * (1 - lines));
+				float alpher = _Color.a* (1 - lines);
+				alpher = min(1, alpher/pow(dot(viewDirection,normalDirection), _RimPow));
+				return float4(_Color.rgb * lightFinal, alpher);
 			 
 			}
 			ENDCG
@@ -237,8 +238,9 @@
 
 				lightFinal * pulsations;
 				 
-
-				return float4(_Color.rgb * lightFinal , _Color.a * (1 - lines));
+				float alpher = _Color.a* (1 - lines);
+				alpher = min(1, alpher/pow(dot(viewDirection,normalDirection), _RimPow));
+				return float4(_Color.rgb * lightFinal, alpher);
 			
 			}
 			ENDCG
