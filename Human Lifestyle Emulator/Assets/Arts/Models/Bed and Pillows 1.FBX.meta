@@ -1,0 +1,140 @@
+fileFormatVersion: 2
+guid: 9f15a8c67cbc3634b8227380388547e5
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: Bed 1
+    100002: Bed 2
+    100004: Bed 3
+    100006: Bed 4
+    100008: Bed 5
+    100010: Bed 6
+    100012: Bed 7
+    100014: Bed 8
+    100016: //RootNode
+    100018: Mattress 1
+    100020: Mattress 2
+    100022: Mattress 3
+    100024: Mattress 4
+    100026: Mattress 5
+    100028: Mattress 6
+    100030: Pillow 1
+    100032: Pillow 2
+    400000: Bed 1
+    400002: Bed 2
+    400004: Bed 3
+    400006: Bed 4
+    400008: Bed 5
+    400010: Bed 6
+    400012: Bed 7
+    400014: Bed 8
+    400016: //RootNode
+    400018: Mattress 1
+    400020: Mattress 2
+    400022: Mattress 3
+    400024: Mattress 4
+    400026: Mattress 5
+    400028: Mattress 6
+    400030: Pillow 1
+    400032: Pillow 2
+    2300000: Bed 1
+    2300002: Bed 2
+    2300004: Bed 3
+    2300006: Bed 4
+    2300008: Bed 5
+    2300010: Bed 6
+    2300012: Bed 7
+    2300014: Bed 8
+    2300016: Mattress 1
+    2300018: Mattress 2
+    2300020: Mattress 3
+    2300022: Mattress 4
+    2300024: Mattress 5
+    2300026: Mattress 6
+    2300028: Pillow 1
+    2300030: Pillow 2
+    3300000: Bed 1
+    3300002: Bed 2
+    3300004: Bed 3
+    3300006: Bed 4
+    3300008: Bed 5
+    3300010: Bed 6
+    3300012: Bed 7
+    3300014: Bed 8
+    3300016: Mattress 1
+    3300018: Mattress 2
+    3300020: Mattress 3
+    3300022: Mattress 4
+    3300024: Mattress 5
+    3300026: Mattress 6
+    3300028: Pillow 1
+    3300030: Pillow 2
+    4300000: Mattress 2
+    4300002: Bed 7
+    4300004: Mattress 3
+    4300006: Mattress 1
+    4300008: Bed 5
+    4300010: Bed 8
+    4300012: Pillow 2
+    4300014: Pillow 1
+    4300016: Mattress 4
+    4300018: Mattress 5
+    4300020: Mattress 6
+    4300022: Bed 4
+    4300024: Bed 6
+    4300026: Bed 3
+    4300028: Bed 2
+    4300030: Bed 1
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  userData: 
