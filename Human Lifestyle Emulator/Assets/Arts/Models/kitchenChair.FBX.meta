@@ -1,0 +1,101 @@
+fileFormatVersion: 2
+guid: cde02aa1ee8b268489013ffc2f9aea19
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: KitchenChair_Back
+    100004: KitchenChair_Leg1
+    100006: KitchenChair_Leg2
+    100008: KitchenChair_Leg3
+    100010: KitchenChair_Leg4
+    100012: KitchenChair_Seat
+    100014: KitchenChair_Support1
+    100016: KitchenChair_Support2
+    400000: //RootNode
+    400002: KitchenChair_Back
+    400004: KitchenChair_Leg1
+    400006: KitchenChair_Leg2
+    400008: KitchenChair_Leg3
+    400010: KitchenChair_Leg4
+    400012: KitchenChair_Seat
+    400014: KitchenChair_Support1
+    400016: KitchenChair_Support2
+    2300000: KitchenChair_Back
+    2300002: KitchenChair_Leg1
+    2300004: KitchenChair_Leg2
+    2300006: KitchenChair_Leg3
+    2300008: KitchenChair_Leg4
+    2300010: KitchenChair_Seat
+    2300012: KitchenChair_Support1
+    2300014: KitchenChair_Support2
+    3300000: KitchenChair_Back
+    3300002: KitchenChair_Leg1
+    3300004: KitchenChair_Leg2
+    3300006: KitchenChair_Leg3
+    3300008: KitchenChair_Leg4
+    3300010: KitchenChair_Seat
+    3300012: KitchenChair_Support1
+    3300014: KitchenChair_Support2
+    4300000: KitchenChair_Leg2
+    4300002: KitchenChair_Leg3
+    4300004: KitchenChair_Leg1
+    4300006: KitchenChair_Leg4
+    4300008: KitchenChair_Back
+    4300010: KitchenChair_Support2
+    4300012: KitchenChair_Seat
+    4300014: KitchenChair_Support1
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

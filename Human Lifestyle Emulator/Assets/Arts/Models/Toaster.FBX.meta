@@ -1,13 +1,25 @@
 fileFormatVersion: 2
 guid: 1229b470dc7e58847b2e6e302993093d
 ModelImporter:
-  serializedVersion: 15
+  serializedVersion: 16
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Box021
+    100000: Kitchen_Toaster01
+    100002: Kitchen_Toaster_Toast01
+    100004: Kitchen_Toaster_Toast02
+    100006: //RootNode
+    400000: Kitchen_Toaster01
+    400002: Kitchen_Toaster_Toast01
+    400004: Kitchen_Toaster_Toast02
+    400006: //RootNode
+    2300000: Kitchen_Toaster01
+    2300002: Kitchen_Toaster_Toast01
+    2300004: Kitchen_Toaster_Toast02
+    3300000: Kitchen_Toaster01
+    3300002: Kitchen_Toaster_Toast01
+    3300004: Kitchen_Toaster_Toast02
+    4300000: Kitchen_Toaster_Toast01
+    4300002: Kitchen_Toaster01
+    4300004: Kitchen_Toaster_Toast02
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -60,4 +72,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
+  additionalBone: 0
   userData: 
