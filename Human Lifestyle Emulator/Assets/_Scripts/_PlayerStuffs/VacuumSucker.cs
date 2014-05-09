@@ -170,8 +170,19 @@ public class VacuumSucker : MonoBehaviour
 		{	//if the vacuum is sucking AND the colliding object is suckable AND EITHER the object is moving, or the object is super small; might remove that last part				if(col.rigidbody.velocity.sqrMagnitude > 0.5f || col.gameObject.GetComponent<GetSucked>().size == 1);
 				AddToIntake(col.gameObject);
 		}
+		/*else 
+		{
+			if(col.rigidbody)
+			{
+			//col.transform.parent.rigidbody.AddExplosionForce(10000-(col.transform.parent.rigidbody.mass*1000),transform.position,10f);
+			Debug.Log("EXPLOSION");
+			col.rigidbody.AddExplosionForce(10000-(col.rigidbody.mass*1000), transform.position, 10f);
+			}
+			else 
+			{
+				col.transform.parent.rigidbody.AddForce(100,100,100);
+			}
+		}*/
 	}
-	
-	
 
 }
