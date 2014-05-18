@@ -1,0 +1,355 @@
+fileFormatVersion: 2
+guid: 9e0b95561a767ad488078d2ff3bfee26
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: 3 Liter 1
+    100002: 3 Liter 2
+    100004: Apple 1
+    100006: Apple 2
+    100008: Apple 3
+    100010: Apple 4
+    100012: Apple 5
+    100014: Apple 6
+    100016: Bottle 1
+    100018: Bottle 2
+    100020: Bottle 3
+    100022: Bottle 4
+    100024: Bottle 5
+    100026: Bottle 6
+    100028: Bottle 7
+    100030: Butter 1
+    100032: Butter 2
+    100034: Cheese
+    100036: Chicken F
+    100038: Chicken Leg 1F
+    100040: Chicken Leg 1R
+    100042: Chicken Leg 2F
+    100044: Chicken Leg 2R
+    100046: ChickenR
+    100048: Egg 10
+    100050: Egg 11
+    100052: Egg 12
+    100054: Egg 2
+    100056: Egg 3
+    100058: Egg 4
+    100060: Egg 5
+    100062: Egg 6
+    100064: Egg 7
+    100066: Egg 8
+    100068: Egg 9
+    100070: Egg Tray
+    100072: Egg1
+    100074: Freezer
+    100076: Freezer Door
+    100078: Fridge
+    100080: //RootNode
+    100082: Fridge Door
+    100084: Fridge Drawer 1
+    100086: Fridge drawer 2
+    100088: Fridge Shelf
+    100090: Fridge Shelf 2
+    100092: Fridge Shelf 3
+    100094: Frozen Box
+    100096: Jar 1
+    100098: Jar 2
+    100100: Jar 3
+    100102: Jar 4
+    100104: Sliced Cheese 1
+    100106: Sliced Cheese 2
+    100108: Soda Box 1
+    100110: Soda Box 2
+    100112: Yogurt 1
+    100114: Yogurt 2
+    100116: Yogurt 3
+    100118: Yogurt 4
+    400000: 3 Liter 1
+    400002: 3 Liter 2
+    400004: Apple 1
+    400006: Apple 2
+    400008: Apple 3
+    400010: Apple 4
+    400012: Apple 5
+    400014: Apple 6
+    400016: Bottle 1
+    400018: Bottle 2
+    400020: Bottle 3
+    400022: Bottle 4
+    400024: Bottle 5
+    400026: Bottle 6
+    400028: Bottle 7
+    400030: Butter 1
+    400032: Butter 2
+    400034: Cheese
+    400036: Chicken F
+    400038: Chicken Leg 1F
+    400040: Chicken Leg 1R
+    400042: Chicken Leg 2F
+    400044: Chicken Leg 2R
+    400046: ChickenR
+    400048: Egg 10
+    400050: Egg 11
+    400052: Egg 12
+    400054: Egg 2
+    400056: Egg 3
+    400058: Egg 4
+    400060: Egg 5
+    400062: Egg 6
+    400064: Egg 7
+    400066: Egg 8
+    400068: Egg 9
+    400070: Egg Tray
+    400072: Egg1
+    400074: Freezer
+    400076: Freezer Door
+    400078: Fridge
+    400080: //RootNode
+    400082: Fridge Door
+    400084: Fridge Drawer 1
+    400086: Fridge drawer 2
+    400088: Fridge Shelf
+    400090: Fridge Shelf 2
+    400092: Fridge Shelf 3
+    400094: Frozen Box
+    400096: Jar 1
+    400098: Jar 2
+    400100: Jar 3
+    400102: Jar 4
+    400104: Sliced Cheese 1
+    400106: Sliced Cheese 2
+    400108: Soda Box 1
+    400110: Soda Box 2
+    400112: Yogurt 1
+    400114: Yogurt 2
+    400116: Yogurt 3
+    400118: Yogurt 4
+    2300000: 3 Liter 1
+    2300002: 3 Liter 2
+    2300004: Apple 1
+    2300006: Apple 2
+    2300008: Apple 3
+    2300010: Apple 4
+    2300012: Apple 5
+    2300014: Apple 6
+    2300016: Bottle 1
+    2300018: Bottle 2
+    2300020: Bottle 3
+    2300022: Bottle 4
+    2300024: Bottle 5
+    2300026: Bottle 6
+    2300028: Bottle 7
+    2300030: Butter 1
+    2300032: Butter 2
+    2300034: Cheese
+    2300036: Chicken F
+    2300038: Chicken Leg 1F
+    2300040: Chicken Leg 1R
+    2300042: Chicken Leg 2F
+    2300044: Chicken Leg 2R
+    2300046: ChickenR
+    2300048: Egg 10
+    2300050: Egg 11
+    2300052: Egg 12
+    2300054: Egg 2
+    2300056: Egg 3
+    2300058: Egg 4
+    2300060: Egg 5
+    2300062: Egg 6
+    2300064: Egg 7
+    2300066: Egg 8
+    2300068: Egg 9
+    2300070: Egg Tray
+    2300072: Egg1
+    2300074: Freezer
+    2300076: Freezer Door
+    2300078: Fridge
+    2300080: Fridge Door
+    2300082: Fridge Drawer 1
+    2300084: Fridge drawer 2
+    2300086: Fridge Shelf
+    2300088: Fridge Shelf 2
+    2300090: Fridge Shelf 3
+    2300092: Frozen Box
+    2300094: Jar 1
+    2300096: Jar 2
+    2300098: Jar 3
+    2300100: Jar 4
+    2300102: Sliced Cheese 1
+    2300104: Sliced Cheese 2
+    2300106: Soda Box 1
+    2300108: Soda Box 2
+    2300110: Yogurt 1
+    2300112: Yogurt 2
+    2300114: Yogurt 3
+    2300116: Yogurt 4
+    3300000: 3 Liter 1
+    3300002: 3 Liter 2
+    3300004: Apple 1
+    3300006: Apple 2
+    3300008: Apple 3
+    3300010: Apple 4
+    3300012: Apple 5
+    3300014: Apple 6
+    3300016: Bottle 1
+    3300018: Bottle 2
+    3300020: Bottle 3
+    3300022: Bottle 4
+    3300024: Bottle 5
+    3300026: Bottle 6
+    3300028: Bottle 7
+    3300030: Butter 1
+    3300032: Butter 2
+    3300034: Cheese
+    3300036: Chicken F
+    3300038: Chicken Leg 1F
+    3300040: Chicken Leg 1R
+    3300042: Chicken Leg 2F
+    3300044: Chicken Leg 2R
+    3300046: ChickenR
+    3300048: Egg 10
+    3300050: Egg 11
+    3300052: Egg 12
+    3300054: Egg 2
+    3300056: Egg 3
+    3300058: Egg 4
+    3300060: Egg 5
+    3300062: Egg 6
+    3300064: Egg 7
+    3300066: Egg 8
+    3300068: Egg 9
+    3300070: Egg Tray
+    3300072: Egg1
+    3300074: Freezer
+    3300076: Freezer Door
+    3300078: Fridge
+    3300080: Fridge Door
+    3300082: Fridge Drawer 1
+    3300084: Fridge drawer 2
+    3300086: Fridge Shelf
+    3300088: Fridge Shelf 2
+    3300090: Fridge Shelf 3
+    3300092: Frozen Box
+    3300094: Jar 1
+    3300096: Jar 2
+    3300098: Jar 3
+    3300100: Jar 4
+    3300102: Sliced Cheese 1
+    3300104: Sliced Cheese 2
+    3300106: Soda Box 1
+    3300108: Soda Box 2
+    3300110: Yogurt 1
+    3300112: Yogurt 2
+    3300114: Yogurt 3
+    3300116: Yogurt 4
+    4300000: Freezer
+    4300002: Fridge Door
+    4300004: Fridge
+    4300006: Freezer Door
+    4300008: Fridge Shelf
+    4300010: Fridge Shelf 2
+    4300012: Fridge Shelf 3
+    4300014: Fridge drawer 2
+    4300016: Fridge Drawer 1
+    4300018: Egg Tray
+    4300020: Egg 11
+    4300022: Egg 10
+    4300024: Egg 7
+    4300026: Egg 6
+    4300028: Egg 3
+    4300030: Egg1
+    4300032: Egg 2
+    4300034: Egg 4
+    4300036: Egg 5
+    4300038: Egg 8
+    4300040: Egg 9
+    4300042: Egg 12
+    4300044: Bottle 4
+    4300046: Bottle 5
+    4300048: Bottle 6
+    4300050: Bottle 7
+    4300052: Bottle 3
+    4300054: Bottle 2
+    4300056: Bottle 1
+    4300058: Butter 1
+    4300060: Butter 2
+    4300062: 3 Liter 1
+    4300064: 3 Liter 2
+    4300066: Apple 5
+    4300068: Apple 4
+    4300070: Apple 6
+    4300072: Apple 1
+    4300074: Apple 2
+    4300076: Apple 3
+    4300078: Sliced Cheese 1
+    4300080: Sliced Cheese 2
+    4300082: Yogurt 2
+    4300084: Yogurt 1
+    4300086: Yogurt 4
+    4300088: Yogurt 3
+    4300090: Jar 2
+    4300092: Jar 1
+    4300094: ChickenR
+    4300096: Chicken Leg 1R
+    4300098: Chicken Leg 2R
+    4300100: Jar 3
+    4300102: Jar 4
+    4300104: Soda Box 2
+    4300106: Soda Box 1
+    4300108: Cheese
+    4300110: Chicken Leg 1F
+    4300112: Chicken F
+    4300114: Chicken Leg 2F
+    4300116: Frozen Box
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  userData: 

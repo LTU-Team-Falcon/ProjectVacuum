@@ -1,0 +1,111 @@
+fileFormatVersion: 2
+guid: 376266db789cfad468098732ddff3d1c
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Kitchen_Cupboard_SinkSection01
+    100004: Kitchen_Cupboard_SinkSection_Door01
+    100006: Kitchen_Cupboard_SinkSection_Door02
+    100008: Kitchen_Cupboard_SinkSection_Drawer01
+    100010: Kitchen_Cupboard_SinkSection_Drawer02
+    100012: Kitchen_Cupboard_SinkSection_Faucet01
+    100014: Kitchen_Cupboard_SinkSection_Handle01
+    100016: Kitchen_Cupboard_SinkSection_Handle02
+    100018: Kitchen_Cupboard_SinkSection_Sink01
+    100020: Kitchen_Cupboard_SinkSection_Surface01
+    400000: //RootNode
+    400002: Kitchen_Cupboard_SinkSection01
+    400004: Kitchen_Cupboard_SinkSection_Door01
+    400006: Kitchen_Cupboard_SinkSection_Door02
+    400008: Kitchen_Cupboard_SinkSection_Drawer01
+    400010: Kitchen_Cupboard_SinkSection_Drawer02
+    400012: Kitchen_Cupboard_SinkSection_Faucet01
+    400014: Kitchen_Cupboard_SinkSection_Handle01
+    400016: Kitchen_Cupboard_SinkSection_Handle02
+    400018: Kitchen_Cupboard_SinkSection_Sink01
+    400020: Kitchen_Cupboard_SinkSection_Surface01
+    2300000: Kitchen_Cupboard_SinkSection01
+    2300002: Kitchen_Cupboard_SinkSection_Door01
+    2300004: Kitchen_Cupboard_SinkSection_Door02
+    2300006: Kitchen_Cupboard_SinkSection_Drawer01
+    2300008: Kitchen_Cupboard_SinkSection_Drawer02
+    2300010: Kitchen_Cupboard_SinkSection_Faucet01
+    2300012: Kitchen_Cupboard_SinkSection_Handle01
+    2300014: Kitchen_Cupboard_SinkSection_Handle02
+    2300016: Kitchen_Cupboard_SinkSection_Sink01
+    2300018: Kitchen_Cupboard_SinkSection_Surface01
+    3300000: Kitchen_Cupboard_SinkSection01
+    3300002: Kitchen_Cupboard_SinkSection_Door01
+    3300004: Kitchen_Cupboard_SinkSection_Door02
+    3300006: Kitchen_Cupboard_SinkSection_Drawer01
+    3300008: Kitchen_Cupboard_SinkSection_Drawer02
+    3300010: Kitchen_Cupboard_SinkSection_Faucet01
+    3300012: Kitchen_Cupboard_SinkSection_Handle01
+    3300014: Kitchen_Cupboard_SinkSection_Handle02
+    3300016: Kitchen_Cupboard_SinkSection_Sink01
+    3300018: Kitchen_Cupboard_SinkSection_Surface01
+    4300000: Kitchen_Cupboard_SinkSection_Handle01
+    4300002: Kitchen_Cupboard_SinkSection_Handle02
+    4300004: Kitchen_Cupboard_SinkSection_Faucet01
+    4300006: Kitchen_Cupboard_SinkSection_Sink01
+    4300008: Kitchen_Cupboard_SinkSection_Door02
+    4300010: Kitchen_Cupboard_SinkSection_Drawer02
+    4300012: Kitchen_Cupboard_SinkSection_Drawer01
+    4300014: Kitchen_Cupboard_SinkSection_Door01
+    4300016: Kitchen_Cupboard_SinkSection01
+    4300018: Kitchen_Cupboard_SinkSection_Surface01
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
