@@ -22,12 +22,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Vertical
-    descriptiveName: Up
-    descriptiveNegativeName: Down
-    negativeButton: down
-    positiveButton: up
-    altNegativeButton: s
-    altPositiveButton: w
+    descriptiveName: Forward
+    descriptiveNegativeName: Backward
+    negativeButton: s
+    positiveButton: w
+    altNegativeButton: down
+    altPositiveButton: up
     gravity: 3
     dead: .00100000005
     sensitivity: 3
@@ -246,16 +246,16 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Pause
-    descriptiveName: pause
+    descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: p
+    positiveButton: joystick button 3
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
     dead: .00100000005
     sensitivity: 1000
-    snap: 1
+    snap: 0
     invert: 0
     type: 0
     axis: 0

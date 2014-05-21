@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: 4887d647fa6e5d54eac3718b59464b5b
+guid: 19317c2f785ecbd41aaac28c25a80e13
 ModelImporter:
-  serializedVersion: 15
+  serializedVersion: 16
   fileIDToRecycleName:
     100000: Game Controller
     100002: Game Controller001
@@ -77,4 +77,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
+  additionalBone: 0
   userData: 

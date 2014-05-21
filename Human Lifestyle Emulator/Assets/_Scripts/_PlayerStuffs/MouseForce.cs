@@ -41,7 +41,7 @@ public class MouseForce : MonoBehaviour {
 			
 			Vector3 relRot = new Vector3(rotationX, -rotationY, 0) - transform.localEulerAngles;
 			transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
-			rigidbody.AddTorque(relRot);
+			//rigidbody.AddTorque(relRot);
 			//Debug.Log("if 1");
 			//transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
 		}

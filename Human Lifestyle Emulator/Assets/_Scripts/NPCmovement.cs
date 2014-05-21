@@ -1,43 +1,88 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class NPCmovement : MonoBehaviour {
-	public Transform start;
-	public Transform Point2;
-	public Transform Point3;
-	public Transform Point4;
-	public Transform Point5;
-	public Transform Point6;
-	public Transform Point7;
+public class NPCMovement : MonoBehaviour {
+
+	public List<Transform> NodesToMove = new List<Transform>();
+
+	private SphereCollider col;
+	public int count;
+	private Transform NextNode;
 
 
+
+	void Awake()
+	{
+		col = GetComponent<SphereCollider>();
+		count = 0;
+	}
+	
 	// Use this for initialization
 	void Start () {
-
-		transform.position = start.position;
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (count == 100)
+		{
+			int num = NodesToMove.Count;
+			int node = Random.Range(0, num);
+
+			NextNode = NodesToMove[node];
+			Debug.Log(node);
+
+			
+		}
 	
+		if (count > 100)
+			Move();
 
-		if (transform.position == start.transform.position)
-		{
-			//toPoint();
-		}
+		if (count == 400)
+			count = 0;
 
-
+		count++;
 	}
-
-	void FixedUpdate()
+	
+	void Move ()
 	{
-		while (transform.position != Point2.position)
+		transform.position = Vector3.MoveTowards(transform.position,NextNode.transform.position,.05f);
+	}
+	
+	void OnTriggerStay(Collider other)
+	{
+		if (other.gameObject.tag == "Node")
 		{
-			transform.position = Vector3.MoveTowards(transform.position, Point2.position ,.1f);
-			Debug.Log("MOVE");
-		}
+			Vector3 direction = other.transform.position - transform.position;
+			RaycastHit hit;
 
+			if (Physics.Raycast(transform.position, direction.normalized, out hit, col.radius))
+			{
+				if ( hit.collider.gameObject.tag == "Node")
+				{
+					if (NodesToMove.Contains(other.transform))
+					{
+				
+					}
+					else
+					{
+						NodesToMove.Add(other.transform);
+					}
+				}
+			}
+		}
 	}
 
+	void OnTriggerExit(Collider other)
+	{
+		if (other.gameObject.tag == "Node")
+		{
+			NodesToMove.Remove(other.transform);
+			Debug.Log("removed");
+		}
+
+
+	}
 }

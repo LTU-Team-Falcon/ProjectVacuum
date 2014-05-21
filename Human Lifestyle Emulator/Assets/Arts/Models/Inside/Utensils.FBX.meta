@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 02274dc77317ea24c9b61e05cd1069ab
 ModelImporter:
-  serializedVersion: 15
+  serializedVersion: 16
   fileIDToRecycleName:
     100000: Box029
     100002: Box030
@@ -72,4 +72,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
+  additionalBone: 0
   userData: 

@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: 09ea78d2d3854ed4682aa8b48685d43c
+guid: 74a3f9b38b727774888cbbbe2862156b
 ModelImporter:
-  serializedVersion: 15
+  serializedVersion: 16
   fileIDToRecycleName:
     100000: //RootNode
     100002: Microwave Body
@@ -67,4 +67,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
+  additionalBone: 0
   userData: 

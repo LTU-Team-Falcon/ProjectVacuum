@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: 4416da88f56bcb1498bff237b4218690
+guid: f03754c0dec0c704887b3da8a1dc0639
 ModelImporter:
-  serializedVersion: 15
+  serializedVersion: 16
   fileIDToRecycleName:
     100000: //RootNode
     100002: Cabinet Drawer 1
@@ -92,4 +92,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
+  additionalBone: 0
   userData: 
