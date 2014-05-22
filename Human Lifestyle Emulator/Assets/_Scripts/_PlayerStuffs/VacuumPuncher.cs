@@ -17,19 +17,6 @@ public class VacuumPuncher : MonoBehaviour
 	public bool canPunchAgain = true;
 
 
-
-
-	// Use this for initialization
-	void Start () 
-	{
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		
-	}
-
 	public void initiatePunch()
 	{
 		canPunchAgain = false;
@@ -72,19 +59,7 @@ public class VacuumPuncher : MonoBehaviour
 			}
 
 			//never reaches here if its already been hit this punch
-			GetSucked colGetSucked = col.gameObject.GetComponent<GetSucked>();
-			float damageValue = vacController.vacSucker.suckPotential;
-
-			if(!isPunching) {	damageValue /= 3;	}
-			
-			
-			colGetSucked.damage += damageValue;
-			
-			
-			if(colGetSucked.damage >= colGetSucked.resistance)
-			{
-				colGetSucked.SplitFromParent();
-			}
+		//	GetSucked colGetSucked = col.gameObject.GetComponent<GetSucked>();
 		}
 	}
 

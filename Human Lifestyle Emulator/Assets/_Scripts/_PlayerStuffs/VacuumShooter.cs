@@ -47,7 +47,7 @@ public class VacuumShooter : MonoBehaviour
 
 			toShoot.AddComponent<GetScored>().gamemanager = gameManager;
 			GetSucked sucker = toShoot.GetComponent<GetSucked>();
-			sucker.UnLockRigid();
+			sucker.DroppedFromIntake();
 			Destroy(sucker);
 	
 			GameObject.FindObjectOfType<Score>().playerScore += 500;
