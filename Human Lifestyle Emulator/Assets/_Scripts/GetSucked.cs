@@ -14,119 +14,86 @@ public class GetSucked : MonoBehaviour
 
 	public bool isDebugging = false;
 	TextMesh debugTextMesh;
-	
+
+	[HideInInspector]
+	public bool canGetSucked = true;
+
 	[HideInInspector]
 	public Vector3 origScale;
 	[HideInInspector]
 	public float origSize;
-	[HideInInspector]
-	public float origHealth;
-	
+
 	private VacuumSucker vacuumSucker;
 	private Vector3 velocity;
 	private Vector3 force;
-	
-	[HideInInspector]
-	public bool canGetSucked = true;
-	
-	public float resistance = 0f; //strength to resist sucking
-	[HideInInspector]
-	public float health = 0f; //amount of punching it can withstand >> Goes with Damage
-	
-	private float realMass;//used to recreate the rigidbody if the rigidbody is destroyed
-	
-	public float size = 0f;//once it has 0 health; this determines how fast it shrinks in the intake;
-	
-	[HideInInspector]
-	public float damage = 0;
 
-	public List<float> debugList;
+	public float size = 0f;//once it has 0 health; this determines how fast it shrinks in the intake;
+
+
+
+	[HideInInspector]
+	public float health = 10f;
+
+	public List<float> debugList = new List<float>();
 	// Use this for initialization
 	void Start () 
 	{
-		realMass = rigidbody.mass;
 		reCalcVar();
 
-		if(transform.parent.gameObject.GetComponent<GetSucked>() != null)
-		{//if its parents are suckable, it disables this one.
-			hasSuckyParent = true;
-			canGetSucked = false;
-			transform.parent.rigidbody.mass += this.rigidbody.mass;
-			Destroy(rigidbody);
-		}
-		
 		vacuumSucker = GameObject.FindGameObjectWithTag("Vacuum").GetComponent("VacuumSucker") as VacuumSucker;
 		gameObject.tag = "Suckable";
 		
 		origScale = transform.localScale;
 		origSize = size;
-		origHealth = health;
-	}
-	
-	public void SplitFromParent()
-	{ //is called when the object has recieved enough force to where it breaks off from its parent
-		if(hasSuckyParent == true)
-		{
-			transform.parent = null;
-		}
-		gameObject.AddComponent<Rigidbody>().mass = realMass;
-		hasSuckyParent = false;
-		canGetSucked = true;
-		this.UnLockRigid();
 	}
 	
 	public void reCalcVar()
 	{
 		if(!(size > 0)) size = rigidbody.mass;//temp 
-		if(!(resistance > 0)) resistance = rigidbody.mass*2;
-		if(!(health > 0)) health = resistance;
 	}
 	
 	// Update is called once per physics frame
 	void FixedUpdate ()
 	{//determines the force withwhich it is pulled towards the sucker.
-		if(canGetSucked)
-		{	
-			if(damage > 0) {	damage -= 0.3f;	}//regenerates a little bit of health every update if its not being sucked currently
-
-			Vector3 relVec = rigidbody.ClosestPointOnBounds(vacuumSucker.transform.position) - vacuumSucker.transform.position;
-
-			float relDist2 = relVec.sqrMagnitude;
+		Vector3 force = new Vector3(0,0,0);
+		Vector3 relVec = rigidbody.ClosestPointOnBounds(vacuumSucker.transform.position) - vacuumSucker.transform.position;
+		
+		float relDist = relVec.sqrMagnitude;
+		
+		if(relDist < vacuumSucker.suckDist2)
+		{				
+			force = relVec.normalized*vacuumSucker.suckPow;
+			relDist = Mathf.Sqrt(relDist);
+			force *= Mathf.Pow((vacuumSucker.suckDist - relDist), vacuumSucker.suckFalloff)/(Mathf.Pow (vacuumSucker.suckDist, vacuumSucker.suckFalloff));
+			force *= Time.fixedDeltaTime*-60f;//multiplies it by the amount of time between each frame
 			
-			if(relDist2 < vacuumSucker.suckDist2)
-			{				
-				force = relVec.normalized*vacuumSucker.suckPow;
-				force *= (vacuumSucker.suckDist2 - relDist2)/vacuumSucker.suckDist2;
-				force *= Time.fixedDeltaTime*-50f;//multiplies it by the amount of time between each frame
-				
-				float AngleDot = Vector3.Dot(vacuumSucker.transform.forward, relVec);	
-				AngleDot /= 3f;
-				AngleDot = (Mathf.Clamp(AngleDot,-1,1f)+0.2f)/2f;
-				AngleDot += 0.3f;
-				force *= AngleDot; //AngleDot sets the "fulcrum" of the force
-				
-				rigidbody.AddForceAtPosition(force,relVec + vacuumSucker.transform.position);
-			}
+			float AngleDot = Vector3.Dot(vacuumSucker.transform.forward, relVec);	
+			AngleDot /= 3f;
+			AngleDot = (Mathf.Clamp(AngleDot,-1,1f)+0.2f)/2f;
+			AngleDot += 0.3f;
+			force *= AngleDot; //AngleDot sets the "fulcrum" of the force
+			
+			rigidbody.AddForceAtPosition(force,relVec + vacuumSucker.transform.position);
 		}
 	}
-	
-	
 
-	public void LockRigid()
+	public void AddedToIntake()
 	{
 		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 		rigidbody.isKinematic = true;
+		canGetSucked = false;
 	}
-	
-	public void FreezeRigid()
-	{
-		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-	}
-	
-	public void UnLockRigid()
+
+	public void DroppedFromIntake()
 	{
 		rigidbody.constraints = RigidbodyConstraints.None;
 		rigidbody.isKinematic = false;
+		canGetSucked = true;
+
+		transform.localScale = origScale;
+		size = origSize;
+		health = 10;
+
 	}
 	
 	

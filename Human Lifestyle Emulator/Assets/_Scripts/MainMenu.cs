@@ -11,8 +11,8 @@ public class MainMenu : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		spotty = GameObject.FindGameObjectWithTag("Light").light;
-		idealIntensity = spotty.intensity;
+		//spotty = GameObject.FindGameObjectWithTag("Light").light;
+		//idealIntensity = spotty.intensity;
 		//spotty.intensity = 0;
 	}
  
