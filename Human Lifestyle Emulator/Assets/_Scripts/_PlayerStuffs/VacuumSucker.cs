@@ -13,9 +13,7 @@ public class VacuumSucker : MonoBehaviour
 	
 	public float suckPotential;
 	public float maxSuckPotential;
-	
-	public float maxSuckDist;
-	
+
 	public float suckPow = 0f;
 	public float suckFalloff = 0f;
 	public float suckDist = 100f;
