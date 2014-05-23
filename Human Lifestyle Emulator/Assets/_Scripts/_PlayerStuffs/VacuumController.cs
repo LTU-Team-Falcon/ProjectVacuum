@@ -116,6 +116,7 @@ public class VacuumController : MonoBehaviour
 		}
 		else
 		{
+
 			if(Input.GetMouseButtonUp(1))
 			{
 				vacSucker.isSucking = true;

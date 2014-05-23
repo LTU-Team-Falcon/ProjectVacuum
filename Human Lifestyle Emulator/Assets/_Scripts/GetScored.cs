@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -12,7 +12,7 @@ public class GetScored : MonoBehaviour
 	public Score score;
 	public GameObject link;
 	public float distance = 100000;
-//	private float oldDistance = 100000;
+	private float oldDistance = 100000;
 
 	private bool hasRigid = true;
 	private bool hasMoved = true;

@@ -8,38 +8,38 @@ public class GetSucked : MonoBehaviour
 	public bool hasSuckyParent = false;
 	
 	public float attachForce; //not implemented yet.
-
+	
 	[HideInInspector]
 	public bool isShootingPhase = true;
-
+	
 	public bool isDebugging = false;
 	TextMesh debugTextMesh;
-
+	
 	[HideInInspector]
 	public bool canGetSucked = true;
-
+	
 	[HideInInspector]
 	public Vector3 origScale;
 	[HideInInspector]
 	public float origSize;
-
+	
 	private VacuumSucker vacuumSucker;
 	private Vector3 velocity;
 	private Vector3 force;
-
+	
 	public float size = 0f;//once it has 0 health; this determines how fast it shrinks in the intake;
-
-
-
+	
+	
+	
 	[HideInInspector]
 	public float health = 10f;
-
+	
 	public List<float> debugList = new List<float>();
 	// Use this for initialization
 	void Start () 
 	{
 		reCalcVar();
-
+		
 		vacuumSucker = GameObject.FindGameObjectWithTag("Vacuum").GetComponent("VacuumSucker") as VacuumSucker;
 		gameObject.tag = "Suckable";
 		
@@ -76,24 +76,24 @@ public class GetSucked : MonoBehaviour
 			rigidbody.AddForceAtPosition(force,relVec + vacuumSucker.transform.position);
 		}
 	}
-
+	
 	public void AddedToIntake()
 	{
 		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 		rigidbody.isKinematic = true;
 		canGetSucked = false;
 	}
-
+	
 	public void DroppedFromIntake()
 	{
 		rigidbody.constraints = RigidbodyConstraints.None;
 		rigidbody.isKinematic = false;
 		canGetSucked = true;
-
+		
 		transform.localScale = origScale;
 		size = origSize;
 		health = 10;
-
+		
 	}
 	
 	
