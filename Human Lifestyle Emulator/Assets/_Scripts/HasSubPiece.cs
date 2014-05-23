@@ -5,12 +5,6 @@ public class HasSubPiece : MonoBehaviour
 {
 	public float breakForce = 10f;
 	public float breakTorque = 10f;
-
-	public float Spring = 0f;
-	public float Bounce = 0f;
-	public float Damper = 0f;
-
-	CharacterJoint bond;
 	GameObject glue;
 	// Use this for initialization
 	void Start () 
@@ -29,17 +23,10 @@ public class HasSubPiece : MonoBehaviour
 
 	void AddJoint(int parIndex)
 	{
-		bond = glue.AddComponent<CharacterJoint>();
+		FixedJoint bond = glue.AddComponent<FixedJoint>();
 		bond.breakForce = this.breakForce;
 		bond.breakTorque = this.breakTorque;
 		bond.connectedBody = transform.GetChild(parIndex).gameObject.rigidbody;
-
-		SoftJointLimit softy = new SoftJointLimit();
-		softy.limit = 0f;
-		bond.swing1Limit = softy;
-		bond.swing2Limit = softy;
-		bond.highTwistLimit = softy;
-		bond.lowTwistLimit = softy;
 	}
 	
 	// Update is called once per frame
