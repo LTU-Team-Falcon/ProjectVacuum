@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class Score : MonoBehaviour 
-{
+public class Score : MonoBehaviour {
+
 	public int playerScore = 0;
 	public float speedMult = 1;
 	
@@ -32,4 +33,14 @@ public class Score : MonoBehaviour
 		if(texty.characterSize > idealCharSize) texty.characterSize -= 0.01f;
 		if(texty.characterSize < idealCharSize) texty.characterSize += 0.01f;
 	}
+	
 }
+
+
+
+
+
+
+
+
+
