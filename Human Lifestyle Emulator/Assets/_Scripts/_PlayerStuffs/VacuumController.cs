@@ -28,7 +28,7 @@ public class VacuumController : MonoBehaviour
 		
 		fixCollisions();
 				
-		camObj = playerObj.transform.FindChild("Main Camera").gameObject;
+//		camObj = playerObj.transform.FindChild("Main Camera").gameObject;
 		vacSucker = gameObject.GetComponentInChildren<VacuumSucker>();
 		vacShooter = gameObject.GetComponentInChildren<VacuumShooter>();
 		vacPuncher = gameObject.GetComponentInChildren<VacuumPuncher>();
@@ -49,7 +49,7 @@ public class VacuumController : MonoBehaviour
 		{
 			if(child.collider != null)
 			{
-				Physics.IgnoreCollision(playerObj.collider, child.collider);
+//				Physics.IgnoreCollision(playerObj.collider, child.collider);
 				childColliders.Add(child.collider);
 				//Physics.IgnoreCollision(this.collider, child.collider);
 			}

@@ -17,48 +17,81 @@ using System.Collections;
 [AddComponentMenu("Camera-Control/Mouse Look")]
 public class MouseForce : MonoBehaviour 
 {
-
-	public Transform turgetTransform;
-
 	public enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
 	public RotationAxes axes = RotationAxes.MouseXAndY;
-
-	public float POWA = 10f;
-
+	
 	public float sensitivityX = 15F;
 	public float sensitivityY = 15F;
 
-
-	public float minimumX = -360F;
-	public float maximumX = 360F;
-
-	public float minimumY = -60F;
 	public float maximumY = 60F;
 
+
+	public GameObject XObj;
+	public GameObject YObj;
+
+	HingeJoint Xhinge;
+	HingeJoint Yhinge;
 
 	GameObject camObj;
 	GameObject playaObj;
 
+	float springCounter = 0;
+
+
 	void Start ()
 	{
 		Screen.lockCursor = true;
-		Screen.showCursor = true;
+		Screen.showCursor = false;
 
-		if(turgetTransform== null)
+		Xhinge = YObj.GetComponent<HingeJoint>();
+		Yhinge = XObj.GetComponent<HingeJoint>();
+
+		/*if(turgetTransform== null)
 		{
 			turgetTransform = GameObject.Find("Main Camera").transform;
-		}
+		}*/
 	}
 
 
 	void FixedUpdate ()
 	{
-		if (axes == RotationAxes.MouseXAndY)
+		float rotationX = Input.GetAxis("Mouse X") * sensitivityX;
+		
+		float rotationY = Input.GetAxis("Mouse Y") * sensitivityY;
+
+		Vector3 roty = new Vector3((-rotationY) , (rotationX) , 0);
+
+		JointMotor newMot = new JointMotor();
+		newMot.force = sensitivityX;
+		newMot.targetVelocity = -roty.x;
+		Xhinge.motor = newMot;
+
+		newMot.force = sensitivityY;
+		newMot.targetVelocity = -roty.y;
+		Yhinge.motor = newMot;
+	}
+
+	void LateUpdate()
+	{
+
+		//rigidbody.angularVelocity =  Vector3.Scale(rigidbody.angularVelocity, new Vector3(1,1,0));
+		//transform.localEulerAngles = Vector3.Scale(transform.localEulerAngles, new Vector3(1,1,0));
+
+/*		rigidbody.angularVelocity =  Vector3.Scale(rigidbody.angularVelocity, new Vector3(1,1,0));
+		transform.eulerAngles = Vector3.Scale(transform.eulerAngles, new Vector3(1,1,0));
+*/
+/*		print(rigidbody.angularVelocity);
+		print(transform.eulerAngles);
+*/	}
+}
+
+//Crap
+/*if (axes == RotationAxes.MouseXAndY)
 		{
 			Vector3 target = turgetTransform.eulerAngles;
 			if(target.x > 180)
 			{
-				target.x -= 360;
+				//target.x -= 360;
 			}
 
 			Vector3 cury = transform.eulerAngles;
@@ -69,9 +102,9 @@ public class MouseForce : MonoBehaviour
 			
 			if(cury.z != 0)
 			{
-				rigidbody.angularVelocity = Vector3.Scale(rigidbody.angularVelocity ,new Vector3(1,1,0));
+				//rigidbody.angularVelocity = Vector3.Scale(rigidbody.angularVelocity ,new Vector3(1,1,0));
 				
-				transform.eulerAngles = Vector3.Scale(transform.eulerAngles,new Vector3(1,1,0));
+				//transform.eulerAngles = Vector3.Scale(transform.eulerAngles,new Vector3(1,1,0));
 			}
 
 			float rotationX = Input.GetAxis("Mouse X") * sensitivityX;
@@ -93,7 +126,7 @@ public class MouseForce : MonoBehaviour
 			}*/
 
 
-			if(target.y < -180)
+/*			if(target.y < -180)
 			{
 				target.y += 360;
 			}
@@ -104,7 +137,7 @@ public class MouseForce : MonoBehaviour
 
 			Vector3 dify = new Vector3(cury.x - target.x, cury.y - target.y,0); //new Vector3(target.x - cury.x,target.y - cury.y,0);
 
-			if(dify.x < -180)
+/*			if(dify.x < -180)
 			{
 				dify.x += 360;
 			}
@@ -115,7 +148,7 @@ public class MouseForce : MonoBehaviour
 
 			float difyMag = dify.magnitude;
 			dify *= 0.02f;
-			Vector3 roty = new Vector3((rotationY) , (rotationX) , 0/* target.z - cury.z*/);
+			Vector3 roty = new Vector3((-rotationY) , (rotationX) , 0/* target.z - cury.z);
 
 			//Vector3 dify = new Vector3(cury.x - target.x, cury.y - target.y,0);//cury - target;//
 
@@ -154,5 +187,3 @@ public class MouseForce : MonoBehaviour
 			transform.localEulerAngles = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
 			Debug.Log("if 3");
 		}*/
-	}
-}
