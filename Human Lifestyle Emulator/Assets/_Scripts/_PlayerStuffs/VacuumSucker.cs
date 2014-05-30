@@ -13,9 +13,7 @@ public class VacuumSucker : MonoBehaviour
 	
 	public float suckPotential;
 	public float maxSuckPotential;
-	
-	public float maxSuckDist;
-	
+
 	public float suckPow = 0f;
 	public float suckFalloff = 0f;
 	public float suckDist = 100f;
@@ -35,7 +33,7 @@ public class VacuumSucker : MonoBehaviour
 	[HideInInspector]
 	public List<GameObject> intake = new List<GameObject>(0);
 	[HideInInspector]
-	public List<GameObject> SuckQueue = new List<GameObject>(0);
+	public List<GameObject> suckQueue = new List<GameObject>(0);
 	
 	public GameObject scorePartFab;
 	
@@ -98,11 +96,11 @@ public class VacuumSucker : MonoBehaviour
 					
 					if(getSuckedI.size < 0)
 					{ //queue object to be actually sucked up officially at the lateUpdate
-					SuckQueue.Add(i);
+					suckQueue.Add(i);
 					}
 				}
 				
-				foreach(GameObject i in SuckQueue)
+				foreach(GameObject i in suckQueue)
 				{ //removes objects from the intake that are queued to get sucked
 					intake.Remove(i);
 				}
@@ -115,7 +113,7 @@ public class VacuumSucker : MonoBehaviour
 	
 	void LateUpdate()
 	{
-		foreach(GameObject i in SuckQueue)
+		foreach(GameObject i in suckQueue)
 		{//Actually suck up the object and increase the intensity of the Vacuum sucker
 			intake.Remove(i);
 			suckPotential += 	i.rigidbody.mass * massToSuction * 2;
@@ -129,7 +127,7 @@ public class VacuumSucker : MonoBehaviour
 			GameObject scorepart = Instantiate(scorePartFab) as GameObject;
 			scorepart.transform.position = transform.position;
 		}
-		SuckQueue.Clear();
+		suckQueue.Clear();
 		
 		if(suckPow <= (suckPotential/2) && vacController.isOut)
 		{
@@ -165,7 +163,10 @@ public class VacuumSucker : MonoBehaviour
 	{ //checks if colliding object is ellidgable to get sucked into the vacuum and if it is, it adds it to the intake for further processing
 		if(this.isSucking && col.gameObject.tag == "Suckable" && col.gameObject.GetComponent<GetSucked>().canGetSucked)
 		{	//if the vacuum is sucking AND the colliding object is suckable AND EITHER the object is moving, or the object is super small; might remove that last part				if(col.rigidbody.velocity.sqrMagnitude > 0.5f || col.gameObject.GetComponent<GetSucked>().size == 1);
+			if(col.rigidbody.mass < suckPow)	
+			{
 				AddToIntake(col.gameObject);
+			}
 		}
 		/*else 
 		{

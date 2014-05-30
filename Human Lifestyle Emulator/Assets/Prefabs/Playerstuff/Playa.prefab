@@ -408,7 +408,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.7897987, y: 11.7497883, z: .0326498747}
+  m_LocalPosition: {x: 32.3795357, y: 9.56303215, z: -16.3967781}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400010}
@@ -947,12 +947,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27ca9fabd97fc1a48a8a27093b030d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turgetTransform: {fileID: 0}
   axes: 0
+  POWA: 10
   sensitivityX: 15
   sensitivityY: 15
   minimumX: -360
@@ -1002,16 +1004,16 @@ MonoBehaviour:
   playerObj: {fileID: 0}
   suckPotential: 3
   maxSuckPotential: 80
-  maxSuckDist: 0
+  suckPow: 1
+  suckFalloff: 0
   suckDist: 15
   suckDist2: 0
   isSucking: 1
-  suckPow: 1
   massToSuction: 0
   countToSuction: 0
   vacController: {fileID: 0}
   intake: []
-  hasSucked: []
+  suckQueue: []
   scorePartFab: {fileID: 100000, guid: 65ba52d89e37b714e8236ccbfe3ede93, type: 2}
 --- !u!114 &11400016
 MonoBehaviour:
@@ -1086,7 +1088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb1c1cdc4ef38e4b8f89a5e143649d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isShootingPhase: 1
+  isShootingPhase: 0
   totalSceneWeight: 0
   objectCount: 0
   DebugTextFab: {fileID: 100000, guid: 65ef8194b8c90664db759b896642740e, type: 2}

@@ -11,8 +11,8 @@ public class MainMenu : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		spotty = GameObject.FindGameObjectWithTag("Light").light;
-		idealIntensity = spotty.intensity;
+		//spotty = GameObject.FindGameObjectWithTag("Light").light;
+		//idealIntensity = spotty.intensity;
 		//spotty.intensity = 0;
 	}
  
@@ -42,7 +42,7 @@ public class MainMenu : MonoBehaviour
 					{
 						if(hit.collider.gameObject.name == "MenuStartLevel")
 						{
-							Application.LoadLevel("TestScene2");
+							Application.LoadLevel("TestScene");
 						}
 						else if(hit.collider.gameObject.name == "MenuQuitGame")
 						{

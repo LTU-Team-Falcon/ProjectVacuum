@@ -31,21 +31,10 @@ public class NPCMovement : MonoBehaviour {
 			int num = NodesToMove.Count;
 			int node = Random.Range(0, num);
 
-			for (int i = 0; i<num;i++)
-			{
-				Vector3 direction = NodesToMove[i].transform.position - transform.position;
-				RaycastHit hit;
-				
-				if (Physics.Raycast(transform.position, direction.normalized, out hit, col.radius))
-				{
-					if ( hit.collider.gameObject.tag != "Node")
-					{
-						NodesToMove.RemoveAt(i);
-					}
+			NextNode = NodesToMove[node];
+			Debug.Log(node);
 
-				}
-			}
-			NextNode = NodesToMove[node];	
+			
 		}
 	
 		if (count > 100)
@@ -91,9 +80,9 @@ public class NPCMovement : MonoBehaviour {
 		if (other.gameObject.tag == "Node")
 		{
 			NodesToMove.Remove(other.transform);
+			Debug.Log("removed");
 		}
+
+
 	}
-
-
-
 }

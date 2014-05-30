@@ -6,12 +6,11 @@ public class VacuumShooter : MonoBehaviour
 {
 	public List<string> StringsInBag = new List<string>();
 	public List<GameObject> ObjectsInQueue = new List<GameObject>();
-	public List<Transform> CurrentArea = new List<Transform>();
-	
+
 	public GameManager gameManager;
-	
+
 	public GameObject Pseudo;
-	
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -27,9 +26,9 @@ public class VacuumShooter : MonoBehaviour
 				isDone = true;
 			}
 		}
-		
+
 	}
-	
+
 	public void ShootObject()
 	{
 		if(StringsInBag.Count != 0)
@@ -39,26 +38,19 @@ public class VacuumShooter : MonoBehaviour
 			{
 				candidate = Resources.Load<GameObject>("Components/" + StringsInBag[0]);
 			}
-			
+
 			GameObject toShoot = Instantiate(candidate) as GameObject;
-			
+
 			toShoot.transform.position = transform.position +	transform.forward*3;
-			
+
 			StringsInBag.RemoveAt(0);
-			
+
 			toShoot.AddComponent<GetScored>().gamemanager = gameManager;
 			GetSucked sucker = toShoot.GetComponent<GetSucked>();
 			sucker.DroppedFromIntake();
 			Destroy(sucker);
-
-
-
-			GameObject ClosestRelated = CurrentArea.Find(candidate);
-			int Distance = Vector3.Distance(ClosestRelated.transform.position, candidate.transform.position);
-			Mathf.Round(Distance);
-			GameObject.FindObjectOfType<Score>().playerScore += Distance;
-
-			//GameObject.FindObjectOfType<Score>().playerScore += 500;
+	
+			GameObject.FindObjectOfType<Score>().playerScore += 500;
 			toShoot.rigidbody.AddExplosionForce(600 + toShoot.rigidbody.mass*500, transform.position, 10f);
 		}
 	}
@@ -66,17 +58,6 @@ public class VacuumShooter : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		
-	}
-
-	void OnTriggerEnter (Collider col)
-	{
-		//CurrentArea.Clear();
-		
-		if (col.gameObject.tag == "Area")
-		{
-			CurrentArea = col.GetComponent<ListingObjects>().ObjectsInRoom;
-		}
-		
+	
 	}
 }

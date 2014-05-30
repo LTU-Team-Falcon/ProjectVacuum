@@ -15,12 +15,19 @@ using System.Collections;
 /// - Add a MouseLook script to the camera.
 ///   -> Set the mouse look to use LookY. (You want the camera to tilt up and down like a head. The character already turns.)
 [AddComponentMenu("Camera-Control/Mouse Look")]
-public class MouseForce : MonoBehaviour {
+public class MouseForce : MonoBehaviour 
+{
+
+	public Transform turgetTransform;
 
 	public enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
 	public RotationAxes axes = RotationAxes.MouseXAndY;
+
+	public float POWA = 10f;
+
 	public float sensitivityX = 15F;
 	public float sensitivityY = 15F;
+
 
 	public float minimumX = -360F;
 	public float maximumX = 360F;
@@ -28,24 +35,113 @@ public class MouseForce : MonoBehaviour {
 	public float minimumY = -60F;
 	public float maximumY = 60F;
 
-	float rotationY = 0F;
 
-	void Update ()
+	GameObject camObj;
+	GameObject playaObj;
+
+	void Start ()
+	{
+		Screen.lockCursor = true;
+		Screen.showCursor = true;
+
+		if(turgetTransform== null)
+		{
+			turgetTransform = GameObject.Find("Main Camera").transform;
+		}
+	}
+
+
+	void FixedUpdate ()
 	{
 		if (axes == RotationAxes.MouseXAndY)
 		{
-			float rotationX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivityX;
+			Vector3 target = turgetTransform.eulerAngles;
+			if(target.x > 180)
+			{
+				target.x -= 360;
+			}
+
+			Vector3 cury = transform.eulerAngles;
+			if(cury.x > 180)
+			{
+				cury.x -= 360;
+			}
 			
-			rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
-			rotationY = Mathf.Clamp (rotationY, minimumY, maximumY);
-			
-			Vector3 relRot = new Vector3(rotationX, -rotationY, 0) - transform.localEulerAngles;
-			transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
-			//rigidbody.AddTorque(relRot);
-			//Debug.Log("if 1");
-			//transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
+			if(cury.z != 0)
+			{
+				rigidbody.angularVelocity = Vector3.Scale(rigidbody.angularVelocity ,new Vector3(1,1,0));
+				
+				transform.eulerAngles = Vector3.Scale(transform.eulerAngles,new Vector3(1,1,0));
+			}
+
+			float rotationX = Input.GetAxis("Mouse X") * sensitivityX;
+
+			float rotationY = Input.GetAxis("Mouse Y") * sensitivityY;
+
+
+			//Vector3 roty = new Vector3((-rotationY - target.x) , (rotationX - target.y) , 0);
+		
+
+
+		/*	if(cury.y < -180)
+			{
+				cury.y += 360;
+			}
+			else if(cury.y > 180)
+			{
+				cury.y -= 360;
+			}*/
+
+
+			if(target.y < -180)
+			{
+				target.y += 360;
+			}
+			else if(target.y > 180)
+			{
+				target.y -= 360;
+			}
+
+			Vector3 dify = new Vector3(cury.x - target.x, cury.y - target.y,0); //new Vector3(target.x - cury.x,target.y - cury.y,0);
+
+			if(dify.x < -180)
+			{
+				dify.x += 360;
+			}
+			else if(dify.x > 180)
+			{
+				dify.x -= 360;
+			}
+
+			float difyMag = dify.magnitude;
+			dify *= 0.02f;
+			Vector3 roty = new Vector3((rotationY) , (rotationX) , 0/* target.z - cury.z*/);
+
+			//Vector3 dify = new Vector3(cury.x - target.x, cury.y - target.y,0);//cury - target;//
+
+
+
+			float sensei = sensitivityX;
+			//testAxis1.transform.localEulerAngles += dify;
+
+			rigidbody.AddTorque(roty);
+
+	//		print("target:" + target + "  cury:" + cury);
+		
+		//	print("roty:" + roty);
+
+	//		print("dify:" + dify + "   difyMag:" + difyMag);
+
+
+
+			if(rigidbody.angularVelocity.magnitude > difyMag)
+			{
+				rigidbody.angularVelocity = rigidbody.angularVelocity.normalized * difyMag;
+			}
+
+
 		}
-		else if (axes == RotationAxes.MouseX)
+	/*	else if (axes == RotationAxes.MouseX)
 		{
 			transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityX, 0);
 			Debug.Log("if 2");
@@ -57,18 +153,6 @@ public class MouseForce : MonoBehaviour {
 			
 			transform.localEulerAngles = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
 			Debug.Log("if 3");
-		}
-	}
-	
-	void Start ()
-	{
-		Screen.lockCursor = true;
-		Screen.showCursor = true;
-		//rigidbody.centerOfMass = transform.localPosition;
-		//transform.position= rigidbody.worldCenterOfMass;
-		
-		// Make the rigid body not change rotation
-		//if (rigidbody)
-			//rigidbody.freezeRotation = true;
+		}*/
 	}
 }

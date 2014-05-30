@@ -32,10 +32,13 @@ public class VacuumController : MonoBehaviour
 		vacSucker = gameObject.GetComponentInChildren<VacuumSucker>();
 		vacShooter = gameObject.GetComponentInChildren<VacuumShooter>();
 		vacPuncher = gameObject.GetComponentInChildren<VacuumPuncher>();
+
 		vacPuncher.vacController = this;
 		vacSucker.vacController = this;
 		downRotation = transform.localEulerAngles;
 		defaultLocPos = transform.localPosition;
+
+		print("init");
 	}
 	
 	
@@ -46,8 +49,9 @@ public class VacuumController : MonoBehaviour
 		{
 			if(child.collider != null)
 			{
-//				Physics.IgnoreCollision(playerObj.collider, child.collider);
+				Physics.IgnoreCollision(playerObj.collider, child.collider);
 				childColliders.Add(child.collider);
+				//Physics.IgnoreCollision(this.collider, child.collider);
 			}
 		}
 		
@@ -57,26 +61,28 @@ public class VacuumController : MonoBehaviour
 			{
 				if(child1 != child2)
 				{
-//					Physics.IgnoreCollision(child1, child2);
+					Physics.IgnoreCollision(child1, child2);
 				}
 			}
 		}
 	}
+
+
 	//Update Called OncePerPhysicsFrame
 	void FixedUpdate() 
 	{
 		if(!isOut)
 		{	//hold the vaccum downwards more;
-			transform.localEulerAngles = downRotation;
+			//transform.localEulerAngles = downRotation;
 		}
-		else if(vacPuncher.isPunching)
+		/*else if(vacPuncher.isPunching)
 		{	//swing for the punch
 			transform.position += transform.forward * (1.5f - transform.localPosition.z) * 0.5f;
-		}
+		}*/
 		else
 		{	//if it is out and you arent punching; normal sucking deal
-			target = camObj.transform.position + camObj.transform.forward*2;
-			transform.LookAt(target);
+			//target = camObj.transform.position + camObj.transform.forward*2;
+			//transform.LookAt(target);
 		}
 	}
 
@@ -90,17 +96,17 @@ public class VacuumController : MonoBehaviour
 		{
 			if(Input.GetMouseButtonUp(1))
 			{
-				vacSucker.isSucking = true;
+/*				vacSucker.isSucking = true;
 				vacSucker.suckPow = vacSucker.suckPotential;
 				isOut = true;
-			}
+*/			}
 			
 			if(Input.GetMouseButton(1))
 			{
-				isOut = false;
+/*				isOut = false;
 				vacSucker.isSucking = false;
 				vacSucker.dropIntake();
-			}
+*/			}
 			else
 			{
 				isOut = true;
@@ -110,13 +116,12 @@ public class VacuumController : MonoBehaviour
 			{
 				if(isOut && !vacPuncher.isPunching && vacPuncher.canPunchAgain)
 				{
-					vacPuncher.initiatePunch();
+					//vacPuncher.initiatePunch();
 				}
 			}
 		}
 		else
 		{
-
 			if(Input.GetMouseButtonUp(1))
 			{
 				vacSucker.isSucking = true;

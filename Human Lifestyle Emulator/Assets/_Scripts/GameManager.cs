@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 		vacSucker = GameObject.FindObjectOfType<VacuumSucker>();
 		vacShooter = GameObject.FindObjectOfType<VacuumShooter>();
 		score = GameObject.FindObjectOfType<Score>();
-		Physics.IgnoreCollision(vacController.transform.FindChild("Body").FindChild("VacuumObject").gameObject.collider, gameObject.collider);
+		//Physics.IgnoreCollision(vacController.transform.FindChild("Body").FindChild("VacuumObject").gameObject.collider, gameObject.collider);
 		if(isShootingPhase)
 		{
 			shiftGameModes();

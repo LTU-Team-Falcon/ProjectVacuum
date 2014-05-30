@@ -6,6 +6,8 @@ public class HasSubPiece : MonoBehaviour
 	public float breakForce = 10f;
 	public float breakTorque = 10f;
 	GameObject glue;
+
+
 	// Use this for initialization
 	void Start () 
 	{
