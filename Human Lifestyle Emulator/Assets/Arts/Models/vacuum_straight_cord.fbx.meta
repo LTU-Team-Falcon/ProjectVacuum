@@ -40,7 +40,9 @@ ModelImporter:
     400032: wheel2InGame
     400034: wheelInGame
     2300000: polySurface1
+    2300002: //RootNode
     3300000: polySurface1
+    3300002: //RootNode
     4300000: polySurface1
     9500000: //RootNode
   materials:
