@@ -1,0 +1,106 @@
+fileFormatVersion: 2
+guid: d546a78be380d944db9b7edeb122b021
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Yard_AnyWhere_Tree_NoSwing_1_leaves00
+    100004: Yard_AnyWhere_Tree_NoSwing_1_leaves01
+    100006: Yard_AnyWhere_Tree_NoSwing_1_leaves02
+    100008: Yard_AnyWhere_Tree_NoSwing_1_leaves03
+    100010: Yard_AnyWhere_Tree_NoSwing_1_leaves04
+    100012: Yard_AnyWhere_Tree_NoSwing_1_leaves05
+    100014: Yard_AnyWhere_Tree_NoSwing_1_leaves06
+    100016: Yard_AnyWhere_Tree_NoSwing_1_leaves07
+    100018: Yard_AnyWhere_Tree_NoSwing_1_wood
+    400000: //RootNode
+    400002: Yard_AnyWhere_Tree_NoSwing_1_leaves00
+    400004: Yard_AnyWhere_Tree_NoSwing_1_leaves01
+    400006: Yard_AnyWhere_Tree_NoSwing_1_leaves02
+    400008: Yard_AnyWhere_Tree_NoSwing_1_leaves03
+    400010: Yard_AnyWhere_Tree_NoSwing_1_leaves04
+    400012: Yard_AnyWhere_Tree_NoSwing_1_leaves05
+    400014: Yard_AnyWhere_Tree_NoSwing_1_leaves06
+    400016: Yard_AnyWhere_Tree_NoSwing_1_leaves07
+    400018: Yard_AnyWhere_Tree_NoSwing_1_wood
+    2300000: Yard_AnyWhere_Tree_NoSwing_1_leaves00
+    2300002: Yard_AnyWhere_Tree_NoSwing_1_leaves01
+    2300004: Yard_AnyWhere_Tree_NoSwing_1_leaves02
+    2300006: Yard_AnyWhere_Tree_NoSwing_1_leaves03
+    2300008: Yard_AnyWhere_Tree_NoSwing_1_leaves04
+    2300010: Yard_AnyWhere_Tree_NoSwing_1_leaves05
+    2300012: Yard_AnyWhere_Tree_NoSwing_1_leaves06
+    2300014: Yard_AnyWhere_Tree_NoSwing_1_leaves07
+    2300016: Yard_AnyWhere_Tree_NoSwing_1_wood
+    3300000: Yard_AnyWhere_Tree_NoSwing_1_leaves00
+    3300002: Yard_AnyWhere_Tree_NoSwing_1_leaves01
+    3300004: Yard_AnyWhere_Tree_NoSwing_1_leaves02
+    3300006: Yard_AnyWhere_Tree_NoSwing_1_leaves03
+    3300008: Yard_AnyWhere_Tree_NoSwing_1_leaves04
+    3300010: Yard_AnyWhere_Tree_NoSwing_1_leaves05
+    3300012: Yard_AnyWhere_Tree_NoSwing_1_leaves06
+    3300014: Yard_AnyWhere_Tree_NoSwing_1_leaves07
+    3300016: Yard_AnyWhere_Tree_NoSwing_1_wood
+    4300000: Yard_AnyWhere_Tree_NoSwing_1_leaves05
+    4300002: Yard_AnyWhere_Tree_NoSwing_1_leaves00
+    4300004: Yard_AnyWhere_Tree_NoSwing_1_leaves06
+    4300006: Yard_AnyWhere_Tree_NoSwing_1_leaves01
+    4300008: Yard_AnyWhere_Tree_NoSwing_1_leaves07
+    4300010: Yard_AnyWhere_Tree_NoSwing_1_leaves04
+    4300012: Yard_AnyWhere_Tree_NoSwing_1_leaves03
+    4300014: Yard_AnyWhere_Tree_NoSwing_1_leaves02
+    4300016: Yard_AnyWhere_Tree_NoSwing_1_wood
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
