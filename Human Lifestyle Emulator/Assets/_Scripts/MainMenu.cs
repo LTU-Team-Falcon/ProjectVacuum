@@ -42,7 +42,7 @@ public class MainMenu : MonoBehaviour
 					{
 						if(hit.collider.gameObject.name == "MenuStartLevel")
 						{
-							Application.LoadLevel("TestScene");
+							Application.LoadLevel(1);
 						}
 						else if(hit.collider.gameObject.name == "MenuQuitGame")
 						{

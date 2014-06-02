@@ -6,12 +6,9 @@ public class VacuumShooter : MonoBehaviour
 {
 	public List<string> StringsInBag = new List<string>();
 	public List<GameObject> ObjectsInQueue = new List<GameObject>();
-<<<<<<< .mine
 	public List<GameObject> CurrentArea = new List<GameObject>();
 	
-=======
 
->>>>>>> .r115
 	public GameManager gameManager;
 
 	public GameObject Pseudo;
@@ -54,8 +51,6 @@ public class VacuumShooter : MonoBehaviour
 			GetSucked sucker = toShoot.GetComponent<GetSucked>();
 			sucker.DroppedFromIntake();
 			Destroy(sucker);
-<<<<<<< .mine
-
 
 
 
@@ -64,10 +59,8 @@ public class VacuumShooter : MonoBehaviour
 			GameObject.FindObjectOfType<Score>().playerScore += Distance2;
 
 			//GameObject.FindObjectOfType<Score>().playerScore += 500;
-=======
 	
 			GameObject.FindObjectOfType<Score>().playerScore += 500;
->>>>>>> .r115
 			toShoot.rigidbody.AddExplosionForce(600 + toShoot.rigidbody.mass*500, transform.position, 10f);
 		}
 	}

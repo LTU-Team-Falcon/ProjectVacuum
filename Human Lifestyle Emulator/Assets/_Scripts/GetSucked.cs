@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class GetSucked : MonoBehaviour 
 {
+	public bool isBox = false;
 	[HideInInspector]
 	public bool hasSuckyParent = false;
 	
@@ -51,7 +52,22 @@ public class GetSucked : MonoBehaviour
 		
 		if(this.collider == null)
 		{
-			gameObject.AddComponent<MeshCollider>();
+			if(isBox)
+			{
+				gameObject.AddComponent<BoxCollider>();
+			}
+			else
+			{
+				gameObject.AddComponent<MeshCollider>();
+			}
+
+			if(this.collider == null)
+			{
+				GameObject gammy = (GameObject)Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube),this.transform.position,this.transform.rotation);
+				gammy.transform.localScale *= 10f;
+				gammy.renderer.material = null;
+				Destroy(this.gameObject);
+			}
 		}
 	}
 
