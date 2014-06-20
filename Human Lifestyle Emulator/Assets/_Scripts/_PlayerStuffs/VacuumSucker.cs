@@ -44,11 +44,12 @@ public class VacuumSucker : MonoBehaviour
 		suckDist2 = suckDist * suckDist;
 
 		vacController = transform.parent.gameObject.GetComponent<VacuumController>();
-		this.playerObj = GameObject.FindGameObjectWithTag("Player");
+		this.playerObj = transform.parent.parent.FindChild ("Player").gameObject;
 		vacController.playerObj = this.playerObj;
-		playerObj.GetComponentInChildren<GameManager>().findTotalSceneWeight();
-		massToSuction = (float)((maxSuckPotential - suckPotential)/playerObj.GetComponentInChildren<GameManager>().totalSceneWeight);
-		countToSuction = (float)((maxSuckPotential - suckPotential)/(float)playerObj.GetComponentInChildren<GameManager>().objectCount);
+		GameManager gamemanage = GameObject.FindObjectOfType<GameManager> ();
+		gamemanage.findTotalSceneWeight ();
+		massToSuction = (float)((maxSuckPotential - suckPotential)/gamemanage.totalSceneWeight);
+		countToSuction = (float)((maxSuckPotential - suckPotential)/(float)gamemanage.objectCount);
 	}
 	
 	// Update is called once per physics frame
@@ -58,21 +59,6 @@ public class VacuumSucker : MonoBehaviour
 		
 		if(isSucking)
 		{
-/*				foreach(GameObject i in intake)
-				{ //reduces the power of the sucking dependent on the size and number of whatever objects are stucked
-					suckPow = (i.GetComponent<GetSucked>().resistance*0.5f); 				
-				}
-*/				
-			
-/*				if(suckPow <= 0f)
-				{ //#SPARKS checks to see if the objects in the intake are have plugged up the intake enough to "short circuite it" and shoot sparks
-					print("isOverloaded")	;	
-					this.isSucking = false;
-					vacController.vacPuncher.gameObject.GetComponent<ParticleSystem>().Play();
-
-					return;	
-				}*/
-				
 				foreach(GameObject i in intake)
 				{ //shrinks objects stuck in intake and then eventually sucks them up completely
 					GetSucked getSuckedI = i.GetComponent<GetSucked>();
@@ -116,7 +102,7 @@ public class VacuumSucker : MonoBehaviour
 		foreach(GameObject i in suckQueue)
 		{//Actually suck up the object and increase the intensity of the Vacuum sucker
 			intake.Remove(i);
-			suckPotential += 	i.rigidbody.mass * massToSuction * 3f;
+			suckPotential += 	i.rigidbody.mass * massToSuction *1f;
 			playerObj.GetComponent<GameManager>().inTheBag.Add(i);
 			i.SetActive(false);
 

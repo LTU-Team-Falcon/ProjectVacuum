@@ -103,11 +103,12 @@ public class GetSucked : MonoBehaviour
 			force *= Mathf.Pow((vacuumSucker.suckDist - relDist), vacuumSucker.suckFalloff)/(Mathf.Pow (vacuumSucker.suckDist, vacuumSucker.suckFalloff));
 			force *= Time.fixedDeltaTime*-60f;//multiplies it by the amount of time between each frame
 			
-			float AngleDot = Vector3.Dot(vacuumSucker.transform.forward, relVec);	
-			AngleDot /= 3f;
-			AngleDot = (Mathf.Clamp(AngleDot,-1,1f)+0.2f)/2f;
-			AngleDot += 0.3f;
-			force *= AngleDot; //AngleDot sets the "fulcrum" of the force
+			float AngleDot = Vector3.Dot(vacuumSucker.transform.forward.normalized, relVec.normalized);	
+			AngleDot -= 4f/6f;
+			AngleDot = Mathf.Max( AngleDot, 0) * 3f;
+			force *= AngleDot;
+			force = Vector3.Scale(force, new Vector3(1,5,1));//AngleDot sets the "fulcrum" of the force
+
 			
 			rigidbody.AddForceAtPosition(force,relVec + vacuumSucker.transform.position);
 		}

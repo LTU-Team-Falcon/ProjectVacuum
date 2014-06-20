@@ -37,16 +37,20 @@ public class NPC_AI : MonoBehaviour {
 
 		if (FoundClosest == true)
 		{
+			float dist = Vector3.Distance(transform.position,ClosestSuckable.transform.position) ;
+			if(dist > 5f)
+			{
+				transform.position += Vector3.Scale((ClosestSuckable.transform.position - transform.position), new Vector3(1,0,1)) * 0.7f*Time.deltaTime;
 
-			if(Vector3.Distance(transform.position,ClosestSuckable.transform.position) > 20)
-			{
-				transform.position = Vector3.MoveTowards(transform.position,ClosestSuckable.transform.position,.1f);
 				transform.LookAt(ClosestSuckable.transform.position);
+				transform.eulerAngles = Vector3.Scale(new Vector3(0,1,0), transform.eulerAngles);
 			}
-			else if (Vector3.Distance(transform.position,ClosestSuckable.transform.position) <= 20)
+			if (dist <= 20f)
 			{
 				transform.LookAt(ClosestSuckable.transform.position);
-				ClosestSuckable.transform.position = Vector3.MoveTowards(ClosestSuckable.transform.position,transform.position,.25f);
+				transform.eulerAngles = Vector3.Scale(new Vector3(0,1,0), transform.eulerAngles);
+
+				ClosestSuckable.rigidbody.AddForce( Vector3.Normalize( transform.position - ClosestSuckable.transform.position) * 30f * dist/10 + Vector3.Normalize( transform.position - ClosestSuckable.transform.position) * 20f);
 			}
 		}
 
