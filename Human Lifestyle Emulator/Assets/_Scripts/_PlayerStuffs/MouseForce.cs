@@ -55,9 +55,26 @@ public class MouseForce : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		float rotationX = Input.GetAxis("Mouse X") * sensitivityX;
-		
-		float rotationY = Input.GetAxis("Mouse Y") * sensitivityY;
+		float rotationX = 0;
+		float rotationY = 0;
+		if (gameObject.tag == "Player")
+		{
+			rotationX = Input.GetAxis("Mouse X") * sensitivityX;
+		}
+		else
+		{
+			rotationX = Input.GetAxis("Mouse X 2") * sensitivityX;
+		}
+
+
+		if (gameObject.tag == "Player")
+		{
+			rotationY = Input.GetAxis("Mouse Y") * sensitivityY;
+		}
+		else
+		{
+		    rotationY = Input.GetAxis("Mouse Y 2") * sensitivityY;
+		}
 
 		Vector3 roty = new Vector3((-rotationY) , (rotationX) , 0);
 
