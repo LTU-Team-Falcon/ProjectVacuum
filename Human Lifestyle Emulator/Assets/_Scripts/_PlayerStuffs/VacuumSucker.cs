@@ -147,12 +147,12 @@ public class VacuumSucker : MonoBehaviour
 	
 	void OnTriggerEnter(Collider col)
 	{ //checks if colliding object is ellidgable to get sucked into the vacuum and if it is, it adds it to the intake for further processing
-		if(this.isSucking && col.gameObject.tag == "Suckable" && col.gameObject.GetComponent<GetSucked>().canGetSucked)
+		if(this.isSucking && col.gameObject.tag == "Suckable")
 		{	//if the vacuum is sucking AND the colliding object is suckable AND EITHER the object is moving, or the object is super small; might remove that last part				if(col.rigidbody.velocity.sqrMagnitude > 0.5f || col.gameObject.GetComponent<GetSucked>().size == 1);
-			if(col.rigidbody.mass < suckPow)	
-			{
+			//if(col.rigidbody.mass < suckPow)	
+			//{
 				AddToIntake(col.gameObject);
-			}
+			//}
 		}
 		/*else 
 		{
