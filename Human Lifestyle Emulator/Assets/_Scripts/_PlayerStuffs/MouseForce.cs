@@ -61,9 +61,17 @@ public class MouseForce : MonoBehaviour
 		{
 			rotationX = Input.GetAxis("Mouse X") * sensitivityX;
 		}
-		else
+		else if (gameObject.tag == "Player2")
 		{
 			rotationX = Input.GetAxis("Mouse X 2") * sensitivityX;
+		}
+		else if (gameObject.tag == "Player3")
+		{
+			rotationX = Input.GetAxis("Mouse X 3") * sensitivityX;
+		}
+		else
+		{
+			rotationX = Input.GetAxis("Mouse X 4") * sensitivityX;
 		}
 
 
@@ -71,9 +79,17 @@ public class MouseForce : MonoBehaviour
 		{
 			rotationY = Input.GetAxis("Mouse Y") * sensitivityY;
 		}
-		else
+		else if (gameObject.tag == "Player2")
 		{
 		    rotationY = Input.GetAxis("Mouse Y 2") * sensitivityY;
+		}
+		else if (gameObject.tag == "Player3")
+		{
+			rotationY = Input.GetAxis("Mouse Y 3") * sensitivityY;
+		}
+		else
+		{
+			rotationY = Input.GetAxis("Mouse Y 4") * sensitivityY;
 		}
 
 		Vector3 roty = new Vector3((-rotationY) , (rotationX) , 0);

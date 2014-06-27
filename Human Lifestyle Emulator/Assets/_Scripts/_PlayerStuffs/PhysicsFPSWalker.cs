@@ -55,8 +55,10 @@ public class PhysicsFPSWalker : MonoBehaviour {
 				return Input.GetButton ("Jump");
 			else if (gameObject.tag == "Player2")
 				return Input.GetButton ("Jump 2");
-			else 
+			else if (gameObject.tag == "Player3")
 				return Input.GetButton ("Jump 3");
+			else 
+				return Input.GetButton ("Jump 4");
 			
 		}
 	}
@@ -69,8 +71,10 @@ public class PhysicsFPSWalker : MonoBehaviour {
 				return Input.GetAxis("Horizontal") * force;
 			else if (gameObject.tag == "Player2")
 				return Input.GetAxis("Horizontal 2") * force;
-			else
+			else if (gameObject.tag == "Player3")
 				return Input.GetAxis("Horizontal 3") * force;
+			else
+				return Input.GetAxis("Horizontal 4") * force;
 		} 
 	} 
 	public virtual float vertical
@@ -79,10 +83,12 @@ public class PhysicsFPSWalker : MonoBehaviour {
 		{
 			if (gameObject.tag == "Player")
 				return Input.GetAxis("Vertical") * force;
-			else if (gameObject.tag == "Player")
+			else if (gameObject.tag == "Player2")
 				return Input.GetAxis("Vertical 2") * force;
-			else 
+			else if (gameObject.tag == "Player3")
 				return Input.GetAxis("Vertical 3") * force;
+			else
+				return Input.GetAxis("Vertical 4") * force;
 		} 
 	}
 	
