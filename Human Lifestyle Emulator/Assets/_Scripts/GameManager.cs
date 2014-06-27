@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 	public float totalSceneWeight =0;
 	public int objectCount =0;
 	public GameObject DebugTextFab;
+	public float Damage;
+
 
 	public List<GameObject> holoList = new List<GameObject>();
 	
@@ -21,6 +23,7 @@ public class GameManager : MonoBehaviour
 	private VacuumShooter vacShooter;
 	private VacuumController vacController;
 	private Score score;
+
 
 	// Use this for initialization
 	void Start ()
@@ -38,6 +41,7 @@ public class GameManager : MonoBehaviour
 		}
 
 		vacShooter.gameManager = this;
+		Damage = 0;
 	}
 	
 	public void findTotalSceneWeight()
@@ -105,8 +109,6 @@ public class GameManager : MonoBehaviour
 		
 	}
 	
-	
-	
 	public void UnPause()
 	{
 		RenderSettings.fog = false;
@@ -134,6 +136,12 @@ public class GameManager : MonoBehaviour
 				UnPause();
 			}
 		}
+
+		if (transform.position.y < -5)
+		{
+			transform.position = new Vector3(0,15,0);
+		}
+
 	}
 
 	public void EndSucking()
@@ -164,5 +172,26 @@ public class GameManager : MonoBehaviour
 			string ID = "sucked" + j.ToString();
 			PlayerPrefs.SetString(ID, inTheBag[j].name);
 		}
+	}
+
+
+	void OnCollisionEnter (Collision col)
+	{
+
+		if (col.gameObject.tag == "Fired")
+		{
+			Vector3 ConPoint = col.contacts[0].point;
+			float power = col.rigidbody.mass * 5000 + (Damage * 100);
+
+			this.rigidbody.AddExplosionForce(power, col.transform.position, 1f, 0f);
+
+
+			print("Added force of " + power + " to " + this.gameObject);
+
+			Damage += col.rigidbody.mass * 1.5f;
+
+			col.gameObject.tag = "Suckable";
+		}
+
 	}
 }
