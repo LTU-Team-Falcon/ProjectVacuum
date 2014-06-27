@@ -342,7 +342,7 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 348265636}
-  m_Text: Human
+  m_Text: RoboTIC
   m_OffsetZ: 0
   m_CharacterSize: .0500000007
   m_LineSpacing: 1
@@ -740,7 +740,7 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 475695752}
-  m_Text: LifeStyle
+  m_Text: ROYALE
   m_OffsetZ: 0
   m_CharacterSize: .0500000007
   m_LineSpacing: 1
@@ -1996,7 +1996,7 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1804058294}
-  m_Text: Emulator
+  m_Text: 
   m_OffsetZ: 0
   m_CharacterSize: .0500000007
   m_LineSpacing: 1
