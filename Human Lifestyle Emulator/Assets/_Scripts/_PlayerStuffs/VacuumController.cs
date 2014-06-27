@@ -92,63 +92,57 @@ public class VacuumController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if(!isShootingPhase)
+		if(Input.GetMouseButtonUp(1))
 		{
-			if(Input.GetMouseButtonUp(1))
-			{
-/*				vacSucker.isSucking = true;
-				vacSucker.suckPow = vacSucker.suckPotential;
-				isOut = true;
-*/			}
-			
-			if(Input.GetMouseButton(1))
-			{
-/*				isOut = false;
-				vacSucker.isSucking = false;
-				vacSucker.dropIntake();
-*/			}
-			else
-			{
-				isOut = true;
-			}
-			
-			if(Input.GetMouseButtonDown(0))
-			{
-				if(isOut && !vacPuncher.isPunching && vacPuncher.canPunchAgain)
-				{
-					//vacPuncher.initiatePunch();
-				}
-			}
-		}
+/*			vacSucker.isSucking = true;
+			vacSucker.suckPow = vacSucker.suckPotential;
+			isOut = true;
+*/		}
+		
+		if(Input.GetMouseButton(1))
+		{
+/*			isOut = false;
+			vacSucker.isSucking = false;
+			vacSucker.dropIntake();
+*/		}
 		else
 		{
-			if(Input.GetMouseButtonUp(1))
+			isOut = true;
+		}
+		
+		if(Input.GetMouseButtonDown(0))
+		{
+			if(isOut && !vacPuncher.isPunching && vacPuncher.canPunchAgain)
 			{
-				vacSucker.isSucking = true;
-				vacSucker.suckPow = vacSucker.suckPotential;
-				isOut = true;
-			}
-			
-			if(Input.GetMouseButton(1))
-			{
-				isOut = false;
-				vacSucker.isSucking = false;
-				vacSucker.dropIntake();
-			}
-			else
-			{
-				isOut = true;
-			}
+				print("yep");
+				ShootObjects(); 
 
-			if(Input.GetMouseButton(0))
-			{
-				if(isOut && !vacPuncher.isPunching && vacPuncher.canPunchAgain)
-				{
-					vacPuncher.initiatePunch();
-					vacShooter.ShootObject();
-				}
+
 			}
 		}
+	}
+
+
+	void ShootObjects()
+	{
+		int children = vacSucker.actualSucker.transform.childCount;
+
+		if(children >0)
+		{
+			Transform projectile = vacSucker.actualSucker.transform.GetChild(0);
+			projectile.tag = "Fired";
+			projectile.parent = null;
+
+			projectile.transform.position += vacSucker.transform.forward;
+			projectile.tag = "Fired";
+			projectile.gameObject.SetActive(true);
+			projectile.collider.enabled = true;
+
+			projectile.GetComponent<GetSucked>().DroppedFromIntake();
+
+			projectile.rigidbody.velocity = vacSucker.transform.forward * 50f;
+		}
+
 	}
 	
 	

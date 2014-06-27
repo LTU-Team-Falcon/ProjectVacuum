@@ -15,7 +15,7 @@ public class Forcefield : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col)
 	{
-		if (col.gameObject.tag != "Suckable")
+		if (col.gameObject.tag != "Suckable" || col.gameObject.tag != "Fired")
 		{
 			Physics.IgnoreCollision(col.collider, collider);
 		}

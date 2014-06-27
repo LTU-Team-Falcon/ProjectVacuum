@@ -46,11 +46,6 @@ public class GetScored : MonoBehaviour
 					if(dist2 < holoComp.distance)
 					{
 						print("got Ere");
-						/*if(holoComp.link != null)
-						{
-							holoComp.link.hasMoved = true; //make sure new connection's old link is taken care of
-							holoComp.link.distance = 10000;
-						}*/
 
 
 						if(link!= null)
@@ -61,9 +56,6 @@ public class GetScored : MonoBehaviour
 
 						distance = dist2; // shift these values to be relative to new connection
 						link = holo;
-
-						//holoComp.link = this; //set the new holoposition to us
-						//holoComp.distance = distance;
 					}
 				}
 

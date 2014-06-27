@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class GetSucked : MonoBehaviour 
 {
+	float minVelocity = 1f;
+
 	public bool isBox = false;
 	[HideInInspector]
 	public bool hasSuckyParent = false;
@@ -87,32 +89,6 @@ public class GetSucked : MonoBehaviour
 	{
 		if(!(size > 0)) size = rigidbody.mass;//temp 
 	}
-	
-	// Update is called once per physics frame
-	void FixedUpdate ()
-	{//determines the force withwhich it is pulled towards the sucker.
-		Vector3 force = new Vector3(0,0,0);
-		Vector3 relVec = rigidbody.ClosestPointOnBounds(vacuumSucker.transform.position) - vacuumSucker.transform.position;
-		
-		float relDist = relVec.sqrMagnitude;
-		
-		if(relDist < vacuumSucker.suckDist2)
-		{				
-			force = relVec.normalized*vacuumSucker.suckPow;
-			relDist = Mathf.Sqrt(relDist);
-			force *= Mathf.Pow((vacuumSucker.suckDist - relDist), vacuumSucker.suckFalloff)/(Mathf.Pow (vacuumSucker.suckDist, vacuumSucker.suckFalloff));
-			force *= Time.fixedDeltaTime*-60f;//multiplies it by the amount of time between each frame
-			
-			float AngleDot = Vector3.Dot(vacuumSucker.transform.forward.normalized, relVec.normalized);	
-			AngleDot -= 4f/6f;
-			AngleDot = Mathf.Max( AngleDot, 0) * 3f;
-			force *= AngleDot;
-			force = Vector3.Scale(force, new Vector3(1,5,1));//AngleDot sets the "fulcrum" of the force
-
-			
-			rigidbody.AddForceAtPosition(force,relVec + vacuumSucker.transform.position);
-		}
-	}
 
 	public void AddedToIntake()
 	{
@@ -132,7 +108,21 @@ public class GetSucked : MonoBehaviour
 		health = 10;
 
 	}
-	
+
+
+	void Update()
+	{
+		if(this.tag == "Fired")
+		{
+			if(rigidbody.velocity.magnitude < minVelocity)
+			{
+				this.tag = "Suckable";
+			}
+		}
+	}
+
+
+
 	
 	
 	void OnGUI()

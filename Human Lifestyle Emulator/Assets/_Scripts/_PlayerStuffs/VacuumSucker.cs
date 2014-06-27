@@ -34,14 +34,18 @@ public class VacuumSucker : MonoBehaviour
 	public List<GameObject> intake = new List<GameObject>(0);
 	[HideInInspector]
 	public List<GameObject> suckQueue = new List<GameObject>(0);
-	
-	public GameObject scorePartFab;
+
+	public GameObject actualSucker;
 	
 	
 	// Use this for initialization
 	void Start ()
 	{
 		suckDist2 = suckDist * suckDist;
+		actualSucker = transform.GetChild(0).gameObject;
+
+		actualSucker.transform.localScale = Vector3.Scale(transform.GetChild(0).localScale, new Vector3(1,1,suckDist));
+		actualSucker.transform.localPosition = new Vector3(0,0,transform.GetChild(0).localScale.z*0.5f);
 
 		vacController = transform.parent.gameObject.GetComponent<VacuumController>();
 		this.playerObj = transform.parent.parent.FindChild ("Player").gameObject;
@@ -51,7 +55,9 @@ public class VacuumSucker : MonoBehaviour
 		massToSuction = (float)((maxSuckPotential - suckPotential)/gamemanage.totalSceneWeight);
 		countToSuction = (float)((maxSuckPotential - suckPotential)/(float)gamemanage.objectCount);
 	}
-	
+
+
+
 	// Update is called once per physics frame
 	void FixedUpdate () 
 	{
@@ -82,7 +88,7 @@ public class VacuumSucker : MonoBehaviour
 					
 					if(getSuckedI.size < 0)
 					{ //queue object to be actually sucked up officially at the lateUpdate
-					suckQueue.Add(i);
+						suckQueue.Add(i);
 					}
 				}
 				
@@ -102,31 +108,17 @@ public class VacuumSucker : MonoBehaviour
 		foreach(GameObject i in suckQueue)
 		{//Actually suck up the object and increase the intensity of the Vacuum sucker
 			intake.Remove(i);
-			suckPotential += 	i.rigidbody.mass * massToSuction *1f;
-			playerObj.GetComponent<GameManager>().inTheBag.Add(i);
 			i.SetActive(false);
-
-/*			playerScore += this.value;
-			texty.characterSize = 0.3f;
-*/
-			
-			GameObject scorepart = Instantiate(scorePartFab) as GameObject;
-			scorepart.transform.position = transform.position;
+			i.transform.parent = actualSucker.transform;
 		}
 		suckQueue.Clear();
-		
-		if(suckPow <= (suckPotential/2) && vacController.isOut)
-		{
-			if(!transform.parent.FindChild("Body").GetComponentInChildren<ParticleSystem>().isPlaying)
-			{//#SMOKES adds smoke if it be workin hard to suck something down
-				transform.parent.GetComponentInChildren<ParticleSystem>().Play();
-			}
-		}
 	}
+
 	
 	void AddToIntake(GameObject parGameObj)
 	{	//adds specified object to the stuck at intake list
 		parGameObj.transform.parent = transform;
+
 		parGameObj.GetComponent<GetSucked>().AddedToIntake();
 		parGameObj.collider.enabled = false;
 		intake.Add(parGameObj);
@@ -148,25 +140,9 @@ public class VacuumSucker : MonoBehaviour
 	void OnTriggerEnter(Collider col)
 	{ //checks if colliding object is ellidgable to get sucked into the vacuum and if it is, it adds it to the intake for further processing
 		if(this.isSucking && col.gameObject.tag == "Suckable")
-		{	//if the vacuum is sucking AND the colliding object is suckable AND EITHER the object is moving, or the object is super small; might remove that last part				if(col.rigidbody.velocity.sqrMagnitude > 0.5f || col.gameObject.GetComponent<GetSucked>().size == 1);
-			//if(col.rigidbody.mass < suckPow)	
-			//{
+		{	
 				AddToIntake(col.gameObject);
-			//}
 		}
-		/*else 
-		{
-			if(col.rigidbody)
-			{
-			//col.transform.parent.rigidbody.AddExplosionForce(10000-(col.transform.parent.rigidbody.mass*1000),transform.position,10f);
-			Debug.Log("EXPLOSION");
-			col.rigidbody.AddExplosionForce(10000-(col.rigidbody.mass*1000), transform.position, 10f);
-			}
-			else 
-			{
-				col.transform.parent.rigidbody.AddForce(100,100,100);
-			}
-		}*/
 	}
 
 }
