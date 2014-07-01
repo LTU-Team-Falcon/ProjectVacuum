@@ -30,7 +30,7 @@ GameObject:
   - 65: {fileID: 6500002}
   m_Layer: 0
   m_Name: SuckerTruely
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,7 +50,7 @@ GameObject:
   - 54: {fileID: 5400002}
   m_Layer: 0
   m_Name: VacuumObject
-  m_TagString: Untagged
+  m_TagString: Player4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,7 +105,7 @@ GameObject:
   - 114: {fileID: 11400020}
   m_Layer: 0
   m_Name: HandCube
-  m_TagString: Player
+  m_TagString: Player4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,7 +147,7 @@ GameObject:
   - 199: {fileID: 19900002}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,6 +166,7 @@ GameObject:
   - 81: {fileID: 8100000}
   - 45: {fileID: 4500000}
   - 114: {fileID: 11400008}
+  - 114: {fileID: 11400034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -240,7 +241,7 @@ GameObject:
   - 4: {fileID: 400024}
   m_Layer: 0
   m_Name: Playa
-  m_TagString: Player
+  m_TagString: Player4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -397,7 +398,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.91481751e-07, y: .292901754, z: 2.36083198}
+  m_LocalPosition: {x: 8.87222654e-07, y: .369835794, z: 2.32830095}
   m_LocalScale: {x: .633428633, y: .633428335, z: .633428395}
   m_Children:
   - {fileID: 400002}
@@ -431,7 +432,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100024}
   m_LocalRotation: {x: 0, y: -.812718034, z: 0, w: -.582657218}
-  m_LocalPosition: {x: 3.27514434, y: 1.27839661, z: 11.3134251}
+  m_LocalPosition: {x: 3.27514434, y: 1.97360611, z: 11.3134251}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400010}
@@ -925,7 +926,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100016}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!92 &9200000
 Behaviour:
   m_ObjectHideFlags: 1
@@ -1156,7 +1157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObj: {fileID: 0}
-  suckPotential: 70
+  suckPotential: 20
   maxSuckPotential: 100
   suckPow: 1
   suckFalloff: 0
@@ -1314,6 +1315,17 @@ MonoBehaviour:
   punchLength: .100000001
   isPunching: 0
   canPunchAgain: 1
+--- !u!114 &11400034
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fa6bbd6c583624abeb84a1bafbed84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
