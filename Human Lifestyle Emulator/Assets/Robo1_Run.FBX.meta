@@ -1,0 +1,140 @@
+fileFormatVersion: 2
+guid: f9759efd8a10e5442a46b7591026bb27
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Foot
+    100002: Head
+    100004: Left Arm Lower
+    100006: Left Arm Upper
+    100008: Left Leg Lower
+    100010: Left Leg Upper
+    100012: LH Down
+    100014: LH Up
+    100016: RH Lower
+    100018: RH Up
+    100020: Right Arm Lower
+    100022: Right Arm Upper
+    100024: Right Foot
+    100026: Right Leg Lower
+    100028: Right Leg Upper
+    100030: //RootNode
+    400000: Foot
+    400002: Head
+    400004: Left Arm Lower
+    400006: Left Arm Upper
+    400008: Left Leg Lower
+    400010: Left Leg Upper
+    400012: LH Down
+    400014: LH Up
+    400016: RH Lower
+    400018: RH Up
+    400020: Right Arm Lower
+    400022: Right Arm Upper
+    400024: Right Foot
+    400026: Right Leg Lower
+    400028: Right Leg Upper
+    400030: //RootNode
+    2300000: Foot
+    2300002: Head
+    2300004: Left Arm Lower
+    2300006: Left Arm Upper
+    2300008: Left Leg Lower
+    2300010: Left Leg Upper
+    2300012: LH Down
+    2300014: LH Up
+    2300016: RH Lower
+    2300018: RH Up
+    2300020: Right Arm Lower
+    2300022: Right Arm Upper
+    2300024: Right Foot
+    2300026: Right Leg Lower
+    2300028: Right Leg Upper
+    2300030: //RootNode
+    3300000: Foot
+    3300002: Head
+    3300004: Left Arm Lower
+    3300006: Left Arm Upper
+    3300008: Left Leg Lower
+    3300010: Left Leg Upper
+    3300012: LH Down
+    3300014: LH Up
+    3300016: RH Lower
+    3300018: RH Up
+    3300020: Right Arm Lower
+    3300022: Right Arm Upper
+    3300024: Right Foot
+    3300026: Right Leg Lower
+    3300028: Right Leg Upper
+    3300030: //RootNode
+    4300000: Body
+    4300002: Left Arm Upper
+    4300004: Left Arm Lower
+    4300006: LH Up
+    4300008: LH Down
+    4300010: Right Arm Upper
+    4300012: Right Arm Lower
+    4300014: RH Up
+    4300016: RH Lower
+    4300018: Head
+    4300020: Right Leg Upper
+    4300022: Right Leg Lower
+    4300024: Right Foot
+    4300026: Left Leg Upper
+    4300028: Left Leg Lower
+    4300030: Foot
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
