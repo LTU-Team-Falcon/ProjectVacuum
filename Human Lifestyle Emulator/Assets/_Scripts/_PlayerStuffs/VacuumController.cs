@@ -99,11 +99,11 @@ public class VacuumController : MonoBehaviour
 			gameManager.StartBeenPressed();
 		}
 
-		if(control.GetRightTrigger() > 0.3f)
+		if(control.GetRightTrigger() > 0.7f)
 		{
 			vacSucker.suckPow = 0;
 
-			ShootObjects( control.GetRightTrigger() * 50f ); 
+			ShootObjects( 50f ); 
 
 		}
 		else if(control.GetLeftTrigger() > 0f)
