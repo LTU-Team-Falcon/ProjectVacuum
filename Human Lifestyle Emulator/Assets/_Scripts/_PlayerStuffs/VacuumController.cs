@@ -27,7 +27,15 @@ public class VacuumController : MonoBehaviour
 		gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
 
 		playerObj = transform.parent.gameObject;
-		control = playerObj.GetComponent<XinputHandler>(); 
+		if(transform.parent.gameObject.GetComponent<XinputHandler>() != null)
+		{
+			control = transform.parent.gameObject.GetComponent<XinputHandler>();
+		}
+		else
+		{
+			control = (XinputHandler)transform.parent.gameObject.GetComponent<XinputKeyboard>();
+		}
+
 		fixCollisions();
 				
 //		camObj = playerObj.transform.FindChild("Main Camera").gameObject;

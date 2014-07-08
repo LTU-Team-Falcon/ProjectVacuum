@@ -43,7 +43,16 @@ public class MouseForce : MonoBehaviour
 
 	void Start ()
 	{
-		control = transform.parent.gameObject.GetComponent<XinputHandler>();
+		if(transform.parent.gameObject.GetComponent<XinputHandler>() != null)
+		{
+			control = transform.parent.gameObject.GetComponent<XinputHandler>();
+		}
+		else
+		{
+			control = (XinputHandler)transform.parent.gameObject.GetComponent<XinputKeyboard>();
+		}
+
+
 		Screen.lockCursor = true;
 		Screen.showCursor = false;
 

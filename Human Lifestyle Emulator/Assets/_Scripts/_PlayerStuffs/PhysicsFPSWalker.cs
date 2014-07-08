@@ -24,7 +24,14 @@ public class PhysicsFPSWalker : MonoBehaviour
 	
 	void Awake ()
 	{ 	// Don't let the Physics Engine rotate this physics object so it doesn't fall over when running
-		control = transform.parent.gameObject.GetComponent<XinputHandler>();
+		if(transform.parent.gameObject.GetComponent<XinputHandler>() != null)
+		{
+			control = transform.parent.gameObject.GetComponent<XinputHandler>();
+		}
+		else
+		{
+			control = (XinputHandler)transform.parent.gameObject.GetComponent<XinputKeyboard>();
+		}
 		rigidbody.freezeRotation = true;
 	}
 	
@@ -48,53 +55,6 @@ public class PhysicsFPSWalker : MonoBehaviour
 		}
 	}
 
-	
-	/*public virtual bool jump
-	{
-		get 
-		{
-			if (gameObject.tag == "Player")
-				return Input.GetButton ("Jump");
-			else if (gameObject.tag == "Player2")
-				return Input.GetButton ("Jump 2");
-			else if (gameObject.tag == "Player3")
-				return Input.GetButton ("Jump 3");
-			else 
-				return Input.GetButton ("Jump 4");
-			
-		}
-	}*/
-	
-/*
-	public virtual float horizontal
-	{
-		get
-		{
-			if (gameObject.tag == "Player")
-				return Input.GetAxis("Horizontal") * force;
-			else if (gameObject.tag == "Player2")
-				return Input.GetAxis("Horizontal 2") * force;
-			else if (gameObject.tag == "Player3")
-				return Input.GetAxis("Horizontal 3") * force;
-			else
-				return Input.GetAxis("Horizontal 4") * force;
-		} 
-	} 
-	public virtual float vertical
-	{
-		get
-		{
-			if (gameObject.tag == "Player")
-				return Input.GetAxis("Vertical") * force;
-			else if (gameObject.tag == "Player2")
-				return Input.GetAxis("Vertical 2") * force;
-			else if (gameObject.tag == "Player3")
-				return Input.GetAxis("Vertical 3") * force;
-			else
-				return Input.GetAxis("Vertical 4") * force;
-		} 
-	}*/
-	
 	//ToDo: make movement feel good.
 	void FixedUpdate ()
 	{	// This is called every physics frame
@@ -165,8 +125,6 @@ public class PhysicsFPSWalker : MonoBehaviour
 		}
 		else if(control.GetButton("LB") && dashLimit >= 77)
 		{
-			//Vector3 DashDirection = Vector3.Cross(transform.forward, Vector3.up) * -jumpSpeed + Vector3.up*jumpSpeed*0.5f;
-			//Vector3 DashDirection = new Vector3(control.GetLeftStick().y * 3f, 0.5f, control.GetLeftStick().x * 3f) * jumpSpeed;
 			Vector3 DashDirection = new Vector3(transform.forward.x, 0 , transform.forward.z) * control.GetLeftStick().y;	
 			DashDirection += new Vector3(transform.right.x, 0 , transform.right.z) * control.GetLeftStick().x;	
 			DashDirection *= 27f;

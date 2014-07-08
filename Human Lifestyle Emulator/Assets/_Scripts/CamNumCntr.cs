@@ -8,7 +8,16 @@ public class CamNumCntr : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		control = transform.parent.parent.gameObject.GetComponent<XinputHandler>();
+		if(transform.parent.gameObject.GetComponent<XinputHandler>() != null)
+		{
+			control = transform.parent.gameObject.GetComponent<XinputHandler>();
+		}
+		else
+		{
+			control = (XinputHandler)transform.parent.gameObject.GetComponent<XinputKeyboard>();
+		}
+
+
 		int PlayerNumber = control.indexNum + 1;//PlayerPrefs.GetInt("PlayerNum");
 		int numberOfPlayers = Input.GetJoystickNames().Length;
 		//Camera thisCam = gameObject.GetComponent<Camera>();
