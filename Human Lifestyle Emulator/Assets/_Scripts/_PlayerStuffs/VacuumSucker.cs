@@ -7,9 +7,7 @@ public class VacuumSucker : MonoBehaviour
 {
 	//[HideInInspector]
 	//public float maxFlyVelocity = 20f;
-	[HideInInspector]
-	public GameObject playerObj;
-	
+
 	
 	public float suckPotential;
 	public float maxSuckPotential;
@@ -20,8 +18,6 @@ public class VacuumSucker : MonoBehaviour
 	[HideInInspector]
 	public float suckDist2 = 1000f;
 
-	[HideInInspector]
-	public bool isSucking = true;
 	[HideInInspector]
 	public float massToSuction; // 3* (the difference between maxSuckPotenital and suckPotential) divided by the total number of objects in the scene
 	[HideInInspector]
@@ -48,22 +44,20 @@ public class VacuumSucker : MonoBehaviour
 		actualSucker.transform.localPosition = new Vector3(0,0,transform.GetChild(0).localScale.z*0.5f);
 
 		vacController = transform.parent.gameObject.GetComponent<VacuumController>();
-		this.playerObj = transform.parent.parent.FindChild ("Player").gameObject;
-		vacController.playerObj = this.playerObj;
+
 		GameManager gamemanage = GameObject.FindObjectOfType<GameManager> ();
-		gamemanage.findTotalSceneWeight ();
+/*		gamemanage.findTotalSceneWeight ();
 		massToSuction = (float)((maxSuckPotential - suckPotential)/gamemanage.totalSceneWeight);
 		countToSuction = (float)((maxSuckPotential - suckPotential)/(float)gamemanage.objectCount);
-	}
+*/	}
 
 
 
 	// Update is called once per physics frame
 	void FixedUpdate () 
 	{
-		suckPow = suckPotential;
-		
-		if(isSucking)
+
+		if(this.suckPow > 0f)
 		{
 				foreach(GameObject i in intake)
 				{ //shrinks objects stuck in intake and then eventually sucks them up completely
@@ -99,7 +93,7 @@ public class VacuumSucker : MonoBehaviour
 		}
 		else
 		{
-			suckPow = 0;
+			//this.dropIntake();
 		}
 	}
 	
@@ -139,7 +133,7 @@ public class VacuumSucker : MonoBehaviour
 	
 	void OnTriggerEnter(Collider col)
 	{ //checks if colliding object is ellidgable to get sucked into the vacuum and if it is, it adds it to the intake for further processing
-		if(this.isSucking && col.gameObject.tag == "Suckable")
+		if(this.suckPow > 0f && col.gameObject.tag == "Suckable")
 		{	
 				AddToIntake(col.gameObject);
 		}

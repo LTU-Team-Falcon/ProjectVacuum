@@ -3,55 +3,84 @@ using System.Collections;
 
 public class CamNumCntr : MonoBehaviour {
 
-
+	XinputHandler control;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
+		control = transform.parent.parent.gameObject.GetComponent<XinputHandler>();
+		int PlayerNumber = control.indexNum + 1;//PlayerPrefs.GetInt("PlayerNum");
+		int numberOfPlayers = Input.GetJoystickNames().Length;
+		//Camera thisCam = gameObject.GetComponent<Camera>();
 
-		int PlayerNumber = PlayerPrefs.GetInt("PlayerNum");
-
-
-		if (PlayerNumber == 1)
+		if(numberOfPlayers == 1)
 		{
-			GameObject.Find("Main Camera").camera.rect = new Rect(0,0,1,1);
-			GameObject.Find("Player2").SetActive(false);
-			GameObject.Find("Player3").SetActive(false);
-			GameObject.Find("Player4").SetActive(false);
+			if(PlayerNumber == 1)
+			{
+				camera.rect = new Rect(0,0,1,1);
+			}
+			else
+			{
+				transform.parent.parent.gameObject.SetActive(false);
+			}
 		}
-		else if(PlayerNumber == 2)
+		else if(numberOfPlayers == 2)
 		{
-			if (transform.parent.tag == "Player")
+			if(PlayerNumber == 1)
 			{
 				camera.rect = new Rect(0,.5f,1,1);
-				Debug.Log("doing Camera for" + transform.parent.tag);
 			}
-			else if (transform.parent.tag == "Player2")
+			else if(PlayerNumber == 2)
 			{
 				camera.rect = new Rect(0,-.5f,1,1);
-				Debug.Log("doing Camera for" + transform.parent.tag);
 			}
-
-			GameObject.Find("Player3").SetActive(false);
-			GameObject.Find("Player4").SetActive(false);
-
+			else
+			{
+				transform.parent.parent.gameObject.SetActive(false);
+			}
 		}
-		else if(PlayerNumber == 3)
+		else if(numberOfPlayers == 3)
 		{
-			if (transform.parent.tag == "Player")
+			if(PlayerNumber == 1)
 			{
-				camera.rect = new Rect(0,.5f,1,1);
+				camera.rect = new Rect(0,0.5f,1,1);
 			}
-			else if (transform.parent.tag == "Player2")
+			else if(PlayerNumber == 2)
 			{
-				camera.rect = new Rect(0,-.5f,.5f,1);
+				camera.rect = new Rect(0,-0.5f,0.5f,1);
 			}
-			else if (transform.parent.tag == "Player3")
+			else if(PlayerNumber == 3)
 			{
-				camera.rect = new Rect(.5f,-.5f,1,1);
+				camera.rect = new Rect(0.5f,-0.5f,0.5f,1);
 			}
-			GameObject.Find("Player4").SetActive(false);
+			else
+			{
+				transform.parent.parent.gameObject.SetActive(false);
+			}
 		}
-
+		else if(numberOfPlayers ==4)
+		{
+			if(PlayerNumber == 1)
+			{
+				camera.rect = new Rect(0, 0.5f, 0.5f,1);
+			}
+			else if(PlayerNumber == 2)
+			{
+				camera.rect = new Rect(0.5f,0.5f,0.5f,1);
+			}
+			else if(PlayerNumber == 3)
+			{
+				camera.rect = new Rect(0,-0.5f,0.5f,1);
+			}
+			else if(PlayerNumber == 4)
+			{
+				camera.rect = new Rect(0.5f,-0.5f,0.5f,1);
+			}
+			else
+			{
+				transform.parent.parent.gameObject.SetActive(false);
+			}
+		}
 	}
 	
 	// Update is called once per frame

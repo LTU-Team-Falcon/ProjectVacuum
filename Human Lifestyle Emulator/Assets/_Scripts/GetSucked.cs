@@ -78,7 +78,6 @@ public class GetSucked : MonoBehaviour
 	{
 		reCalcVar();
 
-		vacuumSucker = GameObject.FindGameObjectWithTag("Vacuum").GetComponent("VacuumSucker") as VacuumSucker;
 		gameObject.tag = "Suckable";
 
 		origScale = transform.localScale;
@@ -131,7 +130,7 @@ public class GetSucked : MonoBehaviour
 		{
 			if(this.isDebugging && debugTextMesh == null)
 			{
-				GameObject textObj = vacuumSucker.playerObj.GetComponent<GameManager>().createNewDebugTextObj();
+				GameObject textObj = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().createNewDebugTextObj();
 				textObj.transform.position = this.transform.position + Vector3.up * 1.5f;
 				textObj.transform.parent = this.transform;
 				

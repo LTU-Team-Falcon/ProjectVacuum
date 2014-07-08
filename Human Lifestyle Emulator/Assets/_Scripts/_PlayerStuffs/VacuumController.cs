@@ -18,14 +18,16 @@ public class VacuumController : MonoBehaviour
 	public VacuumPuncher vacPuncher;
 	public VacuumShooter vacShooter;
 
-	[HideInInspector]
-	public bool isShootingPhase = false;
-	
+	XinputHandler control;
+	GameManager gameManager;
+
 	// Use this for initialization
 	void Start () 
 	{
-		playerObj = GameObject.FindGameObjectWithTag("Player");
-		
+		gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+
+		playerObj = transform.parent.gameObject;
+		control = playerObj.GetComponent<XinputHandler>(); 
 		fixCollisions();
 				
 //		camObj = playerObj.transform.FindChild("Main Camera").gameObject;
@@ -92,43 +94,43 @@ public class VacuumController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if(Input.GetMouseButtonUp(1))
+		if(control.GetButtonDown("Start"))
 		{
-/*			vacSucker.isSucking = true;
-			vacSucker.suckPow = vacSucker.suckPotential;
-			isOut = true;
-*/		}
-		
-		if(Input.GetMouseButton(1))
+			gameManager.StartBeenPressed();
+		}
+
+		if(control.GetRightTrigger() > 0.3f)
 		{
-/*			isOut = false;
-			vacSucker.isSucking = false;
-			vacSucker.dropIntake();
-*/		}
+			vacSucker.suckPow = 0;
+
+			ShootObjects( control.GetRightTrigger() * 50f ); 
+
+		}
+		else if(control.GetLeftTrigger() > 0f)
+		{
+			vacSucker.suckPow = control.GetLeftTrigger() * vacSucker.suckPotential;
+			control.SetVibration(new Vector2(0, control.GetLeftTrigger()*0.4f ));
+		}
+		else if((control.GetLastLeftTrigger() > 0f && control.GetLeftTrigger() <= 0f) )
+		{
+			Invoke("HaltVibrations", 1f);
+		}
 		else
 		{
-			isOut = true;
-		}
-		
-		if(Input.GetMouseButtonDown(0))
-		{
-			if(isOut && !vacPuncher.isPunching && vacPuncher.canPunchAgain)
-			{
-				print("yep");
-				ShootObjects(); 
-
-
-			}
+			vacSucker.suckPow = 0;
 		}
 	}
 
 
-	void ShootObjects()
+	void ShootObjects(float parPower)
 	{
 		int children = vacSucker.actualSucker.transform.childCount;
 
 		if(children >0)
 		{
+			control.SetVibration(new Vector2(1,0.5f));
+			Invoke("HaltVibrations", 0.33f);
+
 			Transform projectile = vacSucker.actualSucker.transform.GetChild(0);
 			projectile.tag = "Fired";
 			projectile.parent = null;
@@ -140,12 +142,15 @@ public class VacuumController : MonoBehaviour
 
 			projectile.GetComponent<GetSucked>().DroppedFromIntake();
 
-			projectile.rigidbody.velocity = vacSucker.transform.forward * 50f;
+			projectile.rigidbody.velocity = vacSucker.transform.forward * parPower;
 		}
 
 	}
-	
-	
+
+	void HaltVibrations()
+	{
+		control.SetVibration(new Vector2(0,0));
+	}
 	void OnGUI()
 	{
 /*		string toGui = "SuckPow: " + vacSucker.suckPow;

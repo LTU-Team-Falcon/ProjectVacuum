@@ -17,6 +17,9 @@ using System.Collections;
 [AddComponentMenu("Camera-Control/Mouse Look")]
 public class MouseForce : MonoBehaviour 
 {
+
+	XinputHandler control;	
+
 	public enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
 	public RotationAxes axes = RotationAxes.MouseXAndY;
 	
@@ -40,6 +43,7 @@ public class MouseForce : MonoBehaviour
 
 	void Start ()
 	{
+		control = transform.parent.gameObject.GetComponent<XinputHandler>();
 		Screen.lockCursor = true;
 		Screen.showCursor = false;
 
@@ -55,42 +59,12 @@ public class MouseForce : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		float rotationX = 0;
-		float rotationY = 0;
-		if (gameObject.tag == "Player")
-		{
-			rotationX = Input.GetAxis("Mouse X") * sensitivityX;
-		}
-		else if (gameObject.tag == "Player2")
-		{
-			rotationX = Input.GetAxis("Mouse X 2") * sensitivityX;
-		}
-		else if (gameObject.tag == "Player3")
-		{
-			rotationX = Input.GetAxis("Mouse X 3") * sensitivityX;
-		}
-		else
-		{
-			rotationX = Input.GetAxis("Mouse X 4") * sensitivityX;
-		}
+		Vector2 rightStick = control.GetRightStick();
+		float aimAccel = Mathf.Abs(rightStick.magnitude);
+		rightStick *= aimAccel;
+		float rotationX = rightStick.x * sensitivityX;
+		float rotationY = rightStick.y * sensitivityX;;
 
-
-		if (gameObject.tag == "Player")
-		{
-			rotationY = Input.GetAxis("Mouse Y") * sensitivityY;
-		}
-		else if (gameObject.tag == "Player2")
-		{
-		    rotationY = Input.GetAxis("Mouse Y 2") * sensitivityY;
-		}
-		else if (gameObject.tag == "Player3")
-		{
-			rotationY = Input.GetAxis("Mouse Y 3") * sensitivityY;
-		}
-		else
-		{
-			rotationY = Input.GetAxis("Mouse Y 4") * sensitivityY;
-		}
 
 		Vector3 roty = new Vector3((-rotationY) , (rotationX) , 0);
 

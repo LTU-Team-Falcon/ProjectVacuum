@@ -5,7 +5,6 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour 
 {
-	public bool isShootingPhase = true;
 	public float totalSceneWeight =0;
 	public int objectCount =0;
 	public GameObject DebugTextFab;
@@ -19,9 +18,6 @@ public class GameManager : MonoBehaviour
 	public bool isPaused = false;
 	private bool canUnpause = true;
 
-	private VacuumSucker vacSucker;
-	private VacuumShooter vacShooter;
-	private VacuumController vacController;
 	private Score score;
 
 
@@ -29,18 +25,8 @@ public class GameManager : MonoBehaviour
 	void Start ()
 	{
 		findTotalSceneWeight();	
-		vacController = GameObject.FindObjectOfType<VacuumController>();
-		vacController.isShootingPhase = isShootingPhase;
-		vacSucker = GameObject.FindObjectOfType<VacuumSucker>();
-		vacShooter = GameObject.FindObjectOfType<VacuumShooter>();
 		score = GameObject.FindObjectOfType<Score>();
 		//Physics.IgnoreCollision(vacController.transform.FindChild("Body").FindChild("VacuumObject").gameObject.collider, gameObject.collider);
-		if(isShootingPhase)
-		{
-			shiftGameModes();
-		}
-
-		vacShooter.gameManager = this;
 		Damage = 0;
 	}
 	
@@ -87,9 +73,13 @@ public class GameManager : MonoBehaviour
 		Screen.lockCursor = false;
 		Screen.showCursor = true;
 		RenderSettings.fog = true;//ambientLight *= 0.01f;
+
+		GameObject[] pauses = GameObject.FindGameObjectsWithTag("Menu");
 		
-		transform.Find("PauseMenuObj").gameObject.SetActive(true); //SetActive(false);
-		
+		foreach(GameObject pauseMenu in pauses)
+		{
+			pauseMenu.SetActive(true);
+		}
 	}
 	
 	public void ForcePause()
@@ -98,12 +88,15 @@ public class GameManager : MonoBehaviour
 		Screen.lockCursor = false;
 		Screen.showCursor = true;
 		RenderSettings.fog = true;//ambientLight *= 0.01f;
-		
-		GameObject pauseMenu = transform.Find("PauseMenuObj").gameObject;
-		pauseMenu.SetActive(true);
-		pauseMenu.transform.FindChild("MenuContinue").gameObject.SetActive(false);
-		pauseMenu.transform.FindChild("MenuReload").gameObject.SetActive(false);
-		
+
+		GameObject[] pauses = GameObject.FindGameObjectsWithTag("Menu");
+
+		foreach(GameObject pauseMenu in pauses)
+		{
+			pauseMenu.SetActive(true);
+			pauseMenu.transform.FindChild("MenuContinue").gameObject.SetActive(false);
+			pauseMenu.transform.FindChild("MenuReload").gameObject.SetActive(false);
+		}
 		canUnpause = false;
 		 //SetActive(false);
 		
@@ -118,46 +111,30 @@ public class GameManager : MonoBehaviour
 		Screen.lockCursor = true;
 		Screen.showCursor = false;
 		
-		transform.Find("PauseMenuObj").gameObject.SetActive(false); //SetActive(false);
-		
+	//	transform.Find("PauseMenuObj").gameObject.SetActive(false); //SetActive(false);
+		GameObject[] pauses = GameObject.FindGameObjectsWithTag("Menu");
+
+		foreach(GameObject pauseMenu in pauses)
+		{
+			pauseMenu.SetActive(false);
+		}
 	}
 	
 	// Update is called once per frame
-	void Update () 
+
+
+	public void StartBeenPressed() 
 	{
-		if(Input.GetButtonDown("Pause") == true)
+		if(!isPaused)
 		{
-			if(!isPaused)
-			{
-				Pause();
-			}
-			else if(canUnpause)
-			{
-				UnPause();
-			}
+			Pause();
 		}
-
-		if (transform.position.y < -5)
+		else if(canUnpause)
 		{
-			transform.position = new Vector3(0,15,0);
+			UnPause();
 		}
-
 	}
 
-	public void EndSucking()
-	{
-		vacSucker.isSucking = false;
-		score.transform.localPosition = new Vector3(score.transform.localPosition.x,0,score.transform.localPosition.z);
-		score.texty.characterSize = 0.3f;
-		score.texty.text = "Score : " + score.playerScore;
-		SaveSuckedObjects();
-		Application.LoadLevel(2);
-	}
-
-	public void EndShooting()
-	{
-		Application.LoadLevel(0);
-	}
 
 	void SaveSuckedObjects()
 	{
@@ -177,8 +154,7 @@ public class GameManager : MonoBehaviour
 
 	void OnCollisionEnter (Collision col)
 	{
-
-		if (col.gameObject.tag == "Fired")
+/*		if (col.gameObject.tag == "Fired")
 		{
 			Vector3 ConPoint = col.contacts[0].point;
 			float power = col.rigidbody.mass * 5000 + (Damage * 100);
@@ -192,6 +168,6 @@ public class GameManager : MonoBehaviour
 
 			col.gameObject.tag = "Suckable";
 		}
-
+*/
 	}
 }

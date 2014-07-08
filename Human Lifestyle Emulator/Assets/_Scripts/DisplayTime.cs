@@ -28,14 +28,6 @@ public class DisplayTime : MonoBehaviour
 		{
 			texty.color = Color.black;
 			texty.text = "END OF PHASE";
-			if(gameManager.isShootingPhase)
-			{
-				gameManager.EndShooting();
-			}
-			else
-			{
-				gameManager.EndSucking();
-			}
 		}
 	}
 }

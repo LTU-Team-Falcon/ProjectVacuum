@@ -1,28 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PhysicsFPSWalker : MonoBehaviour {
-	
-	
+public class PhysicsFPSWalker : MonoBehaviour 
+{
+	XinputHandler control;	
+	GameManager gameManager;
 	
 	// These variables are for adjusting in the inspector how the object behaves 
-	public float maxSpeed  = 7;
+	public float maxSpeed  = 10;
 	public float force     = 8;
-	public float jumpSpeed = 5;
+	public float jumpSpeed = 7;
 	
 	// These variables are there for use by the script and don't need to be edited
 	private int state = 0;
 	private bool grounded = false;
-	private float jumpLimit = 0;
+	private float jumpLimit = 1000;
+	private float dashLimit = 1000;
 	
 	private float XZmovementMag;
-	
-	public float jumpTime = 0;
-	private float lastJump =0;
+
+	bool pressedJump = false;
+	bool pressedDash = false;
 	
 	void Awake ()
 	{ 	// Don't let the Physics Engine rotate this physics object so it doesn't fall over when running
-		
+		control = transform.parent.gameObject.GetComponent<XinputHandler>();
 		rigidbody.freezeRotation = true;
 	}
 	
@@ -45,9 +47,9 @@ public class PhysicsFPSWalker : MonoBehaviour {
 			state = 0;
 		}
 	}
+
 	
-	
-	public virtual bool jump
+	/*public virtual bool jump
 	{
 		get 
 		{
@@ -61,8 +63,9 @@ public class PhysicsFPSWalker : MonoBehaviour {
 				return Input.GetButton ("Jump 4");
 			
 		}
-	}
+	}*/
 	
+/*
 	public virtual float horizontal
 	{
 		get
@@ -90,7 +93,7 @@ public class PhysicsFPSWalker : MonoBehaviour {
 			else
 				return Input.GetAxis("Vertical 4") * force;
 		} 
-	}
+	}*/
 	
 	//ToDo: make movement feel good.
 	void FixedUpdate ()
@@ -104,7 +107,7 @@ public class PhysicsFPSWalker : MonoBehaviour {
 		float speedMod = (maxSpeed - XZmag)/(maxSpeed); //calculates a relative difference in the speed of the player
 
 
-		Vector2 mouseInput = new Vector2(horizontal,vertical);
+		Vector2 mouseInput = control.GetLeftStick()*force;
 		float horz = mouseInput.normalized.x * force;
 		float vert = mouseInput.normalized.y * force;
 				
@@ -151,16 +154,48 @@ public class PhysicsFPSWalker : MonoBehaviour {
 		
 		// This part is for jumping. I only let jump force be applied every 10 physics frames so
 		// the player can't somehow get a huge velocity due to multiple jumps in a very short time
-		if(jumpLimit < 10) jumpLimit ++;
-		if(lastJump < jumpTime) lastJump++;
-		
-		if(jump && (grounded || lastJump == jumpTime) && jumpLimit >= 10)
+		if(jumpLimit < 10000) jumpLimit ++;
+		if(dashLimit < 10000) dashLimit ++;
+
+
+		if(control.GetButton("A") && (grounded) && jumpLimit >= 10)
 		{
-			rigidbody.velocity = rigidbody.velocity + (Vector3.up * jumpSpeed);
+			rigidbody.velocity = rigidbody.velocity + (Vector3.up * jumpSpeed *2f);
 			jumpLimit = 0;
-			lastJump = 0;
+		}
+		else if(control.GetButton("LB") && dashLimit >= 77)
+		{
+			//Vector3 DashDirection = Vector3.Cross(transform.forward, Vector3.up) * -jumpSpeed + Vector3.up*jumpSpeed*0.5f;
+			//Vector3 DashDirection = new Vector3(control.GetLeftStick().y * 3f, 0.5f, control.GetLeftStick().x * 3f) * jumpSpeed;
+			Vector3 DashDirection = new Vector3(transform.forward.x, 0 , transform.forward.z) * control.GetLeftStick().y;	
+			DashDirection += new Vector3(transform.right.x, 0 , transform.right.z) * control.GetLeftStick().x;	
+			DashDirection *= 27f;
+			DashDirection += new Vector3(0, 3f, 0);
+
+			rigidbody.velocity = ( DashDirection );
+			dashLimit = 0;
+
+			if(!grounded)
+			{
+				dashLimit = -17f;
+			}
+		}
+		else if(control.GetButton("RB") && !grounded)
+		{
+			print("Brick!!");
+
+			rigidbody.velocity += Vector3.down;
 		}
 	}
+
+
+	void Update()
+	{
+		pressedJump = control.GetButtonDown("A");
+		pressedDash = control.GetButtonDown("LB");
+		
+	}
+
 	
 
 }
