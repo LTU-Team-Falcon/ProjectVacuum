@@ -19,10 +19,10 @@ public class Damage : MonoBehaviour {
 	void Update () {
 
 		//on death
-		if (transform.parent.transform.position.y < 10)
+		/*if (transform.parent.transform.position.y < 10)
 		{
 			OnDeath();
-		}
+		}*/
 
 	}
 	
