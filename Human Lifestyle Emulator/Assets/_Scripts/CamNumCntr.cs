@@ -12,10 +12,6 @@ public class CamNumCntr : MonoBehaviour {
 		{
 			control = transform.parent.gameObject.GetComponent<XinputHandler>();
 		}
-		else
-		{
-			control = (XinputHandler)transform.parent.gameObject.GetComponent<XinputKeyboard>();
-		}
 
 
 		int PlayerNumber = control.indexNum + 1;//PlayerPrefs.GetInt("PlayerNum");

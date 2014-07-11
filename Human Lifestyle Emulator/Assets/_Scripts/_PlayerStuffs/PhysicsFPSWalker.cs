@@ -28,10 +28,7 @@ public class PhysicsFPSWalker : MonoBehaviour
 		{
 			control = transform.parent.gameObject.GetComponent<XinputHandler>();
 		}
-		else
-		{
-			control = (XinputHandler)transform.parent.gameObject.GetComponent<XinputKeyboard>();
-		}
+
 		rigidbody.freezeRotation = true;
 	}
 	

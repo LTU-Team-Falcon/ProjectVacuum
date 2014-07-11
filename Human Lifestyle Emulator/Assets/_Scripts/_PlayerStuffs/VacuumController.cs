@@ -31,10 +31,7 @@ public class VacuumController : MonoBehaviour
 		{
 			control = transform.parent.gameObject.GetComponent<XinputHandler>();
 		}
-		else
-		{
-			control = (XinputHandler)transform.parent.gameObject.GetComponent<XinputKeyboard>();
-		}
+
 
 		fixCollisions();
 				
