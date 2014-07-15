@@ -137,7 +137,6 @@ public class PhysicsFPSWalker : MonoBehaviour
 		}
 		else if(control.GetButton("RB") && !grounded)
 		{
-			print("Brick!!");
 
 			rigidbody.velocity += Vector3.down;
 		}

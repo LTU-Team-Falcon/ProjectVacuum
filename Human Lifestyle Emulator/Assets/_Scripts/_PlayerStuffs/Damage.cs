@@ -3,26 +3,44 @@ using System.Collections;
 
 public class Damage : MonoBehaviour {
 	
-	private float damageCounter;
+	public float damageCounter;
+	public int Lives;
+	public bool IsDead;
+	public int RespawnCount;
 
-	private int Lives;
+
 	// Use this for initialization
 	void Start () {
 		
 		damageCounter = 1;
 		Lives = 3;
-		
+		IsDead = false;
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		//on death
-		/*if (transform.parent.transform.position.y < 10)
+		if (transform.position.y < -15)
 		{
+			IsDead = true;
 			OnDeath();
-		}*/
+		}
+
+		if (IsDead == true)
+		{
+			RespawnCount++;
+		}
+
+		if (RespawnCount == 150)
+		{
+			OnSpawn();
+		}
+
+		if (Lives == 0)
+		{
+			transform.parent.gameObject.SetActive(false);
+		}
 
 	}
 	
@@ -41,9 +59,17 @@ public class Damage : MonoBehaviour {
 
 	void OnDeath ()
 	{
-		Debug.Log("Dead");
-		transform.position = new Vector3(0,15,0);
-		//Lives--;
+		transform.renderer.enabled = false;
+		transform.position = new Vector3(0,20,0);
+		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+		Lives--;
+	}
 
+	void OnSpawn ()
+	{
+		transform.renderer.enabled = true;
+		IsDead = false;
+		rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+		RespawnCount = 0;
 	}
 }
