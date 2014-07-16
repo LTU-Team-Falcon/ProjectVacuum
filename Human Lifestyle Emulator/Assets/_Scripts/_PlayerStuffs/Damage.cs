@@ -8,6 +8,8 @@ public class Damage : MonoBehaviour {
 	public bool IsDead;
 	public int RespawnCount;
 
+	public GUIText DamageText;
+
 
 	// Use this for initialization
 	void Start () {
@@ -41,6 +43,8 @@ public class Damage : MonoBehaviour {
 		{
 			transform.parent.gameObject.SetActive(false);
 		}
+
+		DamageText.text = damageCounter + "%";
 
 	}
 	
