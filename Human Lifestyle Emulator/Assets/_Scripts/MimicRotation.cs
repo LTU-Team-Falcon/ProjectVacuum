@@ -4,7 +4,7 @@ using System.Collections;
 public class MimicRotation : MonoBehaviour {
 	public Transform turgetTransform;
 
-	public Vector3 mimicFactor = new Vector3(0,1,0);
+	public Vector3 mimicFactor = new Vector3(0,.75f,0);
 
 
 

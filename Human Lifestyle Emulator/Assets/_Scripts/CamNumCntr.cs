@@ -8,10 +8,10 @@ public class CamNumCntr : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		if(transform.parent.gameObject.GetComponent<XinputHandler>() != null)
-		{
-			control = transform.parent.gameObject.GetComponent<XinputHandler>();
-		}
+		//if(transform.parent.gameObject.GetComponent<XinputHandler>() != null)
+		//{
+			control = transform.parent.parent.gameObject.GetComponent<XinputHandler>();
+		//}
 
 
 		int PlayerNumber = control.indexNum + 1;//PlayerPrefs.GetInt("PlayerNum");

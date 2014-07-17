@@ -3,18 +3,20 @@ using System.Collections;
 
 public class Damage : MonoBehaviour {
 	
-	public float damageCounter;
-	public int Lives;
 	public bool IsDead;
-	public int RespawnCount;
 
+	private float damageCounter;
+	private int Lives;
+	private int RespawnCount;
 	public GUIText DamageText;
+
+	public  GameObject VacuumObject;
 
 
 	// Use this for initialization
 	void Start () {
 		
-		damageCounter = 1;
+		damageCounter = 0;
 		Lives = 3;
 		IsDead = false;
 		
@@ -66,12 +68,14 @@ public class Damage : MonoBehaviour {
 		transform.renderer.enabled = false;
 		transform.position = new Vector3(0,20,0);
 		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+		VacuumObject.renderer.enabled = false;
 		Lives--;
 	}
 
 	void OnSpawn ()
 	{
 		transform.renderer.enabled = true;
+		VacuumObject.renderer.enabled = true;
 		IsDead = false;
 		rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 		RespawnCount = 0;
