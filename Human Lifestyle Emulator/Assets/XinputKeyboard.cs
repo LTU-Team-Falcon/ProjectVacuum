@@ -25,7 +25,7 @@ public class XinputKeyboard : MonoBehaviour
 
 	public float GetLeftTrigger()
 	{
-		if (Input.GetButton("Fire2"));
+		if (Input.GetButton("Fire2"))
 			return 1f;
 
 		return 0f;
@@ -39,7 +39,7 @@ public class XinputKeyboard : MonoBehaviour
 	
 	public float GetRightTrigger()
 	{
-		if (Input.GetButton("Fire1"));
+		if (Input.GetButton("Fire1"))
 			return 1f;
 		
 		return 0f;
