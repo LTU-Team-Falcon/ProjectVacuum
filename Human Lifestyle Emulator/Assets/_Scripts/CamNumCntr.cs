@@ -8,15 +8,15 @@ public class CamNumCntr : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		//if(transform.parent.gameObject.GetComponent<XinputHandler>() != null)
-		//{
-			control = transform.parent.parent.gameObject.GetComponent<XinputHandler>();
-		//}
+
+		control = transform.parent.parent.gameObject.GetComponent<XinputHandler>();
 
 
 		int PlayerNumber = control.indexNum + 1;//PlayerPrefs.GetInt("PlayerNum");
 		int numberOfPlayers = Input.GetJoystickNames().Length;
 		//Camera thisCam = gameObject.GetComponent<Camera>();
+
+		doIgnorance();
 
 		if(numberOfPlayers == 1)
 		{
@@ -87,7 +87,31 @@ public class CamNumCntr : MonoBehaviour {
 			}
 		}
 	}
-	
+
+	void doIgnorance()
+	{
+		transform.parent.parent.FindChild("Player").gameObject.layer = 11 + control.indexNum;
+
+		Transform trans = transform.parent.parent.FindChild("Player");
+
+		//camera.layerCullDistances[11+control.indexNum] = 0.1f;
+		camera.cullingMask = ~(1 <<  11+control.indexNum);
+		addChildrenToLayer(trans, 11+control.indexNum);
+	}
+
+	void addChildrenToLayer(Transform parTrans, int parLayer)
+	{
+		foreach(Transform child in parTrans)
+		{
+			child.gameObject.layer = parLayer;
+
+			if(child.childCount >0)
+			{
+				addChildrenToLayer(child, parLayer);
+			}
+		}
+	}
+
 	// Update is called once per frame
 	void Update () {
 	

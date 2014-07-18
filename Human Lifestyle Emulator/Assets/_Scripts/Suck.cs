@@ -55,7 +55,10 @@ public class Suck : MonoBehaviour
 		AngleDot -= 5f/6f;
 		AngleDot = Mathf.Max( AngleDot, 0) * 12f;
 		force *= AngleDot;
-		force = Vector3.Scale(force, new Vector3(1,5,1));
+		if(parObj.rigidbody.mass > 1)
+		{
+			force = Vector3.Scale(force, new Vector3(1, parObj.rigidbody.mass,1));
+		}
 
 		
 		parObj.rigidbody.AddForceAtPosition(-force,relVec + vacuumSucker.transform.position);

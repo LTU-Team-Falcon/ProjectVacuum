@@ -37,7 +37,6 @@ public class PhysicsFPSWalker : MonoBehaviour
 		state ++;
 		if(state > 0)
 		{
-			Debug.Log("Grounded");
 			grounded = true;
 		}
 	}
@@ -81,7 +80,7 @@ public class PhysicsFPSWalker : MonoBehaviour
 			}
 			else
 			{//slows the player down if they aren't applying a force
-				rigidbody.AddForce(transform.rotation * new Vector3(0,0,-velXZ.normalized.z) * speedMod); 
+				//rigidbody.AddForce(transform.rotation * new Vector3(0,0,-velXZ.normalized.z) * speedMod); 
 				rigidbody.AddForce(transform.rotation * (new Vector3(0,0,-velXZ.z) * rigidbody.mass)); 
 			}
 			
