@@ -8,12 +8,9 @@ public class GameManager : MonoBehaviour
 	public float totalSceneWeight =0;
 	public int objectCount =0;
 	public GameObject DebugTextFab;
-	public float Damage;
 
+	public DisplayTime DisplayTime;
 
-	public List<GameObject> holoList = new List<GameObject>();
-	
-	public List<GameObject> inTheBag = new List<GameObject>();
 
 	public bool isPaused = false;
 	private bool canUnpause = true;
@@ -27,7 +24,6 @@ public class GameManager : MonoBehaviour
 		findTotalSceneWeight();	
 		score = GameObject.FindObjectOfType<Score>();
 		//Physics.IgnoreCollision(vacController.transform.FindChild("Body").FindChild("VacuumObject").gameObject.collider, gameObject.collider);
-		Damage = 0;
 	}
 	
 	public void findTotalSceneWeight()
@@ -56,7 +52,7 @@ public class GameManager : MonoBehaviour
 			HoloPositioner holo = sucker.gameObject.AddComponent<HoloPositioner>();
 
 			holo.size = sucker.origSize;
-			holoList.Add(holo.gameObject);
+			//holoList.Add(holo.gameObject);
 
 			sucker.enabled = false;
 		}
@@ -122,6 +118,19 @@ public class GameManager : MonoBehaviour
 	
 	// Update is called once per frame
 
+	void Update ()
+	{
+		if (DisplayTime.timeLeft < 1) 
+		{
+			GameObject GUICamera = GameObject.Find("InGameCamera");
+			GUICamera.camera.enabled = false;
+			GameObject EndGameCamera = GameObject.Find("EndGameCamera");
+			EndGameCamera.camera.enabled = true;
+			Screen.lockCursor = false;
+			Screen.showCursor = true;
+		}
+	}
+
 
 	public void StartBeenPressed() 
 	{
@@ -134,40 +143,6 @@ public class GameManager : MonoBehaviour
 			UnPause();
 		}
 	}
-
-
-	void SaveSuckedObjects()
-	{
-		int size = inTheBag.Count;
-		PlayerPrefs.SetInt("totalSucked", size);
-		PlayerPrefs.SetInt("Score", score.playerScore);
-
-		
-		for(int i = 0; i< size; i++)
-		{
-			int j = size - 1 - i;
-			string ID = "sucked" + j.ToString();
-			PlayerPrefs.SetString(ID, inTheBag[j].name);
-		}
-	}
-
-
-	void OnCollisionEnter (Collision col)
-	{
-/*		if (col.gameObject.tag == "Fired")
-		{
-			Vector3 ConPoint = col.contacts[0].point;
-			float power = col.rigidbody.mass * 5000 + (Damage * 100);
-
-			this.rigidbody.AddExplosionForce(power, col.transform.position, 1f, 0f);
-
-
-			print("Added force of " + power + " to " + this.gameObject);
-
-			Damage += col.rigidbody.mass * 1.5f;
-
-			col.gameObject.tag = "Suckable";
-		}
-*/
-	}
+	
+	
 }

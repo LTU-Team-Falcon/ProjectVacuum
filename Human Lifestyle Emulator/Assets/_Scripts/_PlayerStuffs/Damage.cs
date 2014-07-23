@@ -13,12 +13,13 @@ public class Damage : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 		if(DamageText == null)
 		{
 			string name = "P" + (int)(transform.parent.gameObject.GetComponent<XinputHandler>().indexNum +1) + "UI";
 			DamageText = GameObject.Find(name).guiText;
 		}
-		damageCounter = 1;
+		damageCounter = 0;
 		Lives = 3;
 		IsDead = false;
 		
@@ -26,12 +27,6 @@ public class Damage : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		if (transform.position.y < -15)
-		{
-			IsDead = true;
-			OnDeath();
-		}
 
 		if (IsDead == true)
 		{
@@ -59,7 +54,7 @@ public class Damage : MonoBehaviour {
 		{
 			col.gameObject.tag = "Suckable";
 			Vector3 direction =  transform.position - col.transform.position;
-			float Factor = col.rigidbody.mass * col.relativeVelocity.magnitude * damageCounter * 750;
+			float Factor = col.rigidbody.mass * col.relativeVelocity.magnitude * damageCounter * 500;
 			rigidbody.AddForce(direction.normalized * Factor);
 			damageCounter += col.rigidbody.mass * 5;
 		}
@@ -80,4 +75,15 @@ public class Damage : MonoBehaviour {
 		rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 		RespawnCount = 0;
 	}
+
+	void OnTriggerEnter (Collider col)
+	{
+		if (col.gameObject.name == "Killbox") 
+		{
+			IsDead = true;
+			OnDeath ();
+		}
+
+	}
+	
 }

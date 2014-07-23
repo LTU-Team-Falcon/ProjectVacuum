@@ -90,13 +90,13 @@ public class CamNumCntr : MonoBehaviour {
 
 	void doIgnorance()
 	{
-		transform.parent.parent.FindChild("Player").gameObject.layer = 11 + control.indexNum;
+		//transform.parent.parent.FindChild("Player").gameObject.layer = 11 + control.indexNum;
 
-		Transform trans = transform.parent.parent.FindChild("Player");
+		//Transform trans = transform.parent.parent.FindChild("Player");
 
 		//camera.layerCullDistances[11+control.indexNum] = 0.1f;
-		camera.cullingMask = ~(1 <<  11+control.indexNum);
-		addChildrenToLayer(trans, 11+control.indexNum);
+		//camera.cullingMask = ~(1 <<  11+control.indexNum);
+		//addChildrenToLayer(trans, 11+control.indexNum);
 	}
 
 	void addChildrenToLayer(Transform parTrans, int parLayer)

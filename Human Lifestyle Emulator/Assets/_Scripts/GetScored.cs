@@ -31,7 +31,7 @@ public class GetScored : MonoBehaviour
 
 	}
 
-	public void findAndScoreLink()
+	/*public void findAndScoreLink()
 	{
 		foreach(GameObject holo in gamemanager.holoList)
 		{
@@ -76,7 +76,7 @@ public class GetScored : MonoBehaviour
 			holoComponent.link = this; //set the new holoposition to us
 			holoComponent.distance = distance;
 		}
-	}
+	}*/
 
 
 
@@ -89,7 +89,7 @@ public class GetScored : MonoBehaviour
 		{
 			if(hasMoved && rigidbody.velocity.sqrMagnitude < 0.1)
 			{
-				findAndScoreLink();
+				//findAndScoreLink();
 				hasMoved = false;
 			}
 			else if(!hasMoved && rigidbody.velocity.sqrMagnitude >= 0.1)
