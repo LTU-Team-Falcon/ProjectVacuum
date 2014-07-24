@@ -21,9 +21,9 @@ public class GetSucked : MonoBehaviour
 	[HideInInspector]
 	public bool canGetSucked = true;
 
-	[HideInInspector]
+
 	public Vector3 origScale;
-	[HideInInspector]
+
 	public float origSize;
 
 	private VacuumSucker vacuumSucker;
