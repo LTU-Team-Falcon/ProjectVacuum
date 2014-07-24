@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class Suck : MonoBehaviour 
 {
+	public bool IsSucking;
+
 	public List<GameObject> PossibleSuckers = new List<GameObject>();
 
 	VacuumSucker vacuumSucker;
@@ -34,10 +36,8 @@ public class Suck : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		foreach(GameObject i in PossibleSuckers)
-		{
+			GameObject i = PossibleSuckers[0];
 			SuckThis(i);
-		}
 	}
 
 	void SuckThis(GameObject parObj)
@@ -46,7 +46,7 @@ public class Suck : MonoBehaviour
 		Vector3 relVec = parObj.rigidbody.ClosestPointOnBounds(vacuumSucker.transform.position) - vacuumSucker.transform.position;
 		
 		float relDist = relVec.magnitude;
-					
+			
 		force = relVec.normalized*vacuumSucker.suckPow;
 
 		force *=1;// Mathf.Pow((vacuumSucker.suckDist - relDist), vacuumSucker.suckFalloff)/(Mathf.Pow (vacuumSucker.suckDist, vacuumSucker.suckFalloff));

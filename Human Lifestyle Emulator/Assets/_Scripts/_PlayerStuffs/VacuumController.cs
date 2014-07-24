@@ -20,10 +20,12 @@ public class VacuumController : MonoBehaviour
 
 	XinputHandler control;
 	GameManager gameManager;
+	public bool IsSucking;
 
 	// Use this for initialization
 	void Start () 
 	{
+		IsSucking = true;
 		gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
 
 		playerObj = transform.parent.gameObject;
