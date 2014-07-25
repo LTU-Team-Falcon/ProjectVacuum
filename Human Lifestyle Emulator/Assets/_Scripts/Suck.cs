@@ -36,8 +36,8 @@ public class Suck : MonoBehaviour
 
 	void FixedUpdate()
 	{
-			GameObject i = PossibleSuckers[0];
-			SuckThis(i);
+			foreach(GameObject i in PossibleSuckers)
+				SuckThis(i);
 	}
 
 	void SuckThis(GameObject parObj)
