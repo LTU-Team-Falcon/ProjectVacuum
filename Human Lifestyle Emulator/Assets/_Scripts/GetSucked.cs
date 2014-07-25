@@ -102,12 +102,20 @@ public class GetSucked : MonoBehaviour
 		rigidbody.isKinematic = false;
 		canGetSucked = true;
 
-		transform.localScale = origScale;
+		this.collider.enabled = false;
+		Invoke("EnableCollider",0.1f);
+
+
+		transform.localScale = origScale*25f;
 		size = origSize;
 		health = 10;
 
 	}
 
+	void EnableCollider()
+	{
+		this.collider.enabled = true;
+	}
 
 	void Update()
 	{

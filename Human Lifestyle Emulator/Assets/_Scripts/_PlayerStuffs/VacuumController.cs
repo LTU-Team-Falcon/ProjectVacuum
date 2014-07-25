@@ -149,6 +149,7 @@ public class VacuumController : MonoBehaviour
 
 			projectile.GetComponent<GetSucked>().DroppedFromIntake();
 
+
 			projectile.rigidbody.velocity = vacSucker.transform.forward * parPower;
 		}
 
