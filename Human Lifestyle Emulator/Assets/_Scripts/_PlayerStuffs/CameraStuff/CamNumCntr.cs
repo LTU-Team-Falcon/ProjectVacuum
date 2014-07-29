@@ -63,7 +63,7 @@ public class CamNumCntr : MonoBehaviour {
 				transform.parent.parent.gameObject.SetActive(false);
 			}
 		}
-		else if(numberOfPlayers ==4)
+		else if(numberOfPlayers == 4)
 		{
 			if(PlayerNumber == 1)
 			{
