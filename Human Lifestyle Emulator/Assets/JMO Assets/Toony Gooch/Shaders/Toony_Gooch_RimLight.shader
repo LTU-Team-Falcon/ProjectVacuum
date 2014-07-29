@@ -45,7 +45,7 @@ CGPROGRAM
 			
 			half4 c;
 			c.rgb = s.Albedo * _LightColor0.rgb * ramp * (atten * 2);
-			c.a = 0;
+			c.a = 1;
 			
 			return c;
 		}
@@ -67,6 +67,7 @@ CGPROGRAM
 			//Rim Light
 			half rim = 1.0f - saturate( dot(normalize(IN.viewDir), o.Normal) );
 			o.Emission = (_RimColor.rgb * pow(rim, _RimPower)) * _RimColor.a;
+			o.Emission;
 		}
 ENDCG
 	
