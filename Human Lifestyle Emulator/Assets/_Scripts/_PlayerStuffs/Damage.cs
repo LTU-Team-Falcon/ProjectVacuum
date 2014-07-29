@@ -1,14 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Damage : MonoBehaviour {
-	
-	public float damageCounter;
-	public int Lives;
-	public bool IsDead;
-	public int RespawnCount;
 
+	[HideInInspector]
+	public float damageCounter;
+	[HideInInspector]
+	public int Lives;
+	[HideInInspector]
+	public bool IsDead;
+	[HideInInspector]
+	public int RespawnCount;
+	[HideInInspector]
 	public GUIText DamageText;
+	[HideInInspector]
+	public List<GameObject> Respawns = new List<GameObject>();
+
+
 
 
 	// Use this for initialization
@@ -62,14 +71,23 @@ public class Damage : MonoBehaviour {
 
 	void OnDeath ()
 	{
+		foreach (GameObject respawn in GameObject.FindGameObjectsWithTag("Respawn Points"))
+		{
+			Respawns.Add(respawn);
+		}
 		transform.renderer.enabled = false;
-		transform.position = new Vector3(0,20,0);
+
+		transform.position = Respawns [Random.Range(0,Respawns.Count)].transform.position;
+
+
 		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 		Lives--;
 	}
 
 	void OnSpawn ()
 	{
+		//get distance for all players from spawn points and choose the farthest one
+
 		transform.renderer.enabled = true;
 		IsDead = false;
 		rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
@@ -78,12 +96,25 @@ public class Damage : MonoBehaviour {
 
 	void OnTriggerEnter (Collider col)
 	{
-		if (col.gameObject.name == "Killbox") 
+		if (col.gameObject.name == "KillBox") 
 		{
 			IsDead = true;
 			OnDeath ();
 		}
 
+		if (col.gameObject.name == "Respawn Point") 
+		{
+			col.gameObject.tag = "Untagged";
+		}
+
+	}
+
+	void OnTriggerExit (Collider col)
+	{
+		if (col.gameObject.name == "Respawns Point") 
+		{
+			col.gameObject.tag = "RespawnPoints";
+		}
 	}
 	
 }

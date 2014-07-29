@@ -47,7 +47,6 @@ public class VacuumController : MonoBehaviour
 		downRotation = transform.localEulerAngles;
 		defaultLocPos = transform.localPosition;
 
-		print("init");
 	}
 	
 	
