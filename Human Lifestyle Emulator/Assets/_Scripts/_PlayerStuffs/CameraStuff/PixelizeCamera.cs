@@ -24,6 +24,23 @@ public class PixelizeCamera : MonoBehaviour
 	List<GameObject> addedThings = new List<GameObject>();
 	List<RenderTexture> addedTexs = new List<RenderTexture>();
 
+
+	bool isUniversal = false;
+
+	public List<PixelizeCamera> pixy = new List<PixelizeCamera>();
+	void Awake()
+	{
+		if(gameObject.camera == null)
+		{
+			pixy.AddRange(GameObject.FindObjectsOfType<PixelizeCamera>() );
+			isUniversal = true;
+			pixy.Remove(this);
+			shouldUpdate = true;
+		}
+	}
+
+
+
 	void Start()
 	{
 		Init();
@@ -134,7 +151,7 @@ public class PixelizeCamera : MonoBehaviour
 		}
 		else if(par1Int == 0)
 		{
-			return this.camera.nearClipPlane + 3;
+			return this.camera.nearClipPlane + 2;
 		}
 
 		float radPercent = (float)((float)par1Int/(float)numLOD);
@@ -173,7 +190,22 @@ public class PixelizeCamera : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if(shouldUpdate)
+		if(shouldUpdate && isUniversal)
+		{
+			shouldUpdate = false;
+			foreach(PixelizeCamera perx in pixy)
+			{
+				perx.minResPcent = this.minResPcent;
+				perx.maxResPcent = this.maxResPcent;
+				perx.farRad = this.farRad;
+				perx.closeRad = this.closeRad;
+				perx._SpreadRad = this._SpreadRad;
+				perx._SpreadRes = this._SpreadRes;
+				perx.numLOD = this.numLOD;
+				perx.shouldUpdate = true;
+			}
+		}
+		else if(shouldUpdate)
 		{
 			foreach(GameObject gamObj in addedThings)
 				Destroy((Object)gamObj);

@@ -4,11 +4,14 @@ using XInputDotNetPure; // Required in C#
 public class XinputController : MonoBehaviour
 {
 	public bool isDebugging = false;
-	bool playerIndexSet = false;
+
+	[HideInInspector]
+	public bool playerIndexSet = false;
 	PlayerIndex playerIndex;
 	GamePadState state;
 	GamePadState prevState;
-	
+
+	[HideInInspector]
 	public int indexNum = 1;
 	
 	// Use this for initialization
@@ -16,7 +19,10 @@ public class XinputController : MonoBehaviour
 	{
 		// No need to initialize anything for the plugin
 	}
-	
+	public void CallUpdate()
+	{
+		Update();
+	}
 	// Update is called once per frame
 	void Update()
 	{

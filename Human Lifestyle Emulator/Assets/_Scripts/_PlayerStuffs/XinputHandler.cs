@@ -13,50 +13,53 @@ public class XinputHandler : MonoBehaviour
 	public int indexNum = 1;
 	
 	// Use this for initialization
-	void Start()
+	void Awake()
 	{
 		cont = gameObject.GetComponent<XinputController>();
-
+		
 		keyb = gameObject.GetComponent<XinputKeyboard>();
+		if(cont == null && keyb == null)
+		{
+			cont = gameObject.AddComponent<XinputController>();
+
+		}
+		else if(cont != null && cont.enabled == false)
+		{
+			cont.enabled = true;
+		}
+
+		if (cont != null)
+		{
+			cont.indexNum = this.indexNum;
+			cont.isDebugging = this.isDebugging;
+		}
+		// No need to initialize anything for the plugin
+	}
+
+	void Start()
+	{
+
 
 		if(cont != null)
 		{
-			this.indexNum = cont.indexNum;
-			this.isDebugging = cont.isDebugging;
+			print("ContCalled");
+			cont.CallUpdate();
 		}
-		else
+		print("Awkaek1");
+		if(keyb == null && cont != null && cont.enabled && !cont.playerIndexSet)
 		{
-			this.indexNum = keyb.indexNum;
-			this.isDebugging = keyb.isDebugging;
+			print("Keyb established");
+			keyb = gameObject.AddComponent<XinputKeyboard>();
 			usesKeyboard = true;
+			cont.enabled = false;
 		}
-		// No need to initialize anything for the plugin
 	}
 	
 	// Update is called once per frame
 	void Update()
 	{
-		// Find a PlayerIndex, for a single player game
-		// Will find the controller in slot "indexNum" and use it
 
-/*		
-		// Detect if a button was pressed this frame
-		if (prevState.Buttons.A == ButtonState.Released && state.Buttons.A == ButtonState.Pressed)
-		{
-			renderer.material.color = new Color(Random.value, Random.value, Random.value, 1.0f);
-		}
-		// Detect if a button was released this frame
-		if (prevState.Buttons.A == ButtonState.Pressed && state.Buttons.A == ButtonState.Released)
-		{
-			renderer.material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
-		}
-		
-		// Set vibration according to triggers
-		GamePad.SetVibration(playerIndex, state.Triggers.Left, state.Triggers.Right);
-		
-		// Make the current object turn
-		transform.localRotation *= Quaternion.Euler(0.0f, state.ThumbSticks.Left.X * 25.0f * Time.deltaTime, 0.0f);
-*/	}
+	}
 
 
 

@@ -3,9 +3,10 @@ using System.Collections;
 
 public class XinputKeyboard : MonoBehaviour 
 {
-	public bool isDebugging = false;
-	public int indexNum = 1;
+/*	public bool isDebugging = false;
 
+	public int indexNum = 1;
+*/
 	// Use this for initialization
 	void Start () 
 	{
