@@ -117,6 +117,9 @@ public class GetSucked : MonoBehaviour
 	{
 		if (this.gameObject.tag == "Fired" && col.gameObject.tag == "DestuctableWalls") 
 		{
+
+			Vector3 direction =  transform.position - col.transform.position;
+			rigidbody.AddForce(direction.normalized * 150);
 			col.rigidbody.constraints = RigidbodyConstraints.None;
 			col.rigidbody.useGravity = true;
 			Destroy(col.gameObject, 3);
