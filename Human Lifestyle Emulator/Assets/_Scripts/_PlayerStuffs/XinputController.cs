@@ -10,8 +10,7 @@ public class XinputController : MonoBehaviour
 	PlayerIndex playerIndex;
 	GamePadState state;
 	GamePadState prevState;
-
-	[HideInInspector]
+	
 	public int indexNum = 1;
 	
 	// Use this for initialization

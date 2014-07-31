@@ -112,6 +112,18 @@ public class GetSucked : MonoBehaviour
 
 	}
 
+
+	void OnCollisionEnter(Collision col) 
+	{
+		if (this.gameObject.tag == "Fired" && col.gameObject.tag == "DestuctableWalls") 
+		{
+			col.rigidbody.constraints = RigidbodyConstraints.None;
+			col.rigidbody.useGravity = true;
+			Destroy(col.gameObject, 3);
+			this.gameObject.tag = "Suckable";
+		}
+	}
+
 	void EnableCollider()
 	{
 		this.collider.enabled = true;
