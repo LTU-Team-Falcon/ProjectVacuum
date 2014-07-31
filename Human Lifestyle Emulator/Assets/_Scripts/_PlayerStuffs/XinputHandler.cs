@@ -5,7 +5,7 @@ public class XinputHandler : MonoBehaviour
 {
 	public bool isDebugging = false;
 
-	bool usesKeyboard = false;
+	bool usesKeyboard = true;
 
 	XinputController cont;
 	XinputKeyboard keyb;
