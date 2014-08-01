@@ -48,10 +48,13 @@ public class XinputHandler : MonoBehaviour
 		print("Awkaek1");
 		if(keyb == null && cont != null && cont.enabled && !cont.playerIndexSet)
 		{
-			print("Keyb established");
-			keyb = gameObject.AddComponent<XinputKeyboard>();
-			usesKeyboard = true;
-			cont.enabled = false;
+			if(GameObject.FindObjectOfType<XinputKeyboard>() == null)
+			{
+				print("Keyb established");
+				keyb = gameObject.AddComponent<XinputKeyboard>();
+				usesKeyboard = true;
+				cont.enabled = false;
+			}
 		}
 	}
 	
