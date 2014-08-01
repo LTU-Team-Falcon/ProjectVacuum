@@ -3,6 +3,7 @@ using XInputDotNetPure; // Required in C#
 
 public class XinputController : MonoBehaviour
 {
+	[HideInInspector]
 	public bool isDebugging = false;
 
 	[HideInInspector]
@@ -10,7 +11,8 @@ public class XinputController : MonoBehaviour
 	PlayerIndex playerIndex;
 	GamePadState state;
 	GamePadState prevState;
-	
+
+	[HideInInspector]
 	public int indexNum = 1;
 	
 	// Use this for initialization
