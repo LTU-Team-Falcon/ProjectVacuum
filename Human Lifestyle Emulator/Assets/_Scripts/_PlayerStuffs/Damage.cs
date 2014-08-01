@@ -47,6 +47,13 @@ public class Damage : MonoBehaviour {
 			OnSpawn();
 		}
 
+		if (Vector3.Distance (transform.position, new Vector3 (0, 0, 0)) > 200) 
+		{
+			IsDead = true;
+			OnDeath();
+		}
+
+
 		if (Lives == 0)
 		{
 			transform.parent.gameObject.SetActive(false);
@@ -75,6 +82,7 @@ public class Damage : MonoBehaviour {
 		{
 			Respawns.Add(respawn);
 		}
+
 		transform.renderer.enabled = false;
 
 		transform.position = Respawns [Random.Range(0,Respawns.Count)].transform.position;
@@ -88,7 +96,7 @@ public class Damage : MonoBehaviour {
 	{
 		//get distance for all players from spawn points and choose the farthest one
 
-		transform.renderer.enabled = true;
+		//transform.renderer.enabled = true;
 		IsDead = false;
 		rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 		RespawnCount = 0;

@@ -21,6 +21,7 @@ public class GetSucked : MonoBehaviour
 	[HideInInspector]
 	public bool canGetSucked = true;
 
+	
 
 	public Vector3 origScale;
 
@@ -102,9 +103,7 @@ public class GetSucked : MonoBehaviour
 		rigidbody.isKinematic = false;
 		canGetSucked = true;
 
-		this.collider.enabled = false;
-		Invoke("EnableCollider",0.1f);
-
+			
 
 		transform.localScale = origScale*25f;
 		size = origSize;
@@ -117,7 +116,6 @@ public class GetSucked : MonoBehaviour
 	{
 		if (this.gameObject.tag == "Fired" && col.gameObject.tag == "DestuctableWalls") 
 		{
-
 			Vector3 direction =  transform.position - col.transform.position;
 			rigidbody.AddForce(direction.normalized * 150);
 			col.rigidbody.isKinematic = false;
@@ -127,11 +125,8 @@ public class GetSucked : MonoBehaviour
 			this.gameObject.tag = "Suckable";
 		}
 	}
+	
 
-	void EnableCollider()
-	{
-		this.collider.enabled = true;
-	}
 
 	void Update()
 	{
