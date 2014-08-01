@@ -33,24 +33,21 @@ public class XinputHandler : MonoBehaviour
 			cont.indexNum = this.indexNum;
 			cont.isDebugging = this.isDebugging;
 		}
-		// No need to initialize anything for the plugin
 	}
 
 	void Start()
 	{
-
-
 		if(cont != null)
 		{
-			print("ContCalled");
+	//		print("ContCalled");
 			cont.CallUpdate();
 		}
-		print("Awkaek1");
+	//print("Awkaek");
 		if(keyb == null && cont != null && cont.enabled && !cont.playerIndexSet)
 		{
 			if(GameObject.FindObjectOfType<XinputKeyboard>() == null)
 			{
-				print("Keyb established");
+	//			print("Keyb established");
 				keyb = gameObject.AddComponent<XinputKeyboard>();
 				usesKeyboard = true;
 				cont.enabled = false;

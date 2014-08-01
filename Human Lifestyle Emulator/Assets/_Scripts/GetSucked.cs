@@ -120,6 +120,7 @@ public class GetSucked : MonoBehaviour
 
 			Vector3 direction =  transform.position - col.transform.position;
 			rigidbody.AddForce(direction.normalized * 150);
+			col.rigidbody.isKinematic = false;
 			col.rigidbody.constraints = RigidbodyConstraints.None;
 			col.rigidbody.useGravity = true;
 			Destroy(col.gameObject, 3);
