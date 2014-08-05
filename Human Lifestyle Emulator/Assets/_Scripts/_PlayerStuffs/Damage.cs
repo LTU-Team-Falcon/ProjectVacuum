@@ -29,7 +29,7 @@ public class Damage : MonoBehaviour {
 			DamageText = GameObject.Find(name).guiText;
 		}
 		damageCounter = 0;
-		Lives = 1;
+		Lives = 3;
 		IsDead = false;
 		
 	}
@@ -97,6 +97,7 @@ public class Damage : MonoBehaviour {
 		//get distance for all players from spawn points and choose the farthest one
 
 		//transform.renderer.enabled = true;
+		rigidbody.velocity = new Vector3 (0, 0, 0);
 		IsDead = false;
 		rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 		RespawnCount = 0;
