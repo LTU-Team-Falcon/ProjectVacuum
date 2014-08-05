@@ -6,7 +6,7 @@ public class Damage : MonoBehaviour {
 
 	[HideInInspector]
 	public float damageCounter;
-	[HideInInspector]
+
 	public int Lives;
 	[HideInInspector]
 	public bool IsDead;
@@ -29,7 +29,7 @@ public class Damage : MonoBehaviour {
 			DamageText = GameObject.Find(name).guiText;
 		}
 		damageCounter = 0;
-		Lives = 3;
+		Lives = 1;
 		IsDead = false;
 		
 	}

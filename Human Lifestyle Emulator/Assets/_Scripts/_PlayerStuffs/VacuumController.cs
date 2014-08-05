@@ -149,10 +149,6 @@ public class VacuumController : MonoBehaviour
 			projectile.gameObject.SetActive(true);
 			projectile.collider.enabled = true;
 
-			if(!looping)
-			{
-				StartCoroutine(DisableCollider(projectile));
-			}
 
 			projectile.GetComponent<GetSucked>().DroppedFromIntake();
 
@@ -160,20 +156,7 @@ public class VacuumController : MonoBehaviour
 			projectile.rigidbody.velocity = vacSucker.transform.forward * parPower;
 		}
 	}
-
-
-	IEnumerator DisableCollider (Transform Projectile)
-	{
-		float i = 0;
-		while (i <= 10) 
-		{
-			Physics.IgnoreCollision (this.transform.collider, Projectile.collider);
-			i+=Time.deltaTime;
-			yield return null;
-		}
-
-		looping = false;
-	}
+	
 
 	void HaltVibrations()
 	{
