@@ -53,8 +53,10 @@ public class pauseUnpause : MonoBehaviour {
 		gameObject.GetComponent<PhysicsFPSWalker>().force = 0;
 		gameObject.GetComponent<PhysicsFPSWalker>().jumpSpeed = 0;
 
-		Rigidbody mousy = transform.parent.FindChild("VacuumObject").GetComponent<Rigidbody>();
-		mousy.constraints = RigidbodyConstraints.FreezeAll;
+		Rigidbody vacObj = transform.parent.FindChild("VacuumObject").GetComponent<Rigidbody>();
+		vacObj.transform.localEulerAngles = Vector3.Scale(new Vector3(0,1,1), vacObj.transform.localEulerAngles);
+		vacObj.constraints = RigidbodyConstraints.FreezeAll;
+
 	}
 
 	public void Unpause()
@@ -67,8 +69,8 @@ public class pauseUnpause : MonoBehaviour {
 		gameObject.GetComponent<PhysicsFPSWalker>().force = moveforce;
 		gameObject.GetComponent<PhysicsFPSWalker>().jumpSpeed = movejump;
 
-		Rigidbody mousy = transform.parent.FindChild("VacuumObject").GetComponent<Rigidbody>();
-		mousy.constraints = RigidbodyConstraints.None;
+		Rigidbody vacObj = transform.parent.FindChild("VacuumObject").GetComponent<Rigidbody>();
+		vacObj.constraints = RigidbodyConstraints.None;
 
 	}
 }
