@@ -16,7 +16,14 @@ public class PhysicsFPSWalker : MonoBehaviour
 	private bool grounded = false;
 	private float jumpLimit = 1000;
 	private float dashLimit = 1000;
-	
+
+	[HideInInspector]
+	public int JumpCount = 0;
+	//[HideInInspector]
+	public int TimeTillDash = 77;
+	[HideInInspector]
+	public bool SuperJumpActive = false;
+
 	private float XZmovementMag;
 
 	bool pressedJump = false;
@@ -120,7 +127,13 @@ public class PhysicsFPSWalker : MonoBehaviour
 			rigidbody.velocity = rigidbody.velocity + (Vector3.up * jumpSpeed *2f);
 			jumpLimit = 0;
 		}
-		else if(control.GetButton("LB") && dashLimit >= 77)
+		else if(control.GetButton("A") && SuperJumpActive == true && jumpLimit >=20 && JumpCount < 3)
+		{
+			rigidbody.velocity = rigidbody.velocity + (Vector3.up * jumpSpeed *2f);
+			jumpLimit = 0;
+			JumpCount++;
+		}
+		else if(control.GetButton("LB")&& dashLimit >= TimeTillDash)
 		{
 			Vector3 DashDirection = new Vector3(transform.forward.x, 0 , transform.forward.z) * control.GetLeftStick().y;	
 			DashDirection += new Vector3(transform.right.x, 0 , transform.right.z) * control.GetLeftStick().x;	
@@ -129,17 +142,20 @@ public class PhysicsFPSWalker : MonoBehaviour
 
 			rigidbody.velocity = ( DashDirection );
 			dashLimit = 0;
-
-			if(!grounded)
+			if (TimeTillDash == 77)
 			{
-				dashLimit = -17f;
+				if(!grounded)
+				{
+					dashLimit = -17f;
+				}
 			}
-		}
+		}	
 		else if(control.GetButton("RB") && !grounded)
 		{
 
 			rigidbody.velocity += Vector3.down;
 		}
+
 	}
 
 
@@ -147,7 +163,7 @@ public class PhysicsFPSWalker : MonoBehaviour
 	{
 		pressedJump = control.GetButtonDown("A");
 		pressedDash = control.GetButtonDown("LB");
-		
+
 	}
 
 	
