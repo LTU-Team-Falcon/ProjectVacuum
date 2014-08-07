@@ -89,28 +89,33 @@ public class GetSucked : MonoBehaviour
 	public void DealWithColliders(GameObject parGamObj)
 	{
 		lastshotfrom = parGamObj;
-		Collider[] colliders = lastshotfrom.GetComponentsInChildren<Collider>();
+
+		Physics.IgnoreCollision(lastshotfrom.collider , gameObject.collider, true);
+
+/*		Collider[] colliders = lastshotfrom.GetComponentsInChildren<Collider>();
 		foreach(Collider col in colliders)
 		{
-		//	Physics.IgnoreCollision(col , gameObject.collider, true);
-		}
+			Physics.IgnoreCollision(col , gameObject.collider, true);
+		}*/
 
-		Invoke("UnDealWithColliders", 2f);
+		Invoke("UnDealWithColliders", 1f);
 	}
 
 	void UnDealWithColliders()
 	{
-		Collider[] colliders = lastshotfrom.GetComponentsInChildren<Collider>();
+		Physics.IgnoreCollision(lastshotfrom.collider , gameObject.collider, false);
+
+
+	/*	Collider[] colliders = lastshotfrom.GetComponentsInChildren<Collider>();
 		foreach(Collider col in colliders)
 		{
-//			Physics.IgnoreCollision(col , gameObject.collider, false);
-		}
+			Physics.IgnoreCollision(col , gameObject.collider, false);
+		}*/
 	}
 	
 	public void reCalcVar()
 	{
 		if(!(size > 0)) size = rigidbody.mass;//temp 
-		print("recalced");
 	}
 
 	public void AddedToIntake()
