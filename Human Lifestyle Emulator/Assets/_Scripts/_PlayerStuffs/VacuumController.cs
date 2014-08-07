@@ -140,7 +140,7 @@ public class VacuumController : MonoBehaviour
 
 
 			projectile.GetComponent<GetSucked>().DroppedFromIntake();
-			projectile.GetComponent<GetSucked>().DealWithColliders(transform.FindChild("Model").gameObject);
+			projectile.GetComponent<GetSucked>().DealWithColliders(transform.parent.FindChild("Player").gameObject);
 
 
 			projectile.rigidbody.velocity = vacSucker.transform.forward * parPower;
@@ -152,6 +152,7 @@ public class VacuumController : MonoBehaviour
 	{
 		control.SetVibration(new Vector2(0,0));
 	}
+	
 
 	void OnGUI()
 	{

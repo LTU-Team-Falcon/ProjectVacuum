@@ -8,7 +8,8 @@ public class VacuumSucker : MonoBehaviour
 	//[HideInInspector]
 	//public float maxFlyVelocity = 20f;
 
-	
+	public float bagSize = 50f;
+
 	public float suckPotential;
 	public float maxSuckPotential;
 
@@ -56,7 +57,11 @@ public class VacuumSucker : MonoBehaviour
 	// Update is called once per physics frame
 	void FixedUpdate () 
 	{
-
+		if(this.GetMass() > bagSize)
+		{
+			suckPow = 0;
+			this.dropIntake();
+		}
 		if(this.suckPow > 0f)
 		{
 				foreach(GameObject i in intake)
@@ -105,6 +110,7 @@ public class VacuumSucker : MonoBehaviour
 			i.SetActive(false);
 			i.transform.parent = actualSucker.transform;
 		}
+
 		suckQueue.Clear();
 	}
 
@@ -128,6 +134,7 @@ public class VacuumSucker : MonoBehaviour
 			i.collider.enabled = true;
 		}
 		intake.Clear();
+		actualSucker.transform.parent = this.transform;
 	}
 	
 	
@@ -137,6 +144,17 @@ public class VacuumSucker : MonoBehaviour
 		{	
 				AddToIntake(col.gameObject);
 		}
+	}
+
+	public float GetMass()
+	{
+		float sol =0;
+		foreach(Transform suckedObj in actualSucker.transform)
+		{
+			sol += suckedObj.rigidbody.mass;
+		}
+
+		return sol;
 	}
 
 }
