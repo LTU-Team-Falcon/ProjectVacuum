@@ -5,6 +5,12 @@ using System.Collections.Generic;
 
 public class VacuumController : MonoBehaviour 
 {
+	public float shotPower = 40f;
+	public int rateOfFire = 3;
+	private int shotTime = 0;
+	public int bulletsPerShot = 1;
+
+	public float spread = 10f;
 	public bool isOut = true;
 
 	public GameObject playerObj;
@@ -103,17 +109,17 @@ public class VacuumController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		shotTime --;
+
 		if(control.GetButtonDown("Start"))
 		{
 			gameManager.StartBeenPressed();
 		}
 
-		if(control.GetRightTrigger() > 0.7f)
+		if(control.GetRightTrigger() > 0.7f && shotTime <= 0)
 		{
-			vacSucker.suckPow = 0;
-
-			ShootObjects( 50f ); 
-
+				vacSucker.suckPow = 0;
+				ShootObjects( 50f ); 
 		}
 		else if(control.GetLeftTrigger() > 0f)
 		{
@@ -151,6 +157,7 @@ public class VacuumController : MonoBehaviour
 
 
 			projectile.GetComponent<GetSucked>().DroppedFromIntake();
+			projectile.GetComponent<GetSucked>().DealWithColliders(transform.FindChild("Model").gameObject);
 
 
 			projectile.rigidbody.velocity = vacSucker.transform.forward * parPower;
@@ -162,6 +169,7 @@ public class VacuumController : MonoBehaviour
 	{
 		control.SetVibration(new Vector2(0,0));
 	}
+
 	void OnGUI()
 	{
 /*		string toGui = "SuckPow: " + vacSucker.suckPow;
