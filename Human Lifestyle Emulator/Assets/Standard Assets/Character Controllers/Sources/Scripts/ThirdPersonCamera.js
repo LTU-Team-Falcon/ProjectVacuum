@@ -22,8 +22,8 @@ var clampHeadPositionScreenSpace = 0.75;
 
 var lockCameraTimeout = 0.2;
 
-private var headOffset = Vector3.zero;
-private var centerOffset = Vector3.zero;
+private var headXOffset = Vector3.zero;
+private var centerXOffset = Vector3.zero;
 
 private var heightVelocity = 0.0;
 private var angleVelocity = 0.0;
@@ -50,20 +50,20 @@ function Awake ()
 	if (controller)
 	{
 		var characterController : CharacterController = _target.collider;
-		centerOffset = characterController.bounds.center - _target.position;
-		headOffset = centerOffset;
-		headOffset.y = characterController.bounds.max.y - _target.position.y;
+		centerXOffset = characterController.bounds.center - _target.position;
+		headXOffset = centerXOffset;
+		headXOffset.y = characterController.bounds.max.y - _target.position.y;
 	}
 	else
 		Debug.Log("Please assign a target to the camera that has a ThirdPersonController script attached.");
 
 	
-	Cut(_target, centerOffset);
+	Cut(_target, centerXOffset);
 }
 
 function DebugDrawStuff ()
 {
-	Debug.DrawLine(_target.position, _target.position + headOffset);
+	Debug.DrawLine(_target.position, _target.position + headXOffset);
 
 }
 
@@ -81,8 +81,8 @@ function Apply (dummyTarget : Transform, dummyCenter : Vector3)
 	if (!controller)
 		return;
 	
-	var targetCenter = _target.position + centerOffset;
-	var targetHead = _target.position + headOffset;
+	var targetCenter = _target.position + centerXOffset;
+	var targetHead = _target.position + headXOffset;
 
 //	DebugDrawStuff();
 
@@ -193,13 +193,13 @@ function SetUpRotation (centerPos : Vector3, headPos : Vector3)
 	// 3. When jumping we keep the camera rotation but rotate the camera to get him back into view if his head is above some threshold
 	// 4. When landing we smoothly interpolate towards centering him on screen
 	var cameraPos = cameraTransform.position;
-	var offsetToCenter = centerPos - cameraPos;
+	var XOffsetToCenter = centerPos - cameraPos;
 	
 	// Generate base rotation only around y-axis
-	var yRotation = Quaternion.LookRotation(Vector3(offsetToCenter.x, 0, offsetToCenter.z));
+	var yRotation = Quaternion.LookRotation(Vector3(XOffsetToCenter.x, 0, XOffsetToCenter.z));
 
-	var relativeOffset = Vector3.forward * distance + Vector3.down * height;
-	cameraTransform.rotation = yRotation * Quaternion.LookRotation(relativeOffset);
+	var relativeXOffset = Vector3.forward * distance + Vector3.down * height;
+	cameraTransform.rotation = yRotation * Quaternion.LookRotation(relativeXOffset);
 
 	// Calculate the projected center position and top position in world space
 	var centerRay = cameraTransform.camera.ViewportPointToRay(Vector3(.5, 0.5, 1));
@@ -224,7 +224,7 @@ function SetUpRotation (centerPos : Vector3, headPos : Vector3)
 	}
 }
 
-function GetCenterOffset ()
+function GetCenterXOffset ()
 {
-	return centerOffset;
+	return centerXOffset;
 }

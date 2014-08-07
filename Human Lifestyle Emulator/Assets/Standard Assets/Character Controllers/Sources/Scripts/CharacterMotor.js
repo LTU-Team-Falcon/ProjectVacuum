@@ -213,20 +213,20 @@ private function UpdateFunction () {
 	var lastPosition : Vector3 = tr.position;
 	
 	// We always want the movement to be framerate independent.  Multiplying by Time.deltaTime does this.
-	var currentMovementOffset : Vector3 = velocity * Time.deltaTime;
+	var currentMovementoffset : Vector3 = velocity * Time.deltaTime;
 	
 	// Find out how much we need to push towards the ground to avoid loosing grouning
 	// when walking down a step or over a sharp change in slope.
-	var pushDownOffset : float = Mathf.Max(controller.stepOffset, Vector3(currentMovementOffset.x, 0, currentMovementOffset.z).magnitude);
+	var pushDownOffset : float = Mathf.Max(controller.stepOffset, Vector3(currentMovementoffset.x, 0, currentMovementoffset.z).magnitude);
 	if (grounded)
-		currentMovementOffset -= pushDownOffset * Vector3.up;
+		currentMovementoffset -= pushDownOffset * Vector3.up;
 	
 	// Reset variables that will be set by collision function
 	movingPlatform.hitPlatform = null;
 	groundNormal = Vector3.zero;
 	
    	// Move our character!
-	movement.collisionFlags = controller.Move (currentMovementOffset);
+	movement.collisionFlags = controller.Move (currentMovementoffset);
 	
 	movement.lastHitPoint = movement.hitPoint;
 	lastGroundNormal = groundNormal;
@@ -283,7 +283,7 @@ private function UpdateFunction () {
 		
 		SendMessage("OnFall", SendMessageOptions.DontRequireReceiver);
 		// We pushed the character down to ensure it would stay on the ground if there was any.
-		// But there wasn't so now we cancel the downwards offset to make the fall smoother.
+		// But there wasn't so now we cancel the downwards XOffset to make the fall smoother.
 		tr.position += pushDownOffset * Vector3.up;
 	}
 	// We were not grounded but just landed on something
