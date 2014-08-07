@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class VacuumController : MonoBehaviour 
 {
 	public float shotPower = 40f;
-	public int rateOfFire = 3;
+	public int rateOfFire = 15;
 	private int shotTime = 0;
 	public int bulletsPerShot = 1;
 
@@ -84,28 +84,6 @@ public class VacuumController : MonoBehaviour
 		}
 	}
 
-
-	//Update Called OncePerPhysicsFrame
-	void FixedUpdate() 
-	{
-		if(!isOut)
-		{	//hold the vaccum downwards more;
-			//transform.localEulerAngles = downRotation;
-		}
-		/*else if(vacPuncher.isPunching)
-		{	//swing for the punch
-			transform.position += transform.forward * (1.5f - transform.localPosition.z) * 0.5f;
-		}*/
-		else
-		{	//if it is out and you arent punching; normal sucking deal
-			//target = camObj.transform.position + camObj.transform.forward*2;
-			//transform.LookAt(target);
-		}
-	}
-
-
-
-	
 	// Update is called once per frame
 	void Update()
 	{
@@ -118,8 +96,13 @@ public class VacuumController : MonoBehaviour
 
 		if(control.GetRightTrigger() > 0.7f && shotTime <= 0)
 		{
-				vacSucker.suckPow = 0;
-				ShootObjects( 50f ); 
+			vacSucker.suckPow = 0;
+			for(int i = 1; i <= bulletsPerShot; i++)
+			{
+				ShootObjects( shotPower ); 
+			}
+
+			shotTime = rateOfFire;
 		}
 		else if(control.GetLeftTrigger() > 0f)
 		{

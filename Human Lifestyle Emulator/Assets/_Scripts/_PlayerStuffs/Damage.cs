@@ -17,6 +17,10 @@ public class Damage : MonoBehaviour {
 	[HideInInspector]
 	public List<GameObject> Respawns = new List<GameObject>();
 
+	[HideInInspector]
+	public bool BoutToDie = false;
+	public float DeathTimer;
+
 
 
 
@@ -47,12 +51,22 @@ public class Damage : MonoBehaviour {
 			OnSpawn();
 		}
 
-		if (Vector3.Distance (transform.position, new Vector3 (0, 0, 0)) > 200) 
+/*		if (Vector3.Distance (transform.position, new Vector3 (0, 0, 0)) > 200) 
 		{
 			IsDead = true;
 			OnDeath();
 		}
-
+*/
+		if(BoutToDie)
+		{
+			print("DeathTimer" + DeathTimer);
+			DeathTimer --;
+		}
+		if(BoutToDie && DeathTimer <= 0)
+		{
+			IsDead = true;
+			OnDeath();
+		}
 
 		if (Lives == 0)
 		{
@@ -85,20 +99,23 @@ public class Damage : MonoBehaviour {
 
 		transform.position = Respawns [Random.Range(0,Respawns.Count)].transform.position;
 
+		BoutToDie = false;
 
-		//rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 		Lives--;
 	}
 
 	void OnSpawn ()
 	{
 		//get distance for all players from spawn points and choose the farthest one
-
+	
 		rigidbody.velocity = new Vector3 (0, 0, 0);
 		IsDead = false;
 		//rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 		RespawnCount = 0;
 	}
+
+	
+
 
 	void OnTriggerEnter (Collider col)
 	{
@@ -113,6 +130,11 @@ public class Damage : MonoBehaviour {
 			col.gameObject.tag = "Untagged";
 		}
 
+		if(col.gameObject.tag == "SafeZone")
+		{
+			print("im in.");
+			BoutToDie = false;
+		}
 	}
 
 	void OnTriggerExit (Collider col)
@@ -120,6 +142,13 @@ public class Damage : MonoBehaviour {
 		if (col.gameObject.name == "Respawns Point") 
 		{
 			col.gameObject.tag = "RespawnPoints";
+		}
+		else
+		if(col.gameObject.tag == "SafeZone")
+		{
+			print("IM OUT BE WARY!!");
+			DeathTimer = 5 * 60f;
+			BoutToDie = true;
 		}
 	}
 	
