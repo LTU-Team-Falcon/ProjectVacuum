@@ -86,7 +86,7 @@ public class Damage : MonoBehaviour {
 		transform.position = Respawns [Random.Range(0,Respawns.Count)].transform.position;
 
 
-		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+		//rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 		Lives--;
 	}
 
@@ -96,7 +96,7 @@ public class Damage : MonoBehaviour {
 
 		rigidbody.velocity = new Vector3 (0, 0, 0);
 		IsDead = false;
-		rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+		//rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 		RespawnCount = 0;
 	}
 
