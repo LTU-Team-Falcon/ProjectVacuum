@@ -21,6 +21,9 @@ public class Damage : MonoBehaviour {
 	public bool BoutToDie = false;
 	public float DeathTimer;
 
+
+
+
 	// Use this for initialization
 	void Start () {
 
@@ -30,7 +33,7 @@ public class Damage : MonoBehaviour {
 			DamageText = GameObject.Find(name).guiText;
 		}
 		damageCounter = 0;
-		Lives = 1;
+		Lives = 3;
 		IsDead = false;
 		
 	}
@@ -54,7 +57,7 @@ public class Damage : MonoBehaviour {
 			OnDeath();
 		}
 */
-		/*if(BoutToDie)
+		if(BoutToDie)
 		{
 			print("DeathTimer" + DeathTimer);
 			DeathTimer --;
@@ -63,13 +66,10 @@ public class Damage : MonoBehaviour {
 		{
 			IsDead = true;
 			OnDeath();
-		}*/
+		}
 
 		if (Lives == 0)
 		{
-			string DeathCamName = "P" + (int)(transform.parent.gameObject.GetComponent<XinputHandler>().indexNum +1) + "DeathCam";
-			GameObject DeathCam =  GameObject.Find(DeathCamName);
-			DeathCam.camera.enabled = true;
 			transform.parent.gameObject.SetActive(false);
 		}
 
@@ -97,8 +97,15 @@ public class Damage : MonoBehaviour {
 			Respawns.Add(respawn);
 		}
 
-		transform.position = Respawns [Random.Range(0,Respawns.Count)].transform.position;
+		foreach(Transform brother in transform.parent)
+		{
+		//	brother.position = Respawns [Random.Range(0,Respawns.Count)].transform.position;
+			brother.gameObject.rigidbody.velocity = new Vector3 (0, 0, 0);
 
+			brother.gameObject.rigidbody.isKinematic = true;
+		}
+
+		//transform.position = Respawns [Random.Range(0,Respawns.Count)].transform.position;
 		BoutToDie = false;
 
 		Lives--;
@@ -107,8 +114,16 @@ public class Damage : MonoBehaviour {
 	void OnSpawn ()
 	{
 		//get distance for all players from spawn points and choose the farthest one
-	
-		rigidbody.velocity = new Vector3 (0, 0, 0);
+		
+
+		foreach(Transform brother in transform.parent)
+		{
+			brother.gameObject.rigidbody.isKinematic = false;
+			brother.position = Respawns [Random.Range(0,Respawns.Count)].transform.position;
+			//brother.gameObject.rigidbody.velocity = new Vector3 (0, 0, 0);
+
+		}
+
 		IsDead = false;
 		//rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 		RespawnCount = 0;
@@ -130,11 +145,11 @@ public class Damage : MonoBehaviour {
 			col.gameObject.tag = "Untagged";
 		}
 
-	/*	if(col.gameObject.tag == "SafeZone")
+		if(col.gameObject.tag == "SafeZone")
 		{
-			print("im in.");
+			//print("im in.");
 			BoutToDie = false;
-		}*/
+		}
 	}
 
 	void OnTriggerExit (Collider col)
@@ -143,13 +158,13 @@ public class Damage : MonoBehaviour {
 		{
 			col.gameObject.tag = "RespawnPoints";
 		}
-		/*else
+		else
 		if(col.gameObject.tag == "SafeZone")
 		{
 			print("IM OUT BE WARY!!");
 			DeathTimer = 5 * 60f;
 			BoutToDie = true;
-		}*/
+		}
 	}
 	
 }
