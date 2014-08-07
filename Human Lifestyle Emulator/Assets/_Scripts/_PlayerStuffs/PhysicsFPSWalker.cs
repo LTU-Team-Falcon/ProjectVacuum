@@ -122,12 +122,12 @@ public class PhysicsFPSWalker : MonoBehaviour
 		if(dashLimit < 10000) dashLimit ++;
 
 
-		if(control.GetButton("A") && (grounded) && jumpLimit >= 10)
+		if(control.GetButton("A") && (grounded) && jumpLimit >= 20)
 		{
 			rigidbody.velocity = rigidbody.velocity + (Vector3.up * jumpSpeed *2f);
 			jumpLimit = 0;
 		}
-		else if(control.GetButton("A") && SuperJumpActive == true && jumpLimit >=20 && JumpCount < 3)
+		else if(control.GetButton("A") && SuperJumpActive == true && jumpLimit >=20 && JumpCount < 10)
 		{
 			rigidbody.velocity = rigidbody.velocity + (Vector3.up * jumpSpeed *2f);
 			jumpLimit = 0;
