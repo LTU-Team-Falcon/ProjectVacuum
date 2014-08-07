@@ -84,6 +84,28 @@ public class GetSucked : MonoBehaviour
 		origScale = transform.localScale;
 		origSize = size;
 	}
+
+	GameObject lastshotfrom;
+	public void DealWithColliders(GameObject parGamObj)
+	{
+		lastshotfrom = parGamObj;
+		Collider[] colliders = lastshotfrom.GetComponentsInChildren<Collider>();
+		foreach(Collider col in colliders)
+		{
+			Physics.IgnoreCollision(col , gameObject.collider, true);
+		}
+
+		Invoke("UnDealWithColliders", 2f);
+	}
+
+	void UnDealWithColliders()
+	{
+		Collider[] colliders = lastshotfrom.GetComponentsInChildren<Collider>();
+		foreach(Collider col in colliders)
+		{
+			Physics.IgnoreCollision(col , gameObject.collider, false);
+		}
+	}
 	
 	public void reCalcVar()
 	{
