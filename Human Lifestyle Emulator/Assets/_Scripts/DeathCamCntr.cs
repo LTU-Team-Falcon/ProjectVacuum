@@ -37,7 +37,7 @@ public class DeathCamCntr : MonoBehaviour {
 			}
 			else
 			{
-				transform.parent.parent.gameObject.SetActive(false);
+			//	transform.parent.parent.gameObject.SetActive(false);
 			}
 		}
 		else if(numberOfPlayers == 2)
@@ -52,7 +52,7 @@ public class DeathCamCntr : MonoBehaviour {
 			}
 			else
 			{
-				transform.parent.parent.gameObject.SetActive(false);
+			//	transform.parent.parent.gameObject.SetActive(false);
 			}
 		}
 		else if(numberOfPlayers == 3)
@@ -71,7 +71,7 @@ public class DeathCamCntr : MonoBehaviour {
 			}
 			else
 			{
-				transform.parent.parent.gameObject.SetActive(false);
+//				transform.parent.parent.gameObject.SetActive(false);
 			}
 		}
 		else if(numberOfPlayers == 4)
@@ -94,7 +94,7 @@ public class DeathCamCntr : MonoBehaviour {
 			}
 			else
 			{
-				transform.parent.parent.gameObject.SetActive(false);
+			//	transform.parent.parent.gameObject.SetActive(false);
 			}
 		}
 	}

@@ -10,7 +10,7 @@ public class XinputHandler : MonoBehaviour
 	XinputController cont;
 	XinputKeyboard keyb;
 	
-	public int indexNum = 1;
+	public int indexNum;
 	
 	// Use this for initialization
 	void Awake()
@@ -21,7 +21,6 @@ public class XinputHandler : MonoBehaviour
 		if(cont == null && keyb == null)
 		{
 			cont = gameObject.AddComponent<XinputController>();
-
 		}
 		else if(cont != null && cont.enabled == false)
 		{
@@ -37,7 +36,7 @@ public class XinputHandler : MonoBehaviour
 
 	void Start()
 	{
-		if(cont != null)
+/*		if(cont != null)
 		{
 	//		print("ContCalled");
 			cont.CallUpdate();
@@ -52,7 +51,7 @@ public class XinputHandler : MonoBehaviour
 				usesKeyboard = true;
 				cont.enabled = false;
 			}
-		}
+		}*/
 	}
 	
 	// Update is called once per frame

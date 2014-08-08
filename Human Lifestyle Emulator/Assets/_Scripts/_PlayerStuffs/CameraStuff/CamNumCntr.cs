@@ -5,6 +5,8 @@ public class CamNumCntr : MonoBehaviour {
 
 	XinputHandler control;
 
+	public int PlayNum;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -15,9 +17,9 @@ public class CamNumCntr : MonoBehaviour {
 		int PlayerNumber = control.indexNum + 1;//PlayerPrefs.GetInt("PlayerNum");
 		int numberOfPlayers = Input.GetJoystickNames().Length;
 		//Camera thisCam = gameObject.GetComponent<Camera>();
-
 		doIgnorance();
-
+		print("NumPlay = " + numberOfPlayers);
+		print("Play NUm = " + PlayerNumber);
 		if(numberOfPlayers == 1)
 		{
 			if(PlayerNumber == 1)
@@ -33,11 +35,11 @@ public class CamNumCntr : MonoBehaviour {
 		{
 			if(PlayerNumber == 1)
 			{
-				camera.rect = new Rect(0,.5f,1,1);
+				camera.rect = new Rect(0,.5f, 1, .5f);
 			}
 			else if(PlayerNumber == 2)
 			{
-				camera.rect = new Rect(0,-.5f,1,1);
+				camera.rect = new Rect(0, 0, 1, .5f);
 			}
 			else
 			{

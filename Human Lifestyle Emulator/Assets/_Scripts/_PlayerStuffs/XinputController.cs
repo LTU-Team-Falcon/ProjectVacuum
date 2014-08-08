@@ -13,11 +13,12 @@ public class XinputController : MonoBehaviour
 	GamePadState prevState;
 
 	[HideInInspector]
-	public int indexNum = 1;
+	public int indexNum;
 	
 	// Use this for initialization
 	void Start()
 	{
+		indexNum = gameObject.GetComponent<XinputHandler>().indexNum;
 		// No need to initialize anything for the plugin
 	}
 	public void CallUpdate()
@@ -43,6 +44,8 @@ public class XinputController : MonoBehaviour
 			else
 			{
 				Debug.LogWarning("Controller Index:" + playerIndex + " is Not Connected");
+				gameObject.SetActive(false);
+
 			}
 		}
 
