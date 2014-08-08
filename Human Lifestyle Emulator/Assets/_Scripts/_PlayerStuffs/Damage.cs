@@ -10,7 +10,7 @@ public class Damage : MonoBehaviour {
 	public int Lives;
 	[HideInInspector]
 	public bool IsDead;
-	[HideInInspector]
+	//[HideInInspector]
 	public int RespawnCount;
 	[HideInInspector]
 	public GUIText DamageText;
@@ -33,7 +33,7 @@ public class Damage : MonoBehaviour {
 			DamageText = GameObject.Find(name).guiText;
 		}
 		damageCounter = 0;
-		Lives = 3;
+		Lives = 1;
 		IsDead = false;
 		
 	}
@@ -46,7 +46,7 @@ public class Damage : MonoBehaviour {
 			RespawnCount++;
 		}
 
-		if (RespawnCount == 150)
+		if (RespawnCount == 50)
 		{
 			OnSpawn();
 		}
@@ -57,7 +57,7 @@ public class Damage : MonoBehaviour {
 			OnDeath();
 		}
 */
-		if(BoutToDie)
+		/*if(BoutToDie)
 		{
 			print("DeathTimer" + DeathTimer);
 			DeathTimer --;
@@ -66,10 +66,13 @@ public class Damage : MonoBehaviour {
 		{
 			IsDead = true;
 			OnDeath();
-		}
+		}*/
 
 		if (Lives == 0)
 		{
+			string DeathCamName = "P" + (int)(transform.parent.gameObject.GetComponent<XinputHandler>().indexNum +1) + "DeathCam";
+			GameObject DeathCam =  GameObject.Find(DeathCamName);
+			DeathCam.camera.enabled = true;
 			transform.parent.gameObject.SetActive(false);
 		}
 
@@ -106,7 +109,7 @@ public class Damage : MonoBehaviour {
 		}
 
 		//transform.position = Respawns [Random.Range(0,Respawns.Count)].transform.position;
-		BoutToDie = false;
+		//BoutToDie = false;
 
 		Lives--;
 	}
@@ -145,11 +148,11 @@ public class Damage : MonoBehaviour {
 			col.gameObject.tag = "Untagged";
 		}
 
-		if(col.gameObject.tag == "SafeZone")
+		/*if(col.gameObject.tag == "SafeZone")
 		{
 			//print("im in.");
 			BoutToDie = false;
-		}
+		}*/
 	}
 
 	void OnTriggerExit (Collider col)
@@ -158,13 +161,13 @@ public class Damage : MonoBehaviour {
 		{
 			col.gameObject.tag = "RespawnPoints";
 		}
-		else
+		/*else
 		if(col.gameObject.tag == "SafeZone")
 		{
 			print("IM OUT BE WARY!!");
 			DeathTimer = 5 * 60f;
 			BoutToDie = true;
-		}
+		}*/
 	}
 	
 }
