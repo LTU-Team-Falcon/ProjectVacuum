@@ -80,7 +80,7 @@ public class PhysicsFPSWalker : MonoBehaviour
 		//rather, on the individual components; allowing you to adjust your velocity if you are going the max speed
 		if(grounded)
 		{		// If the object is grounded and isn't moving at the max speed or higher apply force to move it
-
+			//rigidbody.velocity = new Vector3(rigidbody.velocity.x,0,rigidbody.velocity.z);
 			if(vert !=0)
 			{
 				rigidbody.AddForce (new Vector3(transform.forward.x, 0, transform.forward.z) * vert * speedMod);				
@@ -105,10 +105,10 @@ public class PhysicsFPSWalker : MonoBehaviour
 		else
 		if(!grounded)
 		{ //if object is in the air; give you control over it slightly
-			//if(Time.frameCount%15 == 0)
-			//{
-			//	rigidbody.velocity += Vector3.down/.1f;
-			//}
+			if(Time.frameCount%15 == 0)
+			{
+				rigidbody.velocity += Vector3.down;
+			}
 
 			if(vert != 0)
 			{
@@ -160,6 +160,8 @@ public class PhysicsFPSWalker : MonoBehaviour
 
 			rigidbody.velocity += Vector3.down;
 		}
+
+		Debug.Log (rigidbody.velocity.y);
 
 	}
 
