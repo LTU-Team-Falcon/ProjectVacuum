@@ -3,50 +3,62 @@ using System.Collections;
 
 public class MainMenu : MonoBehaviour 
 {
-	public GUITexture Play_Off;
-	public GUITexture Quit_Off;
-	public GUITexture Settings_Off;
+	public GUITexture Main_Play_Off;
+	public GUITexture Main_Quit_Off;
+	public GUITexture Main_Settings_Off;
 
-	Color Orginal;
+	public GameObject subMenuSettings;
+	public GameObject subMenuMain;
 
-	// Use this for initialization
-	void Start () {
+	public GUITexture Sett_Back_Off;
+	public GUITexture Sett_Keyboard_Off;
 
-		Orginal = guiTexture.color;
+	SettingsData settingsData;
 
+	void Start () 
+	{
+		settingsData = GameObject.FindObjectOfType<SettingsData>();
 	}
 
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 
-		if (Input.GetMouseButtonDown (0)) 
+		if (Input.GetMouseButtonUp (0)) 
 		{
-			if (Play_Off.HitTest (Input.mousePosition)) 
+			if (Main_Play_Off.HitTest (Input.mousePosition)) 
 			{
 				Application.LoadLevel (1);
-			}
-			if (Settings_Off.HitTest (Input.mousePosition))
+			} else
+			if (Main_Settings_Off.HitTest (Input.mousePosition))
 			{
+				subMenuMain.SetActive(false);
+				subMenuSettings.SetActive(true);
+				return;
 				// hid main menu and unhid settings menu
-			}
-
-			if (Quit_Off.HitTest (Input.mousePosition)) 
+			} else
+			if (Main_Quit_Off.HitTest (Input.mousePosition)) 
 			{
 				Application.Quit ();
+			}
+		
+
+			if (Sett_Keyboard_Off.HitTest (Input.mousePosition))
+			{
+				settingsData.setHasKeyboard(  !settingsData.getHasKeyboard()  ); 
+
+
+			} else 
+			if(Sett_Back_Off.HitTest(Input.mousePosition))
+			{
+				subMenuMain.SetActive(true);
+				subMenuSettings.SetActive(false);
+				return;
 			}
 		}
 
 			
-	}
-
-	void OnMouseEnter() {
-		guiTexture.color = Color.white;
-
-	}
-
-	void OnMouseExit() {
-		guiTexture.color = Orginal;
 	}
 
 }

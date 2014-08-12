@@ -12,7 +12,7 @@ public class DeathCamCntr : MonoBehaviour {
 	void Awake () 
 	{
 		gameManager = GameObject.FindObjectOfType<GameManager>();
-		s
+
 		if (gameObject.name == "P1DeathCam")
 		{
 			PlayerNumber = 1;

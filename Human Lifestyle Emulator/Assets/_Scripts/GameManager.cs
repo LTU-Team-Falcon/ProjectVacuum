@@ -19,6 +19,12 @@ public class GameManager : MonoBehaviour
 	private Score score;
 
 
+	void Awake()
+	{
+
+	}
+
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -161,5 +167,12 @@ public class GameManager : MonoBehaviour
 		}
 	}
 	
-	
+	void CheckForSettings()
+	{
+		SettingsData settingsdata = Object.FindObjectOfType<SettingsData>();
+		if(settingsdata != null)
+		{
+			this.hasKeyboardPlayer = settingsdata.getHasKeyboard();
+		}
+	}
 }
