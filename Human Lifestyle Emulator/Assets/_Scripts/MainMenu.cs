@@ -47,8 +47,7 @@ public class MainMenu : MonoBehaviour
 			if (Sett_Keyboard_Off.HitTest (Input.mousePosition))
 			{
 				settingsData.setHasKeyboard(  !settingsData.getHasKeyboard()  ); 
-
-
+				//this whole set up is super temporary, unless you like it, Spangler.
 			} else 
 			if(Sett_Back_Off.HitTest(Input.mousePosition))
 			{

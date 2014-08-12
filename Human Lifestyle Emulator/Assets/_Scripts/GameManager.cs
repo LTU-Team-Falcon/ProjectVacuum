@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 	public float totalSceneWeight =0;
 	public int objectCount =0;
 	public GameObject DebugTextFab;
-	
+	 
 	public DisplayTime DisplayTime;
 
 	public bool hasKeyboardPlayer = false;
