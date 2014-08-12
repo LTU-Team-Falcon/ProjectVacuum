@@ -19,6 +19,7 @@ public class CamNumCntr : MonoBehaviour {
 		doIgnorance();
 		//print("NumPlay = " + numberOfPlayers);
 		//print("Play NUm = " + PlayerNumber);
+		print(PlayerNumber);
 		if(numberOfPlayers == 1)
 		{
 			if(PlayerNumber == 1)
@@ -38,10 +39,11 @@ public class CamNumCntr : MonoBehaviour {
 			}
 			else if(PlayerNumber == 2)
 			{
-				camera.rect = new Rect(0, 0, 1, .5f);
+				camera.rect = new Rect(0,-.5f,1,1);
 			}
 			else
 			{
+
 				transform.parent.parent.gameObject.SetActive(false);
 			}
 		}
@@ -61,6 +63,7 @@ public class CamNumCntr : MonoBehaviour {
 			}
 			else
 			{
+
 				transform.parent.parent.gameObject.SetActive(false);
 			}
 		}

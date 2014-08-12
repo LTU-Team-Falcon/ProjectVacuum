@@ -69,11 +69,11 @@ public class Damage : MonoBehaviour {
 
 		if (Lives == 0)
 		{
-			string DeathCamName = "P" + (int)(transform.parent.gameObject.GetComponent<XinputHandler>().indexNum +1) + "DeathCam";
+/*			string DeathCamName = "P" + (int)(transform.parent.gameObject.GetComponent<XinputHandler>().indexNum +1) + "DeathCam";
 			GameObject DeathCam =  GameObject.Find(DeathCamName);
 			DeathCam.camera.enabled = true;
 			transform.parent.gameObject.SetActive(false);
-		}
+*/		}
 
 		DamageText.text = damageCounter + "%";
 

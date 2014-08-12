@@ -19,6 +19,8 @@ public class XinputHandler : MonoBehaviour
 	{
 		gameManager = Object.FindObjectOfType<GameManager>();
 		ResetInputs();
+		
+
 /*		cont = gameObject.GetComponent<XinputController>();
 		
 		keyb = gameObject.GetComponent<XinputKeyboard>();
@@ -64,6 +66,7 @@ public class XinputHandler : MonoBehaviour
 
 	void Start()
 	{
+
 /*		if(cont != null)
 		{
 	//		print("ContCalled");

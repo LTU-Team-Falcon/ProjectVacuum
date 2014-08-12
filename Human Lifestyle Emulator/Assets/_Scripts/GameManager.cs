@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
 	void Awake()
 	{
-
+		CheckForSettings();
 	}
 
 
@@ -172,7 +172,7 @@ public class GameManager : MonoBehaviour
 		SettingsData settingsdata = Object.FindObjectOfType<SettingsData>();
 		if(settingsdata != null)
 		{
-			this.hasKeyboardPlayer = settingsdata.getHasKeyboard();
+			this.hasKeyboardPlayer = settingsdata._HasKeyboard;
 		}
 	}
 }

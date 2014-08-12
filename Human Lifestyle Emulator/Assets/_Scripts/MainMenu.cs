@@ -24,40 +24,52 @@ public class MainMenu : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-
 		if (Input.GetMouseButtonUp (0)) 
 		{
-			if (Main_Play_Off.HitTest (Input.mousePosition)) 
+			if(subMenuMain.activeInHierarchy)
 			{
-				Application.LoadLevel (1);
-			} else
-			if (Main_Settings_Off.HitTest (Input.mousePosition))
-			{
-				subMenuMain.SetActive(false);
-				subMenuSettings.SetActive(true);
-				return;
-				// hid main menu and unhid settings menu
-			} else
-			if (Main_Quit_Off.HitTest (Input.mousePosition)) 
-			{
-				Application.Quit ();
-			}
-		
+				if (Main_Play_Off.HitTest (Input.mousePosition)) 
+				{
+					Application.LoadLevel (1);
+				} else
+					if (Main_Settings_Off.HitTest (Input.mousePosition))
+				{
+					
+					subMenuMain.SetActive(false);
+					subMenuSettings.SetActive(true);
+					return;
+					// hid main menu and unhid settings menu
+				} else
+				if (Main_Quit_Off.HitTest (Input.mousePosition)) 
+				{
+					Application.Quit ();
+				}
 
-			if (Sett_Keyboard_Off.HitTest (Input.mousePosition))
-			{
-				settingsData.setHasKeyboard(  !settingsData.getHasKeyboard()  ); 
-				//this whole set up is super temporary, unless you like it, Spangler.
-			} else 
-			if(Sett_Back_Off.HitTest(Input.mousePosition))
-			{
-				subMenuMain.SetActive(true);
-				subMenuSettings.SetActive(false);
-				return;
 			}
+
+
+
+			if(subMenuSettings.activeInHierarchy)
+			{
+				if (Sett_Keyboard_Off.HitTest (Input.mousePosition))
+				{
+					settingsData._HasKeyboard = !settingsData._HasKeyboard;
+					//this whole set up is super temporary, unless you like it, Spangler.
+				} else 
+					if(Sett_Back_Off.HitTest(Input.mousePosition))
+				{
+					subMenuSettings.SetActive(false);
+					subMenuMain.SetActive(true);
+					return;
+				}
+			}
+
 		}
+	}
 
-			
+	void fullyToggleActivation(GameObject parGameObj, bool parbool)
+	{
+
 	}
 
 }

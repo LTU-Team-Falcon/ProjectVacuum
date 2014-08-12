@@ -5,7 +5,7 @@ public class MainMenuButton : MonoBehaviour
 {
 	public bool doesToggle = false;
 	public Color original;
-	public Color toggled = new Color(1,0.77f, 0.77f, 1);
+	public Color toggled = new Color(1,0.77f, 0.44f, 1);
 	public Color onClick = Color.red;
 	public Color onSelect = Color.white;
 
@@ -30,10 +30,19 @@ public class MainMenuButton : MonoBehaviour
 			{
 				guiTexture.color = onClick;
 			} else
-			if(Input.GetMouseButtonUp(0) && doesToggle)
+			if(Input.GetMouseButtonUp(0))
 			{
-				Toggle();
-				guiTexture.color = Color.Lerp(original, onClick, 0.5f);
+				if(doesToggle)
+				{
+					Toggle();
+					guiTexture.color = Color.Lerp(original, onClick, 0.5f);
+
+				}
+				else
+				{		
+					guiTexture.color = original;
+
+				}
 			}
 		}
 	}

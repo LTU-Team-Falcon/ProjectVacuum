@@ -65,8 +65,8 @@ public class MouseOrbitImproved : MonoBehaviour {
 			{
 				Players.Add(Player);
 			}
-			PlayerSize = Players.Count;
-			target = Players[count].transform;	
+			/*PlayerSize = Players.Count;
+			target = Players[count].transform;	*/
 			count++;
 		}
 	}
