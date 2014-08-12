@@ -8,9 +8,10 @@ public class GameManager : MonoBehaviour
 	public float totalSceneWeight =0;
 	public int objectCount =0;
 	public GameObject DebugTextFab;
-
+	
 	public DisplayTime DisplayTime;
 
+	public bool hasKeyboardPlayer = false;
 
 	public bool isPaused = false;
 	private bool canUnpause = true;
@@ -70,11 +71,11 @@ public class GameManager : MonoBehaviour
 		Screen.showCursor = true;
 		RenderSettings.fog = true;//ambientLight *= 0.01f;
 
-		GameObject[] pauses = GameObject.FindGameObjectsWithTag("Menu");
-		
-		foreach(GameObject pauseMenu in pauses)
+		PauseMenu[] pMenus = GameObject.FindObjectsOfType<PauseMenu>();
+
+		foreach(PauseMenu pauseMenu in pMenus)
 		{
-			pauseMenu.SetActive(true);
+			pauseMenu.gameObject.SetActive(true);
 		}
 	}
 	
@@ -85,11 +86,11 @@ public class GameManager : MonoBehaviour
 		Screen.showCursor = true;
 		RenderSettings.fog = true;//ambientLight *= 0.01f;
 
-		GameObject[] pauses = GameObject.FindGameObjectsWithTag("Menu");
+		PauseMenu[] pMenus = GameObject.FindObjectsOfType<PauseMenu>();
 
-		foreach(GameObject pauseMenu in pauses)
+		foreach(PauseMenu pauseMenu in pMenus)
 		{
-			pauseMenu.SetActive(true);
+			pauseMenu.gameObject.SetActive(true);
 			pauseMenu.transform.FindChild("MenuContinue").gameObject.SetActive(false);
 			pauseMenu.transform.FindChild("MenuReload").gameObject.SetActive(false);
 		}
@@ -108,11 +109,11 @@ public class GameManager : MonoBehaviour
 		Screen.showCursor = false;
 		
 	//	transform.Find("PauseMenuObj").gameObject.SetActive(false); //SetActive(false);
-		GameObject[] pauses = GameObject.FindGameObjectsWithTag("Menu");
+		PauseMenu[] pMenus = GameObject.FindObjectsOfType<PauseMenu>();
 
-		foreach(GameObject pauseMenu in pauses)
+		foreach(PauseMenu pauseMenu in pMenus)
 		{
-			pauseMenu.SetActive(false);
+			pauseMenu.gameObject.SetActive(false);
 		}
 	}
 	
@@ -129,6 +130,22 @@ public class GameManager : MonoBehaviour
 			Screen.lockCursor = false;
 			Screen.showCursor = true;
 		}
+	}
+
+
+
+	public int getNumberOfPlayers()
+	{
+		int sol = Input.GetJoystickNames().Length;
+		if(hasKeyboardPlayer && sol < 4)
+		{
+			sol += 1;
+		}
+		else if(hasKeyboardPlayer && sol == 4)
+		{
+			hasKeyboardPlayer = false;
+		}
+		return sol;
 	}
 
 

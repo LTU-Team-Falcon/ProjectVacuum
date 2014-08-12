@@ -33,7 +33,6 @@ public class Damage : MonoBehaviour {
 			DamageText = GameObject.Find(name).guiText;
 		}
 		damageCounter = 0;
-		Lives = 1;
 		IsDead = false;
 		
 	}

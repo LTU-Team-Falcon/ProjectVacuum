@@ -161,7 +161,7 @@ public class PhysicsFPSWalker : MonoBehaviour
 			rigidbody.velocity += Vector3.down;
 		}
 
-		Debug.Log (rigidbody.velocity.y);
+//		Debug.Log (rigidbody.velocity.y);
 
 	}
 

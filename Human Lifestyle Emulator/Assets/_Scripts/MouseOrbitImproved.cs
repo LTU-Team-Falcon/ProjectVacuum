@@ -18,7 +18,7 @@ public class MouseOrbitImproved : MonoBehaviour {
 
 	public List<GameObject> Players= new List<GameObject>();
 
-	public XinputHandler control;
+	XinputHandler control;
 
 	float x = 0.0f;
 	float y = 0.0f;
@@ -27,7 +27,10 @@ public class MouseOrbitImproved : MonoBehaviour {
 	public int PlayerSize;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
+		control = GameObject.Find("PlayerContainer" + gameObject.GetComponent<DeathCamCntr>().PlayerNumber).GetComponent<XinputHandler>();
+
 		Vector3 angles = transform.eulerAngles;
 		x = angles.y;
 		y = angles.x;

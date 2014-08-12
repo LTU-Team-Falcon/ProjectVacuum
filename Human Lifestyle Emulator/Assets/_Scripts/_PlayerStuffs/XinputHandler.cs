@@ -11,11 +11,15 @@ public class XinputHandler : MonoBehaviour
 	XinputKeyboard keyb;
 	
 	public int indexNum;
+
+	public GameManager gameManager;
 	
 	// Use this for initialization
 	void Awake()
 	{
-		cont = gameObject.GetComponent<XinputController>();
+		gameManager = Object.FindObjectOfType<GameManager>();
+		ResetInputs();
+/*		cont = gameObject.GetComponent<XinputController>();
 		
 		keyb = gameObject.GetComponent<XinputKeyboard>();
 		if(cont == null && keyb == null)
@@ -31,6 +35,30 @@ public class XinputHandler : MonoBehaviour
 		{
 			cont.indexNum = this.indexNum;
 			cont.isDebugging = this.isDebugging;
+		}*/
+	}
+
+	void ResetInputs()
+	{
+		int gameNumPlayers = gameManager.getNumberOfPlayers();
+		if(gameNumPlayers == 0)
+		{
+			keyb = gameObject.AddComponent<XinputKeyboard>();
+			gameManager.hasKeyboardPlayer = true;
+			this.usesKeyboard = true;
+		}
+		else if(gameManager.hasKeyboardPlayer &&  this.indexNum == (gameNumPlayers - 1) )
+		{
+			keyb = gameObject.AddComponent<XinputKeyboard>();
+			this.usesKeyboard = true;
+		}
+		else if(gameNumPlayers > indexNum)
+		{
+			cont = gameObject.AddComponent<XinputController>();
+		}
+		else
+		{
+			gameObject.SetActive(false);
 		}
 	}
 

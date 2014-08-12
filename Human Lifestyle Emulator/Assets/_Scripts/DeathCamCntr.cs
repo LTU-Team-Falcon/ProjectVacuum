@@ -6,11 +6,13 @@ public class DeathCamCntr : MonoBehaviour {
 	public int numberOfPlayers;
 	public int PlayerNumber;
 
+	GameManager gameManager;
+
 	// Use this for initialization
-	void Start () {
-
-		numberOfPlayers = GameObject.FindGameObjectsWithTag ("Player").Length;
-
+	void Awake () 
+	{
+		gameManager = GameObject.FindObjectOfType<GameManager>();
+		s
 		if (gameObject.name == "P1DeathCam")
 		{
 			PlayerNumber = 1;
@@ -28,6 +30,14 @@ public class DeathCamCntr : MonoBehaviour {
 			PlayerNumber = 4;
 		}
 
+	}
+
+	void SetConnections()
+	{
+
+		numberOfPlayers = gameManager.getNumberOfPlayers();
+
+
 
 		if(numberOfPlayers == 1)
 		{
@@ -37,7 +47,7 @@ public class DeathCamCntr : MonoBehaviour {
 			}
 			else
 			{
-			//	transform.parent.parent.gameObject.SetActive(false);
+				gameObject.SetActive(false);
 			}
 		}
 		else if(numberOfPlayers == 2)
@@ -52,7 +62,8 @@ public class DeathCamCntr : MonoBehaviour {
 			}
 			else
 			{
-			//	transform.parent.parent.gameObject.SetActive(false);
+				gameObject.SetActive(false);
+
 			}
 		}
 		else if(numberOfPlayers == 3)
@@ -71,7 +82,8 @@ public class DeathCamCntr : MonoBehaviour {
 			}
 			else
 			{
-//				transform.parent.parent.gameObject.SetActive(false);
+				gameObject.SetActive(false);
+
 			}
 		}
 		else if(numberOfPlayers == 4)
@@ -94,15 +106,22 @@ public class DeathCamCntr : MonoBehaviour {
 			}
 			else
 			{
-			//	transform.parent.parent.gameObject.SetActive(false);
+				gameObject.SetActive(false);
+
 			}
 		}
 	}
-	
+
+
+	bool isFirstUpdate = true;
 	// Update is called once per frame
-	void Update () {
-	
-		numberOfPlayers = GameObject.FindGameObjectsWithTag ("Player").Length;
+	void Update () 
+	{
+		if(isFirstUpdate)
+		{
+			isFirstUpdate = false;
+			SetConnections();
+		}
 
 	}
 }
