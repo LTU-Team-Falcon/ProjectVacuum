@@ -5,7 +5,7 @@ public class pauseUnpause : MonoBehaviour {
 	XinputHandler inputHandler;
 
 	public bool playerIsPaused = false;
-
+	bool isFirstUpdate = true;
 	float moveforce = 2000;
 	float movejump = 4.7f;
 	Vector3 Sensitivity = new Vector3(60f,60f,60f);
@@ -24,21 +24,28 @@ public class pauseUnpause : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void LateUpdate ()
 	{
-		if(inputHandler.GetButtonUp("Start") && Time.time > 1f)
+		if(!isFirstUpdate)
 		{
-			print("Yep");
-			if(playerIsPaused)
+			if(inputHandler.GetButtonUp("Start") && Time.time > 1f)
 			{
-				Unpause();
+				if(playerIsPaused)
+				{
+					Unpause();
+				}
+				else
+				{
+					print("Yep");
+					
+					Pause();
+				}
 			}
-			else
-			{
-				print("Yep");
+		}
+		else
+		{
+			isFirstUpdate = false;
 
-				Pause();
-			}
 		}
 	}
 
