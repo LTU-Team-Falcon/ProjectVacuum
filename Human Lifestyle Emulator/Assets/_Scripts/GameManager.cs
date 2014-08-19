@@ -155,7 +155,7 @@ public class GameManager : MonoBehaviour
 	}
 
 
-	public void StartBeenPressed() 
+	/*public void StartBeenPressed() 
 	{
 		if(!isPaused)
 		{
@@ -165,7 +165,7 @@ public class GameManager : MonoBehaviour
 		{
 			UnPause();
 		}
-	}
+	}*/
 	
 	void CheckForSettings()
 	{

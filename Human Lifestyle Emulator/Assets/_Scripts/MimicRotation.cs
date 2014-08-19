@@ -10,12 +10,12 @@ public class MimicRotation : MonoBehaviour {
 	public bool changeTrueRotation = false;
 	public bool calcOffset = false;
 
-	Vector3 origRotOffset = new Vector3(0,0,0);
+	 Vector3 origRotOffset = new Vector3(0,0,0);
 
 
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 	
 		if(calcOffset)
 		{

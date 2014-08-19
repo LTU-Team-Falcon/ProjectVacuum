@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class PixelizeCamera : MonoBehaviour 
 {
 	public int offset = 0;
+	public int antiAlias = 2;
 	public int numLOD;
 	public float minResPcent;
 	public float maxResPcent;
@@ -56,7 +57,6 @@ public class PixelizeCamera : MonoBehaviour
 		Rect rectjob = this.camera.pixelRect;
 		Vector2 rendDims;
 
-
 		for(int i = 1; i < (numLOD + 1); i++)
 		{
 			float lastRadi = getOuterRadius(i -1);
@@ -77,6 +77,7 @@ public class PixelizeCamera : MonoBehaviour
 			camGam.camera.farClipPlane = thisRadi + 2;
 
 			bool slideFlag = false;
+
 			if(i == numLOD && gameObject.GetComponent<Skybox>() != null)
 			{
 				Skybox skyboxFurRelz = gameObject.GetComponent<Skybox>();
@@ -107,6 +108,7 @@ public class PixelizeCamera : MonoBehaviour
 
 			rendOtex = new RenderTexture((int)(rendDims.x), (int)(rendDims.y), (int)thisRadi);
 			rendOtex.filterMode = FilterMode.Point;
+			rendOtex.antiAliasing = antiAlias;
 			camGam.camera.targetTexture = rendOtex;
 			rendOtex.name = (string) ("rendOtex - " + i);
 
@@ -120,7 +122,7 @@ public class PixelizeCamera : MonoBehaviour
 				slideName = "FinaleViewPlane";
 
 			GameObject renderSlide = GameObject.Instantiate(Resources.Load(slideName), transform.position, transform.rotation) as GameObject;
-			renderSlide.layer = offset + 20;
+			renderSlide.layer = offset + 27;
 			renderSlide.renderer.material.mainTexture = rendOtex;
 			renderSlide.name = (string) (slideName + " - " + i);
 			renderSlide.transform.parent = this.transform;
@@ -139,7 +141,7 @@ public class PixelizeCamera : MonoBehaviour
 		}
 
 			this.camera.isOrthoGraphic = true;
-			this.camera.cullingMask = (1 << (20 + offset));
+			this.camera.cullingMask = (1 << (27 + offset));
 			this.camera.orthographicSize = 5f;
 	}
 
@@ -147,7 +149,7 @@ public class PixelizeCamera : MonoBehaviour
 	{
 		if(par1Int == numLOD)
 		{
-			return 1000;
+			return 5000;
 		}
 		else if(par1Int == 0)
 		{

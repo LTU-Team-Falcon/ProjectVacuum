@@ -19,7 +19,7 @@ public class CamNumCntr : MonoBehaviour {
 		doIgnorance();
 		//print("NumPlay = " + numberOfPlayers);
 		//print("Play NUm = " + PlayerNumber);
-		print(PlayerNumber);
+//		print(PlayerNumber);
 		if(numberOfPlayers == 1)
 		{
 			if(PlayerNumber == 1)

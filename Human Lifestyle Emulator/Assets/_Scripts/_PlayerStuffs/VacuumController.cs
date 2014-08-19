@@ -89,10 +89,10 @@ public class VacuumController : MonoBehaviour
 	{
 		shotTime --;
 
-		if(control.GetButtonDown("Start"))
+		/*if(control.GetButtonDown("Start"))
 		{
 			gameManager.StartBeenPressed();
-		}
+		}*/
 
 		if(control.GetRightTrigger() > 0.7f && shotTime <= 0)
 		{

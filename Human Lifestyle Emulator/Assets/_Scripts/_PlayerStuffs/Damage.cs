@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Damage : MonoBehaviour {
 
-	[HideInInspector]
+	//[HideInInspector]
 	public float damageCounter;
 
 	public int Lives;
@@ -86,7 +86,7 @@ public class Damage : MonoBehaviour {
 		{
 			col.gameObject.tag = "Suckable";
 			Vector3 direction =  transform.position - col.transform.position;
-			float Factor = col.rigidbody.mass * col.relativeVelocity.magnitude * damageCounter * 500;
+			float Factor = col.rigidbody.mass * col.relativeVelocity.magnitude * damageCounter * 50;
 			rigidbody.AddForce(direction.normalized * Factor);
 			damageCounter += col.rigidbody.mass * 5;
 		}
