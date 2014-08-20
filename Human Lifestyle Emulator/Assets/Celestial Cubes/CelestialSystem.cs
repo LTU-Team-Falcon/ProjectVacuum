@@ -6,11 +6,14 @@ public class CelestialSystem : MonoBehaviour
 	public Color AmbientLight;
 
 	// Use this for initialization
-	void Start () 
+	void OnEnable () 
 	{
 		RenderSettings.ambientLight = AmbientLight;
 	}
-	
+	void Start()
+	{
+		OnEnable();
+	}
 	// Update is called once per frame
 	void Update () 
 	{

@@ -4,7 +4,7 @@ using System.Collections;
 public class AsteroidRemover : MonoBehaviour 
 {
 	public int age =0;
-	int deathTime = 2000;
+	int deathTime = 1100;
 	int overTime = 300;
 	// Use this for initialization
 	void Start () 
