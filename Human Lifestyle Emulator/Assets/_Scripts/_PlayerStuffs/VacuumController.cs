@@ -35,7 +35,7 @@ public class VacuumController : MonoBehaviour
 	void Start () 
 	{
 		IsSucking = true;
-		gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+		gameManager = GameObject.FindObjectOfType<GameManager>();
 
 		playerObj = transform.parent.gameObject;
 		if(transform.parent.gameObject.GetComponent<XinputHandler>() != null)

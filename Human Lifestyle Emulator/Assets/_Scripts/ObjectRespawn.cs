@@ -11,8 +11,9 @@ public class ObjectRespawn : MonoBehaviour {
 
 	private int Inum = 60;
 	// Use this for initialization
-	void Start () {
-
+	void Start () 
+	{
+		Floor = GameObject.Find("GroundLayer");
 		OrigPos = transform.position;
 		Inum -= (int)(Random.value*50);
 	}
