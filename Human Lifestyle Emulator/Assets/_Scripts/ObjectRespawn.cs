@@ -4,7 +4,8 @@ using System.Collections;
 public class ObjectRespawn : MonoBehaviour {
 
 	public Vector3 OrigPos;
-	public GameObject Floor;
+
+	private GameObject Floor;
 
 	private int count;
 	private bool IsGone;
