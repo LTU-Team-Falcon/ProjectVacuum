@@ -167,7 +167,11 @@ public class GameManager : MonoBehaviour
 			UnPause();
 		}
 	}*/
-	
+
+
+	//Turn of GUI for players not playing
+
+
 	void CheckForSettings()
 	{
 		SettingsData settingsdata = Object.FindObjectOfType<SettingsData>();
