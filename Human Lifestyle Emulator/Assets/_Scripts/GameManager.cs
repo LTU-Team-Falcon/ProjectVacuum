@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour
 			GameObject EndGameCamera = GameObject.Find("EndGameCamera");
 			EndGameCamera.camera.enabled = true;
 			Screen.lockCursor = false;
-			Screen.showCursor = true
+			Screen.showCursor = true;
 		}
 
 	}
