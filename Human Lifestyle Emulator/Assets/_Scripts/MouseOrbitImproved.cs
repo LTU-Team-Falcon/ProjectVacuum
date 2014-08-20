@@ -18,7 +18,7 @@ public class MouseOrbitImproved : MonoBehaviour {
 
 	public List<GameObject> Players= new List<GameObject>();
 
-	XinputHandler control;
+	public XinputHandler control;
 
 	float x = 0.0f;
 	float y = 0.0f;

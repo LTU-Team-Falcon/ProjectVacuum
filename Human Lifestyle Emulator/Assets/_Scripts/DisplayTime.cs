@@ -5,7 +5,7 @@ public class DisplayTime : MonoBehaviour
 {
 	private float levelStartTime;
 	public int phaseTime = 180;
-	public int timeLeft;
+	public int timeLeft = 180;
 	public GUIText TimeText;
 
 	private GameManager gameManager;

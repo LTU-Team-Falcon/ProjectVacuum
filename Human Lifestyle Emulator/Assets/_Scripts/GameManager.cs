@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 	private bool canUnpause = true;
 
 	private Score score;
-
+	public int sol;
 
 	void Awake()
 	{
@@ -134,8 +134,9 @@ public class GameManager : MonoBehaviour
 			GameObject EndGameCamera = GameObject.Find("EndGameCamera");
 			EndGameCamera.camera.enabled = true;
 			Screen.lockCursor = false;
-			Screen.showCursor = true;
+			Screen.showCursor = true
 		}
+
 	}
 
 
