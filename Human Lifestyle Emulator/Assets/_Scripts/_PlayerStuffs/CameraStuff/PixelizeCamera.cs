@@ -149,7 +149,7 @@ public class PixelizeCamera : MonoBehaviour
 	{
 		if(par1Int == numLOD)
 		{
-			return 5000;
+			return 9001;
 		}
 		else if(par1Int == 0)
 		{

@@ -146,11 +146,16 @@ public class GetSucked : MonoBehaviour
 		{
 			Vector3 direction =  transform.position - col.transform.position;
 			rigidbody.AddForce(direction.normalized * 150);
-			col.rigidbody.isKinematic = false;
-			col.rigidbody.constraints = RigidbodyConstraints.None;
-			col.rigidbody.useGravity = true;
-			Destroy(col.gameObject, 3);
-			this.gameObject.tag = "Suckable";
+
+
+			if(col.gameObject.GetComponent<Rigidbody>() == null)
+			{
+				col.gameObject.AddComponent<Rigidbody>();
+				col.gameObject.GetComponent<Rigidbody>().useGravity = true;
+				col.gameObject.GetComponent<DestructibleWalls>().SelfDestruct();
+
+			}
+
 		}
 	}
 	
