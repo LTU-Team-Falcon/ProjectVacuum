@@ -51,12 +51,12 @@ public class Damage : MonoBehaviour {
 			OnSpawn();
 		}
 
-/*		if (Vector3.Distance (transform.position, new Vector3 (0, 0, 0)) > 200) 
+		if (Vector3.Distance (transform.position, new Vector3 (0, 0, 0)) > 200) 
 		{
 			IsDead = true;
 			OnDeath();
 		}
-*/
+
 		/*if(BoutToDie)
 		{
 			print("DeathTimer" + DeathTimer);
