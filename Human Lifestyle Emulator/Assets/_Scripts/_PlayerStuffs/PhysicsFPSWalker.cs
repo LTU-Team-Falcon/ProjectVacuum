@@ -5,11 +5,13 @@ public class PhysicsFPSWalker : MonoBehaviour
 {
 	XinputHandler control;	
 	GameManager gameManager;
+	public Rigidbody Rigidbody;
 	
 	// These variables are for adjusting in the inspector how the object behaves 
 	public float maxSpeed  = 10;
 	public float force     = 8;
 	public float jumpSpeed = 7;
+	public float Increase = .07f;
 	
 	// These variables are there for use by the script and don't need to be edited
 	private int state = 0;
@@ -66,7 +68,8 @@ public class PhysicsFPSWalker : MonoBehaviour
 		Vector3 velXZ =  new Vector3(rigidbody.velocity.x,0,rigidbody.velocity.z);
 		float XZmag = velXZ.magnitude;
 		XZmovementMag = XZmag;
-		
+
+		Rigidbody = gameObject.GetComponent<Rigidbody> ();
 		
 		float speedMod = (maxSpeed - XZmag)/(maxSpeed); //calculates a relative difference in the speed of the player
 
@@ -83,24 +86,32 @@ public class PhysicsFPSWalker : MonoBehaviour
 			//rigidbody.velocity = new Vector3(rigidbody.velocity.x,0,rigidbody.velocity.z);
 			if(vert !=0)
 			{
-				rigidbody.AddForce (new Vector3(transform.forward.x, 0, transform.forward.z) * vert * speedMod);				
+				rigidbody.AddForce (new Vector3(transform.forward.x, 0, transform.forward.z) * vert * speedMod);	
+				Rigidbody.drag = 1;
 			}
 			else
 			{//slows the player down if they aren't applying a force
 				//rigidbody.AddForce(transform.rotation * new Vector3(0,0,-velXZ.normalized.z) * speedMod); 
 				rigidbody.AddForce(transform.rotation * (new Vector3(0,0,-velXZ.z) * rigidbody.mass)); 
+				Rigidbody.drag += Increase;
 			}
 			
 			if(horz != 0)
 			{
 				rigidbody.AddForce (new Vector3(transform.right.x, 0, transform.right.z) * horz * speedMod);
-				
+				Rigidbody.drag = 1;
+
 			}
 			else
 			{//slows the player down if they aren't applying a force
-				rigidbody.AddForce(transform.rotation * new Vector3( - velXZ.normalized.x,0,0) * speedMod * 0.3f); 
+
+				rigidbody.AddForce(transform.rotation * new Vector3( - velXZ.normalized.x,0,0) * .3f); 
+				Rigidbody.drag += Increase;
 			}
-			
+
+
+
+
 		}
 		else
 		if(!grounded)

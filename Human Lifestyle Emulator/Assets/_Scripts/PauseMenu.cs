@@ -8,12 +8,20 @@ public class PauseMenu : MonoBehaviour
 	public pauseUnpause pauseHandler;
 	XinputHandler inputHandler;
 	public Transform selector;
+	public GameObject VacuumCamera;
 	List<Transform> MenuOptions = new List<Transform>();
 	int currentSelection = 0;
 
 	// Use this for initialization
 	void Start () 
 	{
+
+		VacuumCamera = transform.parent.FindChild("Vacuum Camera").gameObject;
+		
+		VacuumCamera.camera.enabled = false;
+
+
+
 		MenuOptions.Add(transform.FindChild("MenuContinue"));
 		MenuOptions.Add(transform.FindChild("MenuReload"));
 		MenuOptions.Add(transform.FindChild("MenuQuitToMenu"));
@@ -75,8 +83,13 @@ public class PauseMenu : MonoBehaviour
 			}
 			else
 			{
+				VacuumCamera.camera.enabled = true;
 				pauseHandler.Unpause();
 			}
+		}
+		if (inputHandler.GetButtonUp("Start"))
+		{
+			VacuumCamera.camera.enabled = true;
 		}
 		/*if(Input.GetMouseButton(0))
 		{
