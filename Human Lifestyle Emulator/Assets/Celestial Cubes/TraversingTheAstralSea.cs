@@ -11,7 +11,7 @@ public class TraversingTheAstralSea : MonoBehaviour
 
 	public float warpTimeModifier = 10f;
 
-	bool isInWarp = true;
+	public bool isInWarp = true;
 	public int selector = 0;
 
 	//public float currentLocation = 100;
