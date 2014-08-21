@@ -140,7 +140,7 @@ public class VacuumSucker : MonoBehaviour
 	
 	void OnTriggerEnter(Collider col)
 	{ //checks if colliding object is ellidgable to get sucked into the vacuum and if it is, it adds it to the intake for further processing
-		if(this.suckPow > 0f && col.gameObject.tag == "Suckable")
+		if(this.suckPow > 0f && (col.gameObject.tag == "Suckable" || col.gameObject.tag == "Bounce"))
 		{	
 				AddToIntake(col.gameObject);
 		}

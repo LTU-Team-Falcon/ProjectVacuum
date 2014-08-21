@@ -142,7 +142,7 @@ public class GetSucked : MonoBehaviour
 
 	void OnCollisionEnter(Collision col) 
 	{
-		if (this.gameObject.tag == "Fired" && col.gameObject.tag == "DestuctableWalls") 
+		if ( ( this.gameObject.tag == "Fired" ||  this.gameObject.tag == "Bounce" ) && col.gameObject.tag == "DestuctableWalls") 
 		{
 			Vector3 direction =  transform.position - col.transform.position;
 			rigidbody.AddForce(direction.normalized * 150);
@@ -155,6 +155,7 @@ public class GetSucked : MonoBehaviour
 				col.gameObject.GetComponent<DestructibleWalls>().SelfDestruct();
 
 			}
+			this.gameObject.tag = "Bounce";
 
 		}
 	}
@@ -163,7 +164,7 @@ public class GetSucked : MonoBehaviour
 
 	void Update()
 	{
-		if(this.tag == "Fired")
+		if(this.tag == "Fired" || this.tag == "Bounce")
 		{
 			if(rigidbody.velocity.magnitude < minVelocity)
 			{
