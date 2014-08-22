@@ -140,17 +140,20 @@ public class PhysicsFPSWalker : MonoBehaviour
 
 		if(control.GetButton("A") && (grounded) && jumpLimit >= 20)
 		{
+			rigidbody.drag = 1;
 			rigidbody.velocity = rigidbody.velocity + (Vector3.up * jumpSpeed *2f);
 			jumpLimit = 0;
 		}
 		else if(control.GetButton("A") && SuperJumpActive == true && jumpLimit >=20 && JumpCount < 2)
 		{
+			rigidbody.drag = 1;
 			rigidbody.velocity = rigidbody.velocity + (Vector3.up * jumpSpeed *2f);
 			jumpLimit = 0;
 			JumpCount++;
 		}
 		else if(control.GetButton("LB")&& dashLimit >= TimeTillDash)
 		{
+			rigidbody.drag = 1;
 			Vector3 DashDirection = new Vector3(transform.forward.x, 0 , transform.forward.z) * control.GetLeftStick().y;	
 			DashDirection += new Vector3(transform.right.x, 0 , transform.right.z) * control.GetLeftStick().x;	
 			DashDirection *= 27f;
@@ -168,7 +171,7 @@ public class PhysicsFPSWalker : MonoBehaviour
 		}	
 		else if(control.GetButton("RB") && !grounded)
 		{
-
+			rigidbody.drag = 1;
 			rigidbody.velocity += Vector3.down;
 		}
 

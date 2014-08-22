@@ -29,7 +29,7 @@ public class MouseOrbitImproved : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		control = GameObject.Find("PlayerContainer" + gameObject.GetComponent<DeathCamCntr>().PlayerNumber).GetComponent<XinputHandler>();
+		control = GetComponent<XinputHandler> ();
 
 		Vector3 angles = transform.eulerAngles;
 		x = angles.y;
@@ -44,7 +44,7 @@ public class MouseOrbitImproved : MonoBehaviour {
 			Players.Add(Player);
 		}
 		PlayerSize = Players.Count;	
-		target = Players[count].transform;
+		//target = Players[count].transform;
 
 		distanceMax = 7;
 		distanceMin = 7;
@@ -53,21 +53,24 @@ public class MouseOrbitImproved : MonoBehaviour {
 
 	void Update () {
 
-		if (count >= PlayerSize)
+		if (camera.enabled == true)
 		{
-			count = 0;	
-		}
-		
-		if(control.GetButtonDown("A"))
-		{
-			Players.Clear();
-			foreach (GameObject Player in GameObject.FindGameObjectsWithTag("Player"))
+			if (count >= PlayerSize)
 			{
-				Players.Add(Player);
+				count = 0;	
 			}
-			/*PlayerSize = Players.Count;
-			target = Players[count].transform;	*/
-			count++;
+		
+			if(control.GetButtonDown("A"))
+			{
+				Players.Clear();
+				foreach (GameObject Player in GameObject.FindGameObjectsWithTag("Player"))
+				{
+					Players.Add(Player);
+				}
+				PlayerSize = Players.Count;
+				target = Players[count].transform;
+				count++;
+			}
 		}
 	}
 	
@@ -82,12 +85,12 @@ public class MouseOrbitImproved : MonoBehaviour {
 			
 			Quaternion rotation = Quaternion.Euler(y, x, 0);
 			
-			distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel")*5, distanceMin, distanceMax);
+			//distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel")*5, distanceMin, distanceMax);
 			
-			RaycastHit hit;
-			if (Physics.Linecast (target.position, transform.position, out hit)) {
-				distance -=  hit.distance;
-			}
+			//RaycastHit hit;
+			//if (Physics.Linecast (target.position, transform.position, out hit)) {
+			//	distance -=  hit.distance;
+			//}
 			Vector3 negDistance = new Vector3(0.0f, 0.0f, -distance);
 			Vector3 position = rotation * negDistance + target.position;
 			

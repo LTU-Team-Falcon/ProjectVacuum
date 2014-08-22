@@ -27,6 +27,10 @@ public class Damage : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		string DeathCamName = "P" + (int)(transform.parent.gameObject.GetComponent<XinputHandler>().indexNum +1) + "DeathCam";
+		GameObject DeathCam =  GameObject.Find(DeathCamName);
+		DeathCam.camera.enabled = false;
+
 		if(DamageText == null)
 		{
 			string name = "P" + (int)(transform.parent.gameObject.GetComponent<XinputHandler>().indexNum +1) + "UI";
@@ -90,6 +94,7 @@ public class Damage : MonoBehaviour {
 			float Factor = col.rigidbody.mass * col.relativeVelocity.magnitude * damageCounter * 50;
 			rigidbody.AddForce(direction.normalized * Factor);
 			damageCounter += col.rigidbody.mass * 5;
+			rigidbody.drag = 1;
 		}
 	}
 
