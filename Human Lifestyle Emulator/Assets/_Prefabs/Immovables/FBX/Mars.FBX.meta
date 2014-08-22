@@ -1,40 +1,13 @@
 fileFormatVersion: 2
-guid: b4ed702432c920943971f9097d4343ce
+guid: cb2940de7a64db640a00b3d7f924d2a0
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: arenaBase
-    100002: arenaBotPlatform3
-    100004: arenaBotPlatform4
-    100006: arenaBotPlatform5
-    100008: arenaBotPlatform6
-    100010: arenaCenterPlatform
-    100012: //RootNode
-    400000: arenaBase
-    400002: arenaBotPlatform3
-    400004: arenaBotPlatform4
-    400006: arenaBotPlatform5
-    400008: arenaBotPlatform6
-    400010: arenaCenterPlatform
-    400012: //RootNode
-    2300000: arenaBase
-    2300002: arenaBotPlatform3
-    2300004: arenaBotPlatform4
-    2300006: arenaBotPlatform5
-    2300008: arenaBotPlatform6
-    2300010: arenaCenterPlatform
-    3300000: arenaBase
-    3300002: arenaBotPlatform3
-    3300004: arenaBotPlatform4
-    3300006: arenaBotPlatform5
-    3300008: arenaBotPlatform6
-    3300010: arenaCenterPlatform
-    4300000: arenaCenterPlatform
-    4300002: arenaBase
-    4300004: arenaBotPlatform3
-    4300006: arenaBotPlatform4
-    4300008: arenaBotPlatform5
-    4300010: arenaBotPlatform6
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Planet002
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -44,6 +17,7 @@ ModelImporter:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     optimizeGameObjects: 0
+    motionNodeName: 
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5

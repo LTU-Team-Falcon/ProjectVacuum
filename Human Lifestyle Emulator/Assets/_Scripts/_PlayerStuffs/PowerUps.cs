@@ -71,7 +71,7 @@ public class PowerUps : MonoBehaviour {
 	void OnTriggerEnter (Collider col)
 	{
 		//Make Heavy Power Up
-		if (col.gameObject.name == "Iron Skin Power Up") 
+		if (col.gameObject.name == "Power Up Iron Skin") 
 		{
 			if (IronSkinPowerUpActive == true)
 			{
@@ -91,7 +91,7 @@ public class PowerUps : MonoBehaviour {
 		}
 
 		//Multi Jump Power Up
-		if (col.gameObject.name == "Golden Legs Power Up") 
+		if (col.gameObject.name == "Power Up Golden Legs") 
 		{
 			if (GoldenBootsPowerUpActive == true)
 			{
@@ -107,7 +107,7 @@ public class PowerUps : MonoBehaviour {
 
 		}
 
-		if (col.gameObject.name == "Super Jump Power Up")
+		if (col.gameObject.name == "Power Up Heat Rises")
 		{
 			if (SuperJumpPowerUpActive == true)
 			{
