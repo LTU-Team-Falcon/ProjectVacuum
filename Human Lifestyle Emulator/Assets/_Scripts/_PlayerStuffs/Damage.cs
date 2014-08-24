@@ -91,8 +91,12 @@ public class Damage : MonoBehaviour {
 		{
 			col.gameObject.tag = "Suckable";
 			Vector3 direction =  transform.position - col.transform.position;
-			float Factor = col.rigidbody.mass * col.relativeVelocity.magnitude * damageCounter * 50;
+			float Factor = col.rigidbody.mass * col.relativeVelocity.magnitude * damageCounter * 5;
 			rigidbody.AddForce(direction.normalized * Factor);
+			if (damageCounter >= 100)
+			{
+				rigidbody.AddForce(Vector3.up * (Factor / 8)); 
+			}
 			damageCounter += col.rigidbody.mass * 5;
 			rigidbody.drag = 1;
 		}
@@ -123,6 +127,7 @@ public class Damage : MonoBehaviour {
 	{
 		//get distance for all players from spawn points and choose the farthest one
 		
+		damageCounter = 0;
 
 		foreach(Transform brother in transform.parent)
 		{
