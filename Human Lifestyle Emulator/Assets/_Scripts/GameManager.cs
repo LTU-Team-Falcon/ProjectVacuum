@@ -127,7 +127,7 @@ public class GameManager : MonoBehaviour
 
 	void Update ()
 	{
-		if (DisplayTime.timeLeft < 1) 
+		if (DisplayTime.timeLeft < 1 || sol <= 1) 
 		{
 			GameObject GUICamera = GameObject.Find("InGameCamera");
 			GUICamera.camera.enabled = false;
