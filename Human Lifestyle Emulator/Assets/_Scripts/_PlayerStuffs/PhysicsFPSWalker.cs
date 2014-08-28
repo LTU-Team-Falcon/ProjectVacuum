@@ -88,6 +88,7 @@ public class PhysicsFPSWalker : MonoBehaviour
 			{
 				rigidbody.AddForce (new Vector3(transform.forward.x, 0, transform.forward.z) * vert * speedMod);	
 				Rigidbody.drag = 1;
+				audio.Play();
 			}
 			else
 			{//slows the player down if they aren't applying a force
@@ -100,7 +101,7 @@ public class PhysicsFPSWalker : MonoBehaviour
 			{
 				rigidbody.AddForce (new Vector3(transform.right.x, 0, transform.right.z) * horz * speedMod);
 				Rigidbody.drag = 1;
-
+				audio.Play();
 			}
 			else
 			{//slows the player down if they aren't applying a force
