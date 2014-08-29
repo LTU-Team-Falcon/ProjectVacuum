@@ -28,6 +28,9 @@ public class VacuumController : MonoBehaviour
 	GameManager gameManager;
 	public bool IsSucking;
 
+	public AudioClip Shooting;
+	public AudioClip Sucking;
+
 	bool looping = false;
 	int looptime;
 
@@ -103,19 +106,28 @@ public class VacuumController : MonoBehaviour
 			}
 
 			shotTime = rateOfFire;
+
+			//audio.clip = Shooting;
+			//audio.Play();
 		}
 		else if(control.GetLeftTrigger() > 0f)
 		{
 			vacSucker.suckPow = control.GetLeftTrigger() * vacSucker.suckPotential;
 			control.SetVibration(new Vector2(0, control.GetLeftTrigger()*0.4f ));
+			Debug.Log("Sucking");
+			audio.clip = Sucking;
+			audio.Play();
 		}
 		else if((control.GetLastLeftTrigger() > 0f && control.GetLeftTrigger() <= 0f) )
 		{
 			Invoke("HaltVibrations", 1f);
+			audio.Stop();
+
 		}
 		else
 		{
 			vacSucker.suckPow = 0;
+			audio.Stop();
 		}
 	}
 

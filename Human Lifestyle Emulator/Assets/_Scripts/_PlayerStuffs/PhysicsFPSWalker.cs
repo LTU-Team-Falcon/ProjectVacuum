@@ -12,6 +12,16 @@ public class PhysicsFPSWalker : MonoBehaviour
 	public float force     = 8;
 	public float jumpSpeed = 7;
 	public float Increase = .07f;
+
+	[HideInInspector]
+	public AudioClip Run;
+	public bool Running;
+	[HideInInspector]
+	public AudioClip Jump;
+	public bool Jumping;
+	[HideInInspector]
+	public AudioClip Dash;
+	public bool Dashing;
 	
 	// These variables are there for use by the script and don't need to be edited
 	private int state = 0;
@@ -21,7 +31,7 @@ public class PhysicsFPSWalker : MonoBehaviour
 
 	[HideInInspector]
 	public int JumpCount = 0;
-	//[HideInInspector]
+	[HideInInspector]
 	public int TimeTillDash = 77;
 	[HideInInspector]
 	public bool SuperJumpActive = false;
@@ -88,20 +98,25 @@ public class PhysicsFPSWalker : MonoBehaviour
 			{
 				rigidbody.AddForce (new Vector3(transform.forward.x, 0, transform.forward.z) * vert * speedMod);	
 				Rigidbody.drag = 1;
-				audio.Play();
+				Running = true;
+				Dashing = false;
+				Jumping = false;
 			}
 			else
 			{//slows the player down if they aren't applying a force
 				//rigidbody.AddForce(transform.rotation * new Vector3(0,0,-velXZ.normalized.z) * speedMod); 
 				rigidbody.AddForce(transform.rotation * (new Vector3(0,0,-velXZ.z) * rigidbody.mass)); 
 				Rigidbody.drag += Increase;
+
 			}
 			
 			if(horz != 0)
 			{
 				rigidbody.AddForce (new Vector3(transform.right.x, 0, transform.right.z) * horz * speedMod);
 				Rigidbody.drag = 1;
-				audio.Play();
+				Running = true;
+				Dashing = false;
+				Jumping = false;
 			}
 			else
 			{//slows the player down if they aren't applying a force
@@ -144,6 +159,8 @@ public class PhysicsFPSWalker : MonoBehaviour
 			rigidbody.drag = 1;
 			rigidbody.velocity = rigidbody.velocity + (Vector3.up * jumpSpeed *2f);
 			jumpLimit = 0;
+			audio.clip = Jump;
+			audio.Play();
 		}
 		else if(control.GetButton("A") && SuperJumpActive == true && jumpLimit >=20 && JumpCount < 2)
 		{
@@ -151,6 +168,8 @@ public class PhysicsFPSWalker : MonoBehaviour
 			rigidbody.velocity = rigidbody.velocity + (Vector3.up * jumpSpeed *2f);
 			jumpLimit = 0;
 			JumpCount++;
+			audio.clip = Jump;
+			audio.Play();
 		}
 		else if(control.GetButton("LB")&& dashLimit >= TimeTillDash)
 		{
@@ -169,11 +188,15 @@ public class PhysicsFPSWalker : MonoBehaviour
 					dashLimit = -17f;
 				}
 			}
+			audio.clip = Dash;
+			audio.Play();
 		}	
 		else if(control.GetButton("RB") && !grounded)
 		{
 			rigidbody.drag = 1;
 			rigidbody.velocity += Vector3.down;
+			audio.clip = Dash;
+			audio.Play();
 		}
 
 //		Debug.Log (rigidbody.velocity.y);
@@ -185,6 +208,16 @@ public class PhysicsFPSWalker : MonoBehaviour
 	{
 		pressedJump = control.GetButtonDown("A");
 		pressedDash = control.GetButtonDown("LB");
+
+		if (grounded && rigidbody.velocity.magnitude <= .3f)
+		{
+			audio.clip = Run;
+			audio.Play();
+		}
+		else if (!grounded)
+		{
+
+		}
 
 	}
 
