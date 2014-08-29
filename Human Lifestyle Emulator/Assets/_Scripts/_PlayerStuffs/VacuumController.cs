@@ -114,12 +114,11 @@ public class VacuumController : MonoBehaviour
 
 			if (audio.clip != Sucking)
 			{
-			
 				audio.clip = Sucking;
 				audio.Play();
 			}
 		}
-		else if((control.GetLastLeftTrigger() > 0f && control.GetLeftTrigger() <= 0f) )
+		else if(control.GetLeftTrigger() <= 0f)
 		{
 			Invoke("HaltVibrations", 1f);
 			audio.Stop();
@@ -129,6 +128,7 @@ public class VacuumController : MonoBehaviour
 		{
 			vacSucker.suckPow = 0;
 		}
+
 	}
 
 
