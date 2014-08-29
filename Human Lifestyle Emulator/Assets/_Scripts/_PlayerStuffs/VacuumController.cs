@@ -106,28 +106,26 @@ public class VacuumController : MonoBehaviour
 			}
 
 			shotTime = rateOfFire;
-
-			//audio.clip = Shooting;
-			//audio.Play();
 		}
 		else if(control.GetLeftTrigger() > 0f)
 		{
 			vacSucker.suckPow = control.GetLeftTrigger() * vacSucker.suckPotential;
 			control.SetVibration(new Vector2(0, control.GetLeftTrigger()*0.4f ));
-			Debug.Log("Sucking");
-			audio.clip = Sucking;
-			audio.Play();
+			if (audio.clip != Sucking)
+			{
+				audio.clip = Sucking;
+				audio.Play();
+			}
 		}
 		else if((control.GetLastLeftTrigger() > 0f && control.GetLeftTrigger() <= 0f) )
 		{
 			Invoke("HaltVibrations", 1f);
 			audio.Stop();
-
+			audio.clip = null;
 		}
 		else
 		{
 			vacSucker.suckPow = 0;
-			audio.Stop();
 		}
 	}
 
@@ -140,7 +138,8 @@ public class VacuumController : MonoBehaviour
 		{
 			control.SetVibration(new Vector2(1,0.5f));
 			Invoke("HaltVibrations", 0.33f);
-
+			audio.clip = Shooting;
+			audio.Play();
 			Transform projectile = vacSucker.actualSucker.transform.GetChild(0);
 			projectile.tag = "Fired";
 			projectile.parent = null;
