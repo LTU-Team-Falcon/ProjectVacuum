@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
 	{
 		sol = getNumberOfPlayers ();
 
-		if (DisplayTime.timeLeft < 1 || sol <= 1) 
+		if (DisplayTime.timeLeft < 1) 
 		{
 			GameObject GUICamera = GameObject.Find("InGameCamera");
 			GUICamera.camera.enabled = false;

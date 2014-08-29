@@ -111,8 +111,10 @@ public class VacuumController : MonoBehaviour
 		{
 			vacSucker.suckPow = control.GetLeftTrigger() * vacSucker.suckPotential;
 			control.SetVibration(new Vector2(0, control.GetLeftTrigger()*0.4f ));
+
 			if (audio.clip != Sucking)
 			{
+			
 				audio.clip = Sucking;
 				audio.Play();
 			}

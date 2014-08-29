@@ -13,13 +13,13 @@ public class PhysicsFPSWalker : MonoBehaviour
 	public float jumpSpeed = 7;
 	public float Increase = .07f;
 
-	[HideInInspector]
+	//[HideInInspector]
 	public AudioClip Run;
 	public bool Running;
-	[HideInInspector]
+	//[HideInInspector]
 	public AudioClip Jump;
 	public bool Jumping;
-	[HideInInspector]
+	//[HideInInspector]
 	public AudioClip Dash;
 	public bool Dashing;
 	
