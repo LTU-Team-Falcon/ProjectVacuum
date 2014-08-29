@@ -6,17 +6,20 @@ public class PixelizeCamera : MonoBehaviour
 {
 	public int offset = 0;
 	public int antiAlias = 2;
-	public int numLOD;
-	public float minResPcent;
-	public float maxResPcent;
+	public int numLOD = 3;
+	public float minResPcent = 1;
+	public float maxResPcent = 1;
 
-	public float closeRad;
-	public float farRad;
+	public float closeRad = 0.05f;
+	public float farRad = 10000;
 
 	public float _SpreadRad = 0;
 	float spreadRad;
 	public float _SpreadRes = 0;
 	float spreadRes;
+
+	int oldWidth = 0;
+	int oldHeight = 0;
 
 	public bool shouldUpdate = false;
 	// Use this for initialization
@@ -31,7 +34,7 @@ public class PixelizeCamera : MonoBehaviour
 	public List<PixelizeCamera> pixy = new List<PixelizeCamera>();
 	void Awake()
 	{
-		if(gameObject.camera == null)
+		if(gameObject.GetComponent<Camera>() == null)
 		{
 			pixy.AddRange(GameObject.FindObjectsOfType<PixelizeCamera>() );
 			isUniversal = true;
@@ -45,6 +48,7 @@ public class PixelizeCamera : MonoBehaviour
 	void Start()
 	{
 		Init();
+		shouldUpdate = true;
 	}
 
 	void Init () 
@@ -73,8 +77,8 @@ public class PixelizeCamera : MonoBehaviour
 
 			camGam.camera.pixelRect = rectjob;
 
-			camGam.camera.nearClipPlane = lastRadi - 2;
-			camGam.camera.farClipPlane = thisRadi + 2;
+			camGam.camera.nearClipPlane = lastRadi - 5;
+			camGam.camera.farClipPlane = thisRadi + 5;
 
 			bool slideFlag = false;
 
@@ -143,6 +147,9 @@ public class PixelizeCamera : MonoBehaviour
 			this.camera.isOrthoGraphic = true;
 			this.camera.cullingMask = (1 << (27 + offset));
 			this.camera.orthographicSize = 5f;
+
+		oldWidth = Screen.width;
+		oldHeight = Screen.height;
 	}
 
 	float getOuterRadius(int par1Int)
@@ -153,7 +160,7 @@ public class PixelizeCamera : MonoBehaviour
 		}
 		else if(par1Int == 0)
 		{
-			return this.camera.nearClipPlane + 2;
+			return this.camera.nearClipPlane + 5;
 		}
 
 		float radPercent = (float)((float)par1Int/(float)numLOD);
@@ -192,6 +199,12 @@ public class PixelizeCamera : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		
+		if(Screen.width != oldWidth || oldHeight != Screen.height)
+		{
+			shouldUpdate = true;
+		}
+
 		if(shouldUpdate && isUniversal)
 		{
 			shouldUpdate = false;
@@ -217,5 +230,6 @@ public class PixelizeCamera : MonoBehaviour
 			Init();
 			shouldUpdate = false;
 		}
+
 	}
 }

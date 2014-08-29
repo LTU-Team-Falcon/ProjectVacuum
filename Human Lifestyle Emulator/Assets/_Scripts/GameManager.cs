@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 	private bool canUnpause = true;
 
 	private Score score;
-	public int sol;
+	public int numPlayers;
 
 	void Awake()
 	{
@@ -127,14 +127,12 @@ public class GameManager : MonoBehaviour
 
 	void Update ()
 	{
-		sol = getNumberOfPlayers ();
-
-		if (DisplayTime.timeLeft < 1) 
+		if (DisplayTime.timeLeft < 1 || numPlayers <= 1) 
 		{
 			GameObject GUICamera = GameObject.Find("InGameCamera");
 			GUICamera.camera.enabled = false;
-			GameObject EndGameCamera = GameObject.Find("EndGameCamera");
-			EndGameCamera.camera.enabled = true;
+//			GameObject EndGameCamera = GameObject.Find("EndGameCamera");
+//			EndGameCamera.camera.enabled = true;
 			Screen.lockCursor = false;
 			Screen.showCursor = true;
 		}

@@ -55,6 +55,7 @@ public class SunHeat : MonoBehaviour
 		PixelizeCamera pixy = gamObj.transform.parent.FindChild("HandCube").GetComponentInChildren<PixelizeCamera>();
 		pixy.farRad = 13f;
 		pixy.maxResPcent = 0.1f;
+		pixy.antiAlias = 1;
 		
 		pixy.shouldUpdate = true;
 	}
@@ -71,6 +72,8 @@ public class SunHeat : MonoBehaviour
 		pixy.farRad = 30f;
 		pixy.maxResPcent = 0.17f;
 		pixy.shouldUpdate = true;
+		pixy.antiAlias = 1;
+
 
 	}
 

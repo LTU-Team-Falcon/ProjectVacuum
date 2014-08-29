@@ -30,7 +30,18 @@ public class CelestialSystem : MonoBehaviour
 		if(gameObject.name == "Mars&AsteroidBeltSystem")
 		{
 			
+		}else
+		if(gameObject.name == "JupiterSystem")
+		{
+			gameObject.GetComponent<JupterSystem>().OnWarpOut();
 		}
+		else
+			if(gameObject.name == "NeptuneSystem")
+		{
+			gameObject.GetComponent<NeptuneSystem>().OnWarpOut();
+		}
+
+
 	}
 
 	public void OnWarpIn()
@@ -43,6 +54,16 @@ public class CelestialSystem : MonoBehaviour
 		if(gameObject.name == "Mars&AsteroidBeltSystem")
 		{
 			
+		}
+		else
+		if(gameObject.name == "JupiterSystem")
+		{
+			gameObject.GetComponent<JupterSystem>().OnWarpIn();
+		}
+		else
+		if(gameObject.name == "NeptuneSystem")
+		{
+			gameObject.GetComponent<NeptuneSystem>().OnWarpIn();
 		}
 
 	}

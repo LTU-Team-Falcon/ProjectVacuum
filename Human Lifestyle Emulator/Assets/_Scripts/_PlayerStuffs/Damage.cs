@@ -38,8 +38,7 @@ public class Damage : MonoBehaviour {
 		}
 		damageCounter = 0;
 		IsDead = false;
-		Lives = 3;
-		
+
 	}
 	
 	// Update is called once per frame
@@ -57,6 +56,7 @@ public class Damage : MonoBehaviour {
 
 		if (Vector3.Distance (transform.position, new Vector3 (0, 0, 0)) > 200) 
 		{
+			print("isDead");
 			IsDead = true;
 			OnDeath();
 		}

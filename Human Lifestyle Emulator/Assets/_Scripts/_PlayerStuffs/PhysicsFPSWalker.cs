@@ -6,7 +6,7 @@ public class PhysicsFPSWalker : MonoBehaviour
 	XinputHandler control;	
 	GameManager gameManager;
 	public Rigidbody Rigidbody;
-	
+	public bool debug =false;
 	// These variables are for adjusting in the inspector how the object behaves 
 	public float maxSpeed  = 10;
 	public float force     = 8;
@@ -24,8 +24,9 @@ public class PhysicsFPSWalker : MonoBehaviour
 	public bool Dashing;
 	
 	// These variables are there for use by the script and don't need to be edited
-	private int state = 0;
-	private bool grounded = false;
+	public int state = 0;
+	public int state2 = 0;
+	public bool grounded = false;
 	private float jumpLimit = 1000;
 	private float dashLimit = 1000;
 
@@ -60,7 +61,11 @@ public class PhysicsFPSWalker : MonoBehaviour
 		}
 	}
 	
-	
+	void OnCollisionStay()
+	{
+		state2++;
+	}
+
 	void OnCollisionExit ()
 	{
 		state --;
@@ -74,6 +79,8 @@ public class PhysicsFPSWalker : MonoBehaviour
 	//ToDo: make movement feel good.
 	void FixedUpdate ()
 	{	// This is called every physics frame
+
+
 
 		Vector3 velXZ =  new Vector3(rigidbody.velocity.x,0,rigidbody.velocity.z);
 		float XZmag = velXZ.magnitude;
@@ -97,7 +104,7 @@ public class PhysicsFPSWalker : MonoBehaviour
 			if(vert !=0)
 			{
 				rigidbody.AddForce (new Vector3(transform.forward.x, 0, transform.forward.z) * vert * speedMod);	
-				Rigidbody.drag = 1;
+				Rigidbody.drag = 0.2f;
 				Running = true;
 				Dashing = false;
 				Jumping = false;
@@ -106,14 +113,16 @@ public class PhysicsFPSWalker : MonoBehaviour
 			{//slows the player down if they aren't applying a force
 				//rigidbody.AddForce(transform.rotation * new Vector3(0,0,-velXZ.normalized.z) * speedMod); 
 				rigidbody.AddForce(transform.rotation * (new Vector3(0,0,-velXZ.z) * rigidbody.mass)); 
-				Rigidbody.drag += Increase;
+				//print(-velXZ.z + " z ");
+
+				rigidbody.drag += Increase;
 
 			}
 			
 			if(horz != 0)
 			{
 				rigidbody.AddForce (new Vector3(transform.right.x, 0, transform.right.z) * horz * speedMod);
-				Rigidbody.drag = 1;
+				Rigidbody.drag = 0.2f;
 				Running = true;
 				Dashing = false;
 				Jumping = false;
@@ -121,8 +130,11 @@ public class PhysicsFPSWalker : MonoBehaviour
 			else
 			{//slows the player down if they aren't applying a force
 
-				rigidbody.AddForce(transform.rotation * new Vector3( - velXZ.normalized.x,0,0) * .3f); 
-				Rigidbody.drag += Increase;
+			//	rigidbody.AddForce(transform.rotation * new Vector3( - velXZ.x,0,0) * rigidbody.mass);
+				rigidbody.AddForce(transform.rotation * new Vector3( - velXZ.normalized.x,0,0) * 0.3f);
+
+				//print(- velXZ.normalized.x + " x ");
+				rigidbody.drag += Increase;
 			}
 
 
@@ -132,6 +144,7 @@ public class PhysicsFPSWalker : MonoBehaviour
 		else
 		if(!grounded)
 		{ //if object is in the air; give you control over it slightly
+			rigidbody.drag = 0.5f;
 			if(Time.frameCount%15 == 0)
 			{
 				rigidbody.velocity += Vector3.down;
@@ -206,6 +219,7 @@ public class PhysicsFPSWalker : MonoBehaviour
 
 	void Update()
 	{
+		state2 = 0;
 		pressedJump = control.GetButtonDown("A");
 		pressedDash = control.GetButtonDown("LB");
 

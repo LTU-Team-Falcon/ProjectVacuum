@@ -6,6 +6,7 @@ public class TraversingTheAstralSea : MonoBehaviour
 {
 	public List<GameObject> systems = new List<GameObject>();
 	public GameObject warpSystem;
+	public GameObject guiSystem;
 
 	float tim;
 
@@ -23,6 +24,10 @@ public class TraversingTheAstralSea : MonoBehaviour
 			if(child.name == "WarpSystem")
 			{
 				warpSystem = child.gameObject;
+			} 
+			else if(child.name == "CelestialMessages")
+			{
+				guiSystem = child.gameObject;
 			}
 			else
 			{
