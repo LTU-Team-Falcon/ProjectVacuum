@@ -7,8 +7,8 @@ public class ObjectRespawn : MonoBehaviour {
 
 	private GameObject Floor;
 
-	private int count;
-	private bool IsGone;
+	public int count;
+	public bool IsGone;
 
 	private int Inum = 60;
 	// Use this for initialization
@@ -38,13 +38,28 @@ public class ObjectRespawn : MonoBehaviour {
 				count++;
 			}
 			
-			if (count == 2000) 
+			if (count == 60) 
 			{
 				renderer.enabled = true;
+				collider.enabled = true;
 				rigidbody.constraints = RigidbodyConstraints.None;
 				transform.position = OrigPos;
 				count = 0;
 			}
+
+
+		}
+
+		if (gameObject.tag == "PowerUP" && collider.enabled == false)
+		{
+			Debug.Log("Gone");
+			IsGone = true;
+			count = 20;
+			foreach( Transform child in transform )
+			{
+				child.gameObject.SetActive(false);
+			}
+
 		}
 	}
 }
