@@ -82,13 +82,6 @@ public class PowerUps : MonoBehaviour {
 				rigidbody.drag = rigidbody.drag / 4;
 				IronSkinCounter = 0;
 			}
-			col.gameObject.renderer.enabled = false;
-			col.gameObject.collider.enabled = false;
-
-			foreach( Transform child in transform )
-			{
-				child.gameObject.SetActive(false);
-			}
 
 
 			IronSkinPowerUpActive = true;
@@ -109,13 +102,6 @@ public class PowerUps : MonoBehaviour {
 				GoldenBootsCounter = 0;
 			}
 
-			for(int i=0; i<transform.childCount;i++)
-			{
-				transform.GetChild(i).gameObject.SetActiveRecursively(false);
-			}
-
-			col.gameObject.renderer.enabled = false;
-			col.gameObject.collider.enabled = false;
 			GoldenBootsPowerUpActive = true;
 			PhysicsFPSWalker.TimeTillDash = 30;
 
@@ -132,13 +118,6 @@ public class PowerUps : MonoBehaviour {
 				SuperJumpCounter = 0;
 			}
 
-			for(int i=0; i<transform.childCount;i++)
-			{
-				transform.GetChild(i).gameObject.SetActiveRecursively(false);
-			}
-
-			col.gameObject.renderer.enabled = false;
-			col.gameObject.collider.enabled = false;
 			SuperJumpPowerUpActive = true;
 			PhysicsFPSWalker.SuperJumpActive = true;
 		}
