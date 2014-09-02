@@ -497,6 +497,14 @@ ModelImporter:
     100982: Projectile_Smalll_Kitchen_Crockpot
     100984: Projectile_Smalll_Kitchen_Trashcan01
     100986: Projectile_Smalll_Kitchen_Trashcan02
+    100988: Arcade
+    100990: Object003
+    100992: Pinball
+    100994: Ping Pong
+    100996: Projectile_Large_garage_arcadeMachine
+    100998: Projectile_Large_garage_PinBallMAchine
+    101000: Projectile_Large_garage_PingPongTable
+    101002: Projectile_Large_Yard_Trampoline
     400000: //RootNode
     400002: Projectile_Large_Bathroom_Bathtub
     400004: Projectile_Large_Bathroom_Cupboard_Sink
@@ -991,6 +999,14 @@ ModelImporter:
     400982: Projectile_Smalll_Kitchen_Crockpot
     400984: Projectile_Smalll_Kitchen_Trashcan01
     400986: Projectile_Smalll_Kitchen_Trashcan02
+    400988: Arcade
+    400990: Object003
+    400992: Pinball
+    400994: Ping Pong
+    400996: Projectile_Large_garage_arcadeMachine
+    400998: Projectile_Large_garage_PinBallMAchine
+    401000: Projectile_Large_garage_PingPongTable
+    401002: Projectile_Large_Yard_Trampoline
     2300000: Projectile_Large_Bathroom_Bathtub
     2300002: Projectile_Large_Bathroom_Cupboard_Sink
     2300004: Projectile_Large_Bathroom_Shower_Corner
@@ -1484,6 +1500,14 @@ ModelImporter:
     2300980: Projectile_Smalll_Kitchen_Crockpot
     2300982: Projectile_Smalll_Kitchen_Trashcan01
     2300984: Projectile_Smalll_Kitchen_Trashcan02
+    2300986: Arcade
+    2300988: Object003
+    2300990: Pinball
+    2300992: Ping Pong
+    2300994: Projectile_Large_garage_arcadeMachine
+    2300996: Projectile_Large_garage_PinBallMAchine
+    2300998: Projectile_Large_garage_PingPongTable
+    2301000: Projectile_Large_Yard_Trampoline
     3300000: Projectile_Large_Bathroom_Bathtub
     3300002: Projectile_Large_Bathroom_Cupboard_Sink
     3300004: Projectile_Large_Bathroom_Shower_Corner
@@ -1977,6 +2001,14 @@ ModelImporter:
     3300980: Projectile_Smalll_Kitchen_Crockpot
     3300982: Projectile_Smalll_Kitchen_Trashcan01
     3300984: Projectile_Smalll_Kitchen_Trashcan02
+    3300986: Arcade
+    3300988: Object003
+    3300990: Pinball
+    3300992: Ping Pong
+    3300994: Projectile_Large_garage_arcadeMachine
+    3300996: Projectile_Large_garage_PinBallMAchine
+    3300998: Projectile_Large_garage_PingPongTable
+    3301000: Projectile_Large_Yard_Trampoline
     4300000: Projectile_Medium_Bathroom_Toilet
     4300002: Projectile_Large_Kitchen_Table
     4300004: Projectile_Small_Kitchen_Barstool
@@ -2470,6 +2502,14 @@ ModelImporter:
     4300980: Projectile_Small_Yard_Fence02
     4300982: Projectile_Small_Yard_Fence01
     4300984: Projectile_Small_Yard_Fence00
+    4300986: Pinball
+    4300988: Arcade
+    4300990: Ping Pong
+    4300992: Object003
+    4300994: Projectile_Large_garage_PinBallMAchine
+    4300996: Projectile_Large_garage_arcadeMachine
+    4300998: Projectile_Large_garage_PingPongTable
+    4301000: Projectile_Large_Yard_Trampoline
     9500000: //RootNode
   materials:
     importMaterials: 1

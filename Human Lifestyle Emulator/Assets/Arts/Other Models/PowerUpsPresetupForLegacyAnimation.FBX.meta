@@ -12,6 +12,15 @@ ModelImporter:
     100012: //RootNode
     100014: TimeWarp
     100016: TimeWarp001
+    100018: Power Up Golden Legs
+    100020: Power Up Golden Legs_
+    100022: Power Up Heat Rises
+    100024: Power Up Heat Rises 1
+    100026: Power Up Iron Skin
+    100028: Power Up Iron Skin 1
+    100030: Power Up Magnetic Repulsion
+    100032: Power Up Magnetic Repulsion 1
+    100034: Power Up Golden Legs 1
     400000: DarkMatter
     400002: DarkMatter001
     400004: HeatRises
@@ -21,6 +30,15 @@ ModelImporter:
     400012: //RootNode
     400014: TimeWarp
     400016: TimeWarp001
+    400018: Power Up Golden Legs
+    400020: Power Up Golden Legs_
+    400022: Power Up Heat Rises
+    400024: Power Up Heat Rises 1
+    400026: Power Up Iron Skin
+    400028: Power Up Iron Skin 1
+    400030: Power Up Magnetic Repulsion
+    400032: Power Up Magnetic Repulsion 1
+    400034: Power Up Golden Legs 1
     2300000: DarkMatter
     2300002: DarkMatter001
     2300004: HeatRises
@@ -29,6 +47,15 @@ ModelImporter:
     2300010: MagneticRepulsion001
     2300012: TimeWarp
     2300014: TimeWarp001
+    2300016: Power Up Golden Legs
+    2300018: Power Up Golden Legs_
+    2300020: Power Up Heat Rises
+    2300022: Power Up Heat Rises 1
+    2300024: Power Up Iron Skin
+    2300026: Power Up Iron Skin 1
+    2300028: Power Up Magnetic Repulsion
+    2300030: Power Up Magnetic Repulsion 1
+    2300032: Power Up Golden Legs 1
     3300000: DarkMatter
     3300002: DarkMatter001
     3300004: HeatRises
@@ -37,6 +64,15 @@ ModelImporter:
     3300010: MagneticRepulsion001
     3300012: TimeWarp
     3300014: TimeWarp001
+    3300016: Power Up Golden Legs
+    3300018: Power Up Golden Legs_
+    3300020: Power Up Heat Rises
+    3300022: Power Up Heat Rises 1
+    3300024: Power Up Iron Skin
+    3300026: Power Up Iron Skin 1
+    3300028: Power Up Magnetic Repulsion
+    3300030: Power Up Magnetic Repulsion 1
+    3300032: Power Up Golden Legs 1
     4300000: DarkMatter
     4300002: TimeWarp
     4300004: MagneticRepulsion
@@ -45,6 +81,18 @@ ModelImporter:
     4300010: DarkMatter001
     4300012: MagneticRepulsion001
     4300014: TimeWarp001
+    4300016: Power Up Iron Skin
+    4300018: Power Up Golden Legs
+    4300020: Power Up Magnetic Repulsion
+    4300022: Power Up Heat Rises
+    4300024: Power Up Heat Rises
+    4300026: Power Up Iron Skin
+    4300028: Power Up Magnetic Repulsion
+    4300030: Power Up Golden Legs_
+    4300032: Power Up Heat Rises 1
+    4300034: Power Up Iron Skin 1
+    4300036: Power Up Magnetic Repulsion 1
+    4300038: Power Up Golden Legs 1
     7400000: Take 001
     9500000: //RootNode
     11100000: //RootNode
