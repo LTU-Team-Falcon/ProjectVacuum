@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
 	public bool isPaused = false;
 	private bool canUnpause = true;
+	public int sol;
 
 	private Score score;
 	public int numPlayers;
@@ -127,12 +128,13 @@ public class GameManager : MonoBehaviour
 
 	void Update ()
 	{
+		numPlayers = GameObject.FindGameObjectsWithTag ("Player").Length;
 		if (DisplayTime.timeLeft < 1 || numPlayers <= 1) 
 		{
 			GameObject GUICamera = GameObject.Find("InGameCamera");
 			GUICamera.camera.enabled = false;
-//			GameObject EndGameCamera = GameObject.Find("EndGameCamera");
-//			EndGameCamera.camera.enabled = true;
+			GameObject EndGameCamera = GameObject.Find("EndGameCamera");
+			EndGameCamera.camera.enabled = true;
 			Screen.lockCursor = false;
 			Screen.showCursor = true;
 		}
@@ -143,7 +145,7 @@ public class GameManager : MonoBehaviour
 
 	public int getNumberOfPlayers()
 	{
-		int sol = Input.GetJoystickNames().Length;
+		sol = Input.GetJoystickNames().Length;
 		if(hasKeyboardPlayer && sol < 4)
 		{
 			sol += 1;

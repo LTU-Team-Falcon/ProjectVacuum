@@ -77,6 +77,7 @@ public class Damage : MonoBehaviour {
 			string DeathCamName = "P" + (int)(transform.parent.gameObject.GetComponent<XinputHandler>().indexNum +1) + "DeathCam";
 			GameObject DeathCam =  GameObject.Find(DeathCamName);
 			DeathCam.camera.enabled = true;
+
 			transform.parent.gameObject.SetActive(false);
 		}
 
