@@ -66,7 +66,6 @@ public class XinputHandler : MonoBehaviour
 
 	void Start()
 	{
-
 /*		if(cont != null)
 		{
 	//		print("ContCalled");
