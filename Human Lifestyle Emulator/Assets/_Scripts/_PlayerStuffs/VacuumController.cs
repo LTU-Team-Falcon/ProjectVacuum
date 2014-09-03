@@ -118,7 +118,7 @@ public class VacuumController : MonoBehaviour
 				audio.Play();
 			}
 		}
-		else if(control.GetLeftTrigger() <= 0f)
+		else if(control.GetLastLeftTrigger() > 0f && control.GetLeftTrigger() <= 0f)
 		{
 			Invoke("HaltVibrations", 1f);
 			audio.Stop();
