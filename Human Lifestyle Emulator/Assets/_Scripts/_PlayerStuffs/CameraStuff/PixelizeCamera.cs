@@ -18,8 +18,8 @@ public class PixelizeCamera : MonoBehaviour
 	public float _SpreadRes = 0;
 	float spreadRes;
 
-	int oldWidth = 0;
-	int oldHeight = 0;
+	int oldWidth;
+	int oldHeight;
 
 	public bool shouldUpdate = false;
 	// Use this for initialization
@@ -49,13 +49,15 @@ public class PixelizeCamera : MonoBehaviour
 	{
 		if(!isUniversal)
 		{
-			Init();
-			shouldUpdate = true;
+			//Init();
+			//shouldUpdate = true;
 		}
 	}
 
 	void Init () 
 	{
+		print("updated" + maxResPcent);
+
 		spreadRad = SpreadTheNumbers(_SpreadRad);
 
 		spreadRes = SpreadTheNumbers(_SpreadRes);
@@ -152,8 +154,7 @@ public class PixelizeCamera : MonoBehaviour
 			this.camera.cullingMask = (1 << (27 + offset));
 			this.camera.orthographicSize = 5f;
 
-		oldWidth = Screen.width;
-		oldHeight = Screen.height;
+
 	}
 
 	float getOuterRadius(int par1Int)
@@ -203,9 +204,13 @@ public class PixelizeCamera : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		
-		if(Screen.width != oldWidth || oldHeight != Screen.height)
+		if( oldWidth != Screen.width || oldHeight != Screen.height)
 		{
+			
+			print("SupposedScreenChange " + oldWidth + " != " + Screen.width + " || " + oldHeight + " != " + Screen.height);
+			oldWidth = Screen.width;
+			oldHeight = Screen.height;
+			
 			shouldUpdate = true;
 		}
 
@@ -234,6 +239,9 @@ public class PixelizeCamera : MonoBehaviour
 			Init();
 			shouldUpdate = false;
 		}
+
+		
+
 
 	}
 }
