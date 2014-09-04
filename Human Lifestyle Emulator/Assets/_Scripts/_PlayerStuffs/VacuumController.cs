@@ -24,6 +24,9 @@ public class VacuumController : MonoBehaviour
 	//public VacuumPuncher vacPuncher;
 	public VacuumShooter vacShooter;
 
+	public GameObject BlowingParticles;
+	public GameObject SuckingParticles;
+
 	[HideInInspector]
 	public XinputHandler control;
 	GameManager gameManager;
@@ -47,6 +50,8 @@ public class VacuumController : MonoBehaviour
 			control = transform.parent.gameObject.GetComponent<XinputHandler>();
 		}
 
+		BlowingParticles = GameObject.Find ("Blowing Out Particles Burst");
+		SuckingParticles = GameObject.Find ("Sucking in Particles");
 
 		//fixCollisions();
 				
@@ -117,6 +122,7 @@ public class VacuumController : MonoBehaviour
 			{
 				audio.clip = Sucking;
 				audio.Play();
+				SuckingParticles.particleSystem.Play();
 			}
 		}
 		else if(control.GetLastLeftTrigger() > 0f && control.GetLeftTrigger() <= 0f)
@@ -126,6 +132,7 @@ public class VacuumController : MonoBehaviour
 			Invoke("HaltVibrations", 0.2f);
 			audio.Stop();
 			audio.clip = null;
+			SuckingParticles.particleSystem.Stop();
 		}
 		else
 		{
@@ -145,6 +152,7 @@ public class VacuumController : MonoBehaviour
 			Invoke("HaltVibrations", 0.33f);
 			audio.clip = Shooting;
 			audio.Play();
+			BlowingParticles.particleSystem.Play();
 			Transform projectile = vacSucker.actualSucker.transform.GetChild(0);
 			projectile.tag = "Fired";
 			projectile.parent = null;
@@ -167,6 +175,8 @@ public class VacuumController : MonoBehaviour
 	void HaltVibrations()
 	{
 		control.SetVibration(new Vector2(0,0));
+		//stop particles
+		BlowingParticles.particleSystem.Stop ();
 	}
 	
 
