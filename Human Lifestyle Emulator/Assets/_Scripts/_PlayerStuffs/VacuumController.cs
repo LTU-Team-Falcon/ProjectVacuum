@@ -120,6 +120,7 @@ public class VacuumController : MonoBehaviour
 
 			if (audio.clip != Sucking)
 			{
+				audio.loop = true;
 				audio.clip = Sucking;
 				audio.Play();
 				SuckingParticles.particleSystem.Play();
@@ -150,6 +151,7 @@ public class VacuumController : MonoBehaviour
 		{
 			control.SetVibration(new Vector2(1,0.5f));
 			Invoke("HaltVibrations", 0.33f);
+			audio.loop = false;
 			audio.clip = Shooting;
 			audio.Play();
 			BlowingParticles.particleSystem.Play();
