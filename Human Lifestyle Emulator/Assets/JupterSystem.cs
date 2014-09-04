@@ -18,11 +18,15 @@ public class JupterSystem : MonoBehaviour
 		{
 			playerContainers.Add(playaObj.transform);
 		}*/
-
+	/*	GameObject playa;
 		for(int i = 0; i < 4; i++)
 		{
-			playerContainers.Add( GameObject.Find("PlayerContainer" + (i+1)).transform );
-		}
+			playa = GameObject.Find("PlayerContainer" + (i+1));
+			if(playa != null)
+			{
+				playerContainers.Add(playa.transform);
+			}
+		}*/
 	}
 	
 	// Update is called once per frame
