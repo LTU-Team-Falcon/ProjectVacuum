@@ -5,19 +5,18 @@ public class DestructibleWalls : MonoBehaviour {
 
 
 
-	bool hit = false;
-	int hitAtTime;
+	float hitAtTime;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start () 
+	{
+		hitAtTime = Time.time;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		if(hit)
-		{
+
 			if(Time.time - hitAtTime > 4)
 			{
 				Destroy(gameObject.GetComponent<Rigidbody>());
@@ -27,14 +26,8 @@ public class DestructibleWalls : MonoBehaviour {
 				}
 				
 			}
-		}
 
 
-	}
 
-	public void SelfDestruct()
-	{
-		hit = true;
-		hitAtTime = (int)Time.time;
 	}
 }

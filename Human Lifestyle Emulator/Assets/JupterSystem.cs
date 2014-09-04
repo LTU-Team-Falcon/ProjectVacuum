@@ -9,7 +9,7 @@ public class JupterSystem : MonoBehaviour
 	GameObject jupiterPrime;
 	List<Transform> playerContainers = new List<Transform>();
 	// Use this for initialization
-	void Start () 
+	void Awake () 
 	{
 		jupiterPrime = transform.FindChild("JupiterRotation").FindChild("Jupiter").gameObject;
 

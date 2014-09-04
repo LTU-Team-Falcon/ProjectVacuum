@@ -21,10 +21,11 @@ public class VacuumController : MonoBehaviour
 	
 	private Vector3 target;
 	public VacuumSucker vacSucker;
-	public VacuumPuncher vacPuncher;
+	//public VacuumPuncher vacPuncher;
 	public VacuumShooter vacShooter;
 
-	XinputHandler control;
+	[HideInInspector]
+	public XinputHandler control;
 	GameManager gameManager;
 	public bool IsSucking;
 
@@ -52,10 +53,10 @@ public class VacuumController : MonoBehaviour
 //		camObj = playerObj.transform.FindChild("Main Camera").gameObject;
 		vacSucker = gameObject.GetComponentInChildren<VacuumSucker>();
 		vacShooter = gameObject.GetComponentInChildren<VacuumShooter>();
-		vacPuncher = gameObject.GetComponentInChildren<VacuumPuncher>();
+/*		vacPuncher = gameObject.GetComponentInChildren<VacuumPuncher>();
 
 		//vacPuncher.vacController = this;
-		vacSucker.vacController = this;
+*/		vacSucker.vacController = this;
 		downRotation = transform.localEulerAngles;
 		defaultLocPos = transform.localPosition;
 
@@ -120,7 +121,9 @@ public class VacuumController : MonoBehaviour
 		}
 		else if(control.GetLastLeftTrigger() > 0f && control.GetLeftTrigger() <= 0f)
 		{
-			Invoke("HaltVibrations", 1f);
+			vacSucker.suckPow = control.GetLeftTrigger() * vacSucker.suckPotential;
+
+			Invoke("HaltVibrations", 0.2f);
 			audio.Stop();
 			audio.clip = null;
 		}

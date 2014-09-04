@@ -61,7 +61,14 @@ public class VacuumSucker : MonoBehaviour
 		{
 			suckPow = 0;
 			this.dropIntake();
+			//gameObject.particleSystem.Play();
 		}
+		else
+		{
+			//gameObject.particleSystem.Pause();
+
+		}
+
 		if(this.suckPow > 0f)
 		{
 				foreach(GameObject i in intake)

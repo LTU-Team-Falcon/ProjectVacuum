@@ -47,8 +47,11 @@ public class PixelizeCamera : MonoBehaviour
 
 	void Start()
 	{
-		Init();
-		shouldUpdate = true;
+		if(!isUniversal)
+		{
+			Init();
+			shouldUpdate = true;
+		}
 	}
 
 	void Init () 
@@ -75,7 +78,7 @@ public class PixelizeCamera : MonoBehaviour
 			camGam.transform.parent = this.transform;
 			camGam.name = (string) (camName + " - " + i);
 
-			camGam.camera.pixelRect = rectjob;
+			//camGam.camera.pixelRect = rectjob;
 
 			camGam.camera.nearClipPlane = lastRadi - 5;
 			camGam.camera.farClipPlane = thisRadi + 5;
@@ -131,11 +134,12 @@ public class PixelizeCamera : MonoBehaviour
 			renderSlide.name = (string) (slideName + " - " + i);
 			renderSlide.transform.parent = this.transform;
 
-			if(i != numLOD)
+/*			if(i != numLOD)
 				renderSlide.transform.localPosition += new Vector3(0,0, thisRadi);
 			else
 				renderSlide.transform.localPosition += new Vector3(0,0, lastRadi + 5);
-
+*/
+			renderSlide.transform.localPosition += new Vector3(0,0, 5 + 5*i);
 			renderSlide.transform.localScale = Vector3.Scale(new Vector3(this.camera.aspect,1,1),renderSlide.transform.localScale);
 
 
