@@ -47,14 +47,14 @@ public class VacuumController : MonoBehaviour
 		}
 
 
-		fixCollisions();
+		//fixCollisions();
 				
 //		camObj = playerObj.transform.FindChild("Main Camera").gameObject;
 		vacSucker = gameObject.GetComponentInChildren<VacuumSucker>();
 		vacShooter = gameObject.GetComponentInChildren<VacuumShooter>();
 		vacPuncher = gameObject.GetComponentInChildren<VacuumPuncher>();
 
-		vacPuncher.vacController = this;
+		//vacPuncher.vacController = this;
 		vacSucker.vacController = this;
 		downRotation = transform.localEulerAngles;
 		defaultLocPos = transform.localPosition;
