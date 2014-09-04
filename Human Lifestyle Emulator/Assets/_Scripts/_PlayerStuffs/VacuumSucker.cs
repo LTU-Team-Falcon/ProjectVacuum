@@ -11,7 +11,6 @@ public class VacuumSucker : MonoBehaviour
 	public float bagSize = 50f;
 
 	public float suckPotential;
-	public float maxSuckPotential;
 
 	public float suckPow = 0f;
 	public float suckFalloff = 0f;

@@ -19,7 +19,6 @@ public class XinputHandler : MonoBehaviour
 	{
 		gameManager = Object.FindObjectOfType<GameManager>();
 		ResetInputs();
-		
 
 /*		cont = gameObject.GetComponent<XinputController>();
 		
