@@ -19,7 +19,8 @@ public class OCDReorder : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-	
+		currentIndex = transform.GetSiblingIndex() + 1;
+		newIndex = currentIndex;
 	}
 	
 	// Update is called once per frame
