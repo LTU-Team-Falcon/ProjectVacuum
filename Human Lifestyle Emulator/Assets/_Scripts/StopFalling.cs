@@ -31,7 +31,10 @@ public class StopFalling : MonoBehaviour {
 	{
 		if (col.gameObject.name == "SuckerTruely") 
 		{
-			rigidbody.constraints = RigidbodyConstraints.None;
+			if(col.gameObject.GetComponentInParent<VacuumSucker>().suckPow != 0)
+			{
+				rigidbody.constraints = RigidbodyConstraints.None;
+			}
 		}
 
 	}
