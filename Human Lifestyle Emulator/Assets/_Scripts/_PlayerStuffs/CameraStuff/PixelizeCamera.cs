@@ -22,6 +22,8 @@ public class PixelizeCamera : MonoBehaviour
 	int oldHeight;
 
 	public bool shouldUpdate = false;
+
+	int TrueCullingMask;
 	// Use this for initialization
 
 
@@ -40,6 +42,10 @@ public class PixelizeCamera : MonoBehaviour
 			isUniversal = true;
 			pixy.Remove(this);
 			shouldUpdate = true;
+		}
+		else
+		{
+			TrueCullingMask = gameObject.camera.cullingMask;
 		}
 	}
 
@@ -79,6 +85,7 @@ public class PixelizeCamera : MonoBehaviour
 			GameObject camGam = GameObject.Instantiate(Resources.Load(camName), transform.position, transform.rotation) as GameObject;
 			camGam.transform.parent = this.transform;
 			camGam.name = (string) (camName + " - " + i);
+			camGam.camera.cullingMask = TrueCullingMask;
 
 			//camGam.camera.pixelRect = rectjob;
 
@@ -152,6 +159,9 @@ public class PixelizeCamera : MonoBehaviour
 
 			this.camera.isOrthoGraphic = true;
 			this.camera.cullingMask = (1 << (27 + offset));
+			
+
+
 			this.camera.orthographicSize = 5f;
 
 
@@ -241,7 +251,6 @@ public class PixelizeCamera : MonoBehaviour
 		}
 
 		
-
 
 	}
 }
