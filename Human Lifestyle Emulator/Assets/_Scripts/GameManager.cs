@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 	 
 	public DisplayTime DisplayTime;
 
-	public bool hasKeyboardPlayer = false;
+	public bool hasKeyboardPlayer = true;
 
 	public bool isPaused = false;
 	private bool canUnpause = true;

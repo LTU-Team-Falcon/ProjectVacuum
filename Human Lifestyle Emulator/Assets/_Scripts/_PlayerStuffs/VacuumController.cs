@@ -24,8 +24,8 @@ public class VacuumController : MonoBehaviour
 	//public VacuumPuncher vacPuncher;
 	public VacuumShooter vacShooter;
 
-	public GameObject BlowingParticles;
-	public GameObject SuckingParticles;
+	public Transform BlowingParticles;
+	public Transform SuckingParticles;
 
 	[HideInInspector]
 	public XinputHandler control;
@@ -50,9 +50,9 @@ public class VacuumController : MonoBehaviour
 			control = transform.parent.gameObject.GetComponent<XinputHandler>();
 		}
 
-		BlowingParticles = GameObject.Find ("Blowing Out Particles Burst");
-		SuckingParticles = GameObject.Find ("Sucking in Particles");
-
+		BlowingParticles = transform.Find ("Blowing Out Particles Burst");
+		SuckingParticles = transform.Find ("Sucking in Particles");
+		SuckingParticles.particleSystem.Stop ();
 		//fixCollisions();
 				
 //		camObj = playerObj.transform.FindChild("Main Camera").gameObject;
