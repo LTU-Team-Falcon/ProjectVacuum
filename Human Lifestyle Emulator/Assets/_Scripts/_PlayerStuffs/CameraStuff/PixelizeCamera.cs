@@ -62,7 +62,7 @@ public class PixelizeCamera : MonoBehaviour
 
 	void Init () 
 	{
-		print("updated" + maxResPcent);
+		//print("updated" + maxResPcent);
 
 		spreadRad = SpreadTheNumbers(_SpreadRad);
 
@@ -217,7 +217,7 @@ public class PixelizeCamera : MonoBehaviour
 		if( oldWidth != Screen.width || oldHeight != Screen.height)
 		{
 			
-			print("SupposedScreenChange " + oldWidth + " != " + Screen.width + " || " + oldHeight + " != " + Screen.height);
+//			print("SupposedScreenChange " + oldWidth + " != " + Screen.width + " || " + oldHeight + " != " + Screen.height);
 			oldWidth = Screen.width;
 			oldHeight = Screen.height;
 			

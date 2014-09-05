@@ -40,7 +40,7 @@ public class FaceVelocity : MonoBehaviour
 
 			target = Vector3.Scale(target , MirrorAxis);
 
-			print(targetRigid.velocity.normalized + " " + target);
+//			print(targetRigid.velocity.normalized + " " + target);
 
 		}
 
