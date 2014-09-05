@@ -19,6 +19,7 @@ public class XinputController : MonoBehaviour
 	void Start()
 	{
 		indexNum = gameObject.GetComponent<XinputHandler>().indexNum;
+
 		//Update();
 		// No need to initialize anything for the plugin
 	}

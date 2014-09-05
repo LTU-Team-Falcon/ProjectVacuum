@@ -18,7 +18,7 @@ public class XinputHandler : MonoBehaviour
 	void Awake()
 	{
 		gameManager = Object.FindObjectOfType<GameManager>();
-		ResetInputs();
+		ResetInputsMan(true);
 
 /*		cont = gameObject.GetComponent<XinputController>();
 		
@@ -39,7 +39,7 @@ public class XinputHandler : MonoBehaviour
 		}*/
 	}
 
-	void ResetInputs()
+	void ResetInputsMan( bool parn)
 	{
 		int gameNumPlayers = gameManager.getNumberOfPlayers();
 		if(gameNumPlayers == 0)
@@ -59,6 +59,7 @@ public class XinputHandler : MonoBehaviour
 		}
 		else
 		{
+			print("Thiscaused" + indexNum);
 			gameObject.SetActive(false);
 		}
 	}
