@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
 		Screen.lockCursor = true;
 		Screen.showCursor = false;
 		
-	//	transform.Find("PauseMenuObj").gameObject.SetActive(false); //SetActive(false);
+	//	transform.Find("PauseMenuObj").gameObject.f(false); //SetActive(false);
 		PauseMenu[] pMenus = GameObject.FindObjectsOfType<PauseMenu>();
 
 		foreach(PauseMenu pauseMenu in pMenus)
