@@ -152,7 +152,7 @@ public class GetSucked : MonoBehaviour
 			{
 				col.gameObject.AddComponent<Rigidbody>();
 				col.gameObject.rigidbody.useGravity = true;
-				col.rigidbody.isKinematic = false;
+				col.gameObject.rigidbody.isKinematic = false;
 
 			}
 			else
