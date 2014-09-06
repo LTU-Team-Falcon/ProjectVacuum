@@ -15,6 +15,8 @@ public class Damage : MonoBehaviour {
 	[HideInInspector]
 	public GUIText DamageText;
 	[HideInInspector]
+	public GUIText LivesText;
+	[HideInInspector]
 	public List<GameObject> Respawns = new List<GameObject>();
 
 	[HideInInspector]
@@ -35,6 +37,11 @@ public class Damage : MonoBehaviour {
 		{
 			string name = "P" + (int)(transform.parent.gameObject.GetComponent<XinputHandler>().indexNum +1) + "UI";
 			DamageText = GameObject.Find(name).guiText;
+		}
+		if(LivesText == null)
+		{
+			string name = "P" + (int)(transform.parent.gameObject.GetComponent<XinputHandler>().indexNum +1) + "LivesUI";
+			LivesText = GameObject.Find(name).guiText;
 		}
 		damageCounter = 0;
 		IsDead = false;
@@ -122,6 +129,8 @@ public class Damage : MonoBehaviour {
 		//BoutToDie = false;
 
 		Lives--;
+
+		LivesText.text = "x" + Lives;
 	}
 
 	void OnSpawn ()

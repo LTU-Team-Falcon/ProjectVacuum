@@ -9,12 +9,12 @@ public class OCDReorder : MonoBehaviour
 	public int newIndex;
 	public bool run = false;
 	public int currentIndex;
-	 bool cleanUpAndRunAll = false;
+	bool cleanUpAndRunAll = false;
 
-	 bool isCleaning = false;
+	bool isCleaning = false;
 
-	 int Inum = 0;
-	 List<OCDReorder> allSiblingOrders = new List<OCDReorder>();
+	int Inum = 0;
+	List<OCDReorder> allSiblingOrders = new List<OCDReorder>();
 
 	// Use this for initialization
 	void Start () 
