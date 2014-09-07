@@ -29,17 +29,17 @@ public class GameManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		for (int i = sol+1; i <= 4; i++)
-		{
-			GameObject UI = GameObject.Find("P"+i+"UI");
-			UI.guiText.enabled = false;
-
-			UI = GameObject.Find("P" + i + "CharUI");
-			UI.guiTexture.enabled = false;
-
-			UI = GameObject.Find("P" + i + "Image");
-			UI.guiTexture.enabled = false;
-		}
+//		for (int i = sol+1; i <= 4; i++)
+//		{
+//			GameObject UI = GameObject.Find("P"+i+"UI");
+//			UI.guiText.enabled = false;
+//
+//			UI = GameObject.Find("P" + i + "CharUI");
+//			UI.guiTexture.enabled = false;
+//
+//			UI = GameObject.Find("P" + i + "Image");
+//			UI.guiTexture.enabled = false;
+//		}
 
 
 

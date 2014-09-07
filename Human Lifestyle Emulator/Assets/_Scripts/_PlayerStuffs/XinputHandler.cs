@@ -59,8 +59,8 @@ public class XinputHandler : MonoBehaviour
 		}
 		else
 		{
-			print("Thiscaused" + indexNum);
-			gameObject.SetActive(false);
+			//print("Thiscaused" + indexNum);
+			//gameObject.SetActive(false);
 		}
 	}
 
